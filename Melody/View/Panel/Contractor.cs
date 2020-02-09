@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Melody.View.Panel
 {
-  public partial class Material : UserControl
+  public partial class Contractor : UserControl
   {
-    public Material()
+    public Contractor()
     {
       InitializeComponent();
     }

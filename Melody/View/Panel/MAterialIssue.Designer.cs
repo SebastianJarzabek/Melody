@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Panel
 {
-  partial class Material
+  partial class MaterialIssue
   {
     /// <summary> 
     /// Required designer variable.

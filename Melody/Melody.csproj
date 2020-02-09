@@ -51,17 +51,59 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Panel\AboutMe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\AboutMe.Designer.cs">
+      <DependentUpon>AboutMe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\Contact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\ContactDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\ContactDetail.Designer.cs">
+      <DependentUpon>ContactDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\Contractor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\Contractor.Designer.cs">
+      <DependentUpon>Contractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\Contract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\Contract.Designer.cs">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\CurrentState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\CurrentState.Designer.cs">
+      <DependentUpon>CurrentState.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Panel\Employee.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Panel\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Panel\Material.cs">
+    <Compile Include="View\Panel\MaterialIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Panel\Material.Designer.cs">
-      <DependentUpon>Material.cs</DependentUpon>
+    <Compile Include="View\Panel\MaterialIssue.Designer.cs">
+      <DependentUpon>MaterialIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel\MaterialRecipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Panel\MaterialRecipt.Designer.cs">
+      <DependentUpon>MaterialRecipt.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Panel\Order.cs">
       <SubType>UserControl</SubType>
@@ -93,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="View\Window\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Window\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="log4net.config" />
     <None Include="packages.config" />

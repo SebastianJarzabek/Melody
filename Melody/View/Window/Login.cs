@@ -36,5 +36,10 @@ namespace Melody.View.Window
     {
       this.Close();
     }
-  }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

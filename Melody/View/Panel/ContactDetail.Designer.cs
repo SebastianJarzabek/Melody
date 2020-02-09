@@ -28,10 +28,18 @@
     /// </summary>
     private void InitializeComponent()
     {
-      components = new System.ComponentModel.Container();
+      this.SuspendLayout();
+      // 
+      // ContactDetail
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Name = "ContactDetail";
+      this.Size = new System.Drawing.Size(1632, 1020);
+      this.ResumeLayout(false);
+
     }
 
-    #endregion
-  }
+        #endregion
+    }
 }

@@ -189,6 +189,7 @@
       this.Text = "Melody - logowanie";
       this.TopMost = true;
       this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+      this.Load += new System.EventHandler(this.Login_Load);
       this.Login_panel.ResumeLayout(false);
       this.Login_panel.PerformLayout();
       this.ResumeLayout(false);

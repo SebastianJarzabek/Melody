@@ -34,8 +34,14 @@
       this.DeleteOrder_tp = new System.Windows.Forms.TabPage();
       this.ListOfOrder_tp = new System.Windows.Forms.TabPage();
       this.AddOrderTab_tlp = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
       this.tabControl1.SuspendLayout();
       this.AddOrder_tb.SuspendLayout();
+      this.EditOrder_tp.SuspendLayout();
+      this.DeleteOrder_tp.SuspendLayout();
+      this.ListOfOrder_tp.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl1
@@ -64,6 +70,7 @@
       // 
       // EditOrder_tp
       // 
+      this.EditOrder_tp.Controls.Add(this.tableLayoutPanel1);
       this.EditOrder_tp.Location = new System.Drawing.Point(4, 25);
       this.EditOrder_tp.Name = "EditOrder_tp";
       this.EditOrder_tp.Padding = new System.Windows.Forms.Padding(3);
@@ -74,6 +81,7 @@
       // 
       // DeleteOrder_tp
       // 
+      this.DeleteOrder_tp.Controls.Add(this.tableLayoutPanel3);
       this.DeleteOrder_tp.Location = new System.Drawing.Point(4, 25);
       this.DeleteOrder_tp.Name = "DeleteOrder_tp";
       this.DeleteOrder_tp.Size = new System.Drawing.Size(1223, 720);
@@ -83,6 +91,7 @@
       // 
       // ListOfOrder_tp
       // 
+      this.ListOfOrder_tp.Controls.Add(this.tableLayoutPanel2);
       this.ListOfOrder_tp.Location = new System.Drawing.Point(4, 25);
       this.ListOfOrder_tp.Name = "ListOfOrder_tp";
       this.ListOfOrder_tp.Size = new System.Drawing.Size(1223, 720);
@@ -104,6 +113,48 @@
       this.AddOrderTab_tlp.Size = new System.Drawing.Size(1217, 714);
       this.AddOrderTab_tlp.TabIndex = 0;
       // 
+      // tableLayoutPanel1
+      // 
+      this.tableLayoutPanel1.ColumnCount = 2;
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+      this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+      this.tableLayoutPanel1.RowCount = 2;
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(1217, 714);
+      this.tableLayoutPanel1.TabIndex = 1;
+      // 
+      // tableLayoutPanel2
+      // 
+      this.tableLayoutPanel2.ColumnCount = 2;
+      this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+      this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+      this.tableLayoutPanel2.RowCount = 2;
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.Size = new System.Drawing.Size(1223, 720);
+      this.tableLayoutPanel2.TabIndex = 1;
+      // 
+      // tableLayoutPanel3
+      // 
+      this.tableLayoutPanel3.ColumnCount = 2;
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+      this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+      this.tableLayoutPanel3.RowCount = 2;
+      this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel3.Size = new System.Drawing.Size(1223, 720);
+      this.tableLayoutPanel3.TabIndex = 1;
+      // 
       // Order
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -113,6 +164,9 @@
       this.Size = new System.Drawing.Size(1231, 749);
       this.tabControl1.ResumeLayout(false);
       this.AddOrder_tb.ResumeLayout(false);
+      this.EditOrder_tp.ResumeLayout(false);
+      this.DeleteOrder_tp.ResumeLayout(false);
+      this.ListOfOrder_tp.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -125,5 +179,8 @@
         private System.Windows.Forms.TabPage ListOfOrder_tp;
         private System.Windows.Forms.TabPage DeleteOrder_tp;
         private System.Windows.Forms.TableLayoutPanel AddOrderTab_tlp;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

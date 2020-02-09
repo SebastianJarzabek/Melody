@@ -49,6 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MelodyDbDataSet.cs">
+      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MelodyDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Panel\AboutMe.cs">
@@ -142,8 +150,17 @@
     <EmbeddedResource Include="View\Panel\ContactDetail.resx">
       <DependentUpon>ContactDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Panel\CurrentState.resx">
+      <DependentUpon>CurrentState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Panel\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Panel\MAterialIssue.resx">
+      <DependentUpon>MaterialIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Panel\MaterialRecipt.resx">
+      <DependentUpon>MaterialRecipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Panel\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
@@ -155,6 +172,17 @@
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="log4net.config" />
+    <None Include="MelodyDbDataSet.xsc">
+      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MelodyDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MelodyDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MelodyDbDataSet.xss">
+      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

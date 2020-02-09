@@ -28,10 +28,56 @@
     /// </summary>
     private void InitializeComponent()
     {
-      components = new System.ComponentModel.Container();
+      this.components = new System.ComponentModel.Container();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.melodyDbDataSet = new Melody.MelodyDbDataSet();
+      this.melodyDbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSet)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSetBindingSource)).BeginInit();
+      this.SuspendLayout();
+      // 
+      // dataGridView1
+      // 
+      this.dataGridView1.AutoGenerateColumns = false;
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.DataSource = this.melodyDbDataSetBindingSource;
+      this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.RowHeadersWidth = 51;
+      this.dataGridView1.RowTemplate.Height = 24;
+      this.dataGridView1.Size = new System.Drawing.Size(1309, 863);
+      this.dataGridView1.TabIndex = 0;
+      // 
+      // melodyDbDataSet
+      // 
+      this.melodyDbDataSet.DataSetName = "MelodyDbDataSet";
+      this.melodyDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
+      // melodyDbDataSetBindingSource
+      // 
+      this.melodyDbDataSetBindingSource.DataSource = this.melodyDbDataSet;
+      this.melodyDbDataSetBindingSource.Position = 0;
+      // 
+      // CurrentState
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.dataGridView1);
+      this.Name = "CurrentState";
+      this.Size = new System.Drawing.Size(1309, 863);
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSet)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSetBindingSource)).EndInit();
+      this.ResumeLayout(false);
+
     }
 
-    #endregion
-  }
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource melodyDbDataSetBindingSource;
+        private MelodyDbDataSet melodyDbDataSet;
+    }
 }

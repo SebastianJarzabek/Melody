@@ -16,5 +16,13 @@ namespace Melody.View.Controls
     {
       InitializeComponent();
     }
-  }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+      groupBox1.Location = new Point(
+      this.ClientSize.Width / 2 - groupBox1.Size.Width / 2,
+      this.ClientSize.Height / 2 - groupBox1.Size.Height / 2);
+      groupBox1.Anchor = AnchorStyles.None;
+    }
+    }
 }

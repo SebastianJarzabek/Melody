@@ -108,7 +108,6 @@
       this.Contractors_smi.Name = "Contractors_smi";
       this.Contractors_smi.Size = new System.Drawing.Size(224, 26);
       this.Contractors_smi.Text = "Kontrahenci";
-      this.Contractors_smi.Click += new System.EventHandler(this.Contractor_smi_Click);
       // 
       // AddContractors
       // 
@@ -148,33 +147,32 @@
       this.Employees_smi.Name = "Employees_smi";
       this.Employees_smi.Size = new System.Drawing.Size(224, 26);
       this.Employees_smi.Text = "Pracownicy";
-      this.Employees_smi.Click += new System.EventHandler(this.Employees_smi_Click);
       // 
       // AddEmployee
       // 
       this.AddEmployee.Name = "AddEmployee";
-      this.AddEmployee.Size = new System.Drawing.Size(224, 26);
+      this.AddEmployee.Size = new System.Drawing.Size(133, 26);
       this.AddEmployee.Text = "Dodaj";
       this.AddEmployee.Click += new System.EventHandler(this.AddEmployee_Click);
       // 
       // EditEmployee
       // 
       this.EditEmployee.Name = "EditEmployee";
-      this.EditEmployee.Size = new System.Drawing.Size(224, 26);
+      this.EditEmployee.Size = new System.Drawing.Size(133, 26);
       this.EditEmployee.Text = "Edytuj";
       this.EditEmployee.Click += new System.EventHandler(this.EditEmployee_Click);
       // 
       // ListEmployee
       // 
       this.ListEmployee.Name = "ListEmployee";
-      this.ListEmployee.Size = new System.Drawing.Size(224, 26);
+      this.ListEmployee.Size = new System.Drawing.Size(133, 26);
       this.ListEmployee.Text = "Lista";
       this.ListEmployee.Click += new System.EventHandler(this.ListEmployee_Click);
       // 
       // DeleteEmployee
       // 
       this.DeleteEmployee.Name = "DeleteEmployee";
-      this.DeleteEmployee.Size = new System.Drawing.Size(224, 26);
+      this.DeleteEmployee.Size = new System.Drawing.Size(133, 26);
       this.DeleteEmployee.Text = "Usuń";
       this.DeleteEmployee.Click += new System.EventHandler(this.DeleteEmployee_Click);
       // 
@@ -189,26 +187,25 @@
       this.Contract_msmi.Name = "Contract_msmi";
       this.Contract_msmi.Size = new System.Drawing.Size(86, 24);
       this.Contract_msmi.Text = "Kontrakty";
-      this.Contract_msmi.Click += new System.EventHandler(this.Contract_msmi_Click);
       // 
       // AddContract
       // 
       this.AddContract.Name = "AddContract";
-      this.AddContract.Size = new System.Drawing.Size(224, 26);
+      this.AddContract.Size = new System.Drawing.Size(133, 26);
       this.AddContract.Text = "Dodaj";
       this.AddContract.Click += new System.EventHandler(this.AddContract_Click);
       // 
       // EditContract
       // 
       this.EditContract.Name = "EditContract";
-      this.EditContract.Size = new System.Drawing.Size(224, 26);
+      this.EditContract.Size = new System.Drawing.Size(133, 26);
       this.EditContract.Text = "Edytuj";
       this.EditContract.Click += new System.EventHandler(this.EditContract_Click);
       // 
       // ListContract
       // 
       this.ListContract.Name = "ListContract";
-      this.ListContract.Size = new System.Drawing.Size(224, 26);
+      this.ListContract.Size = new System.Drawing.Size(133, 26);
       this.ListContract.Text = "Lista";
       this.ListContract.Click += new System.EventHandler(this.ListContract_Click);
       // 
@@ -220,7 +217,7 @@
       // DeleteContract
       // 
       this.DeleteContract.Name = "DeleteContract";
-      this.DeleteContract.Size = new System.Drawing.Size(224, 26);
+      this.DeleteContract.Size = new System.Drawing.Size(133, 26);
       this.DeleteContract.Text = "Usuń";
       this.DeleteContract.Click += new System.EventHandler(this.DeleteContract_Click);
       // 
@@ -244,28 +241,27 @@
             this.toolStripMenuItem2,
             this.DeleteMaterialReceipt});
       this.MaterialReceipt_smi.Name = "MaterialReceipt_smi";
-      this.MaterialReceipt_smi.Size = new System.Drawing.Size(224, 26);
+      this.MaterialReceipt_smi.Size = new System.Drawing.Size(174, 26);
       this.MaterialReceipt_smi.Text = "Przyjęcia";
-      this.MaterialReceipt_smi.Click += new System.EventHandler(this.MaterialRecipt_smi_Click);
       // 
       // AddMaterialReceipt
       // 
       this.AddMaterialReceipt.Name = "AddMaterialReceipt";
-      this.AddMaterialReceipt.Size = new System.Drawing.Size(224, 26);
+      this.AddMaterialReceipt.Size = new System.Drawing.Size(133, 26);
       this.AddMaterialReceipt.Text = "Dodaj";
       this.AddMaterialReceipt.Click += new System.EventHandler(this.AddMaterialReceipt_Click);
       // 
       // EditMaterialReceipt
       // 
       this.EditMaterialReceipt.Name = "EditMaterialReceipt";
-      this.EditMaterialReceipt.Size = new System.Drawing.Size(224, 26);
+      this.EditMaterialReceipt.Size = new System.Drawing.Size(133, 26);
       this.EditMaterialReceipt.Text = "Edytuj";
       this.EditMaterialReceipt.Click += new System.EventHandler(this.EditMaterialReceipt_Click);
       // 
       // ListMaterialReceipt
       // 
       this.ListMaterialReceipt.Name = "ListMaterialReceipt";
-      this.ListMaterialReceipt.Size = new System.Drawing.Size(224, 26);
+      this.ListMaterialReceipt.Size = new System.Drawing.Size(133, 26);
       this.ListMaterialReceipt.Text = "Lista";
       this.ListMaterialReceipt.Click += new System.EventHandler(this.ListMaterialReceipt_Click);
       // 
@@ -277,7 +273,7 @@
       // DeleteMaterialReceipt
       // 
       this.DeleteMaterialReceipt.Name = "DeleteMaterialReceipt";
-      this.DeleteMaterialReceipt.Size = new System.Drawing.Size(224, 26);
+      this.DeleteMaterialReceipt.Size = new System.Drawing.Size(133, 26);
       this.DeleteMaterialReceipt.Text = "Usuń";
       this.DeleteMaterialReceipt.Click += new System.EventHandler(this.DeleteMaterialReceipt_Click);
       // 
@@ -297,28 +293,27 @@
             this.toolStripMenuItem3,
             this.DeleteMaterialIssue});
       this.MaterialIssue_smi.Name = "MaterialIssue_smi";
-      this.MaterialIssue_smi.Size = new System.Drawing.Size(224, 26);
+      this.MaterialIssue_smi.Size = new System.Drawing.Size(174, 26);
       this.MaterialIssue_smi.Text = "Wydania";
-      this.MaterialIssue_smi.Click += new System.EventHandler(this.MaterialIssue_smi_Click);
       // 
       // AddMaterialIssue
       // 
       this.AddMaterialIssue.Name = "AddMaterialIssue";
-      this.AddMaterialIssue.Size = new System.Drawing.Size(224, 26);
+      this.AddMaterialIssue.Size = new System.Drawing.Size(133, 26);
       this.AddMaterialIssue.Text = "Dodaj";
       this.AddMaterialIssue.Click += new System.EventHandler(this.AddMaterialIssue_Click);
       // 
       // EditMaterialIssue
       // 
       this.EditMaterialIssue.Name = "EditMaterialIssue";
-      this.EditMaterialIssue.Size = new System.Drawing.Size(224, 26);
+      this.EditMaterialIssue.Size = new System.Drawing.Size(133, 26);
       this.EditMaterialIssue.Text = "Edytuj";
       this.EditMaterialIssue.Click += new System.EventHandler(this.EditMaterialIssue_Click);
       // 
       // ListMaterialIssue
       // 
       this.ListMaterialIssue.Name = "ListMaterialIssue";
-      this.ListMaterialIssue.Size = new System.Drawing.Size(224, 26);
+      this.ListMaterialIssue.Size = new System.Drawing.Size(133, 26);
       this.ListMaterialIssue.Text = "Lista";
       this.ListMaterialIssue.Click += new System.EventHandler(this.ListMaterialIssue_Click);
       // 
@@ -330,7 +325,7 @@
       // DeleteMaterialIssue
       // 
       this.DeleteMaterialIssue.Name = "DeleteMaterialIssue";
-      this.DeleteMaterialIssue.Size = new System.Drawing.Size(224, 26);
+      this.DeleteMaterialIssue.Size = new System.Drawing.Size(133, 26);
       this.DeleteMaterialIssue.Text = "Usuń";
       this.DeleteMaterialIssue.Click += new System.EventHandler(this.DeleteMaterialIssue_Click);
       // 
@@ -343,28 +338,27 @@
             this.toolStripMenuItem4,
             this.DeleteOrder});
       this.Order_smi.Name = "Order_smi";
-      this.Order_smi.Size = new System.Drawing.Size(224, 26);
+      this.Order_smi.Size = new System.Drawing.Size(174, 26);
       this.Order_smi.Text = "Zamówienia";
-      this.Order_smi.Click += new System.EventHandler(this.Order_smi_Click);
       // 
       // AddOrder
       // 
       this.AddOrder.Name = "AddOrder";
-      this.AddOrder.Size = new System.Drawing.Size(224, 26);
+      this.AddOrder.Size = new System.Drawing.Size(133, 26);
       this.AddOrder.Text = "Dodaj";
       this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
       // 
       // EditOrder
       // 
       this.EditOrder.Name = "EditOrder";
-      this.EditOrder.Size = new System.Drawing.Size(224, 26);
+      this.EditOrder.Size = new System.Drawing.Size(133, 26);
       this.EditOrder.Text = "Edytuj";
       this.EditOrder.Click += new System.EventHandler(this.EditOrder_Click);
       // 
       // ListOrder
       // 
       this.ListOrder.Name = "ListOrder";
-      this.ListOrder.Size = new System.Drawing.Size(224, 26);
+      this.ListOrder.Size = new System.Drawing.Size(133, 26);
       this.ListOrder.Text = "Lista";
       this.ListOrder.Click += new System.EventHandler(this.ListOrder_Click);
       // 
@@ -376,7 +370,7 @@
       // DeleteOrder
       // 
       this.DeleteOrder.Name = "DeleteOrder";
-      this.DeleteOrder.Size = new System.Drawing.Size(224, 26);
+      this.DeleteOrder.Size = new System.Drawing.Size(133, 26);
       this.DeleteOrder.Text = "Usuń";
       this.DeleteOrder.Click += new System.EventHandler(this.DeleteOrder_Click);
       // 
@@ -392,14 +386,14 @@
       // AboutMe_smi
       // 
       this.AboutMe_smi.Name = "AboutMe_smi";
-      this.AboutMe_smi.Size = new System.Drawing.Size(143, 26);
+      this.AboutMe_smi.Size = new System.Drawing.Size(224, 26);
       this.AboutMe_smi.Text = "O mnie";
       this.AboutMe_smi.Click += new System.EventHandler(this.AboutMe_smi_Click);
       // 
       // Contact_smi
       // 
       this.Contact_smi.Name = "Contact_smi";
-      this.Contact_smi.Size = new System.Drawing.Size(143, 26);
+      this.Contact_smi.Size = new System.Drawing.Size(224, 26);
       this.Contact_smi.Text = "Kontakt";
       this.Contact_smi.Click += new System.EventHandler(this.Contact_smi_Click);
       // 
@@ -412,7 +406,7 @@
       // 
       // Main_Panel
       // 
-      this.Main_Panel.BackgroundImage = global::Melody.Properties.Resources.Login;
+      this.Main_Panel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.Main_Panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.Main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Main_Panel.Location = new System.Drawing.Point(0, 28);

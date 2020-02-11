@@ -16,5 +16,14 @@ namespace Melody.View.Controls
     {
       InitializeComponent();
     }
+
+    private void Sidebar_panel_Paint(object sender, PaintEventArgs e)
+    {
+        Sidebar_panel.Controls.Clear();
+        var SidebarControlPanel = new Sidebar();
+        SidebarControlPanel.Dock = DockStyle.Fill;
+        Sidebar_panel.Controls.Add(SidebarControlPanel);
+      
+    }
   }
 }

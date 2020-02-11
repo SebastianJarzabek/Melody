@@ -268,7 +268,7 @@ namespace Melody.MelodyDbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[29];
+            this._commandCollection = new global::System.Data.IDbCommand[30];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Melody.Properties.Settings.Default.MelodyDbConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.AddDestiny";
@@ -555,6 +555,11 @@ namespace Melody.MelodyDbDataSetTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[28])).CommandText = "dbo.GetInventoryLevel";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[28])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[28])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[29] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[29])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Melody.Properties.Settings.Default.MelodyDbConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[29])).CommandText = "dbo.GetAllDestiny";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[29])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[29])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2046,6 +2051,34 @@ namespace Melody.MelodyDbDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object GetAllInventoryLevel() {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[28]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object GetAllDestiny() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[29]));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

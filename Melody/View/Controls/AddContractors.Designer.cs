@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.AddContractor_panel = new System.Windows.Forms.Panel();
-      this.panel2 = new System.Windows.Forms.Panel();
+      this.AddContractors_panel = new System.Windows.Forms.Panel();
       this.General_gb = new System.Windows.Forms.GroupBox();
       this.label1 = new System.Windows.Forms.Label();
       this.ClearGeneral_btn = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
       this.label16 = new System.Windows.Forms.Label();
       this.ClearContact_btn = new System.Windows.Forms.Button();
       this.AddContractor_panel.SuspendLayout();
-      this.panel2.SuspendLayout();
+      this.AddContractors_panel.SuspendLayout();
       this.General_gb.SuspendLayout();
       this.Adress_gb.SuspendLayout();
       this.Contact_gb.SuspendLayout();
@@ -65,22 +65,23 @@
       // 
       // AddContractor_panel
       // 
-      this.AddContractor_panel.Controls.Add(this.panel2);
+      this.AddContractor_panel.Controls.Add(this.AddContractors_panel);
       this.AddContractor_panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.AddContractor_panel.Location = new System.Drawing.Point(0, 0);
       this.AddContractor_panel.Name = "AddContractor_panel";
       this.AddContractor_panel.Size = new System.Drawing.Size(1920, 1080);
       this.AddContractor_panel.TabIndex = 1;
       // 
-      // panel2
+      // AddContractors_panel
       // 
-      this.panel2.Controls.Add(this.General_gb);
-      this.panel2.Controls.Add(this.Adress_gb);
-      this.panel2.Controls.Add(this.Contact_gb);
-      this.panel2.Location = new System.Drawing.Point(240, 95);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(536, 561);
-      this.panel2.TabIndex = 7;
+      this.AddContractors_panel.Controls.Add(this.General_gb);
+      this.AddContractors_panel.Controls.Add(this.Adress_gb);
+      this.AddContractors_panel.Controls.Add(this.Contact_gb);
+      this.AddContractors_panel.Location = new System.Drawing.Point(240, 95);
+      this.AddContractors_panel.Name = "AddContractors_panel";
+      this.AddContractors_panel.Size = new System.Drawing.Size(536, 561);
+      this.AddContractors_panel.TabIndex = 7;
+      this.AddContractors_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddContractors_panel_Paint);
       // 
       // General_gb
       // 
@@ -344,7 +345,7 @@
       this.Name = "AddContractors";
       this.Size = new System.Drawing.Size(1920, 1080);
       this.AddContractor_panel.ResumeLayout(false);
-      this.panel2.ResumeLayout(false);
+      this.AddContractors_panel.ResumeLayout(false);
       this.General_gb.ResumeLayout(false);
       this.General_gb.PerformLayout();
       this.Adress_gb.ResumeLayout(false);
@@ -358,7 +359,7 @@
         #endregion
 
         private System.Windows.Forms.Panel AddContractor_panel;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel AddContractors_panel;
         private System.Windows.Forms.GroupBox General_gb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ClearGeneral_btn;

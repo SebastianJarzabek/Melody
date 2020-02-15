@@ -6,6 +6,7 @@ namespace Melody.Service.PasswordCoder
   {
     private string _accessCodeParm = string.Empty;
     private string _accessUnCodeParm = string.Empty;
+
     public Coder()
     {
     }

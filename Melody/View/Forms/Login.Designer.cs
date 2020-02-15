@@ -55,18 +55,22 @@
       // 
       this.PasswordValidation_lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
       this.PasswordValidation_lbl.AutoSize = true;
+      this.PasswordValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.PasswordValidation_lbl.ForeColor = System.Drawing.Color.Red;
       this.PasswordValidation_lbl.Location = new System.Drawing.Point(123, 153);
       this.PasswordValidation_lbl.Name = "PasswordValidation_lbl";
-      this.PasswordValidation_lbl.Size = new System.Drawing.Size(0, 25);
+      this.PasswordValidation_lbl.Size = new System.Drawing.Size(0, 20);
       this.PasswordValidation_lbl.TabIndex = 10;
       // 
       // LoginValidation_lbl
       // 
       this.LoginValidation_lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
       this.LoginValidation_lbl.AutoSize = true;
+      this.LoginValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.LoginValidation_lbl.ForeColor = System.Drawing.Color.Red;
       this.LoginValidation_lbl.Location = new System.Drawing.Point(123, 86);
       this.LoginValidation_lbl.Name = "LoginValidation_lbl";
-      this.LoginValidation_lbl.Size = new System.Drawing.Size(0, 25);
+      this.LoginValidation_lbl.Size = new System.Drawing.Size(0, 20);
       this.LoginValidation_lbl.TabIndex = 9;
       // 
       // Clear_btn

@@ -76,14 +76,15 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public void InsertIntoDatabase(string storedProcedureName, object parameters)
+    public bool InsertIntoDatabase(string storedProcedureName, object parameters)
     {
       try
       {
         using (var connection = new SqlConnection(_configService.GetConnectionString()))
         {
-          var pom = connection.Execute(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
-          var a = pom.GetType();
+          var result = connection.Execute(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
+
+          return IsSuccess(result);
         }
       }
       catch (Exception ex)
@@ -111,6 +112,18 @@ namespace Melody.Service.DataAccess
       catch (Exception ex)
       {
         throw;
+      }
+    }
+
+    private bool IsSuccess(int result)
+    {
+      if (result == 1)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
       }
     }
   }

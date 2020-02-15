@@ -47,12 +47,10 @@ namespace Melody.View.Window
           if (string.IsNullOrWhiteSpace(Login_tb.Text))
           {
             LoginValidation_lbl.Text = "Login nie może być pusty!";
-            LoginValidation_lbl.ForeColor = Color.Red;
           }
           if (string.IsNullOrWhiteSpace(Password_tb.Text))
           {
             PasswordValidation_lbl.Text = "Hasło nie może być puste!";
-            PasswordValidation_lbl.ForeColor = Color.Red;
           }
           MessageBox.Show("Pola logowania nie mogą być puste!",
           "Błąd",

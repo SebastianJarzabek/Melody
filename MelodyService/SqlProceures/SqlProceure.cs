@@ -6,75 +6,75 @@
 
     private readonly string _addEmployee = "AddEmployee ";
 
-    private readonly string _addMaterial = " AddMaterial";
+    private readonly string _addMaterial = "AddMaterial";
 
-    private readonly string _addOrder = " AddOrder";
+    private readonly string _addOrder = "AddOrder";
 
-    private readonly string _addSupplier = " AddSupplier";
+    private readonly string _addSupplier = "AddSupplier";
 
-    private readonly string _addUnit = " AddUnit";
+    private readonly string _addUnit = "AddUnit";
 
-    private readonly string _addWarehouseAdmission = " AddWarehouseAdmission";
+    private readonly string _addWarehouseAdmission = "AddWarehouseAdmission";
 
-    private readonly string _addWarehouseIssue = " AddWarehouseIssue";
+    private readonly string _addWarehouseIssue = "AddWarehouseIssue";
 
-    private readonly string _deleteDestiny = " DeleteDestiny";
+    private readonly string _deleteDestiny = "DeleteDestiny";
 
-    private readonly string _deleteEmployee = " DeleteEmployee";
+    private readonly string _deleteEmployee = "DeleteEmployee";
 
-    private readonly string _deleteMaterial = " DeleteMaterial";
+    private readonly string _deleteMaterial = "DeleteMaterial";
 
-    private readonly string _deleteOrder = " DeleteOrder";
+    private readonly string _deleteOrder = "DeleteOrder";
 
-    private readonly string _deleteSupplier = " DeleteSupplier";
+    private readonly string _deleteSupplier = "DeleteSupplier";
 
-    private readonly string _deleteUnit = " DeleteUnit";
+    private readonly string _deleteUnit = "DeleteUnit";
 
-    private readonly string _deleteWarehouseAdmissionFromId = " DeleteWarehouseAdmissionFromId";
+    private readonly string _deleteWarehouseAdmissionFromId = "DeleteWarehouseAdmissionFromId";
 
-    private readonly string _deleteWarehouseIssueFromId = " DeleteWarehouseIssueFromId";
+    private readonly string _deleteWarehouseIssueFromId = "DeleteWarehouseIssueFromId";
 
-    private readonly string _getAllOrder = " GetAllOrder";
+    private readonly string _getAllOrder = "GetAllOrder";
 
-    private readonly string _getAllWarehouseIssue = " GetAllWarehouseIssue";
+    private readonly string _getAllWarehouseIssue = "GetAllWarehouseIssue";
 
-    private readonly string _getAllWarehouseIssueFromId = " GetAllWarehouseIssueFromId";
+    private readonly string _getAllWarehouseIssueFromId = "GetAllWarehouseIssueFromId";
 
-    private readonly string _getDestiny = " GetDestiny";
+    private readonly string _getDestiny = "GetDestiny";
 
-    private readonly string _getDestinyFromId = " GetDestinyFromId";
+    private readonly string _getDestinyFromId = "GetDestinyFromId";
 
-    private readonly string _getEmployee = " GetEmployee";
+    private readonly string _getEmployee = "GetEmployee";
 
-    private readonly string _getMaterialFromId = " GetMaterialFromId";
+    private readonly string _getMaterialFromId = "GetMaterialFromId";
 
-    private readonly string _getOrderFromId = " GetOrderFromId";
+    private readonly string _getOrderFromId = "GetOrderFromId";
 
-    private readonly string _getSupplierFromId = " GetSupplierFromId";
+    private readonly string _getSupplierFromId = "GetSupplierFromId";
 
-    private readonly string _getUnitFromId = " GetUnitFromId";
+    private readonly string _getUnitFromId = "GetUnitFromId";
 
-    private readonly string _updateDestiny = " UpdateDestiny";
+    private readonly string _updateDestiny = "UpdateDestiny";
 
-    private readonly string _updateEmployee = " UpdateEmployee";
+    private readonly string _updateEmployee = "UpdateEmployee";
 
-    private readonly string _updateMaterial = " UpdateMaterial";
+    private readonly string _updateMaterial = "UpdateMaterial";
 
-    private readonly string _updateOrder = " UpdateOrder";
+    private readonly string _updateOrder = "UpdateOrder";
 
-    private readonly string _updateQuantityInventoryLevel = " UpdateQuantityInventoryLevel";
+    private readonly string _updateQuantityInventoryLevel = "UpdateQuantityInventoryLevel";
 
-    private readonly string _updateSupplier = " UpdateSupplier";
+    private readonly string _updateSupplier = "UpdateSupplier";
 
-    private readonly string _updateUnit = " UpdateUnit";
+    private readonly string _updateUnit = "UpdateUnit";
 
-    private readonly string _updateWarehouseAdmission = " UpdateWarehouseAdmission";
+    private readonly string _updateWarehouseAdmission = "UpdateWarehouseAdmission";
 
-    private readonly string _updateWarehouseIssue = " UpdateWarehouseIssue";
+    private readonly string _updateWarehouseIssue = "UpdateWarehouseIssue";
 
-    private readonly string _getInventoryLevel = " GetInventoryLevel";
+    private readonly string _getInventoryLevel = "GetInventoryLevel";
 
-    private readonly string _usersLogin = " UsersLogin";
+    private readonly string _usersLogin = "UsersLogin";
 
     public string GetInventoryLevel { get => _getInventoryLevel; }
 

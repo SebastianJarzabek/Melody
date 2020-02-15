@@ -95,8 +95,8 @@ namespace Melody.View.Controls
 
     private void Clear_btn_Click(object sender, EventArgs e)
     {
-      Name_tb.Text = "";
-      Contract_tb.Text = "";
+      Name_tb.Text = string.Empty; 
+      Contract_tb.Text = string.Empty; 
     }
 
     private bool IsIntContractValidate(string contract)

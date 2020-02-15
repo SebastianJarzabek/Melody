@@ -106,34 +106,34 @@
             this.ListContractors,
             this.DeleteContractors});
       this.Contractors_smi.Name = "Contractors_smi";
-      this.Contractors_smi.Size = new System.Drawing.Size(224, 26);
+      this.Contractors_smi.Size = new System.Drawing.Size(171, 26);
       this.Contractors_smi.Text = "Kontrahenci";
       // 
       // AddContractors
       // 
       this.AddContractors.Name = "AddContractors";
-      this.AddContractors.Size = new System.Drawing.Size(224, 26);
+      this.AddContractors.Size = new System.Drawing.Size(133, 26);
       this.AddContractors.Text = "Dodaj";
       this.AddContractors.Click += new System.EventHandler(this.AddContractors_Click);
       // 
       // EditContractors
       // 
       this.EditContractors.Name = "EditContractors";
-      this.EditContractors.Size = new System.Drawing.Size(224, 26);
+      this.EditContractors.Size = new System.Drawing.Size(133, 26);
       this.EditContractors.Text = "Edytuj";
       this.EditContractors.Click += new System.EventHandler(this.EditContractors_Click);
       // 
       // ListContractors
       // 
       this.ListContractors.Name = "ListContractors";
-      this.ListContractors.Size = new System.Drawing.Size(224, 26);
+      this.ListContractors.Size = new System.Drawing.Size(133, 26);
       this.ListContractors.Text = "Lista";
       this.ListContractors.Click += new System.EventHandler(this.ListContractors_Click);
       // 
       // DeleteContractors
       // 
       this.DeleteContractors.Name = "DeleteContractors";
-      this.DeleteContractors.Size = new System.Drawing.Size(224, 26);
+      this.DeleteContractors.Size = new System.Drawing.Size(133, 26);
       this.DeleteContractors.Text = "Usuń";
       this.DeleteContractors.Click += new System.EventHandler(this.DeleteContractors_Click);
       // 
@@ -145,7 +145,7 @@
             this.ListEmployee,
             this.DeleteEmployee});
       this.Employees_smi.Name = "Employees_smi";
-      this.Employees_smi.Size = new System.Drawing.Size(224, 26);
+      this.Employees_smi.Size = new System.Drawing.Size(171, 26);
       this.Employees_smi.Text = "Pracownicy";
       // 
       // AddEmployee
@@ -386,14 +386,14 @@
       // AboutMe_smi
       // 
       this.AboutMe_smi.Name = "AboutMe_smi";
-      this.AboutMe_smi.Size = new System.Drawing.Size(224, 26);
+      this.AboutMe_smi.Size = new System.Drawing.Size(143, 26);
       this.AboutMe_smi.Text = "O mnie";
       this.AboutMe_smi.Click += new System.EventHandler(this.AboutMe_smi_Click);
       // 
       // Contact_smi
       // 
       this.Contact_smi.Name = "Contact_smi";
-      this.Contact_smi.Size = new System.Drawing.Size(224, 26);
+      this.Contact_smi.Size = new System.Drawing.Size(143, 26);
       this.Contact_smi.Text = "Kontakt";
       this.Contact_smi.Click += new System.EventHandler(this.Contact_smi_Click);
       // 
@@ -428,7 +428,6 @@
       this.Name = "Main";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Melody";
-      this.TopMost = true;
       this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
       this.MainMenu_ms.ResumeLayout(false);
       this.MainMenu_ms.PerformLayout();

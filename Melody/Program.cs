@@ -1,4 +1,5 @@
 ﻿using log4net;
+using Melody.View.Controls;
 using Melody.View.Window;
 using System;
 using System.Reflection;
@@ -17,7 +18,7 @@ namespace Melody
       {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new Login());
+        Application.Run(new Main());
       }
       catch (Exception ex)
       {

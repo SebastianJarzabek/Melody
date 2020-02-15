@@ -105,8 +105,8 @@ namespace Melody.View.Window
 
     private void Clear_btn_Click(object sender, EventArgs e)
     {
-      Login_tb.Text = "";
-      Password_tb.Text = "";
+      Login_tb.Text = string.Empty;
+      Password_tb.Text = string.Empty;
     }
 
     private void Close_btn_Click(object sender, EventArgs e)

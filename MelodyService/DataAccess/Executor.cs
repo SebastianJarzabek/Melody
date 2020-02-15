@@ -117,7 +117,7 @@ namespace Melody.Service.DataAccess
 
     private bool IsSuccess(int result)
     {
-      if (result == 1)
+      if (result >= 1)
       {
         return true;
       }

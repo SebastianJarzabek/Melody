@@ -2,7 +2,7 @@
 {
   public class SqlProceure
   {
-    private readonly string _addDestiny = " AddDestiny";
+    private readonly string _addDestiny = "AddDestiny";
 
     private readonly string _addEmployee = "AddEmployee ";
 
@@ -72,7 +72,11 @@
 
     private readonly string _updateWarehouseIssue = " UpdateWarehouseIssue";
 
+    private readonly string _getInventoryLevel = " GetInventoryLevel";
+
     private readonly string _usersLogin = " UsersLogin";
+
+    public string GetInventoryLevel { get => _getInventoryLevel; }
 
     public string UsersLogin { get => _usersLogin; }
 

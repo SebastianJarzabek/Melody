@@ -10,7 +10,7 @@
 ,@idUnitIn varchar(50)
 ,@idNoteIn varchar(50)
 ,@receivingEmployeeIn varchar(50)
-,@plannedDateOfReceiptIn varchar(50)
+,@dateOfReceiptIn varchar(50)
 
 as
 begin Transaction
@@ -26,13 +26,15 @@ Insert into [dbo].[Order](
 dateOfOrder
 , orderingEmployee
 , idSupplier
+--,dateOfAdmission
+--,hostEmployee
 ,idDestiny
 ,idMaterial
 ,quantity
 ,idUnit
 ,idNote
 ,receivingEmployee
-,plannedDateOfReceipt 
+--,dateOfReceipt 
 ,created
 ,createdBy)  
 Values (@dateOfOrderIn 
@@ -46,7 +48,7 @@ Values (@dateOfOrderIn
 ,@idUnitIn 
 ,@idNoteIn 
 ,@receivingEmployeeIn 
-,@plannedDateOfReceiptIn 
+,@dateOfReceiptIn 
 ,@created
 ,@createdBy
 )

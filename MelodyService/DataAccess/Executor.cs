@@ -4,6 +4,7 @@ using Melody.Service.ConfigService;
 using Melody.Service.ConfigService.Interfaces;
 using Melody.Service.DataAccess.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -75,7 +76,7 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public void InsertIntoDatabase(ILog log, string storedProcedureName, object parameters)
+    public void InsertIntoDatabase(string storedProcedureName, object parameters)
     {
       try
       {
@@ -87,7 +88,28 @@ namespace Melody.Service.DataAccess
       }
       catch (Exception ex)
       {
-        log.Error(ex);
+        throw ex;
+      }
+    }
+
+    public List<object> GetFromDatabase(string storedProcedureName, object parameters)
+    {
+      var list = new List<object>();
+      try
+      {
+        using (var connection = new SqlConnection(_configService.GetConnectionString()))
+        {
+          var reader = connection.ExecuteReader(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
+          while (reader.Read())
+          {
+            list.Add(reader[0]);
+          }
+
+          return list;
+        }
+      }
+      catch (Exception ex)
+      {
         throw;
       }
     }

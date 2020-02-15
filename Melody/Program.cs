@@ -22,7 +22,6 @@ namespace Melody
       catch (Exception ex)
       {
         Log.Error(ex);
-        throw;
       }
     }
   }

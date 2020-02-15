@@ -32,9 +32,10 @@
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.label1 = new System.Windows.Forms.Label();
       this.AddContract_btn = new System.Windows.Forms.Button();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.Contract_tb = new System.Windows.Forms.TextBox();
+      this.Name_tb = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
+      this.Clear_btn = new System.Windows.Forms.Button();
       this.AddContract_panel.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
@@ -50,15 +51,16 @@
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.Clear_btn);
       this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Controls.Add(this.AddContract_btn);
-      this.groupBox1.Controls.Add(this.textBox1);
-      this.groupBox1.Controls.Add(this.textBox2);
+      this.groupBox1.Controls.Add(this.Contract_tb);
+      this.groupBox1.Controls.Add(this.Name_tb);
       this.groupBox1.Controls.Add(this.label2);
       this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(493, 316);
+      this.groupBox1.Location = new System.Drawing.Point(730, 381);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(282, 139);
+      this.groupBox1.Size = new System.Drawing.Size(339, 180);
       this.groupBox1.TabIndex = 6;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Dodaj Kontrakt";
@@ -77,36 +79,48 @@
       // AddContract_btn
       // 
       this.AddContract_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AddContract_btn.Location = new System.Drawing.Point(127, 104);
+      this.AddContract_btn.Location = new System.Drawing.Point(183, 144);
       this.AddContract_btn.Name = "AddContract_btn";
       this.AddContract_btn.Size = new System.Drawing.Size(150, 30);
       this.AddContract_btn.TabIndex = 0;
       this.AddContract_btn.Text = "Dodaj";
       this.AddContract_btn.UseVisualStyleBackColor = true;
+      this.AddContract_btn.Click += new System.EventHandler(this.AddContract_btn_Click);
       // 
-      // textBox1
+      // Contract_tb
       // 
-      this.textBox1.Location = new System.Drawing.Point(77, 68);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(200, 30);
-      this.textBox1.TabIndex = 4;
+      this.Contract_tb.Location = new System.Drawing.Point(77, 99);
+      this.Contract_tb.Name = "Contract_tb";
+      this.Contract_tb.Size = new System.Drawing.Size(200, 30);
+      this.Contract_tb.TabIndex = 4;
       // 
-      // textBox2
+      // Name_tb
       // 
-      this.textBox2.Location = new System.Drawing.Point(77, 32);
-      this.textBox2.Name = "textBox2";
-      this.textBox2.Size = new System.Drawing.Size(200, 30);
-      this.textBox2.TabIndex = 5;
+      this.Name_tb.Location = new System.Drawing.Point(77, 32);
+      this.Name_tb.Name = "Name_tb";
+      this.Name_tb.Size = new System.Drawing.Size(200, 30);
+      this.Name_tb.TabIndex = 5;
       // 
       // label2
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(7, 73);
+      this.label2.Location = new System.Drawing.Point(7, 104);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(64, 20);
       this.label2.TabIndex = 3;
       this.label2.Text = "Numer:";
+      // 
+      // Clear_btn
+      // 
+      this.Clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Clear_btn.Location = new System.Drawing.Point(27, 144);
+      this.Clear_btn.Name = "Clear_btn";
+      this.Clear_btn.Size = new System.Drawing.Size(150, 30);
+      this.Clear_btn.TabIndex = 6;
+      this.Clear_btn.Text = "Wyczyść";
+      this.Clear_btn.UseVisualStyleBackColor = true;
+      this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
       // 
       // AddContract
       // 
@@ -128,8 +142,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AddContract_btn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Contract_tb;
+        private System.Windows.Forms.TextBox Name_tb;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Clear_btn;
     }
 }

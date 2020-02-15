@@ -1,15 +1,17 @@
 ﻿create Procedure UpdateOrder 
 @idOrder int
-,@dateOfOrderIn varchar(100)
+ ,@dateOfOrderIn varchar(100)
 ,@orderingEmployeeIn varchar(100)
 ,@idSupplierIn varchar(100)
+,@dateOfAdmissionIn varchar(100)
+,@hostEmployeeIn varchar(50)
 ,@idDestinyIn  varchar(50)
 ,@idMaterialIn varchar(100)
 ,@quantityIn  varchar(50)
 ,@idUnitIn varchar(50)
 ,@idNoteIn varchar(50)
 ,@receivingEmployeeIn varchar(50)
-,@plannedDateOfReceiptIn varchar(50)
+,@dateOfReceiptIn varchar(50)
 as
 begin Transaction
 
@@ -18,13 +20,15 @@ SET
 dateOfOrder 	  = @dateOfOrderIn
 ,orderingEmployee =	@orderingEmployeeIn 
 ,idSupplier		  =	@idSupplierIn
+,dateOfAdmission  =	@dateOfAdmissionIn
+,hostEmployee	  =	@hostEmployeeIn
 ,idDestiny		  =	@idDestinyIn
 ,idMaterial		  =	@idMaterialIn
 ,quantity		  =	@quantityIn
 ,idUnit			  =	@idUnitIn
 ,idNote			  =	@idNoteIn
 ,receivingEmployee=	@receivingEmployeeIn
-,plannedDateOfReceipt	  =	@plannedDateOfReceiptIn
+,dateOfReceipt	  =	@dateOfReceiptIn
 WHERE idOrder = @idOrder
 
 

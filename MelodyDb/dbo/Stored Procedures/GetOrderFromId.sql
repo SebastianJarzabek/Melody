@@ -12,8 +12,8 @@ select idOrder,
 ,orderingEmployee
 ,s.idSupplier
 ,s.name as 'SupplierName'
-,o.dateOfOrder
-,o.orderingEmployee
+,dateOfAdmission
+,hostEmployee
 ,d.idDestiny
 ,d.name as 'DestinyName'
 ,d.contract as 'DestinyContract'
@@ -25,8 +25,8 @@ select idOrder,
 ,u.name as 'UnitName'
 ,n.idNote 
 ,n.note as 'NoteName'
-,o.receivingEmployee
-,o.plannedDateOfReceipt
+,receivingEmployee
+,dateOfReceipt
 from [Order] o
 inner join Supplier s  on o.idSupplier =  s.idSupplier
 inner join Destiny  d on o.idDestiny = d.idDestiny

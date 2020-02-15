@@ -28,11 +28,14 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutMe));
       this.AboutMe_panel = new System.Windows.Forms.Panel();
       this.AboutMeChild_panel = new System.Windows.Forms.Panel();
       this.label1 = new System.Windows.Forms.Label();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.AboutMe_panel.SuspendLayout();
       this.AboutMeChild_panel.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // AboutMe_panel
@@ -46,8 +49,9 @@
       // 
       // AboutMeChild_panel
       // 
+      this.AboutMeChild_panel.Controls.Add(this.pictureBox1);
       this.AboutMeChild_panel.Controls.Add(this.label1);
-      this.AboutMeChild_panel.Location = new System.Drawing.Point(179, 199);
+      this.AboutMeChild_panel.Location = new System.Drawing.Point(611, 397);
       this.AboutMeChild_panel.Name = "AboutMeChild_panel";
       this.AboutMeChild_panel.Size = new System.Drawing.Size(607, 220);
       this.AboutMeChild_panel.TabIndex = 1;
@@ -68,6 +72,16 @@
       this.label1.Text = "Jestem studentem 7 semestru \r\nw Wyższej Szkoły Informatyki i Zarządzania\r\n\"COPERN" +
     "ICUS\".\r\n\r\nJest to projekt systemu magazynowego do pracy inżynierskiej.\r\n";
       // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+      this.pictureBox1.Location = new System.Drawing.Point(430, 33);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(158, 109);
+      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.pictureBox1.TabIndex = 2;
+      this.pictureBox1.TabStop = false;
+      // 
       // AboutMe
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -78,6 +92,7 @@
       this.AboutMe_panel.ResumeLayout(false);
       this.AboutMeChild_panel.ResumeLayout(false);
       this.AboutMeChild_panel.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -87,5 +102,6 @@
         private System.Windows.Forms.Panel AboutMe_panel;
         private System.Windows.Forms.Panel AboutMeChild_panel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

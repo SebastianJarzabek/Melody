@@ -122,7 +122,7 @@
       // Welcome_lbl
       // 
       this.Welcome_lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-      this.Welcome_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+      this.Welcome_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.Welcome_lbl.AutoSize = true;
       this.Welcome_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +187,6 @@
       this.Name = "Login";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Melody - logowanie";
-      this.TopMost = true;
       this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
       this.Login_panel.ResumeLayout(false);
       this.Login_panel.PerformLayout();

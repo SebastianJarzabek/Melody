@@ -64,7 +64,7 @@
       this.Sidebar_panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Sidebar_panel.Location = new System.Drawing.Point(0, 0);
       this.Sidebar_panel.Name = "Sidebar_panel";
-      this.Sidebar_panel.Size = new System.Drawing.Size(639, 1080);
+      this.Sidebar_panel.Size = new System.Drawing.Size(400, 1080);
       this.Sidebar_panel.TabIndex = 3;
       // 
       // splitContainer1
@@ -81,7 +81,7 @@
       // 
       this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
       this.splitContainer1.Size = new System.Drawing.Size(1920, 1080);
-      this.splitContainer1.SplitterDistance = 639;
+      this.splitContainer1.SplitterDistance = 400;
       this.splitContainer1.TabIndex = 1;
       // 
       // tableLayoutPanel1
@@ -96,7 +96,7 @@
       this.tableLayoutPanel1.RowCount = 2;
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.366014F));
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.63399F));
-      this.tableLayoutPanel1.Size = new System.Drawing.Size(1277, 1080);
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(1516, 1080);
       this.tableLayoutPanel1.TabIndex = 0;
       // 
       // dataGridView1
@@ -106,7 +106,7 @@
       this.dataGridView1.Location = new System.Drawing.Point(3, 93);
       this.dataGridView1.Name = "dataGridView1";
       this.dataGridView1.RowHeadersWidth = 51;
-      this.dataGridView1.Size = new System.Drawing.Size(1271, 984);
+      this.dataGridView1.Size = new System.Drawing.Size(1510, 984);
       this.dataGridView1.TabIndex = 0;
       // 
       // panel1
@@ -116,7 +116,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel1.Location = new System.Drawing.Point(3, 3);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(1271, 84);
+      this.panel1.Size = new System.Drawing.Size(1510, 84);
       this.panel1.TabIndex = 1;
       // 
       // Search_tb

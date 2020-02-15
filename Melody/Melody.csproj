@@ -370,5 +370,11 @@
     <None Include="Resources\AddAccount.jpg" />
     <Content Include="Version.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MelodyService\Melody.Service.csproj">
+      <Project>{26D56B87-2436-4259-A3C6-D825FEC6532B}</Project>
+      <Name>Melody.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

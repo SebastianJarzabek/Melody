@@ -1,4 +1,4 @@
-﻿Create Procedure AddSupplier
+﻿CREATE Procedure [dbo].[AddSupplier]
 @name varchar(100)
 ,@streetIn varchar(100)
 ,@houseNumberIn  varchar(50)
@@ -6,7 +6,7 @@
 ,@cityIn varchar(50)
 ,@zipCodeIn varchar(50)
 ,@countryIn varchar(50)
-,@phoneNumberIn int
+,@phoneNumberIn varchar(50)
 ,@emailIn  varchar(100)
 ,@websideIn   varchar(100)
 as

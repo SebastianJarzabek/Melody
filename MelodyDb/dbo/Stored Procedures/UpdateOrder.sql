@@ -20,15 +20,15 @@ SET
 dateOfOrder 	  = @dateOfOrderIn
 ,orderingEmployee =	@orderingEmployeeIn 
 ,idSupplier		  =	@idSupplierIn
-,dateOfAdmission  =	@dateOfAdmissionIn
-,hostEmployee	  =	@hostEmployeeIn
+--,dateOfAdmission  =	@dateOfAdmissionIn
+--,hostEmployee	  =	@hostEmployeeIn
 ,idDestiny		  =	@idDestinyIn
 ,idMaterial		  =	@idMaterialIn
 ,quantity		  =	@quantityIn
 ,idUnit			  =	@idUnitIn
 ,idNote			  =	@idNoteIn
 ,receivingEmployee=	@receivingEmployeeIn
-,dateOfReceipt	  =	@dateOfReceiptIn
+--,dateOfReceipt	  =	@dateOfReceiptIn
 WHERE idOrder = @idOrder
 
 

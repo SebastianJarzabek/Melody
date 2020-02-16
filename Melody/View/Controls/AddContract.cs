@@ -1,6 +1,9 @@
-﻿using Melody.Service.DataAccess;
+﻿using Melody.Logic;
+using Melody.Service.DataAccess;
+using Melody.Service.Entity;
 using Melody.Service.SqlProceures;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,6 +11,7 @@ namespace Melody.View.Controls
 {
   public partial class AddContract : UserControl
   {
+    Validators validators = new Validators();
     public AddContract()
     {
       InitializeComponent();
@@ -23,43 +27,39 @@ namespace Melody.View.Controls
 
     private void AddContract_btn_Click(object sender, EventArgs e)
     {
-      string ValidatedContract = null;
-
-      if (!string.IsNullOrWhiteSpace(NameValidation_lbl.Text)
-        || !string.IsNullOrWhiteSpace(ContractValidation_lbl.Text))
+      if (!string.IsNullOrWhiteSpace(Validation_lbl.Text))
       {
-        NameValidation_lbl.Text = string.Empty;
-        ContractValidation_lbl.Text = string.Empty;
+        Validation_lbl.Text = string.Empty;
       }
 
       try
       {
-        if (string.IsNullOrWhiteSpace(Name_tb.Text)
-        || string.IsNullOrWhiteSpace(Contract_tb.Text))
+        var destiny = new Destiny()
         {
-          if (string.IsNullOrWhiteSpace(Name_tb.Text))
-          {
-            NameValidation_lbl.Text = "Nazwa nie może być pusta";
-          }
-          if (string.IsNullOrWhiteSpace(Contract_tb.Text))
-          {
-            ContractValidation_lbl.Text = "Numer Kontraktu nie może być pusty";
-          }
-          MessageBox.Show("Pola nie mogą być puste!",
+          Name = Name_tb.Text,
+          Contract = Contract_tb.Text
+        };
+
+        var list = new List<DataClass>
+        {
+          DataClass.Destiny
+        };
+
+        var textBoxesValidateErrorMessage = validators.TextBoxesValidate(destiny, null, null, list);
+        if (!string.IsNullOrEmpty(textBoxesValidateErrorMessage))
+        {
+          Validation_lbl.Text = textBoxesValidateErrorMessage;
+          MessageBox.Show(textBoxesValidateErrorMessage,
           "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
           return;
         }
-
-        if (IsIntContractValidate(Contract_tb.Text))
+        var destinyErrorMessage = validators.IsIntContractValidate(destiny);
+        if (!string.IsNullOrEmpty(destinyErrorMessage))
         {
-          ValidatedContract = Contract_tb.Text;
-        }
-        else
-        {
-          ContractValidation_lbl.Text = "Numer Kontraktu\nmoże zawierać jedynie liczby.";
-          MessageBox.Show("Numer Kontraktu musi zawierać jedynie cyfry oraz być dłuższy niż cztery znaki np. 1234.",
+          Validation_lbl.Text = destinyErrorMessage;
+          MessageBox.Show(destinyErrorMessage,
           "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
@@ -68,8 +68,8 @@ namespace Melody.View.Controls
 
         var parameters = new
         {
-          name = Name_tb.Text,
-          contract = ValidatedContract,
+          name = destiny.Name,
+          contract = destiny.Contract,
         };
 
         var executor = new Executor();
@@ -95,18 +95,8 @@ namespace Melody.View.Controls
 
     private void Clear_btn_Click(object sender, EventArgs e)
     {
-      Name_tb.Text = string.Empty; 
-      Contract_tb.Text = string.Empty; 
-    }
-
-    private bool IsIntContractValidate(string contract)
-    {
-      if (contract.Length >= 4)
-      {
-        return int.TryParse(contract, out int result);
-      }
-      else
-        return false;
+      Name_tb.Text = string.Empty;
+      Contract_tb.Text = string.Empty;
     }
   }
 }

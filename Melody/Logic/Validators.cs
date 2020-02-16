@@ -1,4 +1,5 @@
 ﻿using Melody.Service.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -31,7 +32,7 @@ namespace Melody.Logic
       }
     }
 
-    public string TextBoxesValidate(Employee emp, List<DataClass> toValidate)
+    public string TextBoxesValidate(Destiny destiny, Employee emp, Supplier supplier, List<DataClass> toValidate)
     {
       var stb = new StringBuilder();
       stb.AppendLine("Pole:");
@@ -88,7 +89,6 @@ namespace Melody.Logic
         }
       }
 
-
       if (toValidate.Contains(DataClass.ContactDetails))
       {
         if (string.IsNullOrEmpty(emp.ContactDetails.PhoneNumber)
@@ -112,7 +112,19 @@ namespace Melody.Logic
 
       if (toValidate.Contains(DataClass.Destiny))
       {
+        if (string.IsNullOrWhiteSpace(destiny.Name)
+        || string.IsNullOrWhiteSpace(destiny.Contract))
+        {
 
+          if (string.IsNullOrWhiteSpace(destiny.Name))
+          {
+            stb.AppendLine("Nazwa");
+          }
+          if (string.IsNullOrWhiteSpace(destiny.Contract))
+          {
+            stb.AppendLine("Numer Kontraktu");
+          }
+        }
       }
 
 
@@ -168,8 +180,12 @@ namespace Melody.Logic
 
       if (toValidate.Contains(DataClass.Supplier))
       {
-
+        if (string.IsNullOrEmpty(supplier.Name))
+        {
+          stb.AppendLine(" nazwa,");
+        }
       }
+
       if (toValidate.Contains(DataClass.Unit))
       {
 
@@ -186,7 +202,26 @@ namespace Melody.Logic
       stb.Remove(stb.Length - 1, 1);
       stb.AppendLine("musi zostać uzupełnione.");
 
-      return stb.ToString();
+      if (stb.Length < 30)
+      {
+        return stb.ToString();
+      }
+      else
+      {
+        return string.Empty;
+      }
+    }
+
+    public string IsIntContractValidate(Destiny destiny)
+    {
+      if (!int.TryParse(destiny.Contract, out int result))
+      {
+        return "Nieprawidłowy format numeru Kontraktu.\nNumer powinien sie składać tylko cyfr.";
+      }
+      else
+      {
+        return string.Empty;
+      }
     }
   }
 }

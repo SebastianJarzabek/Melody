@@ -30,14 +30,13 @@
     {
       this.AddContract_panel = new System.Windows.Forms.Panel();
       this.AddContract_gb = new System.Windows.Forms.GroupBox();
+      this.Validation_lbl = new System.Windows.Forms.Label();
       this.Clear_btn = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.AddContract_btn = new System.Windows.Forms.Button();
       this.Contract_tb = new System.Windows.Forms.TextBox();
       this.Name_tb = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.NameValidation_lbl = new System.Windows.Forms.Label();
-      this.ContractValidation_lbl = new System.Windows.Forms.Label();
       this.AddContract_panel.SuspendLayout();
       this.AddContract_gb.SuspendLayout();
       this.SuspendLayout();
@@ -53,8 +52,7 @@
       // 
       // AddContract_gb
       // 
-      this.AddContract_gb.Controls.Add(this.ContractValidation_lbl);
-      this.AddContract_gb.Controls.Add(this.NameValidation_lbl);
+      this.AddContract_gb.Controls.Add(this.Validation_lbl);
       this.AddContract_gb.Controls.Add(this.Clear_btn);
       this.AddContract_gb.Controls.Add(this.label1);
       this.AddContract_gb.Controls.Add(this.AddContract_btn);
@@ -64,15 +62,25 @@
       this.AddContract_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.AddContract_gb.Location = new System.Drawing.Point(354, 230);
       this.AddContract_gb.Name = "AddContract_gb";
-      this.AddContract_gb.Size = new System.Drawing.Size(365, 197);
+      this.AddContract_gb.Size = new System.Drawing.Size(365, 277);
       this.AddContract_gb.TabIndex = 6;
       this.AddContract_gb.TabStop = false;
       this.AddContract_gb.Text = "Dodaj Kontrakt";
       // 
+      // Validation_lbl
+      // 
+      this.Validation_lbl.AutoSize = true;
+      this.Validation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Validation_lbl.ForeColor = System.Drawing.Color.Red;
+      this.Validation_lbl.Location = new System.Drawing.Point(7, 126);
+      this.Validation_lbl.Name = "Validation_lbl";
+      this.Validation_lbl.Size = new System.Drawing.Size(0, 20);
+      this.Validation_lbl.TabIndex = 7;
+      // 
       // Clear_btn
       // 
       this.Clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Clear_btn.Location = new System.Drawing.Point(59, 161);
+      this.Clear_btn.Location = new System.Drawing.Point(59, 241);
       this.Clear_btn.Name = "Clear_btn";
       this.Clear_btn.Size = new System.Drawing.Size(150, 30);
       this.Clear_btn.TabIndex = 4;
@@ -93,7 +101,7 @@
       // AddContract_btn
       // 
       this.AddContract_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AddContract_btn.Location = new System.Drawing.Point(210, 161);
+      this.AddContract_btn.Location = new System.Drawing.Point(210, 241);
       this.AddContract_btn.Name = "AddContract_btn";
       this.AddContract_btn.Size = new System.Drawing.Size(150, 30);
       this.AddContract_btn.TabIndex = 3;
@@ -103,7 +111,7 @@
       // 
       // Contract_tb
       // 
-      this.Contract_tb.Location = new System.Drawing.Point(160, 97);
+      this.Contract_tb.Location = new System.Drawing.Point(159, 76);
       this.Contract_tb.Name = "Contract_tb";
       this.Contract_tb.Size = new System.Drawing.Size(200, 30);
       this.Contract_tb.TabIndex = 2;
@@ -119,31 +127,11 @@
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(6, 104);
+      this.label2.Location = new System.Drawing.Point(5, 83);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(137, 20);
       this.label2.TabIndex = 3;
       this.label2.Text = "Numer kontraktu:";
-      // 
-      // NameValidation_lbl
-      // 
-      this.NameValidation_lbl.AutoSize = true;
-      this.NameValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.NameValidation_lbl.ForeColor = System.Drawing.Color.Red;
-      this.NameValidation_lbl.Location = new System.Drawing.Point(156, 73);
-      this.NameValidation_lbl.Name = "NameValidation_lbl";
-      this.NameValidation_lbl.Size = new System.Drawing.Size(0, 20);
-      this.NameValidation_lbl.TabIndex = 7;
-      // 
-      // ContractValidation_lbl
-      // 
-      this.ContractValidation_lbl.AutoSize = true;
-      this.ContractValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ContractValidation_lbl.ForeColor = System.Drawing.Color.Red;
-      this.ContractValidation_lbl.Location = new System.Drawing.Point(156, 130);
-      this.ContractValidation_lbl.Name = "ContractValidation_lbl";
-      this.ContractValidation_lbl.Size = new System.Drawing.Size(0, 20);
-      this.ContractValidation_lbl.TabIndex = 8;
       // 
       // AddContract
       // 
@@ -169,7 +157,6 @@
         private System.Windows.Forms.TextBox Name_tb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Clear_btn;
-        private System.Windows.Forms.Label ContractValidation_lbl;
-        private System.Windows.Forms.Label NameValidation_lbl;
+        private System.Windows.Forms.Label Validation_lbl;
     }
 }

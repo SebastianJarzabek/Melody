@@ -145,7 +145,7 @@ namespace Melody.View.Controls
 
     private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      var errorMessage = validators.TextBoxesValidate(emp, dataClasses);
+      var errorMessage = validators.TextBoxesValidate(null,emp, null, dataClasses);
 
       if (string.IsNullOrEmpty(errorMessage))
       {

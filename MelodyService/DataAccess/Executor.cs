@@ -111,7 +111,7 @@ namespace Melody.Service.DataAccess
 
     public DataTable GetFromDatabase(string storedProcedureName)
     {
-      var list = new List<object>();
+      //var list = new List<object>();
       try
       {
         using (var sqlconnection = new SqlConnection(_configService.GetConnectionString()))
@@ -132,7 +132,7 @@ namespace Melody.Service.DataAccess
       }
       catch (Exception ex)
       {
-        throw;
+        throw ex;
       }
     }
 

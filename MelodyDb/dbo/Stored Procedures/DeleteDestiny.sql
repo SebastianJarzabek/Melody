@@ -1,6 +1,6 @@
-﻿Create Procedure DeleteDestiny
-@name varchar(100)
-,@contract int
+﻿CREATE Procedure [dbo].[DeleteDestiny]
+@name varchar(100) = null
+,@contract int =null
 as
 begin Transaction
 Delete Destiny where name=@name or contract = @contract

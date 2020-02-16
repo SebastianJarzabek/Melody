@@ -26,15 +26,12 @@ Insert into [dbo].[Order](
 dateOfOrder
 , orderingEmployee
 , idSupplier
---,dateOfAdmission
---,hostEmployee
 ,idDestiny
 ,idMaterial
 ,quantity
 ,idUnit
 ,idNote
 ,receivingEmployee
---,dateOfReceipt 
 ,created
 ,createdBy)  
 Values (@dateOfOrderIn 

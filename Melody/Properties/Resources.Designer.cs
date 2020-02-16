@@ -63,16 +63,6 @@ namespace Melody.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _832g {
-            get {
-                object obj = ResourceManager.GetObject("832g", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap AddAccount {
             get {
                 object obj = ResourceManager.GetObject("AddAccount", resourceCulture);
@@ -86,6 +76,16 @@ namespace Melody.Properties {
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap me {
+            get {
+                object obj = ResourceManager.GetObject("me", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

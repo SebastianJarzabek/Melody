@@ -1,4 +1,4 @@
-﻿create Procedure UpdateOrder 
+﻿CREATE Procedure [dbo].[UpdateOrder] 
 @idOrder int
  ,@dateOfOrderIn varchar(100)
 ,@orderingEmployeeIn varchar(100)
@@ -20,15 +20,12 @@ SET
 dateOfOrder 	  = @dateOfOrderIn
 ,orderingEmployee =	@orderingEmployeeIn 
 ,idSupplier		  =	@idSupplierIn
---,dateOfAdmission  =	@dateOfAdmissionIn
---,hostEmployee	  =	@hostEmployeeIn
 ,idDestiny		  =	@idDestinyIn
 ,idMaterial		  =	@idMaterialIn
 ,quantity		  =	@quantityIn
 ,idUnit			  =	@idUnitIn
 ,idNote			  =	@idNoteIn
 ,receivingEmployee=	@receivingEmployeeIn
---,dateOfReceipt	  =	@dateOfReceiptIn
 WHERE idOrder = @idOrder
 
 

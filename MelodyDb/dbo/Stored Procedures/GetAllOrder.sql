@@ -1,6 +1,6 @@
 ﻿
 
-CREATE Procedure GetAllOrder
+CREATE Procedure [dbo].[GetAllOrder]
 
 as
 begin Transaction
@@ -9,8 +9,6 @@ select idOrder,
 ,orderingEmployee
 ,s.idSupplier
 ,s.name as 'SupplierName'
---,dateOfAdmission
---,hostEmployee
 ,d.idDestiny
 ,d.name as 'DestinyName'
 ,d.contract as 'DestinyContract'
@@ -23,7 +21,6 @@ select idOrder,
 ,n.idNote 
 ,n.note as 'NoteName'
 ,receivingEmployee
---,dateOfReceipt
 from [Order] o
 inner join Supplier s  on o.idSupplier =  s.idSupplier
 inner join Destiny  d on o.idDestiny = d.idDestiny

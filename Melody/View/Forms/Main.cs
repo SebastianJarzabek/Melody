@@ -148,7 +148,7 @@ namespace Melody.View.Window
     private void CurrentState_smi_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var CurrentStateControl = new CurrentState();
+      var CurrentStateControl = new CurrentState_panel();
       CurrentStateControl.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(CurrentStateControl);
     }

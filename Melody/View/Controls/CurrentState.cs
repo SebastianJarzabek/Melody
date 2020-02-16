@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Melody.Service.DataAccess;
+using Melody.Service.SqlProceures;
 
 namespace Melody.View.Panel
 {
-  public partial class CurrentState : UserControl
+  public partial class CurrentState_panel : UserControl
   {
-    public CurrentState()
+    public CurrentState_panel()
     {
       InitializeComponent();
+    }
+
+    private void CurrentState_panel_Load(object sender, EventArgs e)
+    {
+      var exec = new Executor();
+      var sqlProc = new SqlProceure();
+      var dataTable = exec.GetFromDatabase(sqlProc.GetInventoryLevel);
+
     }
   }
 }

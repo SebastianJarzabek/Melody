@@ -109,20 +109,25 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public List<object> GetFromDatabase(string storedProcedureName, object parameters)
+    public DataTable GetFromDatabase(string storedProcedureName)
     {
       var list = new List<object>();
       try
       {
-        using (var connection = new SqlConnection(_configService.GetConnectionString()))
+        using (var sqlconnection = new SqlConnection(_configService.GetConnectionString()))
         {
-          var reader = connection.ExecuteReader(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
-          while (reader.Read())
-          {
-            list.Add(reader[0]);
-          }
+          sqlconnection.Open();
 
-          return list;
+          SqlCommand sqlCommand = new SqlCommand(storedProcedureName, sqlconnection);
+
+          SqlDataReader reader;
+          reader = sqlCommand.ExecuteReader();
+          DataTable datatable = new DataTable();
+          //datatable.Columns.Add(column, typeof(string));
+          datatable.Load(reader);
+          sqlconnection.Close();
+
+          return datatable;
         }
       }
       catch (Exception ex)

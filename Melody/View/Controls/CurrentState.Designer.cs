@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Panel
 {
-  partial class CurrentState
+  partial class CurrentState_panel
   {
     /// <summary> 
     /// Required designer variable.
@@ -28,9 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
-      this.melodyDbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.melodyDbDataSet = new Melody.MelodyDbDataSet();
       this.Sidebar_panel = new System.Windows.Forms.Panel();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,8 +35,6 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.Search_tb = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSetBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -48,16 +43,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // melodyDbDataSetBindingSource
-      // 
-      this.melodyDbDataSetBindingSource.DataSource = this.melodyDbDataSet;
-      this.melodyDbDataSetBindingSource.Position = 0;
-      // 
-      // melodyDbDataSet
-      // 
-      this.melodyDbDataSet.DataSetName = "MelodyDbDataSet";
-      this.melodyDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // Sidebar_panel
       // 
@@ -96,6 +81,7 @@
       this.tableLayoutPanel1.RowCount = 2;
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.366014F));
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.63399F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
       this.tableLayoutPanel1.Size = new System.Drawing.Size(1516, 1080);
       this.tableLayoutPanel1.TabIndex = 0;
       // 
@@ -135,15 +121,14 @@
       this.Search_btn.Text = "Szukaj";
       this.Search_btn.UseVisualStyleBackColor = true;
       // 
-      // CurrentState
+      // CurrentState_panel
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.splitContainer1);
-      this.Name = "CurrentState";
+      this.Name = "CurrentState_panel";
       this.Size = new System.Drawing.Size(1920, 1080);
-      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSetBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.melodyDbDataSet)).EndInit();
+      this.Load += new System.EventHandler(this.CurrentState_panel_Load);
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -157,8 +142,6 @@
     }
 
         #endregion
-        private System.Windows.Forms.BindingSource melodyDbDataSetBindingSource;
-        private MelodyDbDataSet melodyDbDataSet;
     private System.Windows.Forms.Panel Sidebar_panel;
     private System.Windows.Forms.SplitContainer splitContainer1;
     private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

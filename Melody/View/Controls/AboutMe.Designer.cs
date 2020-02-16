@@ -28,11 +28,10 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutMe));
       this.AboutMe_panel = new System.Windows.Forms.Panel();
       this.AboutMeChild_panel = new System.Windows.Forms.Panel();
-      this.label1 = new System.Windows.Forms.Label();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.label1 = new System.Windows.Forms.Label();
       this.AboutMe_panel.SuspendLayout();
       this.AboutMeChild_panel.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +56,16 @@
       this.AboutMeChild_panel.TabIndex = 1;
       this.AboutMeChild_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AboutMeChild_panel_Paint);
       // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Image = global::Melody.Properties.Resources._832g;
+      this.pictureBox1.Location = new System.Drawing.Point(430, 33);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(158, 109);
+      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.pictureBox1.TabIndex = 2;
+      this.pictureBox1.TabStop = false;
+      // 
       // label1
       // 
       this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -71,16 +80,6 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Jestem studentem 7 semestru \r\nw Wyższej Szkoły Informatyki i Zarządzania\r\n\"COPERN" +
     "ICUS\".\r\n\r\nJest to projekt systemu magazynowego do pracy inżynierskiej.\r\n";
-      // 
-      // pictureBox1
-      // 
-      this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-      this.pictureBox1.Location = new System.Drawing.Point(430, 33);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(158, 109);
-      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-      this.pictureBox1.TabIndex = 2;
-      this.pictureBox1.TabStop = false;
       // 
       // AboutMe
       // 

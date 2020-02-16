@@ -51,19 +51,6 @@
   <ItemGroup>
     <Compile Include="Logic\DataClass.cs" />
     <Compile Include="Logic\Validators.cs" />
-    <Compile Include="MelodyDbData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MelodyDbData.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MelodyDbDataSet.cs">
-      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MelodyDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Controls\AboutMe.cs">
@@ -347,28 +334,6 @@
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="log4net.config" />
-    <None Include="MelodyDbData.xsc">
-      <DependentUpon>MelodyDbData.xsd</DependentUpon>
-    </None>
-    <None Include="MelodyDbData.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MelodyDbData.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MelodyDbData.xss">
-      <DependentUpon>MelodyDbData.xsd</DependentUpon>
-    </None>
-    <None Include="MelodyDbDataSet.xsc">
-      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MelodyDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MelodyDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MelodyDbDataSet.xss">
-      <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Melody.View.Controls.AddOrder.datasource" />
     <None Include="Properties\Settings.settings">
@@ -388,6 +353,7 @@
   <ItemGroup>
     <None Include="Resources\Login.jpg" />
     <None Include="Resources\AddAccount.jpg" />
+    <None Include="Resources\me.jpg" />
     <Content Include="Version.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -85,17 +85,17 @@
     <Compile Include="View\Controls\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddMaterialIssue.cs">
+    <Compile Include="View\Controls\AddWarehouseAdmission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddMaterialIssue.Designer.cs">
-      <DependentUpon>AddMaterialIssue.cs</DependentUpon>
+    <Compile Include="View\Controls\AddWarehouseAdmission.Designer.cs">
+      <DependentUpon>AddWarehouseAdmission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddMaterialReceipt.cs">
+    <Compile Include="View\Controls\AddWarehouseIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddMaterialReceipt.Designer.cs">
-      <DependentUpon>AddMaterialReceipt.cs</DependentUpon>
+    <Compile Include="View\Controls\AddWarehouseIssue.Designer.cs">
+      <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\AddOrder.cs">
       <SubType>UserControl</SubType>
@@ -263,8 +263,11 @@
     <EmbeddedResource Include="View\Controls\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddMaterialReceipt.resx">
-      <DependentUpon>AddMaterialReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\AddWarehouseAdmission.resx">
+      <DependentUpon>AddWarehouseAdmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\AddWarehouseIssue.resx">
+      <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
@@ -351,6 +354,7 @@
       <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Melody.View.Controls.AddOrder.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class AddMaterialReceipt
+  partial class AddWarehouseAdmission
   {
     /// <summary> 
     /// Required designer variable.
@@ -30,11 +30,11 @@
     {
       this.SuspendLayout();
       // 
-      // AddMaterialReceipt
+      // AddMaterialIssue
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Name = "AddMaterialReceipt";
+      this.Name = "AddMaterialIssue";
       this.Size = new System.Drawing.Size(1920, 1080);
       this.ResumeLayout(false);
 

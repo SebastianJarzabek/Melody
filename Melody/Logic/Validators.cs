@@ -223,5 +223,17 @@ namespace Melody.Logic
         return string.Empty;
       }
     }
+
+    public string IsIntValidate(string intToCheck)
+    {
+      if (!int.TryParse(intToCheck, out int result))
+      {
+        return "Nieprawidłowy format liczbowy.\nPole powinno sie składać tylko cyfr.";
+      }
+      else
+      {
+        return string.Empty;
+      }
+    }
   }
 }

@@ -65,6 +65,7 @@
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\InventoryLevel.cs" />
     <Compile Include="Entity\Material.cs" />
+    <Compile Include="Entity\MaterialToOrder.cs" />
     <Compile Include="Entity\Note.cs" />
     <Compile Include="Entity\WarehouseIssue.cs" />
     <Compile Include="Entity\WarehouseAdmission.cs" />

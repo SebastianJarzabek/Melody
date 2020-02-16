@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class AddMaterialReceipt : UserControl
+  public partial class AddWarehouseAdmission : UserControl
   {
-    public AddMaterialReceipt()
+    public AddWarehouseAdmission()
     {
       InitializeComponent();
     }

@@ -116,7 +116,7 @@ namespace Melody.View.Window
     private void AddMaterialReceipt_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var AddMaterialReceiptControlPanel = new AddMaterialReceipt();
+      var AddMaterialReceiptControlPanel = new AddWarehouseIssue();
       AddMaterialReceiptControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(AddMaterialReceiptControlPanel);
     }
@@ -156,7 +156,7 @@ namespace Melody.View.Window
     private void AddMaterialIssue_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var AddMaterialIssueControlPanel = new AddMaterialIssue();
+      var AddMaterialIssueControlPanel = new AddWarehouseAdmission();
       AddMaterialIssueControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(AddMaterialIssueControlPanel);
     }

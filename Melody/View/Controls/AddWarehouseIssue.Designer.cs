@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class AddMaterialIssue
+  partial class AddWarehouseIssue
   {
     /// <summary> 
     /// Required designer variable.
@@ -28,8 +28,16 @@
     /// </summary>
     private void InitializeComponent()
     {
-      components = new System.ComponentModel.Container();
+      this.SuspendLayout();
+      // 
+      // AddMaterialReceipt
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Name = "AddMaterialReceipt";
+      this.Size = new System.Drawing.Size(1920, 1080);
+      this.ResumeLayout(false);
+
     }
 
     #endregion

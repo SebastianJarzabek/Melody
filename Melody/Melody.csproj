@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\CopyFactory.cs" />
     <Compile Include="Logic\DataClass.cs" />
     <Compile Include="Logic\Validators.cs" />
     <Compile Include="MelodyDbData.Designer.cs">

@@ -4,7 +4,6 @@ using Melody.Service.ConfigService;
 using Melody.Service.ConfigService.Interfaces;
 using Melody.Service.DataAccess.Interfaces;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -77,6 +76,23 @@ namespace Melody.Service.DataAccess
     }
 
     public bool InsertIntoDatabase(string storedProcedureName, object parameters)
+    {
+      try
+      {
+        using (var connection = new SqlConnection(_configService.GetConnectionString()))
+        {
+          var result = connection.Execute(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
+
+          return IsSuccess(result);
+        }
+      }
+      catch (Exception ex)
+      {
+        throw ex;
+      }
+    }
+
+    public bool DeleteFromDatabase(string storedProcedureName, object parameters)
     {
       try
       {

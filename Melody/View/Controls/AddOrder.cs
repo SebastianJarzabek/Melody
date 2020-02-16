@@ -3,8 +3,6 @@ using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -68,7 +66,7 @@ namespace Melody.View.Controls
 
     private void AddOrder_btn_Click(object sender, EventArgs e)
     {
-
+      ///TODO: validacja, dodanie do bazy.
     }
 
 
@@ -132,9 +130,11 @@ namespace Melody.View.Controls
       var datatableName = exec.ComboboxSugest("name", "Employee");
       NameOrderingEmployeeIn_cb.ValueMember = "name";
       NameOrderingEmployeeIn_cb.DataSource = datatableName;
+
       var datatableName1 = exec.ComboboxSugest("name", "Employee");
       NameHostEmployeeIn_cb.ValueMember = "name";
       NameHostEmployeeIn_cb.DataSource = datatableName1;
+
       var datatableName2 = exec.ComboboxSugest("name", "Employee");
       NameReceivingEmployeeIn_cb.ValueMember = "name";
       NameReceivingEmployeeIn_cb.DataSource = datatableName2;
@@ -142,9 +142,11 @@ namespace Melody.View.Controls
       var datatableSurname = exec.ComboboxSugest("surname", "Employee");
       SurnameOrderingEmployeeIn_cb.ValueMember = "surname";
       SurnameOrderingEmployeeIn_cb.DataSource = datatableSurname;
+
       var datatableSurname1 = exec.ComboboxSugest("surname", "Employee");
       SurnameHostEmployeeIn_cb.ValueMember = "surname";
       SurnameHostEmployeeIn_cb.DataSource = datatableSurname1;
+
       var datatableSurname2 = exec.ComboboxSugest("surname", "Employee");
       SurnameReceivingEmployeeIn_cb.ValueMember = "surname";
       SurnameReceivingEmployeeIn_cb.DataSource = datatableSurname2;
@@ -172,27 +174,6 @@ namespace Melody.View.Controls
       var datatableUnitName = exec.ComboboxSugest("name", "Unit");
       MaterialUnitType_cb.ValueMember = "name";
       MaterialUnitType_cb.DataSource = datatableUnitName;
-
-      //  SqlConnection sqlconnection = new SqlConnection("Data Source=SEBASTIAN;Initial Catalog=MelodyDb;Integrated Security=True;");
-      //  sqlconnection.Open();
-
-      //  SqlCommand sqlCommand = new SqlCommand("select DISTINCT  [name] from Employee order by name asc", sqlconnection);
-
-      //  SqlDataReader reader;
-      //  reader = sqlCommand.ExecuteReader();
-      //  DataTable datatable = new DataTable();
-      //  datatable.Columns.Add("name", typeof(string));
-
-      //  datatable.Load(reader);
-      //  NameOrderingEmployeeIn_cb.ValueMember = "name";
-      //  NameOrderingEmployeeIn_cb.DataSource = datatable;
-      //  sqlconnection.Close();
-      //}
-      //catch (Exception ex)
-      //{
-      //  MessageBox.Show(ex.Message);
-      //  throw ex;
-
     }
   }
 }

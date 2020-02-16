@@ -49,8 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\CopyFactory.cs" />
     <Compile Include="Logic\DataClass.cs" />
     <Compile Include="Logic\Validators.cs" />
+    <Compile Include="MelodyDbData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MelodyDbData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MelodyDbDataSet.cs">
       <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
     </Compile>
@@ -342,6 +348,17 @@
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="log4net.config" />
+    <None Include="MelodyDbData.xsc">
+      <DependentUpon>MelodyDbData.xsd</DependentUpon>
+    </None>
+    <None Include="MelodyDbData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MelodyDbData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MelodyDbData.xss">
+      <DependentUpon>MelodyDbData.xsd</DependentUpon>
+    </None>
     <None Include="MelodyDbDataSet.xsc">
       <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
     </None>

@@ -115,6 +115,22 @@ namespace Melody.Service.DataAccess
       }
     }
 
+    public DataTable ComboboxSugest(string column, string table)
+    {
+      SqlConnection sqlconnection = new SqlConnection(_configService.GetConnectionString());
+      sqlconnection.Open();
+
+      SqlCommand sqlCommand = new SqlCommand($"SELECT DISTINCT [{column}] FROM MelodyDb.dbo.{table} ORDER BY [{column}] ASC", sqlconnection);
+
+      SqlDataReader reader;
+      reader = sqlCommand.ExecuteReader();
+      DataTable datatable = new DataTable();
+      datatable.Columns.Add(column, typeof(string));
+      datatable.Load(reader);
+      sqlconnection.Close();
+      return datatable;
+    }
+
     private bool IsSuccess(int result)
     {
       if (result >= 1)

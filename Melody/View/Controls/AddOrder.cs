@@ -1,10 +1,12 @@
 ﻿using Melody.Logic;
+using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using static log4net.Appender.RollingFileAppender;
 
 namespace Melody.View.Controls
 {
@@ -122,6 +124,75 @@ namespace Melody.View.Controls
     {
       MaterialsToOrder_dgv.DataSource = materialToOrders;
       MaterialsToOrder_dgv.Refresh();
+    }
+
+    private void AddOrder_Load(object sender, EventArgs e)
+     {
+      var exec = new Executor();
+      var datatableName = exec.ComboboxSugest("name", "Employee");
+      NameOrderingEmployeeIn_cb.ValueMember = "name";
+      NameOrderingEmployeeIn_cb.DataSource = datatableName;
+      var datatableName1 = exec.ComboboxSugest("name", "Employee");
+      NameHostEmployeeIn_cb.ValueMember = "name";
+      NameHostEmployeeIn_cb.DataSource = datatableName1;
+      var datatableName2 = exec.ComboboxSugest("name", "Employee");
+      NameReceivingEmployeeIn_cb.ValueMember = "name";
+      NameReceivingEmployeeIn_cb.DataSource = datatableName2;
+
+      var datatableSurname = exec.ComboboxSugest("surname", "Employee");
+      SurnameOrderingEmployeeIn_cb.ValueMember = "surname";
+      SurnameOrderingEmployeeIn_cb.DataSource = datatableSurname;
+      var datatableSurname1 = exec.ComboboxSugest("surname", "Employee");
+      SurnameHostEmployeeIn_cb.ValueMember = "surname";
+      SurnameHostEmployeeIn_cb.DataSource = datatableSurname1;
+      var datatableSurname2 = exec.ComboboxSugest("surname", "Employee");
+      SurnameReceivingEmployeeIn_cb.ValueMember = "surname";
+      SurnameReceivingEmployeeIn_cb.DataSource = datatableSurname2;
+
+      var datatableDestinyName = exec.ComboboxSugest("name", "Destiny");
+      DestinyName_cb.ValueMember = "name";
+      DestinyName_cb.DataSource = datatableDestinyName;
+
+      var datatableSupplierName = exec.ComboboxSugest("name", "Supplier");
+      NameSupplierIn_cb.ValueMember = "name";
+      NameSupplierIn_cb.DataSource = datatableSupplierName;
+
+      var datatableDestinyContract = exec.ComboboxSugest("contract", "Destiny");
+      DestinyContractNumber_cb.ValueMember = "contract";
+      DestinyContractNumber_cb.DataSource = datatableDestinyContract;
+
+      var datatableMaterialName = exec.ComboboxSugest("name", "Material");
+      MaterialName_cb.ValueMember = "name";
+      MaterialName_cb.DataSource = datatableMaterialName;
+
+      var datatableMaterialType = exec.ComboboxSugest("type", "Material");
+      MaterialType_cb.ValueMember = "type";
+      MaterialType_cb.DataSource = datatableMaterialType;
+
+      var datatableUnitName = exec.ComboboxSugest("name", "Unit");
+      MaterialUnitType_cb.ValueMember = "name";
+      MaterialUnitType_cb.DataSource = datatableUnitName;
+
+      //  SqlConnection sqlconnection = new SqlConnection("Data Source=SEBASTIAN;Initial Catalog=MelodyDb;Integrated Security=True;");
+      //  sqlconnection.Open();
+
+      //  SqlCommand sqlCommand = new SqlCommand("select DISTINCT  [name] from Employee order by name asc", sqlconnection);
+
+      //  SqlDataReader reader;
+      //  reader = sqlCommand.ExecuteReader();
+      //  DataTable datatable = new DataTable();
+      //  datatable.Columns.Add("name", typeof(string));
+
+      //  datatable.Load(reader);
+      //  NameOrderingEmployeeIn_cb.ValueMember = "name";
+      //  NameOrderingEmployeeIn_cb.DataSource = datatable;
+      //  sqlconnection.Close();
+      //}
+      //catch (Exception ex)
+      //{
+      //  MessageBox.Show(ex.Message);
+      //  throw ex;
+
     }
   }
 }

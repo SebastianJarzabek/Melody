@@ -89,7 +89,6 @@
       this.MaterialName_cb = new System.Windows.Forms.ComboBox();
       this.MaterialType_cb = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
-      this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
       this.AddOrder_panel.SuspendLayout();
       this.MaterialsToOrder_gb.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).BeginInit();
@@ -148,6 +147,7 @@
       // MaterialsToOrder_dgv
       // 
       this.MaterialsToOrder_dgv.AllowUserToDeleteRows = false;
+      this.MaterialsToOrder_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.MaterialsToOrder_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.MaterialsToOrder_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaterialName_dgvr,
@@ -159,6 +159,7 @@
       this.MaterialsToOrder_dgv.Name = "MaterialsToOrder_dgv";
       this.MaterialsToOrder_dgv.RowHeadersWidth = 51;
       this.MaterialsToOrder_dgv.RowTemplate.Height = 24;
+      this.MaterialsToOrder_dgv.ScrollBars = System.Windows.Forms.ScrollBars.None;
       this.MaterialsToOrder_dgv.Size = new System.Drawing.Size(554, 337);
       this.MaterialsToOrder_dgv.TabIndex = 0;
       this.MaterialsToOrder_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MaterialsToOrder_dgv_CellContentClick);
@@ -168,28 +169,24 @@
       this.MaterialName_dgvr.HeaderText = "Nazwa materiału";
       this.MaterialName_dgvr.MinimumWidth = 6;
       this.MaterialName_dgvr.Name = "MaterialName_dgvr";
-      this.MaterialName_dgvr.Width = 125;
       // 
       // MaterialType_dgvr
       // 
       this.MaterialType_dgvr.HeaderText = "Typ materiału";
       this.MaterialType_dgvr.MinimumWidth = 6;
       this.MaterialType_dgvr.Name = "MaterialType_dgvr";
-      this.MaterialType_dgvr.Width = 125;
       // 
       // MaterialUnit_dgvr
       // 
       this.MaterialUnit_dgvr.HeaderText = "J.m.";
       this.MaterialUnit_dgvr.MinimumWidth = 6;
       this.MaterialUnit_dgvr.Name = "MaterialUnit_dgvr";
-      this.MaterialUnit_dgvr.Width = 125;
       // 
       // MaterialQuaility_dgvr
       // 
       this.MaterialQuaility_dgvr.HeaderText = "Ilość";
       this.MaterialQuaility_dgvr.MinimumWidth = 6;
       this.MaterialQuaility_dgvr.Name = "MaterialQuaility_dgvr";
-      this.MaterialQuaility_dgvr.Width = 125;
       // 
       // Validation_lbl
       // 
@@ -276,6 +273,7 @@
       // 
       // SurnameHostEmployeeIn_cb
       // 
+      this.SurnameHostEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.SurnameHostEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.SurnameHostEmployeeIn_cb.FormattingEnabled = true;
       this.SurnameHostEmployeeIn_cb.Location = new System.Drawing.Point(339, 102);
@@ -285,6 +283,7 @@
       // 
       // NameHostEmployeeIn_cb
       // 
+      this.NameHostEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.NameHostEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NameHostEmployeeIn_cb.FormattingEnabled = true;
       this.NameHostEmployeeIn_cb.Location = new System.Drawing.Point(52, 102);
@@ -372,6 +371,7 @@
       // 
       // SurnameReceivingEmployeeIn_cb
       // 
+      this.SurnameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.SurnameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.SurnameReceivingEmployeeIn_cb.FormattingEnabled = true;
       this.SurnameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(339, 102);
@@ -381,6 +381,7 @@
       // 
       // NameReceivingEmployeeIn_cb
       // 
+      this.NameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.NameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NameReceivingEmployeeIn_cb.FormattingEnabled = true;
       this.NameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(52, 102);
@@ -485,6 +486,7 @@
       // 
       // NameSupplierIn_cb
       // 
+      this.NameSupplierIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.NameSupplierIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NameSupplierIn_cb.FormattingEnabled = true;
       this.NameSupplierIn_cb.Location = new System.Drawing.Point(10, 167);
@@ -512,6 +514,7 @@
       // 
       // SurnameOrderingEmployeeIn_cb
       // 
+      this.SurnameOrderingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.SurnameOrderingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.SurnameOrderingEmployeeIn_cb.FormattingEnabled = true;
       this.SurnameOrderingEmployeeIn_cb.Location = new System.Drawing.Point(336, 113);
@@ -521,6 +524,7 @@
       // 
       // NameOrderingEmployeeIn_cb
       // 
+      this.NameOrderingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.NameOrderingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NameOrderingEmployeeIn_cb.FormattingEnabled = true;
       this.NameOrderingEmployeeIn_cb.Location = new System.Drawing.Point(49, 113);
@@ -587,6 +591,7 @@
       // 
       // DestinyName_cb
       // 
+      this.DestinyName_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.DestinyName_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.DestinyName_cb.FormattingEnabled = true;
       this.DestinyName_cb.Location = new System.Drawing.Point(6, 53);
@@ -606,6 +611,7 @@
       // 
       // DestinyContractNumber_cb
       // 
+      this.DestinyContractNumber_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.DestinyContractNumber_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.DestinyContractNumber_cb.FormattingEnabled = true;
       this.DestinyContractNumber_cb.Location = new System.Drawing.Point(6, 107);
@@ -686,6 +692,7 @@
       // 
       // MaterialUnitType_cb
       // 
+      this.MaterialUnitType_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.MaterialUnitType_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.MaterialUnitType_cb.FormattingEnabled = true;
       this.MaterialUnitType_cb.Location = new System.Drawing.Point(73, 105);
@@ -737,6 +744,7 @@
       // 
       // MaterialName_cb
       // 
+      this.MaterialName_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.MaterialName_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.MaterialName_cb.FormattingEnabled = true;
       this.MaterialName_cb.Location = new System.Drawing.Point(118, 27);
@@ -746,6 +754,7 @@
       // 
       // MaterialType_cb
       // 
+      this.MaterialType_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
       this.MaterialType_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.MaterialType_cb.FormattingEnabled = true;
       this.MaterialType_cb.Location = new System.Drawing.Point(118, 66);
@@ -763,24 +772,16 @@
       this.label4.TabIndex = 12;
       this.label4.Text = "Typ materiału";
       // 
-      // vScrollBar1
-      // 
-      this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-      this.vScrollBar1.Location = new System.Drawing.Point(1899, 0);
-      this.vScrollBar1.Name = "vScrollBar1";
-      this.vScrollBar1.Size = new System.Drawing.Size(21, 1080);
-      this.vScrollBar1.TabIndex = 36;
-      // 
       // AddOrder
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
       this.AutoScroll = true;
       this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      this.Controls.Add(this.vScrollBar1);
       this.Controls.Add(this.AddOrder_panel);
       this.Name = "AddOrder";
       this.Size = new System.Drawing.Size(1920, 1080);
+      this.Load += new System.EventHandler(this.AddOrder_Load);
       this.AddOrder_panel.ResumeLayout(false);
       this.AddOrder_panel.PerformLayout();
       this.MaterialsToOrder_gb.ResumeLayout(false);
@@ -865,6 +866,5 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType_dgvr;
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialUnit_dgvr;
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialQuaility_dgvr;
-    private System.Windows.Forms.VScrollBar vScrollBar1;
-  }
+    }
 }

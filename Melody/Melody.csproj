@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\DataClass.cs" />
+    <Compile Include="Logic\Validators.cs" />
     <Compile Include="MelodyDbDataSet.cs">
       <DependentUpon>MelodyDbDataSet.xsd</DependentUpon>
     </Compile>
@@ -362,9 +364,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Login.jpg" />
     <None Include="Resources\AddAccount.jpg" />

@@ -1,7 +1,10 @@
-﻿using Melody.Service.DataAccess;
+﻿using Melody.Logic;
+using Melody.Service.DataAccess;
+using Melody.Service.Entity;
 using Melody.Service.PasswordCoder;
 using Melody.Service.SqlProceures;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -10,16 +13,52 @@ namespace Melody.View.Controls
 {
   public partial class AddEmployee : UserControl
   {
+    Validators validators = new Validators();
     public AddEmployee()
     {
       InitializeComponent();
+
     }
 
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
       TextBoxesValidation_lbl.Text = string.Empty;
+      var emp = new Employee
+      {
+        Name = Name_tb.Text,
+        Surname = Surname_tb.Text,
+        Departament = Departmrnt_tb.Text,
+        Position = Position_tb.Text,
+        Access = new Access
+        {
+          Login = Login_tb.Text,
+          Password = Password_tb.Text,
+        },
+        Adress = new Adress
+        {
+          Street = Street_tb.Text,
+          HouseNumber = HouseNumber_tb.Text,
+          ApartmentNumber = ApartamentNumber_tb.Text,
+          City = City_tb.Text,
+          ZipCode = ZipCode_tb.Text,
+          Country = Country_tb.Text
+        },
+        ContactDetails =new ContactDetails
+        {
+          PhoneNumber=PhoneNumber_tb.Text,
+          Email=Email_tb.Text,
+          Webside=Webside_tb.Text
+        }
+      };
 
-      if (!TextBoxesValidate()
+      var list = new List<DataClass> 
+      {
+        DataClass.Employee
+        ,DataClass.Access
+        ,DataClass.Adress
+        ,DataClass.ContactDetails};
+
+      if (!TextBoxesValidate(emp,list)
         || !PhoneValidate(PhoneNumber_tb.Text)
         || !EmailValidate(Email_tb.Text))
       {
@@ -30,21 +69,21 @@ namespace Melody.View.Controls
       {
         var parameters = new
         {
-          nameIn = Name_tb.Text,
-          surnameIn = Surname_tb.Text,
-          departamentIn = Departmrnt_tb.Text,
-          positionIn = Position_tb.Text,
-          loginIn = Login_tb.Text,
-          passwordIn = new Coder().CodePassword(Password_tb.Text),
-          streetIn = Street_tb.Text,
-          houseNumberIn = HouseNumber_tb.Text,
-          apartmentNumberIn = ApartamentNumber_tb.Text,
-          cityIn = City_tb.Text,
-          zipCodeIn = ZipCode_tb.Text,
-          countryIn = Country_tb.Text,
-          phoneNumberIn = PhoneNumber_tb.Text,
-          emailIn = Email_tb.Text,
-          websideIn = Webside_tb.Text
+          nameIn = emp.Name,
+          surnameIn = emp.Surname,
+          departamentIn = emp.Departament,
+          positionIn = emp.Position,
+          loginIn = emp.Access.Login,
+          passwordIn = new Coder().CodePassword(emp.Access.Password),
+          streetIn = emp.Adress.Street,
+          houseNumberIn = emp.Adress.HouseNumber,
+          apartmentNumberIn = emp.Adress.ApartmentNumber,
+          cityIn = emp.Adress.City,
+          zipCodeIn = emp.Adress.ZipCode,
+          countryIn = emp.Adress.Country,
+          phoneNumberIn = emp.ContactDetails.PhoneNumber,
+          emailIn = emp.ContactDetails.Email,
+          websideIn = emp.ContactDetails.Webside
         };
 
         var executor = new Executor();
@@ -70,13 +109,14 @@ namespace Melody.View.Controls
 
     private bool PhoneValidate(string phoneNumber)
     {
-      if (int.TryParse(phoneNumber, out int result))
+      var errorMessage = validators.PhoneValidate(PhoneNumber_tb.Text);
+
+      if (string.IsNullOrEmpty(errorMessage))
       {
         return true;
       }
       else
       {
-        var errorMessage = "Nieprawidłowy format numeru telefonu.\nNumer powinien sie składać tylko cyfr.";
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
@@ -87,13 +127,14 @@ namespace Melody.View.Controls
 
     private bool EmailValidate(string email)
     {
-      if (email.Contains("@") && email.Contains("."))
+      var errorMessage = validators.EmailValidate(Email_tb.Text);
+
+      if (string.IsNullOrEmpty(errorMessage))
       {
         return true;
       }
       else
       {
-        var errorMessage = $"Nieprawidłowy format adresu email.\nNumer powinien zwierać @ i .";
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
@@ -102,99 +143,21 @@ namespace Melody.View.Controls
       }
     }
 
-    private bool TextBoxesValidate()
+    private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      if (string.IsNullOrEmpty(Name_tb.Text)
-        || string.IsNullOrEmpty(Surname_tb.Text)
-        || string.IsNullOrEmpty(Departmrnt_tb.Text)
-        || string.IsNullOrEmpty(Position_tb.Text)
-        || string.IsNullOrEmpty(Login_tb.Text)
-        || string.IsNullOrEmpty(Password_tb.Text)
-        || string.IsNullOrEmpty(PhoneNumber_tb.Text)
-        || string.IsNullOrEmpty(Email_tb.Text)
-        || string.IsNullOrEmpty(Webside_tb.Text)
-        || string.IsNullOrEmpty(Street_tb.Text)
-        || string.IsNullOrEmpty(HouseNumber_tb.Text)
-        || string.IsNullOrEmpty(ApartamentNumber_tb.Text)
-        || string.IsNullOrEmpty(City_tb.Text)
-        || string.IsNullOrEmpty(ZipCode_tb.Text)
-        || string.IsNullOrEmpty(Country_tb.Text)
-        )
-      {
-        var stb = new StringBuilder();
-        stb.AppendLine("Pole:");
+      var errorMessage = validators.TextBoxesValidate(emp, dataClasses);
 
-        if (string.IsNullOrEmpty(Name_tb.Text))
-        {
-          stb.AppendLine(" imie,");
-        }
-        if (string.IsNullOrEmpty(Surname_tb.Text))
-        {
-          stb.AppendLine(" nazwisko,");
-        }
-        if (string.IsNullOrEmpty(Name_tb.Text))
-        {
-          stb.AppendLine(" dział,");
-        }
-        if (string.IsNullOrEmpty(Name_tb.Text))
-        {
-          stb.AppendLine(" stanowisko,");
-        }
-        if (string.IsNullOrEmpty(Name_tb.Text))
-        {
-          stb.AppendLine(" login,");
-        }
-        if (string.IsNullOrEmpty(Name_tb.Text))
-        {
-          stb.AppendLine(" hasło,");
-        }
-        if (string.IsNullOrEmpty(PhoneNumber_tb.Text))
-        {
-          stb.AppendLine(" numer telefonu,");
-        }
-        if (string.IsNullOrEmpty(Email_tb.Text))
-        {
-          stb.AppendLine(" e-mail,");
-        }
-        if (string.IsNullOrEmpty(Webside_tb.Text))
-        {
-          stb.AppendLine(" strona internetowa,");
-        }
-        if (string.IsNullOrEmpty(Street_tb.Text))
-        {
-          stb.AppendLine(" ulica,");
-        }
-        if (string.IsNullOrEmpty(HouseNumber_tb.Text))
-        {
-          stb.AppendLine(" numer domu,");
-        }
-        if (string.IsNullOrEmpty(ApartamentNumber_tb.Text))
-        {
-          stb.AppendLine(" numer lokalu,");
-        }
-        if (string.IsNullOrEmpty(City_tb.Text))
-        {
-          stb.AppendLine(" miasto,");
-        }
-        if (string.IsNullOrEmpty(ZipCode_tb.Text))
-        {
-          stb.AppendLine(" kod-pocztowy,");
-        }
-        if (string.IsNullOrEmpty(Country_tb.Text))
-        {
-          stb.AppendLine(" kraj,");
-        }
-        stb.Remove(stb.Length - 1, 1);
-        stb.AppendLine("musi zostać uzupełnione.");
-        MessageBox.Show(stb.ToString(), "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = stb.ToString();
-        return false;
+      if (string.IsNullOrEmpty(errorMessage))
+      {
+        return true;
       }
       else
       {
-        return true;
+        MessageBox.Show(errorMessage, "Błąd",
+          MessageBoxButtons.OK,
+          MessageBoxIcon.Error);
+        TextBoxesValidation_lbl.Text = errorMessage;
+        return false;
       }
     }
 

@@ -28,71 +28,110 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.Contact_panel = new System.Windows.Forms.Panel();
-      this.ContractorChild_panel = new System.Windows.Forms.Panel();
+      this.Parent_panel = new System.Windows.Forms.Panel();
+      this.DeleteContractor_panel = new System.Windows.Forms.Panel();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.DeleteContractor_btn = new System.Windows.Forms.Button();
-      this.Contact_panel.SuspendLayout();
-      this.ContractorChild_panel.SuspendLayout();
+      this.Clear_btn = new System.Windows.Forms.Button();
+      this.label4 = new System.Windows.Forms.Label();
+      this.DeleteConcractor_btn = new System.Windows.Forms.Button();
+      this.Name_tb = new System.Windows.Forms.TextBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.Parent_panel.SuspendLayout();
+      this.DeleteContractor_panel.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
-      // Contact_panel
+      // Parent_panel
       // 
-      this.Contact_panel.Controls.Add(this.ContractorChild_panel);
-      this.Contact_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.Contact_panel.Location = new System.Drawing.Point(0, 0);
-      this.Contact_panel.Name = "Contact_panel";
-      this.Contact_panel.Size = new System.Drawing.Size(1920, 1080);
-      this.Contact_panel.TabIndex = 2;
+      this.Parent_panel.Controls.Add(this.DeleteContractor_panel);
+      this.Parent_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Parent_panel.Location = new System.Drawing.Point(0, 0);
+      this.Parent_panel.Name = "Parent_panel";
+      this.Parent_panel.Size = new System.Drawing.Size(1920, 1080);
+      this.Parent_panel.TabIndex = 1;
       // 
-      // ContractorChild_panel
+      // DeleteContractor_panel
       // 
-      this.ContractorChild_panel.Controls.Add(this.groupBox1);
-      this.ContractorChild_panel.Location = new System.Drawing.Point(305, 250);
-      this.ContractorChild_panel.Name = "ContractorChild_panel";
-      this.ContractorChild_panel.Size = new System.Drawing.Size(332, 112);
-      this.ContractorChild_panel.TabIndex = 5;
+      this.DeleteContractor_panel.Controls.Add(this.groupBox1);
+      this.DeleteContractor_panel.Location = new System.Drawing.Point(370, 180);
+      this.DeleteContractor_panel.Name = "DeleteContractor_panel";
+      this.DeleteContractor_panel.Size = new System.Drawing.Size(358, 266);
+      this.DeleteContractor_panel.TabIndex = 0;
+      this.DeleteContractor_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.DeleteContractor_panel_Paint);
       // 
       // groupBox1
       // 
-      this.groupBox1.Controls.Add(this.textBox1);
-      this.groupBox1.Controls.Add(this.DeleteContractor_btn);
+      this.groupBox1.Controls.Add(this.Clear_btn);
+      this.groupBox1.Controls.Add(this.label4);
+      this.groupBox1.Controls.Add(this.DeleteConcractor_btn);
+      this.groupBox1.Controls.Add(this.Name_tb);
+      this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(8, 8);
+      this.groupBox1.Location = new System.Drawing.Point(3, 3);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(310, 101);
-      this.groupBox1.TabIndex = 2;
+      this.groupBox1.Size = new System.Drawing.Size(345, 255);
+      this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "Podaj Kontrahenta do usunięcia:";
+      this.groupBox1.Text = "Usuń kontrahenta";
       // 
-      // textBox1
+      // Clear_btn
       // 
-      this.textBox1.Location = new System.Drawing.Point(6, 30);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(300, 30);
-      this.textBox1.TabIndex = 1;
+      this.Clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Clear_btn.Location = new System.Drawing.Point(6, 219);
+      this.Clear_btn.Name = "Clear_btn";
+      this.Clear_btn.Size = new System.Drawing.Size(150, 30);
+      this.Clear_btn.TabIndex = 7;
+      this.Clear_btn.Text = "Wyczyść";
+      this.Clear_btn.UseVisualStyleBackColor = true;
+      this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
       // 
-      // DeleteContractor_btn
+      // label4
       // 
-      this.DeleteContractor_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.DeleteContractor_btn.Location = new System.Drawing.Point(156, 66);
-      this.DeleteContractor_btn.Name = "DeleteContractor_btn";
-      this.DeleteContractor_btn.Size = new System.Drawing.Size(150, 30);
-      this.DeleteContractor_btn.TabIndex = 0;
-      this.DeleteContractor_btn.Text = "Usuń";
-      this.DeleteContractor_btn.UseVisualStyleBackColor = true;
+      this.label4.AutoSize = true;
+      this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label4.Location = new System.Drawing.Point(6, 51);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(146, 20);
+      this.label4.TabIndex = 6;
+      this.label4.Text = "Aby usunąć podaj:";
+      // 
+      // DeleteConcractor_btn
+      // 
+      this.DeleteConcractor_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.DeleteConcractor_btn.Location = new System.Drawing.Point(189, 219);
+      this.DeleteConcractor_btn.Name = "DeleteConcractor_btn";
+      this.DeleteConcractor_btn.Size = new System.Drawing.Size(150, 30);
+      this.DeleteConcractor_btn.TabIndex = 2;
+      this.DeleteConcractor_btn.Text = "Usuń";
+      this.DeleteConcractor_btn.UseVisualStyleBackColor = true;
+      this.DeleteConcractor_btn.Click += new System.EventHandler(this.DeleteConcractor_btn_Click);
+      // 
+      // Name_tb
+      // 
+      this.Name_tb.Location = new System.Drawing.Point(88, 87);
+      this.Name_tb.Name = "Name_tb";
+      this.Name_tb.Size = new System.Drawing.Size(200, 30);
+      this.Name_tb.TabIndex = 1;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.Location = new System.Drawing.Point(6, 94);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(65, 20);
+      this.label1.TabIndex = 0;
+      this.label1.Text = "Nazwa:";
       // 
       // DeleteContractors
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.Contact_panel);
+      this.Controls.Add(this.Parent_panel);
       this.Name = "DeleteContractors";
       this.Size = new System.Drawing.Size(1920, 1080);
-      this.Contact_panel.ResumeLayout(false);
-      this.ContractorChild_panel.ResumeLayout(false);
+      this.Parent_panel.ResumeLayout(false);
+      this.DeleteContractor_panel.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
@@ -101,10 +140,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel Contact_panel;
-        private System.Windows.Forms.Panel ContractorChild_panel;
+        private System.Windows.Forms.Panel Parent_panel;
+        private System.Windows.Forms.Panel DeleteContractor_panel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button DeleteContractor_btn;
+        private System.Windows.Forms.Button Clear_btn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button DeleteConcractor_btn;
+        private System.Windows.Forms.TextBox Name_tb;
+        private System.Windows.Forms.Label label1;
     }
 }

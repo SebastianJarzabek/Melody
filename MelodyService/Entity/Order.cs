@@ -4,6 +4,8 @@ namespace Melody.Service.Entity
 {
   public class Order
   {
+    public int OrderId { get; set; }
+
     public DateTime DateOfOrder { get; set; }
 
     public string OrderingEmployee { get; set; }

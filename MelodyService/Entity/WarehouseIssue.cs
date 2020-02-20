@@ -6,7 +6,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class WarehouseIssue
   {
-    public int WarehouseIssueId { get; set; }
+    public int IdWarehouseIssue { get; set; }
 
     public DateTime DateOfReceipt { get; set; }
 

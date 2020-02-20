@@ -5,6 +5,8 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class Adress
   {
+    public int IdAdress { get; set; }
+
     public string Street { get; set; }
 
     public string HouseNumber { get; set; }

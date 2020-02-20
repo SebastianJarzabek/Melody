@@ -28,12 +28,12 @@ namespace Melody.View.Controls
       {
         var order = new Order()
         {
-          OrderId = Convert.ToInt16(OrderNumber_tb.Text)
+          IdOrder = Convert.ToInt16(OrderNumber_tb.Text)
         };
 
         var parameters = new
         {
-          name = order.OrderId
+          name = order.IdOrder
         };
 
         var executor = new Executor();

@@ -6,7 +6,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class Order
   {
-    public int OrderId { get; set; }
+    public int IdOrder { get; set; }
 
     public DateTime DateOfOrder { get; set; }
 

@@ -39,13 +39,13 @@ this.ClientSize.Height / 2 - DeleteMaterialIssue_panel.Size.Height / 2);
       {
         var warehouseIssue = new WarehouseIssue()
         {
-          WarehouseIssueId = Convert.ToInt16(MaterialIssueId_tb.Text)
+          IdWarehouseIssue = Convert.ToInt16(MaterialIssueId_tb.Text)
 
         };
 
         var parameters = new
         {
-          idWarehouseIssue = warehouseIssue.WarehouseIssueId
+          idWarehouseIssue = warehouseIssue.IdWarehouseIssue
         };
 
         var executor = new Executor();

@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Melody.Db", "MelodyDb\Melod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melody.Service", "MelodyService\Melody.Service.csproj", "{26D56B87-2436-4259-A3C6-D825FEC6532B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melody.Tests", "Melody.Tests\Melody.Tests.csproj", "{36B3E628-0CE6-4F9A-9C7B-9F17264D1CFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{26D56B87-2436-4259-A3C6-D825FEC6532B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26D56B87-2436-4259-A3C6-D825FEC6532B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26D56B87-2436-4259-A3C6-D825FEC6532B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B3E628-0CE6-4F9A-9C7B-9F17264D1CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B3E628-0CE6-4F9A-9C7B-9F17264D1CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B3E628-0CE6-4F9A-9C7B-9F17264D1CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B3E628-0CE6-4F9A-9C7B-9F17264D1CFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

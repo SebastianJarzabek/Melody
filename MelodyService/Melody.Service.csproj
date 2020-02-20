@@ -79,8 +79,8 @@
     <Compile Include="Logic\Interfaces\IValidators.cs" />
     <Compile Include="Logic\QueryBuilder.cs" />
     <Compile Include="Logic\Validators.cs" />
-    <Compile Include="PasswordCoder\Coder.cs" />
-    <Compile Include="PasswordCoder\Interfaces\ICoder.cs" />
+    <Compile Include="Cryptography\Coder.cs" />
+    <Compile Include="Cryptography\Interfaces\ICoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlProceures\SqlProceure.cs" />

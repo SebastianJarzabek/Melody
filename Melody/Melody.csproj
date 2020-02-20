@@ -343,9 +343,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Login.jpg" />
-    <None Include="Resources\AddAccount.jpg" />
-    <None Include="Resources\me.jpg" />
+    <None Include="Resources\Login.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\AddAccount.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\me.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Version.txt" />
   </ItemGroup>
   <ItemGroup>

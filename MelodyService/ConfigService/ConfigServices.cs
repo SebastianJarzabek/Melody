@@ -1,4 +1,5 @@
 ﻿using Melody.Service.ConfigService.Interfaces;
+using System;
 using System.Configuration;
 
 namespace Melody.Service.ConfigService
@@ -14,7 +15,15 @@ namespace Melody.Service.ConfigService
 
     public string GetConnectionString()
     {
-      return _connectionString;
+      try
+      {
+        return _connectionString;
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("Exception was occured in ConfigServices.GetConnectionString. " + ex);
+      }
+
     }
   }
 }

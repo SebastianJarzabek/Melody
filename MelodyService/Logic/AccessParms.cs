@@ -1,24 +1,47 @@
 ﻿using Melody.Service.Entity;
+using Melody.Service.Logic.Interfaces;
+using System;
 
 namespace Melody.Service.Logic
 {
-  public static class TrimAccessParms
+  public class TrimAccessParms : ITrimAccessParms
   {
-    public static string TrimParms(string toTrimParm)
+    public string TrimParms(string toTrimParm)
     {
-      return toTrimParm.Trim();
+      try
+      {
+        return toTrimParm.Trim();
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("Exception was occured in TrimAccessParms.TrimParms. " + ex);
+      }
     }
 
-    public static Employee TrimParms(Employee emp)
+    public Employee TrimParms(Employee emp)
     {
-      emp.Access.Login = emp.Access.Login.Trim();
-      emp.Access.Password = emp.Access.Password.Trim();
-      return emp;
+      try
+      {
+        emp.Access.Login = emp.Access.Login.Trim();
+        emp.Access.Password = emp.Access.Password.Trim();
+        return emp;
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("Exception was occured in TrimAccessParms.TrimParms - Employee " + ex);
+      }
     }
 
-    public static string TrimPassword(string pass)
+    public string TrimPassword(string pass)
     {
-      return pass.Trim();
+      try
+      {
+        return pass.Trim();
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("Exception was occured in TrimAccessParms.TrimPassword. " + ex);
+      }
     }
   }
 }

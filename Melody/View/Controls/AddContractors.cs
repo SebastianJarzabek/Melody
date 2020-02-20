@@ -1,11 +1,10 @@
-﻿using Melody.Logic;
-using Melody.Service.DataAccess;
+﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Logic;
 using Melody.Service.SqlProceures;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Melody.View.Controls

@@ -1,10 +1,11 @@
 ﻿using Melody.Service.Entity;
+using Melody.Service.Logic.Interfaces;
 using System;
 using System.Text;
 
 namespace Melody.Service.Logic
 {
-  public class QueryBuilder
+  public class QueryBuilder : IQueryBuilder
   {
     public string BuildLoginQuery(string query, Employee emp)
     {

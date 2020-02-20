@@ -74,6 +74,9 @@
     <Compile Include="Entity\Unit.cs" />
     <Compile Include="Logic\AccessParms.cs" />
     <Compile Include="Logic\DataClass.cs" />
+    <Compile Include="Logic\Interfaces\IQueryBuilder.cs" />
+    <Compile Include="Logic\Interfaces\ITrimAccessParms.cs" />
+    <Compile Include="Logic\Interfaces\IValidators.cs" />
     <Compile Include="Logic\QueryBuilder.cs" />
     <Compile Include="Logic\Validators.cs" />
     <Compile Include="PasswordCoder\Coder.cs" />

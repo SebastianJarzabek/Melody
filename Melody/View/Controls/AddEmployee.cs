@@ -1,6 +1,6 @@
-﻿using Melody.Logic;
-using Melody.Service.DataAccess;
+﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Logic;
 using Melody.Service.PasswordCoder;
 using Melody.Service.SqlProceures;
 using System;

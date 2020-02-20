@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Melody.Service.Entity
 {
+  [ExcludeFromCodeCoverage]
   public class WarehouseAdmission
   {
     public int WarehouseAdmissionId { get; set; }
+
     public DateTime DateOfAdmission { get; set; }
 
     public string HostEmployee { get; set; }

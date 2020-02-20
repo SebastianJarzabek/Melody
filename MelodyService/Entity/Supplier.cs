@@ -1,5 +1,8 @@
-﻿namespace Melody.Service.Entity
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Melody.Service.Entity
 {
+  [ExcludeFromCodeCoverage]
   public class Supplier
   {
     public string Name { get; set; }

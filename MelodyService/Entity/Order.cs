@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Melody.Service.Entity
 {
+  [ExcludeFromCodeCoverage]
   public class Order
   {
     public int OrderId { get; set; }

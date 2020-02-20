@@ -4,6 +4,6 @@
   {
     string CodePassword(string password);
 
-    string uncodePassword(string password);
+    string UncodePassword(string password);
   }
 }

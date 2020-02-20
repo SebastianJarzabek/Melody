@@ -1,5 +1,8 @@
-﻿namespace Melody.Service.Entity
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Melody.Service.Entity
 {
+  [ExcludeFromCodeCoverage]
   public class Employee
   {
     public string Name { get; set; }
@@ -13,6 +16,7 @@
     public Access Access { get; set; }
 
     public ContactDetails ContactDetails { get; set; }
+
     public Adress Adress { get; set; }
 
   }

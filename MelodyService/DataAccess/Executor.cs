@@ -8,10 +8,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Melody.Service.DataAccess
 {
+  [ExcludeFromCodeCoverage]
   public class Executor : IExecutor
   {
     private readonly IConfigServices _configService;

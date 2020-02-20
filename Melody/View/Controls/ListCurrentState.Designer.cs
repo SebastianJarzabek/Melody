@@ -1,6 +1,6 @@
-﻿namespace Melody.View.Controls
+﻿namespace Melody.View.Panel
 {
-  partial class ListMaterialIssue
+  partial class CurrentState_panel
   {
     /// <summary> 
     /// Required designer variable.
@@ -30,12 +30,13 @@
     {
       this.SuspendLayout();
       // 
-      // ListMaterialIssue
+      // CurrentState_panel
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Name = "ListMaterialIssue";
+      this.Name = "CurrentState_panel";
       this.Size = new System.Drawing.Size(1920, 1080);
+      this.Load += new System.EventHandler(this.CurrentState_panel_Load);
       this.ResumeLayout(false);
 
     }

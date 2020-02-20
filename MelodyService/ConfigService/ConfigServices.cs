@@ -5,7 +5,6 @@ namespace Melody.Service.ConfigService
 {
   public class ConfigServices : IConfigServices
   {
-    // view log in error
     private readonly string _connectionString;
 
     public ConfigServices()

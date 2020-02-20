@@ -1,9 +1,8 @@
 ﻿using Melody.Service.Entity;
-using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Melody.Logic
+namespace Melody.Service.Logic
 {
   public class Validators
   {

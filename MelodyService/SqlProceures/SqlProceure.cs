@@ -1,5 +1,8 @@
-﻿namespace Melody.Service.SqlProceures
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Melody.Service.SqlProceures
 {
+  [ExcludeFromCodeCoverage]
   public class SqlProceure
   {
     private readonly string _addDestiny = "AddDestiny";
@@ -75,6 +78,10 @@
     private readonly string _getInventoryLevel = "GetInventoryLevel";
 
     private readonly string _usersLogin = "UsersLogin";
+
+    private readonly string _getAllEmployee = "GetAllEmployee";
+
+    public string GetAllEmployee  { get =>_getAllEmployee; }
 
     public string GetInventoryLevel { get => _getInventoryLevel; }
 

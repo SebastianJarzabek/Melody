@@ -1,5 +1,4 @@
 ﻿using Melody.Service.Entity;
-using System;
 
 namespace Melody.Service.Logic
 {
@@ -14,7 +13,6 @@ namespace Melody.Service.Logic
     {
       emp.Access.Login = emp.Access.Login.Trim();
       emp.Access.Password = emp.Access.Password.Trim();
-
       return emp;
     }
 

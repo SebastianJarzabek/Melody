@@ -1,26 +1,53 @@
 ﻿using Melody.Service.PasswordCoder.Interfaces;
+using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Melody.Service.PasswordCoder
 {
   public class Coder : ICoder
   {
-    private string _accessCodeParm = string.Empty;
-    private string _accessUnCodeParm = string.Empty;
-
-    public Coder()
-    {
-    }
-
     public string CodePassword(string password)
     {
-      var _accessCodeParm = System.Text.Encoding.UTF8.GetBytes(password);
-      return System.Convert.ToBase64String(_accessCodeParm);
+      return System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
     }
 
-    public string uncodePassword(string password)
+    public string UncodePassword(string password)
     {
       var _accessUnCodeParm = System.Text.Encoding.UTF8.GetBytes(password);
       return System.Convert.ToBase64String(_accessUnCodeParm);
+    }
+
+    public string CodeMD5Password(string password)
+    {
+      byte[] data = UTF8Encoding.UTF8.GetBytes(password);
+      using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+      {
+        byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(password));
+        using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+        {
+          ICryptoTransform transform = tripDes.CreateEncryptor();
+          byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+          password = Convert.ToBase64String(results, 0, results.Length);
+          return password;
+        }
+      }
+    }
+
+    public string UncodeMD5Password(string password)
+    {
+      byte[] data = Convert.FromBase64String(password); // decrypt the incrypted text
+      using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+      {
+        byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(password));
+        using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+        {
+          ICryptoTransform transform = tripDes.CreateDecryptor();
+          byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+          password = UTF8Encoding.UTF8.GetString(results);
+          return password;
+        }
+      }
     }
   }
 }

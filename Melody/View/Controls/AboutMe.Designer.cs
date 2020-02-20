@@ -32,6 +32,7 @@
       this.AboutMeChild_panel = new System.Windows.Forms.Panel();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
       this.AboutMe_panel.SuspendLayout();
       this.AboutMeChild_panel.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -39,6 +40,8 @@
       // 
       // AboutMe_panel
       // 
+      this.AboutMe_panel.BackgroundImage = global::Melody.Properties.Resources.Login;
+      this.AboutMe_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
       this.AboutMe_panel.Controls.Add(this.AboutMeChild_panel);
       this.AboutMe_panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.AboutMe_panel.Location = new System.Drawing.Point(0, 0);
@@ -48,18 +51,21 @@
       // 
       // AboutMeChild_panel
       // 
+      this.AboutMeChild_panel.BackColor = System.Drawing.Color.SkyBlue;
+      this.AboutMeChild_panel.Controls.Add(this.label2);
       this.AboutMeChild_panel.Controls.Add(this.pictureBox1);
       this.AboutMeChild_panel.Controls.Add(this.label1);
-      this.AboutMeChild_panel.Location = new System.Drawing.Point(611, 397);
+      this.AboutMeChild_panel.Location = new System.Drawing.Point(600, 400);
       this.AboutMeChild_panel.Name = "AboutMeChild_panel";
-      this.AboutMeChild_panel.Size = new System.Drawing.Size(607, 220);
+      this.AboutMeChild_panel.Size = new System.Drawing.Size(600, 250);
       this.AboutMeChild_panel.TabIndex = 1;
       this.AboutMeChild_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AboutMeChild_panel_Paint);
       // 
       // pictureBox1
       // 
+      this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
       this.pictureBox1.Image = global::Melody.Properties.Resources.me;
-      this.pictureBox1.Location = new System.Drawing.Point(430, 33);
+      this.pictureBox1.Location = new System.Drawing.Point(439, 3);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(158, 109);
       this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,13 +79,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(18, 33);
+      this.label1.Location = new System.Drawing.Point(3, 3);
       this.label1.Name = "label1";
       this.label1.Padding = new System.Windows.Forms.Padding(10);
       this.label1.Size = new System.Drawing.Size(570, 145);
       this.label1.TabIndex = 0;
       this.label1.Text = "Jestem studentem 7 semestru \r\nw Wyższej Szkoły Informatyki i Zarządzania\r\n\"COPERN" +
     "ICUS\".\r\n\r\nJest to projekt systemu magazynowego do pracy inżynierskiej.\r\n";
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Location = new System.Drawing.Point(5, 224);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(67, 25);
+      this.label2.TabIndex = 3;
+      this.label2.Text = "2020r.";
       // 
       // AboutMe
       // 
@@ -102,5 +118,6 @@
         private System.Windows.Forms.Panel AboutMeChild_panel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

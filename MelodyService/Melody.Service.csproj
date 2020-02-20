@@ -73,7 +73,9 @@
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Unit.cs" />
     <Compile Include="Logic\AccessParms.cs" />
+    <Compile Include="Logic\DataClass.cs" />
     <Compile Include="Logic\QueryBuilder.cs" />
+    <Compile Include="Logic\Validators.cs" />
     <Compile Include="PasswordCoder\Coder.cs" />
     <Compile Include="PasswordCoder\Interfaces\ICoder.cs" />
     <Compile Include="Program.cs" />
@@ -82,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

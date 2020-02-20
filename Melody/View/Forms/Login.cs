@@ -58,7 +58,8 @@ namespace Melody.View.Window
           MessageBoxIcon.Error);
           return;
         }
-        var PasswordToPrepared = TrimAccessParms.TrimPassword(Password_tb.Text);
+        var trimAccessParms = new TrimAccessParms();
+        var PasswordToPrepared = trimAccessParms.TrimPassword(Password_tb.Text);
         if (PasswordToPrepared != "admin")
         {
           var coder = new Coder();
@@ -73,7 +74,7 @@ namespace Melody.View.Window
             Password = string.IsNullOrEmpty(codePassword) ? PasswordToPrepared : codePassword,
           }
         };
-        TrimAccessParms.TrimParms(emp);
+        trimAccessParms.TrimParms(emp);
 
         var parameters = new { loginInparm = emp.Access.Login, passwordInParm = emp.Access.Password };
         var loginExec = new Executor();

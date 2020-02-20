@@ -6,7 +6,6 @@ using Melody.Service.SqlProceures;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Melody.View.Controls
@@ -17,7 +16,6 @@ namespace Melody.View.Controls
     public AddEmployee()
     {
       InitializeComponent();
-
     }
 
     private void AddEmployee_btn_Click(object sender, EventArgs e)

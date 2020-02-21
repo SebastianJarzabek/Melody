@@ -6,19 +6,19 @@ using Melody.Service.Entity;
 
 namespace Melody.View.Controls
 {
-  public partial class ListContractors_panel : UserControl
+  public partial class ListContractors : UserControl
   {
     private readonly ISuppliersRepository _suppliersRepository;
     private List<Supplier> _suppliers;
 
-    public ListContractors_panel(ISuppliersRepository suppliersRepository)
+    public ListContractors(ISuppliersRepository suppliersRepository)
     {
       InitializeComponent();
       _suppliersRepository = suppliersRepository;
       ReferesSuppliers();
     }
 
-    public ListContractors_panel()
+    public ListContractors()
     {
     }
 

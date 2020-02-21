@@ -2,7 +2,7 @@
 
 namespace Melody.View.Controls
 {
-  partial class ListContractors_panel
+  partial class ListContractors
   {
     /// <summary> 
     /// Required designer variable.
@@ -35,7 +35,7 @@ namespace Melody.View.Controls
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
       this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HouseNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApartamentNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@ namespace Melody.View.Controls
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
-            this.Name,
+            this.NameColumn,
             this.Contract,
             this.HouseNumberColumn,
             this.ApartamentNumberColumn,
@@ -204,14 +204,14 @@ namespace Melody.View.Controls
       this.WebsideColumn.Name = "WebsideColumn";
       this.WebsideColumn.Width = 110;
       // 
-      // ListContractors_panel
+      // ListContractors
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.Data_dgv);
       this.Controls.Add(this.panel1);
       this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.Name = "ListContractors_panel";
+      this.Name = "ListContractors";
       this.Size = new System.Drawing.Size(1920, 1081);
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).EndInit();
       this.panel1.ResumeLayout(false);

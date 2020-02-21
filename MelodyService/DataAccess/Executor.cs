@@ -10,26 +10,28 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 
 namespace Melody.Service.DataAccess
 {
   [ExcludeFromCodeCoverage]
   public class Executor : IExecutor
   {
+    private ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
     private readonly IConfigServices _configService;
-
+    
     public Executor()
     {
       _configService = new ConfigServices();
     }
 
-    public ObservableCollection<T> GetObservableCollectionFromDatabase<T>(ILog log, string storedProcedureName, object parameters)
+    public ObservableCollection<T> GetObservableCollectionFromDatabase<T>(string storedProcedureName, object parameters)
     {
-      var result = GetListFromDatabase<T>(log, storedProcedureName, parameters);
+      var result = GetListFromDatabase<T>(storedProcedureName, parameters);
       return new ObservableCollection<T>(result);
     }
 
-    public List<T> GetListFromDatabase<T>(ILog log, string storedProcedureName, object parameters)
+    public List<T> GetListFromDatabase<T>(string storedProcedureName, object parameters)
     {
       try
       {
@@ -45,7 +47,7 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public T GetFromDatabase<T>(ILog log, string storedProcedureName, object parameters)
+    public T GetFromDatabase<T>(string storedProcedureName, object parameters)
     {
       try
       {
@@ -61,7 +63,7 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public void GetFromDatabase(ILog log, string storedProcedureName, object parameters)
+    public void GetFromDatabase(string storedProcedureName, object parameters)
     {
       try
       {

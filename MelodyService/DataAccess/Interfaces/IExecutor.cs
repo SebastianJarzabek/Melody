@@ -6,12 +6,12 @@ namespace Melody.Service.DataAccess.Interfaces
 {
   public interface IExecutor
   {
-    List<T> GetListFromDatabase<T>(ILog log, string storedProcedureName, object parameters);
+    List<T> GetListFromDatabase<T>(string storedProcedureName, object parameters);
 
-    T GetFromDatabase<T>(ILog log, string storedProcedureName, object parameters);
+    T GetFromDatabase<T>(string storedProcedureName, object parameters);
 
-    void GetFromDatabase(ILog log, string storedProcedureName, object parameters);
+    void GetFromDatabase(string storedProcedureName, object parameters);
 
-    ObservableCollection<T> GetObservableCollectionFromDatabase<T>(ILog log, string storedProcedureName, object parameters);
+    ObservableCollection<T> GetObservableCollectionFromDatabase<T>(string storedProcedureName, object parameters);
   }
 }

@@ -1,6 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -49,7 +49,7 @@ this.ClientSize.Height / 2 - DeleteMaterialIssue_panel.Size.Height / 2);
         };
 
         var executor = new Executor();
-        var execute = new SqlProceure();
+        var execute = new SqlProcedure();
         if (executor.DeleteFromDatabase(execute.DeleteWarehouseIssueFromId, parameters))
         {
           Clear();

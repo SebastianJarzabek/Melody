@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Melody.Service.Entity;
 using Melody.Service.DataAccess;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 
 namespace Melody.View.Controls
 {
@@ -43,7 +43,7 @@ this.ClientSize.Height / 2 - DeleteContractor_panel.Size.Height / 2);
         };
 
         var executor = new Executor();
-        var execute = new SqlProceure();
+        var execute = new SqlProcedure();
         if (executor.DeleteFromDatabase(execute.DeleteSupplier, parameters))
         {
           Clear();

@@ -1,7 +1,7 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using Melody.Service.Logic;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -78,7 +78,7 @@ namespace Melody.View.Controls
         };
 
         var executor = new Executor();
-        var execute = new SqlProceure();
+        var execute = new SqlProcedure();
         if (executor.InsertIntoDatabase(execute.AddSupplier, parameters))
         {
           MessageBox.Show(

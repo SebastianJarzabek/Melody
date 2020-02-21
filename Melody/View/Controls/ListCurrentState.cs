@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Melody.Service.DataAccess;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 
 namespace Melody.View.Panel
 {
@@ -22,7 +22,7 @@ namespace Melody.View.Panel
     private void CurrentState_panel_Load(object sender, EventArgs e)
     {
       var exec = new Executor();
-      var sqlProc = new SqlProceure();
+      var sqlProc = new SqlProcedure();
       var dataTable = exec.GetFromDatabase(sqlProc.GetInventoryLevel);
 
     }

@@ -3,7 +3,7 @@ using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using Melody.Service.Logic;
 using Melody.Service.PasswordCoder;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
 using System.Reflection;
@@ -78,9 +78,9 @@ namespace Melody.View.Window
 
         var parameters = new { loginInparm = emp.Access.Login, passwordInParm = emp.Access.Password };
         var loginExec = new Executor();
-        var sqlProceures = new SqlProceure();
+        var SqlProcedures = new SqlProcedure();
 
-        if (loginExec.GetFromDatabase<bool>(Log, sqlProceures.UsersLogin, parameters))
+        if (loginExec.GetFromDatabase<bool>(SqlProcedures.UsersLogin, parameters))
         {
           var MainForm = new Main();
           MainForm.Show();

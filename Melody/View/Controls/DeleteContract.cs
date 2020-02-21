@@ -1,6 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.SqlProceures;
+using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -51,7 +51,7 @@ namespace Melody.View.Controls
         };
 
         var executor = new Executor();
-        var execute = new SqlProceure();
+        var execute = new SqlProcedure();
         if (executor.DeleteFromDatabase(execute.DeleteDestiny, parameters))
         {
           Clear();

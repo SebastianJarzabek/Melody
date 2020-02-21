@@ -2,6 +2,7 @@
 using Melody.View.Panel;
 using System;
 using System.Windows.Forms;
+using Melody.Service.DataAccess;
 
 namespace Melody.View.Window
 {
@@ -100,7 +101,7 @@ namespace Melody.View.Window
     private void ListContract_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var ListContractControlPanel = new ListContract();
+      var ListContractControlPanel = new ListContract(new ContractsRepository(new Executor()));
       ListContractControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(ListContractControlPanel);
     }

@@ -63,6 +63,8 @@
     <Compile Include="DataAccess\Executor.cs" />
     <Compile Include="DataAccess\Interfaces\IContractsRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IExecutor.cs" />
+    <Compile Include="DataAccess\Interfaces\ISuppliersRepository.cs" />
+    <Compile Include="DataAccess\SuppliersRepository.cs" />
     <Compile Include="Entity\Access.cs" />
     <Compile Include="Entity\Adress.cs" />
     <Compile Include="Entity\ContactDetails.cs" />

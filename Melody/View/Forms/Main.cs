@@ -37,7 +37,7 @@ namespace Melody.View.Window
     private void ListContractors_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var ListContractorsControlPanel = new ListContractors();
+      var ListContractorsControlPanel = new ListContractors_panel();
       ListContractorsControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(ListContractorsControlPanel);
     }

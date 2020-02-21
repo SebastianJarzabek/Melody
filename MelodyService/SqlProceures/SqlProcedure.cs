@@ -6,6 +6,7 @@ namespace Melody.Service.SqlProcedures
   [ExcludeFromCodeCoverage]
   public class SqlProcedure
   {
+    public string GetAllSupplier => "GetAllSupplier";
 
     public string GetAllEmployee => " GetAllEmployee";
 

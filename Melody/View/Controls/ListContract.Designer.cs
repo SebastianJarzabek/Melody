@@ -124,6 +124,7 @@
       this.Controls.Add(this.Data_dgv);
       this.Controls.Add(this.panel1);
       this.Margin = new System.Windows.Forms.Padding(2);
+      this.Name = "ListContract";
       this.Size = new System.Drawing.Size(1440, 878);
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).EndInit();
       this.panel1.ResumeLayout(false);

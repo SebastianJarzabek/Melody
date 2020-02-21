@@ -1,26 +1,28 @@
 ﻿CREATE TABLE [dbo].[WarehouseAdmission] (
-    [idWarehouseAdmission] INT           IDENTITY (1, 1) NOT NULL,
-    [DateOfAdmission]      DATETIME      NOT NULL,
-    [hostEmployee]         VARCHAR (100) NULL,
-    [idSupplier]           INT           NOT NULL,
-    [idOrder]              INT           NOT NULL,
-    [idMaterial]           INT           NOT NULL,
-    [quantity]             INT           NOT NULL,
-    [idUnit]               INT           NOT NULL,
-    [idDestiny]            INT           NOT NULL,
-    [idNote]               INT           NULL,
-    [created]              DATETIME      NOT NULL,
-    [createdBy]            VARCHAR (100) NOT NULL,
-    [modified]             DATETIME      NULL,
-    [modifiedBy]           VARCHAR (100) NULL,
-    CONSTRAINT [PK_WarehouseAdmission] PRIMARY KEY CLUSTERED ([idWarehouseAdmission] ASC),
-    CONSTRAINT [FK_WarehouseAdmission_Destiny] FOREIGN KEY ([idDestiny]) REFERENCES [dbo].[Destiny] ([idDestiny]),
-    CONSTRAINT [FK_WarehouseAdmission_Material] FOREIGN KEY ([idMaterial]) REFERENCES [dbo].[Material] ([idMaterial]),
-    CONSTRAINT [FK_WarehouseAdmission_Note] FOREIGN KEY ([idNote]) REFERENCES [dbo].[Note] ([idNote]),
-    CONSTRAINT [FK_WarehouseAdmission_Order] FOREIGN KEY ([idOrder]) REFERENCES [dbo].[Order] ([idOrder]),
-    CONSTRAINT [FK_WarehouseAdmission_Supplier] FOREIGN KEY ([idSupplier]) REFERENCES [dbo].[Supplier] ([idSupplier]),
-    CONSTRAINT [FK_WarehouseAdmission_Unit] FOREIGN KEY ([idUnit]) REFERENCES [dbo].[Unit] ([idUnit])
+    [Id]              INT           IDENTITY (1, 1) NOT NULL,
+    [DateOfAdmission] DATETIME      NOT NULL,
+    [HostEmployee]    VARCHAR (100) NULL,
+    [IdSupplier]      INT           NOT NULL,
+    [IdOrder]         INT           NOT NULL,
+    [IdMaterial]      INT           NOT NULL,
+    [Quantity]        INT           NOT NULL,
+    [IdUnit]          INT           NOT NULL,
+    [IdDestiny]       INT           NOT NULL,
+    [IdNote]          INT           NULL,
+    [Created]         DATETIME      NOT NULL,
+    [CreatedBy]       VARCHAR (100) NOT NULL,
+    [Modified]        DATETIME      NULL,
+    [ModifiedBy]      VARCHAR (100) NULL,
+    CONSTRAINT [PK_WarehouseAdmission] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_WarehouseAdmission_Destiny] FOREIGN KEY ([IdDestiny]) REFERENCES [dbo].[Destiny] ([Id]),
+    CONSTRAINT [FK_WarehouseAdmission_Material] FOREIGN KEY ([IdMaterial]) REFERENCES [dbo].[Material] ([Id]),
+    CONSTRAINT [FK_WarehouseAdmission_Note] FOREIGN KEY ([IdNote]) REFERENCES [dbo].[Note] ([Id]),
+    CONSTRAINT [FK_WarehouseAdmission_Order] FOREIGN KEY ([IdOrder]) REFERENCES [dbo].[Order] ([Id]),
+    CONSTRAINT [FK_WarehouseAdmission_Supplier] FOREIGN KEY ([IdSupplier]) REFERENCES [dbo].[Supplier] ([Id]),
+    CONSTRAINT [FK_WarehouseAdmission_Unit] FOREIGN KEY ([IdUnit]) REFERENCES [dbo].[Unit] ([Id])
 );
+
+
 
 
 GO

@@ -1,12 +1,14 @@
 ﻿CREATE TABLE [dbo].[InventoryLevel] (
-    [idInventoryLevel] INT IDENTITY (1, 1) NOT NULL,
-    [idMaterial]       INT NOT NULL,
-    [quantity]         INT NOT NULL,
-    [idUnit]           INT NOT NULL,
-    CONSTRAINT [PK_InventoryLevel] PRIMARY KEY CLUSTERED ([idInventoryLevel] ASC),
-    CONSTRAINT [FK_InventoryLevel_Material] FOREIGN KEY ([idMaterial]) REFERENCES [dbo].[Material] ([idMaterial]),
-    CONSTRAINT [FK_InventoryLevel_Unit] FOREIGN KEY ([idUnit]) REFERENCES [dbo].[Unit] ([idUnit])
+    [IdInventoryLevel] INT IDENTITY (1, 1) NOT NULL,
+    [IdMaterial]       INT NOT NULL,
+    [Quantity]         INT NOT NULL,
+    [IdUnit]           INT NOT NULL,
+    CONSTRAINT [PK_InventoryLevel] PRIMARY KEY CLUSTERED ([IdInventoryLevel] ASC),
+    CONSTRAINT [FK_InventoryLevel_Material] FOREIGN KEY ([IdMaterial]) REFERENCES [dbo].[Material] ([Id]),
+    CONSTRAINT [FK_InventoryLevel_Unit] FOREIGN KEY ([IdUnit]) REFERENCES [dbo].[Unit] ([Id])
 );
+
+
 
 
 GO
@@ -50,7 +52,7 @@ declare
 ,@idMaterial int 
 ,@quantity int
 	set @quantityToSubtract = (select quantity from WarehouseIssue where  (SELECT IDENT_CURRENT('Table')) = idOrder)
-	set @idMaterial = (select idMaterial from WarehouseIssue where  (SELECT IDENT_CURRENT('Table')) = idOrder)
+	set @idMaterial = (select Id from WarehouseIssue where  (SELECT IDENT_CURRENT('Table')) = idOrder)
 	set @quantity = (select quantity from InventoryLevel where  idMaterial = @idMaterial)
 	SET NOCOUNT ON;
 	Update InventoryLevel set  quantity= (@quantity - @quantityToSubtract) 

@@ -6,7 +6,7 @@ Create Procedure UpdateMaterial
 as
 begin Transaction
 update  Material set  name = @name, type = @type 
-where idMaterial= @idMaterial or name = @name or type = @type 
+where Id= @idMaterial or name = @name or type = @type 
     BEGIN
         ROLLBACK TRANSACTION
         return 11

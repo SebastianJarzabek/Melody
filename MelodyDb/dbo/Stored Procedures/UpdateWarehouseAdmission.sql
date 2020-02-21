@@ -20,7 +20,7 @@ UPDATE [dbo].[WarehouseAdmission]
       ,[idUnit] = @idUnit
       ,[idDestiny] = @idDestiny
       ,[idNote] = @idNote
- WHERE @idWarehouseAdmission =idWarehouseAdmission
+ WHERE @idWarehouseAdmission =Id
  		    IF @@ERROR <> 0																																																 
     BEGIN
         ROLLBACK TRANSACTION

@@ -15,13 +15,13 @@ UPDATE [dbo].[WarehouseIssue]
    SET [dateOfReceipt] =  @dateOfReceipt
       ,[receivingEmployee] = @receivingEmployee
       ,[hostEmployee] = @hostEmployee
-      ,[idOrder] = @hostEmployee
-      ,[idDestiny] =@idOrder
+      ,[idOrder] = @idOrder
+      ,[idDestiny] =@idDestiny
       ,[idMaterial] =@idMaterial
       ,[quantity] = @quantity
       ,[idUnit] = @idUnit
       ,[idNote] = @idNote
- WHERE @idWarehouseIssue=idWarehouseIssue
+ WHERE @idWarehouseIssue=Id
  IF @@ERROR <> 0																																																 
     BEGIN
         ROLLBACK TRANSACTION

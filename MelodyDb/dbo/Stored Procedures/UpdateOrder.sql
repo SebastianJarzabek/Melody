@@ -26,7 +26,7 @@ dateOfOrder 	  = @dateOfOrderIn
 ,idUnit			  =	@idUnitIn
 ,idNote			  =	@idNoteIn
 ,receivingEmployee=	@receivingEmployeeIn
-WHERE idOrder = @idOrder
+WHERE Id = @idOrder
 
 
 IF @@ERROR <> 0

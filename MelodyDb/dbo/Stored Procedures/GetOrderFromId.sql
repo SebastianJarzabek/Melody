@@ -7,31 +7,31 @@ declare
 ,@idAdress int
 ,@idContactDetails int
 ,@Order int
-select idOrder,
+select o.Id,
  dateOfOrder
 ,orderingEmployee
-,s.idSupplier
+,s.Id as 'idSupplier'
 ,s.name as 'SupplierName'
-,d.idDestiny
+,d.Id as 'idDestiny'
 ,d.name as 'DestinyName'
 ,d.contract as 'DestinyContract'
-,m.idMaterial
+,m.Id as 'idMaterial'
 ,m.name as 'MaterialName'
 ,m.type as 'MaterialType'
 ,quantity
-,u.idUnit
+,u.Id as 'idUnit'
 ,u.name as 'UnitName'
-,n.idNote 
+,n.Id as 'idNote '
 ,n.note as 'NoteName'
 ,receivingEmployee
 from [Order] o
-inner join Supplier s  on o.idSupplier =  s.idSupplier
-inner join Destiny  d on o.idDestiny = d.idDestiny
-inner join Material m on o.idMaterial = m.idMaterial
-inner join Unit u  on o.idUnit =  u.idUnit
-inner join Note  n on o.idNote = n.idNote
+inner join Supplier s  on o.idSupplier =  s.Id
+inner join Destiny  d on o.idDestiny = d.Id
+inner join Material m on o.idMaterial = m.Id
+inner join Unit u  on o.idUnit =  u.Id
+inner join Note  n on o.idNote = n.Id
 
-where idOrder = @idOrder
+where o.Id = @idOrder
 
 IF @@ERROR <> 0
     BEGIN

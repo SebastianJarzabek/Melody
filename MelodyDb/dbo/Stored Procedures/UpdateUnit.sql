@@ -5,7 +5,7 @@ Create Procedure UpdateUnit
 as
 begin Transaction
 update  Unit set  name = @name
-where idUnit= @idUnit or name = @name
+where Id= @idUnit or name = @name
     BEGIN
         ROLLBACK TRANSACTION
         return 11

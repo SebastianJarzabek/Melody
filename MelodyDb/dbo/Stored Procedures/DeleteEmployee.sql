@@ -5,8 +5,8 @@ as
 begin Transaction
 declare 
 @Employee int
-select  @Employee = idEmployee from employee where name=@nameIn and surname=@surnameIn
-delete Employee where idEmployee=@Employee
+select  @Employee = Id from employee where name=@nameIn and surname=@surnameIn
+delete Employee where Id=@Employee
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

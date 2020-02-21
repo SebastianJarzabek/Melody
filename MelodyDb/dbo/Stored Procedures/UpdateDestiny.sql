@@ -5,7 +5,7 @@
 as
 begin Transaction
 update  Destiny set  name = @name, contract = @contract 
-where idDestiny= @idDestiny or name = @name or contract = @contract 
+where Id= @idDestiny or name = @name or contract = @contract 
     BEGIN
         ROLLBACK TRANSACTION
         return 11

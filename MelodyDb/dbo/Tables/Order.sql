@@ -1,26 +1,28 @@
 ﻿CREATE TABLE [dbo].[Order] (
-    [idOrder]              INT           IDENTITY (1, 1) NOT NULL,
-    [dateOfOrder]          DATETIME      NOT NULL,
-    [orderingEmployee]     VARCHAR (100) NOT NULL,
-    [idSupplier]           INT           NULL,
-    [idDestiny]            INT           NOT NULL,
-    [idMaterial]           INT           NOT NULL,
-    [quantity]             INT           NOT NULL,
-    [idUnit]               INT           NOT NULL,
-    [idNote]               INT           NULL,
-    [receivingEmployee]    VARCHAR (100) NULL,
-    [plannedDateOfReceipt] DATETIME      NULL,
-    [created]              DATETIME      NOT NULL,
-    [createdBy]            VARCHAR (100) NOT NULL,
-    [modified]             DATETIME      NULL,
-    [modifiedBy]           VARCHAR (100) NULL,
-    CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([idOrder] ASC),
-    CONSTRAINT [FK_Order_Destiny] FOREIGN KEY ([idDestiny]) REFERENCES [dbo].[Destiny] ([idDestiny]),
-    CONSTRAINT [FK_Order_Material] FOREIGN KEY ([idMaterial]) REFERENCES [dbo].[Material] ([idMaterial]),
-    CONSTRAINT [FK_Order_Note] FOREIGN KEY ([idNote]) REFERENCES [dbo].[Note] ([idNote]),
-    CONSTRAINT [FK_Order_Supplier] FOREIGN KEY ([idSupplier]) REFERENCES [dbo].[Supplier] ([idSupplier]),
-    CONSTRAINT [FK_Order_Unit] FOREIGN KEY ([idUnit]) REFERENCES [dbo].[Unit] ([idUnit])
+    [Id]                   INT           IDENTITY (1, 1) NOT NULL,
+    [DateOfOrder]          DATETIME      NOT NULL,
+    [OrderingEmployee]     VARCHAR (100) NOT NULL,
+    [IdSupplier]           INT           NULL,
+    [IdDestiny]            INT           NOT NULL,
+    [IdMaterial]           INT           NOT NULL,
+    [Quantity]             INT           NOT NULL,
+    [IdUnit]               INT           NOT NULL,
+    [IdNote]               INT           NULL,
+    [ReceivingEmployee]    VARCHAR (100) NULL,
+    [PlannedDateOfReceipt] DATETIME      NULL,
+    [Created]              DATETIME      NOT NULL,
+    [CreatedBy]            VARCHAR (100) NOT NULL,
+    [Modified]             DATETIME      NULL,
+    [ModifiedBy]           VARCHAR (100) NULL,
+    CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Order_Destiny] FOREIGN KEY ([IdDestiny]) REFERENCES [dbo].[Destiny] ([Id]),
+    CONSTRAINT [FK_Order_Material] FOREIGN KEY ([IdMaterial]) REFERENCES [dbo].[Material] ([Id]),
+    CONSTRAINT [FK_Order_Note] FOREIGN KEY ([IdNote]) REFERENCES [dbo].[Note] ([Id]),
+    CONSTRAINT [FK_Order_Supplier] FOREIGN KEY ([IdSupplier]) REFERENCES [dbo].[Supplier] ([Id]),
+    CONSTRAINT [FK_Order_Unit] FOREIGN KEY ([IdUnit]) REFERENCES [dbo].[Unit] ([Id])
 );
+
+
 
 
 GO

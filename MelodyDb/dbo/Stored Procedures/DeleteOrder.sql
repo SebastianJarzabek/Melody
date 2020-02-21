@@ -3,7 +3,7 @@
 as
 begin Transaction
 
-delete [Order] where idOrder=@Order
+delete [Order] where Id=@Order
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

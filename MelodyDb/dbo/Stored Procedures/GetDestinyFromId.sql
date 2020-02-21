@@ -5,7 +5,7 @@ Create Procedure GetDestinyFromId
 ,@contract int
 as
 begin Transaction
-select idDestiny, name, contract from Destiny where idDestiny= @idDestiny
+select Id, name, contract from Destiny where Id= @idDestiny
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

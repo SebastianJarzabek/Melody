@@ -1,21 +1,23 @@
 ﻿CREATE TABLE [dbo].[Employee] (
-    [idEmployee]       INT           IDENTITY (1, 1) NOT NULL,
-    [name]             VARCHAR (100) NOT NULL,
-    [surname]          VARCHAR (100) NOT NULL,
-    [department]       VARCHAR (100) NOT NULL,
-    [position]         VARCHAR (100) NOT NULL,
-    [idAccess]         INT           NOT NULL,
-    [idAdress]         INT           NOT NULL,
-    [idContactDetails] INT           NOT NULL,
-    [created]          DATETIME      NOT NULL,
-    [createdBy]        VARCHAR (100) NOT NULL,
-    [modified]         DATETIME      NULL,
-    [modifiedBy]       VARCHAR (100) NULL,
-    CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([idEmployee] ASC),
-    CONSTRAINT [FK_Employee_Access] FOREIGN KEY ([idAccess]) REFERENCES [dbo].[Access] ([idAccess]),
-    CONSTRAINT [FK_Employee_Adress] FOREIGN KEY ([idAdress]) REFERENCES [dbo].[Adress] ([idAdress]),
-    CONSTRAINT [FK_Employee_contactDetails] FOREIGN KEY ([idContactDetails]) REFERENCES [dbo].[contactDetails] ([idContactDetails])
+    [Id]               INT           IDENTITY (1, 1) NOT NULL,
+    [Name]             VARCHAR (100) NOT NULL,
+    [Surname]          VARCHAR (100) NOT NULL,
+    [Department]       VARCHAR (100) NOT NULL,
+    [Position]         VARCHAR (100) NOT NULL,
+    [IdAccess]         INT           NOT NULL,
+    [IdAdress]         INT           NOT NULL,
+    [IdContactDetails] INT           NOT NULL,
+    [Created]          DATETIME      NOT NULL,
+    [CreatedBy]        VARCHAR (100) NOT NULL,
+    [Modified]         DATETIME      NULL,
+    [ModifiedBy]       VARCHAR (100) NULL,
+    CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Employee_Access] FOREIGN KEY ([IdAccess]) REFERENCES [dbo].[Access] ([Id]),
+    CONSTRAINT [FK_Employee_Adress] FOREIGN KEY ([IdAdress]) REFERENCES [dbo].[Adress] ([Id]),
+    CONSTRAINT [FK_Employee_contactDetails] FOREIGN KEY ([IdContactDetails]) REFERENCES [dbo].[contactDetails] ([Id])
 );
+
+
 
 
 GO

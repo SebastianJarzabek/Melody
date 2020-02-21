@@ -28,7 +28,7 @@ Insert into Adress(street, houseNumber,apartmentNumber,city,zipCode,country)  Va
 set @idAdress = SCOPE_IDENTITY()
 Insert into ContactDetails(phoneNumber,email,webside)  Values (@phoneNumberIn, @emailIn, @websideIn)
 set @idContactDetails = SCOPE_IDENTITY()
-Insert into Employee(name, surname, department, position,idAccess,idAdress,idContactDetails, created, createdBy)  Values (@nameIn,@surnameIn,@departamentIn,@positionIn,@idAccess,@idAdress,@idContactDetails,@created,@createdBy )
+Insert into Employee(name, Surname, department, position,idAccess,idAdress,idContactDetails, created, createdBy)  Values (@nameIn,@surnameIn,@departamentIn,@positionIn,@idAccess,@idAdress,@idContactDetails,@created,@createdBy )
 IF @@ERROR <> 0																																																 
     BEGIN
         ROLLBACK TRANSACTION

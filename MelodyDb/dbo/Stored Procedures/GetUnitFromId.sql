@@ -4,7 +4,7 @@ Create Procedure GetUnitFromId
 ,@name varchar(100)
 as
 begin Transaction
-select idUnit, name from Unit where idUnit= @idUnit
+select Id, name from Unit where Id= @idUnit
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

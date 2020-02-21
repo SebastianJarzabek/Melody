@@ -5,7 +5,7 @@ as
 begin Transaction
 DELETE FROM [dbo].[WarehouseAdmission]
       WHERE 
-    @idWarehouseAdmission=idWarehouseAdmission
+    Id=@idWarehouseAdmission
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

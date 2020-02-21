@@ -2,7 +2,7 @@
 as
 begin Transaction
 Delete [WarehouseIssue] where 
-    @idWarehouseIssue=idWarehouseIssue
+    Id=@idWarehouseIssue
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

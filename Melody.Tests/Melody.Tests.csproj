@@ -78,10 +78,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MelodyDb\Melody.Db.sqlproj">
-      <Project>{084bde29-f204-4c71-aa96-e9cbe22ea093}</Project>
-      <Name>Melody.Db</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MelodyService\Melody.Service.csproj">
       <Project>{26d56b87-2436-4259-a3c6-d825fec6532b}</Project>
       <Name>Melody.Service</Name>

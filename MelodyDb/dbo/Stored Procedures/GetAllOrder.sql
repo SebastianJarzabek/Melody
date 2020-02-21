@@ -4,29 +4,29 @@ CREATE Procedure [dbo].[GetAllOrder]
 
 as
 begin Transaction
-select idOrder,
+select o.Id,
  dateOfOrder
 ,orderingEmployee
-,s.idSupplier
+,s.Id
 ,s.name as 'SupplierName'
-,d.idDestiny
+,d.Id as 'DestinyId'
 ,d.name as 'DestinyName'
 ,d.contract as 'DestinyContract'
-,m.idMaterial
+,m.Id  as 'MaterialId'
 ,m.name as 'MaterialName'
 ,m.type as 'MaterialType'
 ,quantity
-,u.idUnit
+,u.Id as 'UnitId'
 ,u.name as 'UnitName'
-,n.idNote 
+,n.Id as 'NoteId'
 ,n.note as 'NoteName'
 ,receivingEmployee
 from [Order] o
-inner join Supplier s  on o.idSupplier =  s.idSupplier
-inner join Destiny  d on o.idDestiny = d.idDestiny
-inner join Material m on o.idMaterial = m.idMaterial
-inner join Unit u  on o.idUnit =  u.idUnit
-inner join Note  n on o.idNote = n.idNote
+inner join Supplier s  on o.idSupplier =  s.Id
+inner join Destiny  d on o.idDestiny = d.Id
+inner join Material m on o.idMaterial = m.Id
+inner join Unit u  on o.idUnit =  u.Id
+inner join Note  n on o.idNote = n.Id
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

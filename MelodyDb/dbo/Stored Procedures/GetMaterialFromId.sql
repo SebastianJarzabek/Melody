@@ -5,7 +5,7 @@ Create Procedure GetMaterialFromId
 ,@type varchar(100)
 as
 begin Transaction
-select idMaterial, name, type from Material where idMaterial= @idMaterial
+select Id, name, type from Material where Id= @idMaterial
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

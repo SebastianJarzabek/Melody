@@ -16,20 +16,20 @@ begin Transaction
 declare 
 @idAdress int
 ,@idContactDetails int
-set @idAdress = ( select idSupplier from Supplier where name=@name)
-set @idContactDetails = ( select idSupplier from Supplier where name=@name)
+set @idAdress = ( select Id from Supplier where name=@name)
+set @idContactDetails = ( select Id from Supplier where name=@name)
 
 UPDATE Adress
 SET street = @streetIn, houseNumber = @houseNumberIn, apartmentNumber = @apartmentNumberIn, city = @cityIn, zipCode = @zipCodeIn, country = @countryIn
-where idAdress = @idAdress
+where Id = @idAdress
 
 UPDATE ContactDetails
 SET phoneNumber = @phoneNumberIn, email = @emailIn, webside = @websideIn
-where idContactDetails = @idContactDetails
+where Id = @idContactDetails
 
 
 update  Supplier set  name = @name
-where idSupplier= @idSupplier or name = @name
+where Id= @idSupplier or name = @name
     BEGIN
         ROLLBACK TRANSACTION
         return 11

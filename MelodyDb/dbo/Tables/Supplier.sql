@@ -1,10 +1,12 @@
 ﻿CREATE TABLE [dbo].[Supplier] (
-    [idSupplier]       INT           IDENTITY (1, 1) NOT NULL,
-    [name]             VARCHAR (100) NOT NULL,
-    [idAdress]         INT           NOT NULL,
-    [idContactDetails] INT           NOT NULL,
-    CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED ([idSupplier] ASC),
-    CONSTRAINT [FK_Supplier_Adress] FOREIGN KEY ([idAdress]) REFERENCES [dbo].[Adress] ([idAdress]),
-    CONSTRAINT [FK_Supplier_contactDetails] FOREIGN KEY ([idContactDetails]) REFERENCES [dbo].[contactDetails] ([idContactDetails])
+    [Id]               INT           IDENTITY (1, 1) NOT NULL,
+    [Name]             VARCHAR (100) NOT NULL,
+    [IdAdress]         INT           NOT NULL,
+    [IdContactDetails] INT           NOT NULL,
+    CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Supplier_Adress] FOREIGN KEY ([IdAdress]) REFERENCES [dbo].[Adress] ([Id]),
+    CONSTRAINT [FK_Supplier_contactDetails] FOREIGN KEY ([IdContactDetails]) REFERENCES [dbo].[contactDetails] ([Id])
 );
+
+
 

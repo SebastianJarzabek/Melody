@@ -33,7 +33,7 @@
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
       this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NameColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ContractColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.panel1.SuspendLayout();
@@ -44,7 +44,7 @@
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
-            this.Name,
+            this.NameColumne,
             this.ContractColumne});
       this.Data_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Data_dgv.Location = new System.Drawing.Point(0, 76);

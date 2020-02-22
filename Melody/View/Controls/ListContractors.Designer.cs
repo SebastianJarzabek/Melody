@@ -35,7 +35,7 @@ namespace Melody.View.Controls
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
       this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NameColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HouseNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApartamentNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@ namespace Melody.View.Controls
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
-            this.NameColumn,
+            this.NameColumne,
             this.Contract,
             this.HouseNumberColumn,
             this.ApartamentNumberColumn,
@@ -120,15 +120,15 @@ namespace Melody.View.Controls
       this.IdDestiny.Visible = false;
       this.IdDestiny.Width = 48;
       // 
-      // Name
+      // NameColumne
       // 
-      this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.Name.DataPropertyName = "NameColumn";
-      this.Name.HeaderText = "Nazwa";
-      this.Name.MinimumWidth = 6;
-      this.Name.Name = "Name";
-      this.Name.Visible = false;
-      this.Name.Width = 79;
+      this.NameColumne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.NameColumne.DataPropertyName = "NameColumn";
+      this.NameColumne.HeaderText = "Nazwa";
+      this.NameColumne.MinimumWidth = 6;
+      this.NameColumne.Name = "Name";
+      this.NameColumne.Visible = false;
+      this.NameColumne.Width = 79;
       // 
       // Contract
       // 
@@ -226,7 +226,7 @@ namespace Melody.View.Controls
     private System.Windows.Forms.Button Refresh_btn;
     private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn IdDestiny;
-    private DataGridViewTextBoxColumn Name;
+    private DataGridViewTextBoxColumn NameColumne;
     private DataGridViewTextBoxColumn Contract;
     private DataGridViewTextBoxColumn HouseNumberColumn;
     private DataGridViewTextBoxColumn ApartamentNumberColumn;

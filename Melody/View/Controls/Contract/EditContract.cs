@@ -1,6 +1,6 @@
-﻿using Melody.Service.Logic;
-using Melody.Service.DataAccess;
+﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Logic;
 using Melody.Service.SqlProcedures;
 using System;
 using System.Collections.Generic;
@@ -9,23 +9,15 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class AddContract : UserControl
+  public partial class EditContract : UserControl
   {
     Validators validators = new Validators();
-    public AddContract()
+    public EditContract()
     {
       InitializeComponent();
     }
 
-    private void AddContract_gb_Paint(object sender, EventArgs e)
-    {
-      AddContract_gb.Location = new Point(
-      this.ClientSize.Width / 2 - AddContract_gb.Size.Width / 2,
-      this.ClientSize.Height / 2 - AddContract_gb.Size.Height / 2);
-      AddContract_gb.Anchor = AnchorStyles.None;
-    }
-
-    private void AddContract_btn_Click(object sender, EventArgs e)
+    private void EditContract_btn_Click(object sender, EventArgs e)
     {
       if (!string.IsNullOrWhiteSpace(Validation_lbl.Text))
       {
@@ -74,10 +66,10 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.AddDestiny, parameters))
+        if (executor.InsertIntoDatabase(execute.UpdateDestiny, parameters))
         {
           MessageBox.Show(
-          $"Dodano do bazy danych kontrakt: {parameters.name} o numerze: {parameters.contract}.",
+          $"Edytowano kontrakt: {parameters.name} o numerze: {parameters.contract}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
@@ -86,7 +78,7 @@ namespace Melody.View.Controls
       catch (Exception ex)
       {
         MessageBox.Show("Błąd",
-          $"Wystąpił błąd przy dodaniu kontraktu do bazy. {ex}",
+          $"Wystąpił błąd przy edycji kontraktu. {ex}",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
         throw ex;
@@ -97,6 +89,13 @@ namespace Melody.View.Controls
     {
       Name_tb.Text = string.Empty;
       Contract_tb.Text = string.Empty;
+    }
+
+    private void UpdateContract_gb_Paint(object sender, PaintEventArgs e)
+    {
+      EditContract_gb.Location = new Point(
+this.ClientSize.Width / 2 - EditContract_gb.Size.Width / 2);
+      EditContract_gb.Anchor = AnchorStyles.None;
     }
   }
 }

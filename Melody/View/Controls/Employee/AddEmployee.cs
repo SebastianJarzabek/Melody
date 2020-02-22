@@ -1,6 +1,7 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using Melody.Service.Logic;
+using Melody.Service.PasswordCoder;
 using Melody.Service.SqlProcedures;
 using System;
 using System.Collections.Generic;
@@ -9,28 +10,28 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class AddContractors : UserControl
+  public partial class AddEmployee : UserControl
   {
     Validators validators = new Validators();
-    public AddContractors()
+    public AddEmployee()
     {
       InitializeComponent();
     }
 
-    private void AddContractors_panel_Paint(object sender, PaintEventArgs e)
-    {
-      AddContractors_panel.Location = new Point(
-      this.ClientSize.Width / 2 - AddContractors_panel.Size.Width / 2,
-      this.ClientSize.Height / 2 - AddContractors_panel.Size.Height / 2);
-      AddContractors_panel.Anchor = AnchorStyles.None;
-    }
-
-    private void AddContractors_btn_Click(object sender, EventArgs e)
+    private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
       TextBoxesValidation_lbl.Text = string.Empty;
-      var contractor = new Supplier
+      var emp = new Employee
       {
         Name = Name_tb.Text,
+        Surname = Surname_tb.Text,
+        Departament = Departmrnt_tb.Text,
+        Position = Position_tb.Text,
+        Access = new Access
+        {
+          Login = Login_tb.Text,
+          Password = Password_tb.Text,
+        },
         Adress = new Adress
         {
           Street = Street_tb.Text,
@@ -40,23 +41,24 @@ namespace Melody.View.Controls
           ZipCode = ZipCode_tb.Text,
           Country = Country_tb.Text
         },
-        ContactDetails = new ContactDetails
+        ContactDetails =new ContactDetails
         {
-          PhoneNumber = PhoneNumber_tb.Text,
-          Email = Email_tb.Text,
-          Webside = Webside_tb.Text
+          PhoneNumber=PhoneNumber_tb.Text,
+          Email=Email_tb.Text,
+          Webside=Webside_tb.Text
         }
       };
 
-      var list = new List<DataClass>
+      var list = new List<DataClass> 
       {
-        DataClass.Supplier
+        DataClass.Employee
+        ,DataClass.Access
         ,DataClass.Adress
         ,DataClass.ContactDetails};
 
-      if (!TextBoxesValidate(contractor, list)
-        || !PhoneValidate(contractor.ContactDetails.PhoneNumber)
-        || !EmailValidate(contractor.ContactDetails.Email))
+      if (!TextBoxesValidate(emp,list)
+        || !PhoneValidate(PhoneNumber_tb.Text)
+        || !EmailValidate(Email_tb.Text))
       {
         return;
       }
@@ -65,24 +67,29 @@ namespace Melody.View.Controls
       {
         var parameters = new
         {
-          name = Name_tb.Text,
-          streetIn = Street_tb.Text,
-          houseNumberIn = HouseNumber_tb.Text,
-          apartmentNumberIn = ApartamentNumber_tb.Text,
-          cityIn = City_tb.Text,
-          zipCodeIn = ZipCode_tb.Text,
-          countryIn = Country_tb.Text,
-          phoneNumberIn = PhoneNumber_tb.Text,
-          emailIn = Email_tb.Text,
-          websideIn = Webside_tb.Text
+          nameIn = emp.Name,
+          surnameIn = emp.Surname,
+          departamentIn = emp.Departament,
+          positionIn = emp.Position,
+          loginIn = emp.Access.Login,
+          passwordIn = new Coder().CodePassword(emp.Access.Password),
+          streetIn = emp.Adress.Street,
+          houseNumberIn = emp.Adress.HouseNumber,
+          apartmentNumberIn = emp.Adress.ApartmentNumber,
+          cityIn = emp.Adress.City,
+          zipCodeIn = emp.Adress.ZipCode,
+          countryIn = emp.Adress.Country,
+          phoneNumberIn = emp.ContactDetails.PhoneNumber,
+          emailIn = emp.ContactDetails.Email,
+          websideIn = emp.ContactDetails.Webside
         };
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.AddSupplier, parameters))
+        if (executor.InsertIntoDatabase(execute.AddEmployee, parameters))
         {
           MessageBox.Show(
-          $"Dodano do bazy danych kontrahenta: {parameters.name}.",
+          $"Dodano do bazy danych pracownika: {parameters.nameIn} {parameters.surnameIn}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
@@ -90,7 +97,7 @@ namespace Melody.View.Controls
       }
       catch (Exception ex)
       {
-        MessageBox.Show($"Wystąpił błąd przy dodaniu kontrahenta do bazy. {ex}",
+        MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
           "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
@@ -134,9 +141,9 @@ namespace Melody.View.Controls
       }
     }
 
-    private bool TextBoxesValidate(Supplier contractor, List<DataClass> dataClasses)
+    private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      var errorMessage = validators.TextBoxesValidate(null, null, contractor, dataClasses);
+      var errorMessage = validators.TextBoxesValidate(null,emp, null, dataClasses);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -152,9 +159,18 @@ namespace Melody.View.Controls
       }
     }
 
-    private void ClearGeneral_btn_Click(object sender, EventArgs e)
+    private void GeneralClear_btn_Click(object sender, EventArgs e)
     {
       Name_tb.Text = string.Empty;
+      Surname_tb.Text = string.Empty;
+      Departmrnt_tb.Text = string.Empty;
+      Position_tb.Text = string.Empty;
+    }
+
+    private void LoginDataClear_btn_Click(object sender, EventArgs e)
+    {
+      Login_tb.Text = string.Empty;
+      Password_tb.Text = string.Empty;
     }
 
     private void ClearContact_btn_Click(object sender, EventArgs e)
@@ -164,7 +180,7 @@ namespace Melody.View.Controls
       Webside_tb.Text = "Brak";
     }
 
-    private void ClearAdress_btn_Click(object sender, EventArgs e)
+    private void AdressClear_btn_Click(object sender, EventArgs e)
     {
       Street_tb.Text = string.Empty;
       HouseNumber_tb.Text = string.Empty;
@@ -172,6 +188,13 @@ namespace Melody.View.Controls
       City_tb.Text = string.Empty;
       ZipCode_tb.Text = string.Empty;
       Country_tb.Text = string.Empty;
+    }
+
+    private void AddEmployee_panel_Paint(object sender, PaintEventArgs e)
+    {
+      AddEmployee_panel.Location = new Point(
+this.ClientSize.Width / 2 - AddEmployee_panel.Size.Width / 2);
+      AddEmployee_panel.Anchor = AnchorStyles.None;
     }
   }
 }

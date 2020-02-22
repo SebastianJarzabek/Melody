@@ -23,8 +23,7 @@ namespace Melody.View.Controls
     private void DeleteContractor_panel_Paint(object sender, PaintEventArgs e)
     {
       DeleteContractor_panel.Location = new Point(
-this.ClientSize.Width / 2 - DeleteContractor_panel.Size.Width / 2,
-this.ClientSize.Height / 2 - DeleteContractor_panel.Size.Height / 2);
+this.ClientSize.Width / 2 - DeleteContractor_panel.Size.Width / 2);
       DeleteContractor_panel.Anchor = AnchorStyles.None;
     }
 

@@ -7,20 +7,20 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class DeleteEmployee : UserControl
+  public partial class DeleteContract : UserControl
   {
-    public DeleteEmployee()
+    public DeleteContract()
     {
       InitializeComponent();
     }
 
-    private void DeleteEmployee_panel_Paint(object sender, PaintEventArgs e)
+    private void DeleteContract_panel_Paint(object sender, PaintEventArgs e)
     {
-      DeleteEmployee_panel.Location = new Point(
-this.ClientSize.Width / 2 - DeleteEmployee_panel.Size.Width / 2,
-this.ClientSize.Height / 2 - DeleteEmployee_panel.Size.Height / 2);
-      DeleteEmployee_panel.Anchor = AnchorStyles.None;
+      DeleteContract_panel.Location = new Point(
+      this.ClientSize.Width / 2 - DeleteContract_panel.Size.Width / 2);
+      DeleteContract_panel.Anchor = AnchorStyles.None;
     }
+
     private void Clear_btn_Click(object sender, EventArgs e)
     {
       Clear();
@@ -30,32 +30,32 @@ this.ClientSize.Height / 2 - DeleteEmployee_panel.Size.Height / 2);
     private void Clear()
     {
       Name_tb.Text = string.Empty;
-      Surname_tb.Text = string.Empty;
+      Contract_tb.Text = string.Empty;
     }
 
     private void DeleteConcract_btn_Click(object sender, EventArgs e)
     {
       try
       {
-        var employee = new Employee()
+        var destiny = new Destiny()
         {
           Name = Name_tb.Text,
-          Surname = Surname_tb.Text
+          Contract = Contract_tb.Text
         };
 
         var parameters = new
         {
-          nameIn   = employee.Name,
-          surnameIn = employee.Surname,
+          name = destiny.Name,
+          contract = destiny.Contract,
         };
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteEmployee, parameters))
+        if (executor.DeleteFromDatabase(execute.DeleteDestiny, parameters))
         {
           Clear();
           MessageBox.Show(
-          $"Usunięto z bazy danych kontrakt: {parameters.nameIn} o numerze: {parameters.surnameIn}.",
+          $"Usunięto z bazy danych kontrakt: {parameters.name} o numerze: {parameters.contract}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);

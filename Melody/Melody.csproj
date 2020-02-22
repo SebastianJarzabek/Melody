@@ -54,160 +54,160 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Controls\AboutMe.cs">
+    <Compile Include="View\Controls\AboutMe\AboutMe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AboutMe.Designer.cs">
+    <Compile Include="View\Controls\AboutMe\AboutMe.Designer.cs">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddContract.cs">
+    <Compile Include="View\Controls\Contract\AddContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddContract.Designer.cs">
+    <Compile Include="View\Controls\Contract\AddContract.Designer.cs">
       <DependentUpon>AddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddContractors.cs">
+    <Compile Include="View\Controls\Supplier\AddContractors.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddContractors.Designer.cs">
+    <Compile Include="View\Controls\Supplier\AddContractors.Designer.cs">
       <DependentUpon>AddContractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddEmployee.cs">
+    <Compile Include="View\Controls\Employee\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddEmployee.Designer.cs">
+    <Compile Include="View\Controls\Employee\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddWarehouseAdmission.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\AddWarehouseAdmission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddWarehouseAdmission.Designer.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\AddWarehouseAdmission.Designer.cs">
       <DependentUpon>AddWarehouseAdmission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddWarehouseIssue.cs">
+    <Compile Include="View\Controls\WarehouseIssue\AddWarehouseIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddWarehouseIssue.Designer.cs">
+    <Compile Include="View\Controls\WarehouseIssue\AddWarehouseIssue.Designer.cs">
       <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AddOrder.cs">
+    <Compile Include="View\Controls\Order\AddOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\AddOrder.Designer.cs">
+    <Compile Include="View\Controls\Order\AddOrder.Designer.cs">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteContract.cs">
+    <Compile Include="View\Controls\Contract\DeleteContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteContract.Designer.cs">
+    <Compile Include="View\Controls\Contract\DeleteContract.Designer.cs">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteContractors.cs">
+    <Compile Include="View\Controls\Supplier\DeleteContractors.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteContractors.Designer.cs">
+    <Compile Include="View\Controls\Supplier\DeleteContractors.Designer.cs">
       <DependentUpon>DeleteContractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteEmployee.cs">
+    <Compile Include="View\Controls\Employee\DeleteEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteEmployee.Designer.cs">
+    <Compile Include="View\Controls\Employee\DeleteEmployee.Designer.cs">
       <DependentUpon>DeleteEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteMaterialIssue.cs">
+    <Compile Include="View\Controls\WarehouseIssue\DeleteMaterialIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteMaterialIssue.Designer.cs">
+    <Compile Include="View\Controls\WarehouseIssue\DeleteMaterialIssue.Designer.cs">
       <DependentUpon>DeleteMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteMaterialReceipt.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteMaterialReceipt.Designer.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.Designer.cs">
       <DependentUpon>DeleteMaterialReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DeleteOrder.cs">
+    <Compile Include="View\Controls\Order\DeleteOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\DeleteOrder.Designer.cs">
+    <Compile Include="View\Controls\Order\DeleteOrder.Designer.cs">
       <DependentUpon>DeleteOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditContract.cs">
+    <Compile Include="View\Controls\Contract\EditContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditContract.Designer.cs">
+    <Compile Include="View\Controls\Contract\EditContract.Designer.cs">
       <DependentUpon>EditContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditContractors.cs">
+    <Compile Include="View\Controls\Supplier\EditContractors.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditContractors.Designer.cs">
+    <Compile Include="View\Controls\Supplier\EditContractors.Designer.cs">
       <DependentUpon>EditContractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditEmployee.cs">
+    <Compile Include="View\Controls\Employee\EditEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditEmployee.Designer.cs">
+    <Compile Include="View\Controls\Employee\EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditMaterialIssue.cs">
+    <Compile Include="View\Controls\WarehouseIssue\EditMaterialIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditMaterialIssue.Designer.cs">
+    <Compile Include="View\Controls\WarehouseIssue\EditMaterialIssue.Designer.cs">
       <DependentUpon>EditMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditMaterialReceipt.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditMaterialReceipt.Designer.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.Designer.cs">
       <DependentUpon>EditMaterialReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\EditOrder.cs">
+    <Compile Include="View\Controls\Order\EditOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\EditOrder.Designer.cs">
+    <Compile Include="View\Controls\Order\EditOrder.Designer.cs">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListContract.cs">
+    <Compile Include="View\Controls\Contract\ListContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListContract.Designer.cs">
+    <Compile Include="View\Controls\Contract\ListContract.Designer.cs">
       <DependentUpon>ListContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListContractors.cs">
+    <Compile Include="View\Controls\Supplier\ListContractors.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListContractors.Designer.cs">
+    <Compile Include="View\Controls\Supplier\ListContractors.Designer.cs">
       <DependentUpon>ListContractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListEmployee.cs">
+    <Compile Include="View\Controls\Employee\ListEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListEmployee.Designer.cs">
+    <Compile Include="View\Controls\Employee\ListEmployee.Designer.cs">
       <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListMaterialIssue.cs">
+    <Compile Include="View\Controls\WarehouseIssue\ListMaterialIssue.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListMaterialIssue.Designer.cs">
+    <Compile Include="View\Controls\WarehouseIssue\ListMaterialIssue.Designer.cs">
       <DependentUpon>ListMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListMaterialReceipt.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListMaterialReceipt.Designer.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.Designer.cs">
       <DependentUpon>ListMaterialReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ListOrder.cs">
+    <Compile Include="View\Controls\Order\ListOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\ListOrder.Designer.cs">
+    <Compile Include="View\Controls\Order\ListOrder.Designer.cs">
       <DependentUpon>ListOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\Contact.cs">
+    <Compile Include="View\Controls\AboutMe\Contact.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\Contact.Designer.cs">
+    <Compile Include="View\Controls\AboutMe\Contact.Designer.cs">
       <DependentUpon>Contact.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\ListCurrentState.cs">
@@ -238,82 +238,82 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\Controls\AboutMe.resx">
+    <EmbeddedResource Include="View\Controls\AboutMe\AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddContract.resx">
+    <EmbeddedResource Include="View\Controls\Contract\AddContract.resx">
       <DependentUpon>AddContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddContractors.resx">
+    <EmbeddedResource Include="View\Controls\Supplier\AddContractors.resx">
       <DependentUpon>AddContractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddEmployee.resx">
+    <EmbeddedResource Include="View\Controls\Employee\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddWarehouseAdmission.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\AddWarehouseAdmission.resx">
       <DependentUpon>AddWarehouseAdmission.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddWarehouseIssue.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseIssue\AddWarehouseIssue.resx">
       <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\AddOrder.resx">
+    <EmbeddedResource Include="View\Controls\Order\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteContract.resx">
+    <EmbeddedResource Include="View\Controls\Contract\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteContractors.resx">
+    <EmbeddedResource Include="View\Controls\Supplier\DeleteContractors.resx">
       <DependentUpon>DeleteContractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteEmployee.resx">
+    <EmbeddedResource Include="View\Controls\Employee\DeleteEmployee.resx">
       <DependentUpon>DeleteEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteMaterialIssue.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseIssue\DeleteMaterialIssue.resx">
       <DependentUpon>DeleteMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteMaterialReceipt.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.resx">
       <DependentUpon>DeleteMaterialReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DeleteOrder.resx">
+    <EmbeddedResource Include="View\Controls\Order\DeleteOrder.resx">
       <DependentUpon>DeleteOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditContract.resx">
+    <EmbeddedResource Include="View\Controls\Contract\EditContract.resx">
       <DependentUpon>EditContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditContractors.resx">
+    <EmbeddedResource Include="View\Controls\Supplier\EditContractors.resx">
       <DependentUpon>EditContractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditEmployee.resx">
+    <EmbeddedResource Include="View\Controls\Employee\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditMaterialIssue.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseIssue\EditMaterialIssue.resx">
       <DependentUpon>EditMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditMaterialReceipt.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.resx">
       <DependentUpon>EditMaterialReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\EditOrder.resx">
+    <EmbeddedResource Include="View\Controls\Order\EditOrder.resx">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListContract.resx">
+    <EmbeddedResource Include="View\Controls\Contract\ListContract.resx">
       <DependentUpon>ListContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListContractors.resx">
+    <EmbeddedResource Include="View\Controls\Supplier\ListContractors.resx">
       <DependentUpon>ListContractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListEmployee.resx">
+    <EmbeddedResource Include="View\Controls\Employee\ListEmployee.resx">
       <DependentUpon>ListEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListMaterialIssue.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseIssue\ListMaterialIssue.resx">
       <DependentUpon>ListMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListMaterialReceipt.resx">
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.resx">
       <DependentUpon>ListMaterialReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\ListOrder.resx">
+    <EmbeddedResource Include="View\Controls\Order\ListOrder.resx">
       <DependentUpon>ListOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\Contact.resx">
+    <EmbeddedResource Include="View\Controls\AboutMe\Contact.resx">
       <DependentUpon>Contact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\ListCurrentState.resx">

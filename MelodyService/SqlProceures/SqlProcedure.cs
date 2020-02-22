@@ -84,6 +84,6 @@ namespace Melody.Service.SqlProcedures
 
     public string UpdateWarehouseIssue => " UpdateWarehouseIssue";
 
-    public string GetDestinies => " GetDestinies";
+    public string GetDestinies => " dbo.GetAllDestiny";
   }
 }

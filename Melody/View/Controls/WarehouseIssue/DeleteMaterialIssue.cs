@@ -27,8 +27,7 @@ namespace Melody.View.Controls
     private void DeleteMaterialIssue_panel_Paint(object sender, PaintEventArgs e)
     {
       DeleteMaterialIssue_panel.Location = new Point(
-this.ClientSize.Width / 2 - DeleteMaterialIssue_panel.Size.Width / 2,
-this.ClientSize.Height / 2 - DeleteMaterialIssue_panel.Size.Height / 2);
+this.ClientSize.Width / 2 - DeleteMaterialIssue_panel.Size.Width / 2);
       DeleteMaterialIssue_panel.Anchor = AnchorStyles.None;
 
     }

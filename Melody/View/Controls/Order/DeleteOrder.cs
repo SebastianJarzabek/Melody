@@ -17,8 +17,7 @@ namespace Melody.View.Controls
         private void DeleteOrder_panel_Paint(object sender, PaintEventArgs e)
         {
       DeleteOrder_panel.Location = new Point(
-      this.ClientSize.Width / 2 - DeleteOrder_panel.Size.Width / 2,
-      this.ClientSize.Height / 2 - DeleteOrder_panel.Size.Height / 2);
+      this.ClientSize.Width / 2 - DeleteOrder_panel.Size.Width / 2);
       DeleteOrder_panel.Anchor = AnchorStyles.None;
     }
 
@@ -67,5 +66,10 @@ namespace Melody.View.Controls
     {
       OrderNumber_tb.Text = string.Empty;
     }
-  }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

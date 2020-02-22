@@ -406,7 +406,8 @@
       // 
       // Main_Panel
       // 
-      this.Main_Panel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.Main_Panel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+      this.Main_Panel.BackgroundImage = global::Melody.Properties.Resources.AddAccount;
       this.Main_Panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.Main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Main_Panel.Location = new System.Drawing.Point(0, 28);

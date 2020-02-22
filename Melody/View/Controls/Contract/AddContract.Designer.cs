@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.AddContract_panel = new System.Windows.Forms.Panel();
       this.AddContract_gb = new System.Windows.Forms.GroupBox();
       this.Validation_lbl = new System.Windows.Forms.Label();
       this.Clear_btn = new System.Windows.Forms.Button();
@@ -37,18 +36,8 @@
       this.Contract_tb = new System.Windows.Forms.TextBox();
       this.Name_tb = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.AddContract_panel.SuspendLayout();
       this.AddContract_gb.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // AddContract_panel
-      // 
-      this.AddContract_panel.Controls.Add(this.AddContract_gb);
-      this.AddContract_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.AddContract_panel.Location = new System.Drawing.Point(0, 0);
-      this.AddContract_panel.Name = "AddContract_panel";
-      this.AddContract_panel.Size = new System.Drawing.Size(1920, 1080);
-      this.AddContract_panel.TabIndex = 2;
       // 
       // AddContract_gb
       // 
@@ -60,12 +49,13 @@
       this.AddContract_gb.Controls.Add(this.Name_tb);
       this.AddContract_gb.Controls.Add(this.label2);
       this.AddContract_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AddContract_gb.Location = new System.Drawing.Point(354, 230);
+      this.AddContract_gb.Location = new System.Drawing.Point(8, 8);
       this.AddContract_gb.Name = "AddContract_gb";
-      this.AddContract_gb.Size = new System.Drawing.Size(365, 277);
-      this.AddContract_gb.TabIndex = 6;
+      this.AddContract_gb.Size = new System.Drawing.Size(376, 286);
+      this.AddContract_gb.TabIndex = 7;
       this.AddContract_gb.TabStop = false;
       this.AddContract_gb.Text = "Dodaj Kontrakt";
+      this.AddContract_gb.Paint += new System.Windows.Forms.PaintEventHandler(this.AddContract_gb_Paint);
       // 
       // Validation_lbl
       // 
@@ -86,7 +76,6 @@
       this.Clear_btn.TabIndex = 4;
       this.Clear_btn.Text = "Wyczyść";
       this.Clear_btn.UseVisualStyleBackColor = true;
-      this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
       // 
       // label1
       // 
@@ -107,7 +96,6 @@
       this.AddContract_btn.TabIndex = 3;
       this.AddContract_btn.Text = "Dodaj";
       this.AddContract_btn.UseVisualStyleBackColor = true;
-      this.AddContract_btn.Click += new System.EventHandler(this.AddContract_btn_Click);
       // 
       // Contract_tb
       // 
@@ -137,10 +125,9 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.AddContract_panel);
+      this.Controls.Add(this.AddContract_gb);
       this.Name = "AddContract";
       this.Size = new System.Drawing.Size(1920, 1080);
-      this.AddContract_panel.ResumeLayout(false);
       this.AddContract_gb.ResumeLayout(false);
       this.AddContract_gb.PerformLayout();
       this.ResumeLayout(false);
@@ -149,14 +136,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel AddContract_panel;
         private System.Windows.Forms.GroupBox AddContract_gb;
+        private System.Windows.Forms.Label Validation_lbl;
+        private System.Windows.Forms.Button Clear_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AddContract_btn;
         private System.Windows.Forms.TextBox Contract_tb;
         private System.Windows.Forms.TextBox Name_tb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Clear_btn;
-        private System.Windows.Forms.Label Validation_lbl;
     }
 }

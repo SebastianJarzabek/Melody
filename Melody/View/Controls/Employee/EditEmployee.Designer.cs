@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class AddEmployee
+  partial class EditEmployee
   {
     /// <summary> 
     /// Required designer variable.
@@ -28,8 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.PersonalDataPanel_panel = new System.Windows.Forms.Panel();
-      this.AddEmployee_panel = new System.Windows.Forms.Panel();
+      this.UpdateEmployee_panel = new System.Windows.Forms.Panel();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
       this.Login_tb = new System.Windows.Forms.TextBox();
       this.label29 = new System.Windows.Forms.Label();
@@ -47,7 +46,7 @@
       this.label28 = new System.Windows.Forms.Label();
       this.Departmrnt_tb = new System.Windows.Forms.TextBox();
       this.TextBoxesValidation_lbl = new System.Windows.Forms.Label();
-      this.AddEmployee_btn = new System.Windows.Forms.Button();
+      this.UpdateEmployee_btn = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.label17 = new System.Windows.Forms.Label();
       this.Street_tb = new System.Windows.Forms.TextBox();
@@ -70,35 +69,26 @@
       this.Email_tb = new System.Windows.Forms.TextBox();
       this.label25 = new System.Windows.Forms.Label();
       this.ContactDetailClear_btn = new System.Windows.Forms.Button();
-      this.PersonalDataPanel_panel.SuspendLayout();
-      this.AddEmployee_panel.SuspendLayout();
+      this.UpdateEmployee_panel.SuspendLayout();
       this.groupBox4.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.SuspendLayout();
       // 
-      // PersonalDataPanel_panel
+      // UpdateEmployee_panel
       // 
-      this.PersonalDataPanel_panel.Controls.Add(this.AddEmployee_panel);
-      this.PersonalDataPanel_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.PersonalDataPanel_panel.Location = new System.Drawing.Point(0, 0);
-      this.PersonalDataPanel_panel.Name = "PersonalDataPanel_panel";
-      this.PersonalDataPanel_panel.Size = new System.Drawing.Size(1920, 1080);
-      this.PersonalDataPanel_panel.TabIndex = 3;
-      // 
-      // AddEmployee_panel
-      // 
-      this.AddEmployee_panel.Controls.Add(this.groupBox4);
-      this.AddEmployee_panel.Controls.Add(this.groupBox1);
-      this.AddEmployee_panel.Controls.Add(this.TextBoxesValidation_lbl);
-      this.AddEmployee_panel.Controls.Add(this.AddEmployee_btn);
-      this.AddEmployee_panel.Controls.Add(this.groupBox2);
-      this.AddEmployee_panel.Controls.Add(this.groupBox3);
-      this.AddEmployee_panel.Location = new System.Drawing.Point(423, 240);
-      this.AddEmployee_panel.Name = "AddEmployee_panel";
-      this.AddEmployee_panel.Size = new System.Drawing.Size(1075, 672);
-      this.AddEmployee_panel.TabIndex = 43;
+      this.UpdateEmployee_panel.Controls.Add(this.groupBox4);
+      this.UpdateEmployee_panel.Controls.Add(this.groupBox1);
+      this.UpdateEmployee_panel.Controls.Add(this.TextBoxesValidation_lbl);
+      this.UpdateEmployee_panel.Controls.Add(this.UpdateEmployee_btn);
+      this.UpdateEmployee_panel.Controls.Add(this.groupBox2);
+      this.UpdateEmployee_panel.Controls.Add(this.groupBox3);
+      this.UpdateEmployee_panel.Location = new System.Drawing.Point(0, 0);
+      this.UpdateEmployee_panel.Name = "UpdateEmployee_panel";
+      this.UpdateEmployee_panel.Size = new System.Drawing.Size(1075, 672);
+      this.UpdateEmployee_panel.TabIndex = 44;
+      this.UpdateEmployee_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdateEmployee_panel_Paint);
       // 
       // groupBox4
       // 
@@ -151,7 +141,6 @@
       this.LoginDataClear_btn.TabIndex = 2;
       this.LoginDataClear_btn.Text = " Wyczyść";
       this.LoginDataClear_btn.UseVisualStyleBackColor = true;
-      this.LoginDataClear_btn.Click += new System.EventHandler(this.LoginDataClear_btn_Click);
       // 
       // Password_tb
       // 
@@ -198,7 +187,6 @@
       this.GeneralClear_btn.TabIndex = 4;
       this.GeneralClear_btn.Text = " Wyczyść";
       this.GeneralClear_btn.UseVisualStyleBackColor = true;
-      this.GeneralClear_btn.Click += new System.EventHandler(this.GeneralClear_btn_Click);
       // 
       // Name_tb
       // 
@@ -268,16 +256,15 @@
       this.TextBoxesValidation_lbl.Size = new System.Drawing.Size(0, 20);
       this.TextBoxesValidation_lbl.TabIndex = 8;
       // 
-      // AddEmployee_btn
+      // UpdateEmployee_btn
       // 
-      this.AddEmployee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AddEmployee_btn.Location = new System.Drawing.Point(946, 461);
-      this.AddEmployee_btn.Name = "AddEmployee_btn";
-      this.AddEmployee_btn.Size = new System.Drawing.Size(120, 30);
-      this.AddEmployee_btn.TabIndex = 7;
-      this.AddEmployee_btn.Text = "Dodaj";
-      this.AddEmployee_btn.UseVisualStyleBackColor = true;
-      this.AddEmployee_btn.Click += new System.EventHandler(this.AddEmployee_btn_Click);
+      this.UpdateEmployee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.UpdateEmployee_btn.Location = new System.Drawing.Point(946, 461);
+      this.UpdateEmployee_btn.Name = "UpdateEmployee_btn";
+      this.UpdateEmployee_btn.Size = new System.Drawing.Size(120, 30);
+      this.UpdateEmployee_btn.TabIndex = 7;
+      this.UpdateEmployee_btn.Text = "Edytuj";
+      this.UpdateEmployee_btn.UseVisualStyleBackColor = true;
       // 
       // groupBox2
       // 
@@ -355,7 +342,6 @@
       this.AdressClear_btn.TabIndex = 6;
       this.AdressClear_btn.Text = " Wyczyść";
       this.AdressClear_btn.UseVisualStyleBackColor = true;
-      this.AdressClear_btn.Click += new System.EventHandler(this.AdressClear_btn_Click);
       // 
       // ApartamentNumber_tb
       // 
@@ -494,18 +480,16 @@
       this.ContactDetailClear_btn.TabIndex = 3;
       this.ContactDetailClear_btn.Text = " Wyczyść";
       this.ContactDetailClear_btn.UseVisualStyleBackColor = true;
-      this.ContactDetailClear_btn.Click += new System.EventHandler(this.ClearContact_btn_Click);
       // 
-      // AddEmployee
+      // EditEmployee
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.PersonalDataPanel_panel);
-      this.Name = "AddEmployee";
+      this.Controls.Add(this.UpdateEmployee_panel);
+      this.Name = "EditEmployee";
       this.Size = new System.Drawing.Size(1920, 1080);
-      this.PersonalDataPanel_panel.ResumeLayout(false);
-      this.AddEmployee_panel.ResumeLayout(false);
-      this.AddEmployee_panel.PerformLayout();
+      this.UpdateEmployee_panel.ResumeLayout(false);
+      this.UpdateEmployee_panel.PerformLayout();
       this.groupBox4.ResumeLayout(false);
       this.groupBox4.PerformLayout();
       this.groupBox1.ResumeLayout(false);
@@ -518,49 +502,48 @@
 
     }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.Panel PersonalDataPanel_panel;
-        private System.Windows.Forms.Panel AddEmployee_panel;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox Login_tb;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button LoginDataClear_btn;
-        private System.Windows.Forms.TextBox Password_tb;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button GeneralClear_btn;
-        private System.Windows.Forms.TextBox Name_tb;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox Surname_tb;
-        private System.Windows.Forms.TextBox Position_tb;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox Departmrnt_tb;
-        private System.Windows.Forms.Label TextBoxesValidation_lbl;
-        private System.Windows.Forms.Button AddEmployee_btn;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox Street_tb;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox HouseNumber_tb;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button AdressClear_btn;
-        private System.Windows.Forms.TextBox ApartamentNumber_tb;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox City_tb;
-        private System.Windows.Forms.TextBox Country_tb;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox ZipCode_tb;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox PhoneNumber_tb;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox Webside_tb;
-        private System.Windows.Forms.TextBox Email_tb;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button ContactDetailClear_btn;
-    }
+    private System.Windows.Forms.Panel UpdateEmployee_panel;
+    private System.Windows.Forms.GroupBox groupBox4;
+    private System.Windows.Forms.TextBox Login_tb;
+    private System.Windows.Forms.Label label29;
+    private System.Windows.Forms.Label label30;
+    private System.Windows.Forms.Button LoginDataClear_btn;
+    private System.Windows.Forms.TextBox Password_tb;
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.Button GeneralClear_btn;
+    private System.Windows.Forms.TextBox Name_tb;
+    private System.Windows.Forms.Label label26;
+    private System.Windows.Forms.TextBox Surname_tb;
+    private System.Windows.Forms.TextBox Position_tb;
+    private System.Windows.Forms.Label label27;
+    private System.Windows.Forms.Label label28;
+    private System.Windows.Forms.TextBox Departmrnt_tb;
+    private System.Windows.Forms.Label TextBoxesValidation_lbl;
+    private System.Windows.Forms.Button UpdateEmployee_btn;
+    private System.Windows.Forms.GroupBox groupBox2;
+    private System.Windows.Forms.Label label17;
+    private System.Windows.Forms.TextBox Street_tb;
+    private System.Windows.Forms.Label label18;
+    private System.Windows.Forms.TextBox HouseNumber_tb;
+    private System.Windows.Forms.Label label19;
+    private System.Windows.Forms.Button AdressClear_btn;
+    private System.Windows.Forms.TextBox ApartamentNumber_tb;
+    private System.Windows.Forms.Label label20;
+    private System.Windows.Forms.TextBox City_tb;
+    private System.Windows.Forms.TextBox Country_tb;
+    private System.Windows.Forms.Label label21;
+    private System.Windows.Forms.Label label22;
+    private System.Windows.Forms.TextBox ZipCode_tb;
+    private System.Windows.Forms.GroupBox groupBox3;
+    private System.Windows.Forms.Label label23;
+    private System.Windows.Forms.TextBox PhoneNumber_tb;
+    private System.Windows.Forms.Label label24;
+    private System.Windows.Forms.TextBox Webside_tb;
+    private System.Windows.Forms.TextBox Email_tb;
+    private System.Windows.Forms.Label label25;
+    private System.Windows.Forms.Button ContactDetailClear_btn;
+  }
 }

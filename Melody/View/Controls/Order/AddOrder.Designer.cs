@@ -104,16 +104,12 @@
       // 
       // AddOrder_panel
       // 
-      this.AddOrder_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.AddOrder_panel.AutoSize = true;
       this.AddOrder_panel.Controls.Add(this.MaterialsToOrder_gb);
       this.AddOrder_panel.Controls.Add(this.Validation_lbl);
       this.AddOrder_panel.Controls.Add(this.AddOrder_btn);
       this.AddOrder_panel.Controls.Add(this.DataFlow_gb);
       this.AddOrder_panel.Controls.Add(this.OrderData_gb);
-      this.AddOrder_panel.Location = new System.Drawing.Point(391, 5);
+      this.AddOrder_panel.Location = new System.Drawing.Point(390, 0);
       this.AddOrder_panel.MaximumSize = new System.Drawing.Size(1140, 850);
       this.AddOrder_panel.MinimumSize = new System.Drawing.Size(1140, 850);
       this.AddOrder_panel.Name = "AddOrder_panel";
@@ -800,7 +796,6 @@
       this.Material_gb.ResumeLayout(false);
       this.Material_gb.PerformLayout();
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 

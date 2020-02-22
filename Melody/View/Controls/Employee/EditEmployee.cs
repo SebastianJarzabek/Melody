@@ -10,14 +10,53 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class AddEmployee : UserControl
+  public partial class EditEmployee : UserControl
   {
+
     Validators validators = new Validators();
-    public AddEmployee()
+
+    public EditEmployee()
     {
       InitializeComponent();
     }
 
+    private void UpdateEmployee_panel_Paint(object sender, PaintEventArgs e)
+    {
+      UpdateEmployee_panel.Location = new Point(
+       this.ClientSize.Width / 2 - UpdateEmployee_panel.Size.Width / 2);
+      UpdateEmployee_panel.Anchor = AnchorStyles.None;
+    }
+
+    private void GeneralClear_btn_Click(object sender, EventArgs e)
+    {
+      Name_tb.Text = string.Empty;
+      Surname_tb.Text = string.Empty;
+      Departmrnt_tb.Text = string.Empty;
+      Position_tb.Text = string.Empty;
+    }
+
+    private void LoginDataClear_btn_Click(object sender, EventArgs e)
+    {
+      Login_tb.Text = string.Empty;
+      Password_tb.Text = string.Empty;
+    }
+
+    private void ClearContact_btn_Click(object sender, EventArgs e)
+    {
+      PhoneNumber_tb.Text = string.Empty;
+      Email_tb.Text = string.Empty;
+      Webside_tb.Text = "Brak";
+    }
+
+    private void AdressClear_btn_Click(object sender, EventArgs e)
+    {
+      Street_tb.Text = string.Empty;
+      HouseNumber_tb.Text = string.Empty;
+      ApartamentNumber_tb.Text = "0";
+      City_tb.Text = string.Empty;
+      ZipCode_tb.Text = string.Empty;
+      Country_tb.Text = string.Empty;
+    }
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
       TextBoxesValidation_lbl.Text = string.Empty;
@@ -41,22 +80,22 @@ namespace Melody.View.Controls
           ZipCode = ZipCode_tb.Text,
           Country = Country_tb.Text
         },
-        ContactDetails =new ContactDetails
+        ContactDetails = new ContactDetails
         {
-          PhoneNumber=PhoneNumber_tb.Text,
-          Email=Email_tb.Text,
-          Webside=Webside_tb.Text
+          PhoneNumber = PhoneNumber_tb.Text,
+          Email = Email_tb.Text,
+          Webside = Webside_tb.Text
         }
       };
 
-      var list = new List<DataClass> 
+      var list = new List<DataClass>
       {
         DataClass.Employee
         ,DataClass.Access
         ,DataClass.Adress
         ,DataClass.ContactDetails};
 
-      if (!TextBoxesValidate(emp,list)
+      if (!TextBoxesValidate(emp, list)
         || !PhoneValidate(PhoneNumber_tb.Text)
         || !EmailValidate(Email_tb.Text))
       {
@@ -86,10 +125,10 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.AddEmployee, parameters))
+        if (executor.InsertIntoDatabase(execute.UpdateEmployee, parameters))
         {
           MessageBox.Show(
-          $"Dodano do bazy danych pracownika: {parameters.nameIn} {parameters.surnameIn}.",
+          $"Edytowano dane pracownika: {parameters.nameIn} {parameters.surnameIn}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
@@ -97,7 +136,7 @@ namespace Melody.View.Controls
       }
       catch (Exception ex)
       {
-        MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
+        MessageBox.Show($"Wystąpił błąd przy Edytowaniu pracownika. {ex}",
           "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
@@ -143,7 +182,7 @@ namespace Melody.View.Controls
 
     private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      var errorMessage = validators.TextBoxesValidate(null,emp, null, dataClasses);
+      var errorMessage = validators.TextBoxesValidate(null, emp, null, dataClasses);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -157,45 +196,6 @@ namespace Melody.View.Controls
         TextBoxesValidation_lbl.Text = errorMessage;
         return false;
       }
-    }
-
-    private void GeneralClear_btn_Click(object sender, EventArgs e)
-    {
-      Name_tb.Text = string.Empty;
-      Surname_tb.Text = string.Empty;
-      Departmrnt_tb.Text = string.Empty;
-      Position_tb.Text = string.Empty;
-    }
-
-    private void LoginDataClear_btn_Click(object sender, EventArgs e)
-    {
-      Login_tb.Text = string.Empty;
-      Password_tb.Text = string.Empty;
-    }
-
-    private void ClearContact_btn_Click(object sender, EventArgs e)
-    {
-      PhoneNumber_tb.Text = string.Empty;
-      Email_tb.Text = string.Empty;
-      Webside_tb.Text = "Brak";
-    }
-
-    private void AdressClear_btn_Click(object sender, EventArgs e)
-    {
-      Street_tb.Text = string.Empty;
-      HouseNumber_tb.Text = string.Empty;
-      ApartamentNumber_tb.Text = "0";
-      City_tb.Text = string.Empty;
-      ZipCode_tb.Text = string.Empty;
-      Country_tb.Text = string.Empty;
-    }
-
-    private void AddEmployee_panel_Paint(object sender, PaintEventArgs e)
-    {
-      AddEmployee_panel.Location = new Point(
-       this.ClientSize.Width / 2 - AddEmployee_panel.Size.Width / 2,
-       this.ClientSize.Height / 2 - AddEmployee_panel.Size.Height / 2);
-      AddEmployee_panel.Anchor = AnchorStyles.None;
     }
   }
 }

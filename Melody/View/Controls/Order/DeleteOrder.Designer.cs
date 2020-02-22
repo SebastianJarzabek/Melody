@@ -73,6 +73,8 @@
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Usuń zamówienie";
+      this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.DeleteOrder_panel_Paint);
+      this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
       // 
       // Clear_btn
       // 
@@ -130,6 +132,7 @@
       this.Controls.Add(this.Parent_panel);
       this.Name = "DeleteOrder";
       this.Size = new System.Drawing.Size(1920, 1080);
+      this.Paint += new System.Windows.Forms.PaintEventHandler(this.DeleteOrder_panel_Paint);
       this.Parent_panel.ResumeLayout(false);
       this.DeleteOrder_panel.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);

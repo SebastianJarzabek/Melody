@@ -52,7 +52,7 @@
       // 
       // ContactChild_palen
       // 
-      this.ContactChild_palen.BackColor = System.Drawing.Color.SkyBlue;
+      this.ContactChild_palen.BackColor = System.Drawing.SystemColors.Control;
       this.ContactChild_palen.Controls.Add(this.label5);
       this.ContactChild_palen.Controls.Add(this.label4);
       this.ContactChild_palen.Controls.Add(this.label3);

@@ -32,10 +32,11 @@ namespace Melody.View.Controls
     {
       this.Data_dgv = new System.Windows.Forms.DataGridView();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.textBox1 = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
       this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.NameColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HouseNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApartamentNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,7 @@ namespace Melody.View.Controls
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
-            this.NameColumne,
+            this.NameColumn,
             this.Contract,
             this.HouseNumberColumn,
             this.ApartamentNumberColumn,
@@ -76,6 +77,7 @@ namespace Melody.View.Controls
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.textBox1);
       this.panel1.Controls.Add(this.Search_btn);
       this.panel1.Controls.Add(this.Refresh_btn);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -85,15 +87,23 @@ namespace Melody.View.Controls
       this.panel1.Size = new System.Drawing.Size(1920, 62);
       this.panel1.TabIndex = 2;
       // 
+      // textBox1
+      // 
+      this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBox1.Location = new System.Drawing.Point(209, 29);
+      this.textBox1.Name = "textBox1";
+      this.textBox1.Size = new System.Drawing.Size(400, 27);
+      this.textBox1.TabIndex = 6;
+      // 
       // Search_btn
       // 
       this.Search_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this.Search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Search_btn.Location = new System.Drawing.Point(221, 26);
-      this.Search_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.Search_btn.Location = new System.Drawing.Point(615, 27);
       this.Search_btn.Name = "Search_btn";
       this.Search_btn.Size = new System.Drawing.Size(200, 30);
-      this.Search_btn.TabIndex = 2;
+      this.Search_btn.TabIndex = 5;
       this.Search_btn.Text = "Szukaj";
       this.Search_btn.UseVisualStyleBackColor = true;
       // 
@@ -101,14 +111,12 @@ namespace Melody.View.Controls
       // 
       this.Refresh_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this.Refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Refresh_btn.Location = new System.Drawing.Point(16, 26);
-      this.Refresh_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.Refresh_btn.Location = new System.Drawing.Point(3, 27);
       this.Refresh_btn.Name = "Refresh_btn";
       this.Refresh_btn.Size = new System.Drawing.Size(200, 30);
-      this.Refresh_btn.TabIndex = 0;
+      this.Refresh_btn.TabIndex = 4;
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
-      this.Refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
       // 
       // IdDestiny
       // 
@@ -120,15 +128,12 @@ namespace Melody.View.Controls
       this.IdDestiny.Visible = false;
       this.IdDestiny.Width = 48;
       // 
-      // NameColumne
+      // NameColumn
       // 
-      this.NameColumne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.NameColumne.DataPropertyName = "NameColumn";
-      this.NameColumne.HeaderText = "Nazwa";
-      this.NameColumne.MinimumWidth = 6;
-      this.NameColumne.Name = "Name";
-      this.NameColumne.Visible = false;
-      this.NameColumne.Width = 79;
+      this.NameColumn.HeaderText = "Nazwa";
+      this.NameColumn.MinimumWidth = 6;
+      this.NameColumn.Name = "NameColumn";
+      this.NameColumn.Width = 125;
       // 
       // Contract
       // 
@@ -137,7 +142,6 @@ namespace Melody.View.Controls
       this.Contract.HeaderText = "Ulica";
       this.Contract.MinimumWidth = 6;
       this.Contract.Name = "Contract";
-      this.Contract.Visible = false;
       this.Contract.Width = 68;
       // 
       // HouseNumberColumn
@@ -215,6 +219,7 @@ namespace Melody.View.Controls
       this.Size = new System.Drawing.Size(1920, 1081);
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).EndInit();
       this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -222,11 +227,11 @@ namespace Melody.View.Controls
     #endregion
     private System.Windows.Forms.DataGridView Data_dgv;
     private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button Search_btn;
-    private System.Windows.Forms.Button Refresh_btn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private TextBox textBox1;
+        private Button Search_btn;
+        private Button Refresh_btn;
     private DataGridViewTextBoxColumn IdDestiny;
-    private DataGridViewTextBoxColumn NameColumne;
+    private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn Contract;
     private DataGridViewTextBoxColumn HouseNumberColumn;
     private DataGridViewTextBoxColumn ApartamentNumberColumn;

@@ -6,6 +6,9 @@ namespace Melody.Service.DataAccess.Interfaces
 {
   public interface IExecutor
   {
+    bool InsertIntoDatabase(string storedProcedureName, object parameters);
+    bool DeleteFromDatabase(string storedProcedureName, object parameters);
+
     List<T> GetListFromDatabase<T>(string storedProcedureName, object parameters);
 
     T GetFromDatabase<T>(string storedProcedureName, object parameters);

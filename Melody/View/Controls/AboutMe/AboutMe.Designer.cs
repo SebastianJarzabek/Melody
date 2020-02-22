@@ -30,9 +30,9 @@
     {
       this.AboutMe_panel = new System.Windows.Forms.Panel();
       this.AboutMeChild_panel = new System.Windows.Forms.Panel();
+      this.label2 = new System.Windows.Forms.Label();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
       this.AboutMe_panel.SuspendLayout();
       this.AboutMeChild_panel.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +51,7 @@
       // 
       // AboutMeChild_panel
       // 
-      this.AboutMeChild_panel.BackColor = System.Drawing.Color.SkyBlue;
+      this.AboutMeChild_panel.BackColor = System.Drawing.SystemColors.Control;
       this.AboutMeChild_panel.Controls.Add(this.label2);
       this.AboutMeChild_panel.Controls.Add(this.pictureBox1);
       this.AboutMeChild_panel.Controls.Add(this.label1);
@@ -61,9 +61,19 @@
       this.AboutMeChild_panel.TabIndex = 1;
       this.AboutMeChild_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AboutMeChild_panel_Paint);
       // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Location = new System.Drawing.Point(5, 224);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(67, 25);
+      this.label2.TabIndex = 3;
+      this.label2.Text = "2020r.";
+      // 
       // pictureBox1
       // 
-      this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
+      this.pictureBox1.BackColor = System.Drawing.SystemColors.Info;
       this.pictureBox1.Image = global::Melody.Properties.Resources.me;
       this.pictureBox1.Location = new System.Drawing.Point(439, 3);
       this.pictureBox1.Name = "pictureBox1";
@@ -86,16 +96,6 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Jestem studentem 7 semestru \r\nw Wyższej Szkoły Informatyki i Zarządzania\r\n\"COPERN" +
     "ICUS\".\r\n\r\nJest to projekt systemu magazynowego do pracy inżynierskiej.\r\n";
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(5, 224);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(67, 25);
-      this.label2.TabIndex = 3;
-      this.label2.Text = "2020r.";
       // 
       // AboutMe
       // 

@@ -76,6 +76,7 @@
       this.Clear_btn.TabIndex = 4;
       this.Clear_btn.Text = "Wyczyść";
       this.Clear_btn.UseVisualStyleBackColor = true;
+      this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
       // 
       // label1
       // 
@@ -96,6 +97,7 @@
       this.AddContract_btn.TabIndex = 3;
       this.AddContract_btn.Text = "Dodaj";
       this.AddContract_btn.UseVisualStyleBackColor = true;
+      this.AddContract_btn.Click += new System.EventHandler(this.AddContract_btn_Click);
       // 
       // Contract_tb
       // 

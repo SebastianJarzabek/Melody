@@ -85,7 +85,7 @@ namespace Melody.View.Window
     private void AddContract_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var AddContractControlPanel = new AddContract();
+      var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()));
       AddContractControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(AddContractControlPanel);
     }

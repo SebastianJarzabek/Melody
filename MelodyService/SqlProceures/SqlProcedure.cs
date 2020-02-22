@@ -6,83 +6,83 @@ namespace Melody.Service.SqlProcedures
   [ExcludeFromCodeCoverage]
   public class SqlProcedure
   {
-    public string GetAllSupplier => "GetAllSupplier";
+    public string GetAllSupplier => "dbo.GetAllSupplier";
 
-    public string GetAllEmployee => " GetAllEmployee";
+    public string GetAllEmployee => " dbo.GetAllEmployee";
 
-    public string GetInventoryLevel => " GetInventoryLevel";
+    public string GetInventoryLevel => " dbo.GetInventoryLevel";
 
-    public string UsersLogin => " UsersLogin";
+    public string UsersLogin => " dbo.UsersLogin";
 
-    public string AddDestiny => " AddDestiny";
+    public string AddDestiny => " dbo.AddDestiny";
 
-    public string AddEmployee => " AddEmployee";
+    public string AddEmployee => " dbo.AddEmployee";
 
-    public string AddMaterial => " AddMaterial";
+    public string AddMaterial => " dbo.AddMaterial";
 
-    public string AddOrder => " AddOrder";
+    public string AddOrder => " dbo.AddOrder";
 
-    public string AddSupplier => " AddSupplier";
+    public string AddSupplier => " dbo.AddSupplier";
 
-    public string AddUnit => " AddUnit";
+    public string AddUnit => " dbo.AddUnit";
 
-    public string AddWarehouseAdmission => " AddWarehouseAdmission";
+    public string AddWarehouseAdmission => " dbo.AddWarehouseAdmission";
 
-    public string AddWarehouseIssue => " AddWarehouseIssue";
+    public string AddWarehouseIssue => " dbo.AddWarehouseIssue";
 
-    public string DeleteDestiny => " DeleteDestiny";
+    public string DeleteDestiny => " dbo.DeleteDestiny";
 
-    public string DeleteEmployee => " DeleteEmployee";
+    public string DeleteEmployee => " dbo.DeleteEmployee";
 
-    public string DeleteMaterial => " DeleteMaterial";
+    public string DeleteMaterial => " dbo.DeleteMaterial";
 
-    public string DeleteOrder => " DeleteOrder";
+    public string DeleteOrder => " dbo.DeleteOrder";
 
-    public string DeleteSupplier => " DeleteSupplier";
+    public string DeleteSupplier => "dbo.DeleteSupplier";
 
-    public string DeleteUnit => " DeleteUnit";
+    public string DeleteUnit => " dbo.DeleteUnit";
 
-    public string DeleteWarehouseAdmissionFromId => " DeleteWarehouseAdmissionFromId";
+    public string DeleteWarehouseAdmissionFromId => " dbo.DeleteWarehouseAdmissionFromId";
 
-    public string DeleteWarehouseIssueFromId => " DeleteWarehouseIssueFromId";
+    public string DeleteWarehouseIssueFromId => " dbo.DeleteWarehouseIssueFromId";
 
-    public string GetAllOrder => " GetAllOrder";
+    public string GetAllOrder => " dbo.GetAllOrder";
 
-    public string GetAllWarehouseIssue => " GetAllWarehouseIssue";
+    public string GetAllWarehouseIssue => " dbo.GetAllWarehouseIssue";
 
-    public string GetAllWarehouseIssueFromId => " GetAllWarehouseIssueFromId";
+    public string GetAllWarehouseIssueFromId => " dbo.GetAllWarehouseIssueFromId";
 
-    public string GetDestiny => " GetDestiny";
+    public string GetDestiny => " dbo.GetDestiny";
 
-    public string GetDestinyFromId => " GetDestinyFromId";
+    public string GetDestinyFromId => " dbo.GetDestinyFromId";
 
-    public string GetEmployee => " GetEmployee";
+    public string GetEmployee => " dbo.GetEmployee";
 
-    public string GetMaterialFromId => " GetMaterialFromId";
+    public string GetMaterialFromId => " dbo.GetMaterialFromId";
 
-    public string GetOrderFromId => " GetOrderFromId";
+    public string GetOrderFromId => " dbo.GetOrderFromId";
 
-    public string GetSupplierFromId => " GetSupplierFromId";
+    public string GetSupplierFromId => " dbo.GetSupplierFromId";
 
-    public string GetUnitFromId => " GetUnitFromId";
+    public string GetUnitFromId => " dbo.GetUnitFromId";
 
-    public string UpdateDestiny => " UpdateDestiny";
+    public string UpdateDestiny => " dbo.UpdateDestiny";
 
-    public string UpdateEmployee => " UpdateEmployee";
+    public string UpdateEmployee => " dbo.UpdateEmployee";
 
-    public string UpdateMaterial => " UpdateMaterial";
+    public string UpdateMaterial => " dbo.UpdateMaterial";
 
-    public string UpdateOrder => " UpdateOrder";
+    public string UpdateOrder => " dbo.UpdateOrder";
 
-    public string UpdateQuantityInventoryLevel => " UpdateQuantityInventoryLevel";
+    public string UpdateQuantityInventoryLevel => " dbo.UpdateQuantityInventoryLevel";
 
-    public string UpdateSupplier => " UpdateSupplier";
+    public string UpdateSupplier => " dbo.UpdateSupplier";
 
-    public string UpdateUnit => " UpdateUnit";
+    public string UpdateUnit => " dbo.UpdateUnit";
 
-    public string UpdateWarehouseAdmission => " UpdateWarehouseAdmission";
+    public string UpdateWarehouseAdmission => " dbo.UpdateWarehouseAdmission";
 
-    public string UpdateWarehouseIssue => " UpdateWarehouseIssue";
+    public string UpdateWarehouseIssue => " dbo.UpdateWarehouseIssue";
 
     public string GetDestinies => " dbo.GetAllDestiny";
   }

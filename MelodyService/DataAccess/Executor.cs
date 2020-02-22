@@ -113,33 +113,6 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public DataTable GetFromDatabase(string storedProcedureName)
-    {
-      //var list = new List<object>();
-      try
-      {
-        using (var sqlconnection = new SqlConnection(_configService.GetConnectionString()))
-        {
-          sqlconnection.Open();
-
-          SqlCommand sqlCommand = new SqlCommand(storedProcedureName, sqlconnection);
-
-          SqlDataReader reader;
-          reader = sqlCommand.ExecuteReader();
-          DataTable datatable = new DataTable();
-          //datatable.Columns.Add(column, typeof(string));
-          datatable.Load(reader);
-          sqlconnection.Close();
-
-          return datatable;
-        }
-      }
-      catch (Exception ex)
-      {
-        throw ex;
-      }
-    }
-
     public DataTable ComboboxSugest(string column, string table)
     {
       SqlConnection sqlconnection = new SqlConnection(_configService.GetConnectionString());

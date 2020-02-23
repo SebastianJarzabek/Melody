@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class DeleteContractors
+  partial class DeleteSuppliers
   {
     /// <summary> 
     /// Required designer variable.
@@ -123,12 +123,12 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Nazwa:";
       // 
-      // DeleteContractors
+      // DeleteSuppliers
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.Parent_panel);
-      this.Name = "DeleteContractors";
+      this.Name = "DeleteSuppliers";
       this.Size = new System.Drawing.Size(1920, 1080);
       this.Parent_panel.ResumeLayout(false);
       this.DeleteContractor_panel.ResumeLayout(false);

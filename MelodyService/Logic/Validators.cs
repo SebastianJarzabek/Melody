@@ -51,11 +51,14 @@ namespace Melody.Service.Logic
     {
       try
       {
+        var obj = new Object();
+
         var stb = new StringBuilder();
         stb.AppendLine("Pole:");
 
         if (toValidate.Contains(DataClass.Access))
         {
+
           if (string.IsNullOrEmpty(emp.Access.Login)
           || string.IsNullOrEmpty(emp.Access.Password))
           {

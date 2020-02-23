@@ -66,11 +66,11 @@
     <Compile Include="View\Controls\Contract\AddContract.Designer.cs">
       <DependentUpon>AddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\Supplier\AddContractors.cs">
+    <Compile Include="View\Controls\Supplier\AddSuppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\Supplier\AddContractors.Designer.cs">
-      <DependentUpon>AddContractors.cs</DependentUpon>
+    <Compile Include="View\Controls\Supplier\AddSuppliers.Designer.cs">
+      <DependentUpon>AddSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\Employee\AddEmployee.cs">
       <SubType>UserControl</SubType>
@@ -102,11 +102,11 @@
     <Compile Include="View\Controls\Contract\DeleteContract.Designer.cs">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\Supplier\DeleteContractors.cs">
+    <Compile Include="View\Controls\Supplier\DeleteSuppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\Supplier\DeleteContractors.Designer.cs">
-      <DependentUpon>DeleteContractors.cs</DependentUpon>
+    <Compile Include="View\Controls\Supplier\DeleteSuppliers.Designer.cs">
+      <DependentUpon>DeleteSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\Employee\DeleteEmployee.cs">
       <SubType>UserControl</SubType>
@@ -244,8 +244,8 @@
     <EmbeddedResource Include="View\Controls\Contract\AddContract.resx">
       <DependentUpon>AddContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\Supplier\AddContractors.resx">
-      <DependentUpon>AddContractors.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\Supplier\AddSuppliers.resx">
+      <DependentUpon>AddSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Employee\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
@@ -262,8 +262,8 @@
     <EmbeddedResource Include="View\Controls\Contract\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\Supplier\DeleteContractors.resx">
-      <DependentUpon>DeleteContractors.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\Supplier\DeleteSuppliers.resx">
+      <DependentUpon>DeleteSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Employee\DeleteEmployee.resx">
       <DependentUpon>DeleteEmployee.cs</DependentUpon>

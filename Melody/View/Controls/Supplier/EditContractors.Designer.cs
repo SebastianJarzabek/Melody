@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class EditContractors
+  partial class UpdateSuppliers
   {
     /// <summary> 
     /// Required designer variable.
@@ -52,15 +52,17 @@
       this.ZipCode_tb = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.ClearGeneral_btn = new System.Windows.Forms.Button();
-      this.TextBoxesValidation_lbl = new System.Windows.Forms.Label();
-      this.EditContractors_btn = new System.Windows.Forms.Button();
+      this.Validation_lbl = new System.Windows.Forms.Label();
+      this.UpdateSuppliers_btn = new System.Windows.Forms.Button();
       this.General_gb = new System.Windows.Forms.GroupBox();
-      this.EditContractors_panel = new System.Windows.Forms.Panel();
+      this.UpdateSuppliers_panel = new System.Windows.Forms.Panel();
       this.Adress_gb = new System.Windows.Forms.GroupBox();
       this.AddContractor_panel = new System.Windows.Forms.Panel();
+      this.label2 = new System.Windows.Forms.Label();
+      this.Id_tb = new System.Windows.Forms.TextBox();
       this.Contact_gb.SuspendLayout();
       this.General_gb.SuspendLayout();
-      this.EditContractors_panel.SuspendLayout();
+      this.UpdateSuppliers_panel.SuspendLayout();
       this.Adress_gb.SuspendLayout();
       this.AddContractor_panel.SuspendLayout();
       this.SuspendLayout();
@@ -116,6 +118,7 @@
       this.ClearContact_btn.TabIndex = 3;
       this.ClearContact_btn.Text = " Wyczyść";
       this.ClearContact_btn.UseVisualStyleBackColor = true;
+      this.ClearContact_btn.Click += new System.EventHandler(this.ClearContact_btn_Click);
       // 
       // Contact_gb
       // 
@@ -127,7 +130,7 @@
       this.Contact_gb.Controls.Add(this.label16);
       this.Contact_gb.Controls.Add(this.ClearContact_btn);
       this.Contact_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Contact_gb.Location = new System.Drawing.Point(11, 142);
+      this.Contact_gb.Location = new System.Drawing.Point(11, 177);
       this.Contact_gb.Name = "Contact_gb";
       this.Contact_gb.Size = new System.Drawing.Size(526, 167);
       this.Contact_gb.TabIndex = 5;
@@ -197,10 +200,11 @@
       this.ClearAdress_btn.TabIndex = 6;
       this.ClearAdress_btn.Text = " Wyczyść";
       this.ClearAdress_btn.UseVisualStyleBackColor = true;
+      this.ClearAdress_btn.Click += new System.EventHandler(this.AdressClear_btn_Click);
       // 
       // Name_tb
       // 
-      this.Name_tb.Location = new System.Drawing.Point(220, 24);
+      this.Name_tb.Location = new System.Drawing.Point(220, 67);
       this.Name_tb.Name = "Name_tb";
       this.Name_tb.Size = new System.Drawing.Size(300, 30);
       this.Name_tb.TabIndex = 0;
@@ -268,7 +272,7 @@
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(8, 31);
+      this.label1.Location = new System.Drawing.Point(9, 70);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(65, 20);
       this.label1.TabIndex = 4;
@@ -277,59 +281,62 @@
       // ClearGeneral_btn
       // 
       this.ClearGeneral_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ClearGeneral_btn.Location = new System.Drawing.Point(400, 60);
+      this.ClearGeneral_btn.Location = new System.Drawing.Point(400, 103);
       this.ClearGeneral_btn.Name = "ClearGeneral_btn";
       this.ClearGeneral_btn.Size = new System.Drawing.Size(120, 30);
       this.ClearGeneral_btn.TabIndex = 1;
       this.ClearGeneral_btn.Text = " Wyczyść";
       this.ClearGeneral_btn.UseVisualStyleBackColor = true;
+      this.ClearGeneral_btn.Click += new System.EventHandler(this.GeneralClear_btn_Click);
       // 
-      // TextBoxesValidation_lbl
+      // Validation_lbl
       // 
-      this.TextBoxesValidation_lbl.AutoSize = true;
-      this.TextBoxesValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TextBoxesValidation_lbl.ForeColor = System.Drawing.Color.Red;
-      this.TextBoxesValidation_lbl.Location = new System.Drawing.Point(20, 327);
-      this.TextBoxesValidation_lbl.Name = "TextBoxesValidation_lbl";
-      this.TextBoxesValidation_lbl.Size = new System.Drawing.Size(0, 20);
-      this.TextBoxesValidation_lbl.TabIndex = 8;
+      this.Validation_lbl.AutoSize = true;
+      this.Validation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Validation_lbl.ForeColor = System.Drawing.Color.Red;
+      this.Validation_lbl.Location = new System.Drawing.Point(20, 327);
+      this.Validation_lbl.Name = "Validation_lbl";
+      this.Validation_lbl.Size = new System.Drawing.Size(0, 20);
+      this.Validation_lbl.TabIndex = 8;
       // 
-      // EditContractors_btn
+      // UpdateSuppliers_btn
       // 
-      this.EditContractors_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.EditContractors_btn.Location = new System.Drawing.Point(941, 327);
-      this.EditContractors_btn.Name = "EditContractors_btn";
-      this.EditContractors_btn.Size = new System.Drawing.Size(120, 30);
-      this.EditContractors_btn.TabIndex = 7;
-      this.EditContractors_btn.Text = "Dodaj";
-      this.EditContractors_btn.UseVisualStyleBackColor = true;
-      this.EditContractors_btn.Click += new System.EventHandler(this.EditContractors_btn_Click);
+      this.UpdateSuppliers_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.UpdateSuppliers_btn.Location = new System.Drawing.Point(941, 327);
+      this.UpdateSuppliers_btn.Name = "UpdateSuppliers_btn";
+      this.UpdateSuppliers_btn.Size = new System.Drawing.Size(120, 30);
+      this.UpdateSuppliers_btn.TabIndex = 7;
+      this.UpdateSuppliers_btn.Text = "Edytuj";
+      this.UpdateSuppliers_btn.UseVisualStyleBackColor = true;
+      this.UpdateSuppliers_btn.Click += new System.EventHandler(this.UpdateSuppliers_btn_Click);
       // 
       // General_gb
       // 
+      this.General_gb.Controls.Add(this.Id_tb);
+      this.General_gb.Controls.Add(this.label2);
       this.General_gb.Controls.Add(this.label1);
       this.General_gb.Controls.Add(this.ClearGeneral_btn);
       this.General_gb.Controls.Add(this.Name_tb);
       this.General_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.General_gb.Location = new System.Drawing.Point(11, 27);
       this.General_gb.Name = "General_gb";
-      this.General_gb.Size = new System.Drawing.Size(526, 94);
+      this.General_gb.Size = new System.Drawing.Size(526, 144);
       this.General_gb.TabIndex = 4;
       this.General_gb.TabStop = false;
       this.General_gb.Text = "Edytuj Kontrahenta";
       // 
-      // EditContractors_panel
+      // UpdateSuppliers_panel
       // 
-      this.EditContractors_panel.Controls.Add(this.TextBoxesValidation_lbl);
-      this.EditContractors_panel.Controls.Add(this.EditContractors_btn);
-      this.EditContractors_panel.Controls.Add(this.General_gb);
-      this.EditContractors_panel.Controls.Add(this.Adress_gb);
-      this.EditContractors_panel.Controls.Add(this.Contact_gb);
-      this.EditContractors_panel.Location = new System.Drawing.Point(260, 116);
-      this.EditContractors_panel.Name = "EditContractors_panel";
-      this.EditContractors_panel.Size = new System.Drawing.Size(1075, 600);
-      this.EditContractors_panel.TabIndex = 7;
-      this.EditContractors_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.EditContractors_panel_Paint);
+      this.UpdateSuppliers_panel.Controls.Add(this.Validation_lbl);
+      this.UpdateSuppliers_panel.Controls.Add(this.UpdateSuppliers_btn);
+      this.UpdateSuppliers_panel.Controls.Add(this.General_gb);
+      this.UpdateSuppliers_panel.Controls.Add(this.Adress_gb);
+      this.UpdateSuppliers_panel.Controls.Add(this.Contact_gb);
+      this.UpdateSuppliers_panel.Location = new System.Drawing.Point(260, 116);
+      this.UpdateSuppliers_panel.Name = "UpdateSuppliers_panel";
+      this.UpdateSuppliers_panel.Size = new System.Drawing.Size(1075, 600);
+      this.UpdateSuppliers_panel.TabIndex = 7;
+      this.UpdateSuppliers_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdateSuppliers_panel_Paint);
       // 
       // Adress_gb
       // 
@@ -357,26 +364,43 @@
       // AddContractor_panel
       // 
       this.AddContractor_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.AddContractor_panel.Controls.Add(this.EditContractors_panel);
+      this.AddContractor_panel.Controls.Add(this.UpdateSuppliers_panel);
       this.AddContractor_panel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.AddContractor_panel.Location = new System.Drawing.Point(0, 0);
       this.AddContractor_panel.Name = "AddContractor_panel";
       this.AddContractor_panel.Size = new System.Drawing.Size(1920, 1080);
       this.AddContractor_panel.TabIndex = 1;
       // 
-      // EditContractors
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Location = new System.Drawing.Point(9, 36);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(27, 20);
+      this.label2.TabIndex = 5;
+      this.label2.Text = "Id:";
+      // 
+      // Id_tb
+      // 
+      this.Id_tb.Location = new System.Drawing.Point(220, 29);
+      this.Id_tb.Name = "Id_tb";
+      this.Id_tb.Size = new System.Drawing.Size(300, 30);
+      this.Id_tb.TabIndex = 6;
+      // 
+      // UpdateSuppliers
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.AddContractor_panel);
-      this.Name = "EditContractors";
+      this.Name = "UpdateSuppliers";
       this.Size = new System.Drawing.Size(1920, 1080);
       this.Contact_gb.ResumeLayout(false);
       this.Contact_gb.PerformLayout();
       this.General_gb.ResumeLayout(false);
       this.General_gb.PerformLayout();
-      this.EditContractors_panel.ResumeLayout(false);
-      this.EditContractors_panel.PerformLayout();
+      this.UpdateSuppliers_panel.ResumeLayout(false);
+      this.UpdateSuppliers_panel.PerformLayout();
       this.Adress_gb.ResumeLayout(false);
       this.Adress_gb.PerformLayout();
       this.AddContractor_panel.ResumeLayout(false);
@@ -410,11 +434,13 @@
         private System.Windows.Forms.TextBox ZipCode_tb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ClearGeneral_btn;
-        private System.Windows.Forms.Label TextBoxesValidation_lbl;
-        private System.Windows.Forms.Button EditContractors_btn;
+        private System.Windows.Forms.Label Validation_lbl;
+        private System.Windows.Forms.Button UpdateSuppliers_btn;
         private System.Windows.Forms.GroupBox General_gb;
-        private System.Windows.Forms.Panel EditContractors_panel;
+        private System.Windows.Forms.Panel UpdateSuppliers_panel;
         private System.Windows.Forms.GroupBox Adress_gb;
         private System.Windows.Forms.Panel AddContractor_panel;
-    }
+    private System.Windows.Forms.TextBox Id_tb;
+    private System.Windows.Forms.Label label2;
+  }
 }

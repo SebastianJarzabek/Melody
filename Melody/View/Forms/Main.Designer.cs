@@ -31,10 +31,10 @@
       this.MainMenu_ms = new System.Windows.Forms.MenuStrip();
       this.ContactDetails_msmi = new System.Windows.Forms.ToolStripMenuItem();
       this.Contractors_smi = new System.Windows.Forms.ToolStripMenuItem();
-      this.AddContractors = new System.Windows.Forms.ToolStripMenuItem();
-      this.EditContractors = new System.Windows.Forms.ToolStripMenuItem();
+      this.AddSuppliers = new System.Windows.Forms.ToolStripMenuItem();
+      this.UpdateSuppliers = new System.Windows.Forms.ToolStripMenuItem();
       this.ListContractors = new System.Windows.Forms.ToolStripMenuItem();
-      this.DeleteContractors = new System.Windows.Forms.ToolStripMenuItem();
+      this.DeleteSuppliers = new System.Windows.Forms.ToolStripMenuItem();
       this.Employees_smi = new System.Windows.Forms.ToolStripMenuItem();
       this.AddEmployee = new System.Windows.Forms.ToolStripMenuItem();
       this.EditEmployee = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,27 +101,27 @@
       // Contractors_smi
       // 
       this.Contractors_smi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddContractors,
-            this.EditContractors,
+            this.AddSuppliers,
+            this.UpdateSuppliers,
             this.ListContractors,
-            this.DeleteContractors});
+            this.DeleteSuppliers});
       this.Contractors_smi.Name = "Contractors_smi";
       this.Contractors_smi.Size = new System.Drawing.Size(171, 26);
       this.Contractors_smi.Text = "Kontrahenci";
       // 
-      // AddContractors
+      // AddSuppliers
       // 
-      this.AddContractors.Name = "AddContractors";
-      this.AddContractors.Size = new System.Drawing.Size(133, 26);
-      this.AddContractors.Text = "Dodaj";
-      this.AddContractors.Click += new System.EventHandler(this.AddContractors_Click);
+      this.AddSuppliers.Name = "AddSuppliers";
+      this.AddSuppliers.Size = new System.Drawing.Size(133, 26);
+      this.AddSuppliers.Text = "Dodaj";
+      this.AddSuppliers.Click += new System.EventHandler(this.AddSuppliers_Click);
       // 
-      // EditContractors
+      // UpdateSuppliers
       // 
-      this.EditContractors.Name = "EditContractors";
-      this.EditContractors.Size = new System.Drawing.Size(133, 26);
-      this.EditContractors.Text = "Edytuj";
-      this.EditContractors.Click += new System.EventHandler(this.EditContractors_Click);
+      this.UpdateSuppliers.Name = "UpdateSuppliers";
+      this.UpdateSuppliers.Size = new System.Drawing.Size(133, 26);
+      this.UpdateSuppliers.Text = "Edytuj";
+      this.UpdateSuppliers.Click += new System.EventHandler(this.UpdateSuppliers_Click);
       // 
       // ListContractors
       // 
@@ -130,12 +130,12 @@
       this.ListContractors.Text = "Lista";
       this.ListContractors.Click += new System.EventHandler(this.ListContractors_Click);
       // 
-      // DeleteContractors
+      // DeleteSuppliers
       // 
-      this.DeleteContractors.Name = "DeleteContractors";
-      this.DeleteContractors.Size = new System.Drawing.Size(133, 26);
-      this.DeleteContractors.Text = "Usuń";
-      this.DeleteContractors.Click += new System.EventHandler(this.DeleteContractors_Click);
+      this.DeleteSuppliers.Name = "DeleteSuppliers";
+      this.DeleteSuppliers.Size = new System.Drawing.Size(133, 26);
+      this.DeleteSuppliers.Text = "Usuń";
+      this.DeleteSuppliers.Click += new System.EventHandler(this.DeleteSuppliers_Click);
       // 
       // Employees_smi
       // 
@@ -443,10 +443,10 @@
         private System.Windows.Forms.MenuStrip MainMenu_ms;
         private System.Windows.Forms.ToolStripMenuItem ContactDetails_msmi;
         private System.Windows.Forms.ToolStripMenuItem Contractors_smi;
-        private System.Windows.Forms.ToolStripMenuItem AddContractors;
-        private System.Windows.Forms.ToolStripMenuItem EditContractors;
+        private System.Windows.Forms.ToolStripMenuItem AddSuppliers;
+        private System.Windows.Forms.ToolStripMenuItem UpdateSuppliers;
         private System.Windows.Forms.ToolStripMenuItem ListContractors;
-        private System.Windows.Forms.ToolStripMenuItem DeleteContractors;
+        private System.Windows.Forms.ToolStripMenuItem DeleteSuppliers;
         private System.Windows.Forms.ToolStripMenuItem Employees_smi;
         private System.Windows.Forms.ToolStripMenuItem AddEmployee;
         private System.Windows.Forms.ToolStripMenuItem EditEmployee;

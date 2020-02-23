@@ -23,26 +23,26 @@ namespace Melody.View.Window
       catch (Exception ex) { throw ex; }
     }
 
-    private void AddContractors_Click(object sender, EventArgs e)
+    private void AddSuppliers_Click(object sender, EventArgs e)
     {
       try
       {
         Main_Panel.Controls.Clear();
-        var AddContractorsControlPanel = new AddContractors();
-        AddContractorsControlPanel.Dock = DockStyle.Fill;
-        Main_Panel.Controls.Add(AddContractorsControlPanel);
+        var AddSuppliersControlPanel = new AddSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        AddSuppliersControlPanel.Dock = DockStyle.Fill;
+        Main_Panel.Controls.Add(AddSuppliersControlPanel);
       }
       catch (Exception ex) { throw ex; }
     }
 
-    private void EditContractors_Click(object sender, EventArgs e)
+    private void UpdateSuppliers_Click(object sender, EventArgs e)
     {
       try
       {
         Main_Panel.Controls.Clear();
-        var EditContractorsControlPanel = new EditContractors();
-        EditContractorsControlPanel.Dock = DockStyle.Fill;
-        Main_Panel.Controls.Add(EditContractorsControlPanel);
+        var UpdateSuppliersControlPanel = new UpdateSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        UpdateSuppliersControlPanel.Dock = DockStyle.Fill;
+        Main_Panel.Controls.Add(UpdateSuppliersControlPanel);
       }
       catch (Exception ex) { throw ex; }
     }
@@ -59,14 +59,14 @@ namespace Melody.View.Window
       catch (Exception ex) { throw ex; }
     }
 
-    private void DeleteContractors_Click(object sender, EventArgs e)
+    private void DeleteSuppliers_Click(object sender, EventArgs e)
     {
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteContractorsControlPanel = new DeleteContractors();
-        DeleteContractorsControlPanel.Dock = DockStyle.Fill;
-        Main_Panel.Controls.Add(DeleteContractorsControlPanel);
+        var DeleteSuppliersControlPanel = new DeleteSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        DeleteSuppliersControlPanel.Dock = DockStyle.Fill;
+        Main_Panel.Controls.Add(DeleteSuppliersControlPanel);
       }
       catch (Exception ex) { throw ex; }
     }

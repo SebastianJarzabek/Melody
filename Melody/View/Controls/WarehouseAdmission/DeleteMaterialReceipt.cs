@@ -50,15 +50,15 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteWarehouseAdmissionFromId, parameters))
-        {
-          Clear();
-          MessageBox.Show(
-          $"Usunięto z bazy danych  : {parameters.idWarehouseIssue}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
-        }
+        //if (executor.DeleteFromDatabase(execute.DeleteWarehouseAdmissionFromId, parameters))
+        //{
+        //  Clear();
+        //  MessageBox.Show(
+        //  $"Usunięto z bazy danych  : {parameters.idWarehouseIssue}.",
+        //  "Informacja",
+        //  MessageBoxButtons.OK,
+        //  MessageBoxIcon.Information);
+        //}
       }
       catch (Exception ex)
       {

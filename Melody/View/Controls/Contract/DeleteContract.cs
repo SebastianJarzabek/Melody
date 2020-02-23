@@ -1,17 +1,28 @@
 ﻿using Melody.Service.DataAccess;
+using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Logic.Interfaces;
 using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
   public partial class DeleteContract : UserControl
   {
-    public DeleteContract()
+    private readonly IContractsRepository _contractsRepository;
+    private readonly IValidators _validator;
+
+    Destiny destiny = new Destiny();
+
+    public DeleteContract(IContractsRepository contractsRepository, IValidators validators)
     {
       InitializeComponent();
+
+      _contractsRepository = contractsRepository;
+      _validator = validators;
     }
 
     private void DeleteContract_panel_Paint(object sender, PaintEventArgs e)
@@ -37,37 +48,41 @@ namespace Melody.View.Controls
     {
       try
       {
-        var destiny = new Destiny()
-        {
-          Name = Name_tb.Text,
-          Contract = Contract_tb.Text
-        };
 
-        var parameters = new
-        {
-          name = destiny.Name,
-          contract = destiny.Contract,
-        };
+        destiny.Name = Name_tb.Text;
+        destiny.Contract = Contract_tb.Text;
 
-        var executor = new Executor();
-        var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteDestiny, parameters))
+        _contractsRepository.DeleteDestinies(destiny);
+
+        Clear();
+        var stb = new StringBuilder();
+        stb.Append($"Usunięto z bazy danych ");
+        if (!string.IsNullOrWhiteSpace(destiny.Name))
         {
-          Clear();
-          MessageBox.Show(
-          $"Usunięto z bazy danych kontrakt: {parameters.name} o numerze: {parameters.contract}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
+          stb.Append($"kontrakt: { destiny.Name}");
         }
+        if (!string.IsNullOrWhiteSpace(destiny.Contract))
+        {
+          stb.Append($" o numerze: {destiny.Contract}");
+        }
+        stb.Append(".");
+        
+        MessageBox.Show(stb.ToString(),
+                        "Informacja",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Błąd",
-          $"Wystąpił błąd przy usuwaniu kontraktu do bazy. {ex}",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
+        MessageBox.Show($"Wystąpił błąd przy usuwaniu kontraktu do bazy. {ex}",
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
         throw ex;
+      }
+      finally
+      {
+        Clear();
       }
     }
   }

@@ -50,15 +50,15 @@ this.ClientSize.Width / 2 - DeleteEmployee_panel.Size.Width / 2);
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteEmployee, parameters))
-        {
+        executor.DeleteFromDatabase(execute.DeleteEmployee, parameters);
+        
           Clear();
           MessageBox.Show(
           $"Usunięto z bazy danych kontrakt: {parameters.nameIn} o numerze: {parameters.surnameIn}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+        
       }
       catch (Exception ex)
       {

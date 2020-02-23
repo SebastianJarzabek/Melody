@@ -20,17 +20,28 @@ namespace Melody.Service.DataAccess
       int Contract = Convert.ToInt32(destiny.Contract);
       var parameters = new { destiny.Name, Contract };
 
-       _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
+      _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
 
     public void UpdateDestinies(object parm)
     {
-       _executor.InsertIntoDatabase(new SqlProcedure().UpdateDestiny, parm);
+      _executor.InsertIntoDatabase(new SqlProcedure().UpdateDestiny, parm);
     }
 
-    public bool DeleteDestinies(object parm)
+    public void DeleteDestinies(Destiny destiny)
     {
-      return _executor.DeleteFromDatabase(new SqlProcedure().DeleteDestiny, parm);
+      object parameters;
+
+      if (!string.IsNullOrEmpty(destiny.Contract))
+      {
+        var Contract = Convert.ToInt32(destiny.Contract);
+        parameters = new { destiny.Name, Contract };
+      }
+      else
+      {
+        parameters = new { destiny.Name };
+      }
+      _executor.DeleteFromDatabase(new SqlProcedure().DeleteDestiny, parameters);
     }
 
     public List<Destiny> GetDestinies()

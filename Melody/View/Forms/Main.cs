@@ -110,7 +110,7 @@ namespace Melody.View.Window
     private void DeleteContract_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var DeleteContractControlPanel = new DeleteContract();
+      var DeleteContractControlPanel = new DeleteContract(new ContractsRepository(new Executor()), new Validators());
       DeleteContractControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(DeleteContractControlPanel);
     }

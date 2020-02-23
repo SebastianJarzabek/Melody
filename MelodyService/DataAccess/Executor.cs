@@ -95,15 +95,13 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public bool DeleteFromDatabase(string storedProcedureName, object parameters)
+    public void DeleteFromDatabase(string storedProcedureName, object parameters)
     {
       try
       {
         using (var connection = new SqlConnection(_configService.GetConnectionString()))
         {
-          var result = connection.Execute(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
-
-          return IsSuccess(result);
+          connection.Query(storedProcedureName, parameters, null, true, null, commandType: CommandType.StoredProcedure).ToList();
         }
       }
       catch (Exception ex)

@@ -43,15 +43,15 @@ this.ClientSize.Width / 2 - DeleteContractor_panel.Size.Width / 2);
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteSupplier, parameters))
-        {
-          Clear();
-          MessageBox.Show(
-          $"Usunięto z bazy danych kontrahenta: {parameters.name}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
-        }
+        //if (executor.DeleteFromDatabase(execute.DeleteSupplier, parameters))
+        //{
+        //  Clear();
+        //  MessageBox.Show(
+        //  $"Usunięto z bazy danych kontrahenta: {parameters.name}.",
+        //  "Informacja",
+        //  MessageBoxButtons.OK,
+        //  MessageBoxIcon.Information);
+        //}
       }
       catch (Exception ex)
       {

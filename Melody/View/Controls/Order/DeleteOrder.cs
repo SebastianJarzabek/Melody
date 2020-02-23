@@ -37,15 +37,15 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.DeleteFromDatabase(execute.DeleteDestiny, parameters))
-        {
-          Clear();
-          MessageBox.Show(
-          $"Usunięto z bazy danych kontrakt: {parameters.name}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
-        }
+        //if (executor.DeleteFromDatabase(execute.DeleteDestiny, parameters))
+        //{
+        //  Clear();
+        //  MessageBox.Show(
+        //  $"Usunięto z bazy danych kontrakt: {parameters.name}.",
+        //  "Informacja",
+        //  MessageBoxButtons.OK,
+        //  MessageBoxIcon.Information);
+        //}
       }
       catch (Exception ex)
       {

@@ -1,23 +1,34 @@
 ﻿using Melody.Service.DataAccess;
+using Melody.Service.Entity;
 using Melody.Service.Logic;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
   public partial class ListEmployee : UserControl
   {
-    private EmployeesRepository employeesRepository;
-    private Validators validators;
+    private IEmployeesRepository _employeesRepository;
+    private List<Employee> _employees;
 
-    public ListEmployee()
+    public ListEmployee(EmployeesRepository employeesRepository)
     {
       InitializeComponent();
+      _employeesRepository = employeesRepository;
+      RefereshDestinies();
     }
 
-    public ListEmployee(EmployeesRepository employeesRepository, Validators validators)
+    private void Refresh_btn_Click(object sender, System.EventArgs e)
     {
-      this.employeesRepository = employeesRepository;
-      this.validators = validators;
+      RefereshDestinies();
+    }
+
+    private void RefereshDestinies()
+    {
+      _employees = _employeesRepository.GetEmployees();
+      Data_dgv.DataSource = null;
+      Data_dgv.DataSource = _employees;
     }
   }
 }

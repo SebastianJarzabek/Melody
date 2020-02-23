@@ -100,7 +100,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var ListEmployeeControlPanel = new ListEmployee(new EmployeesRepository(new Executor()), new Validators());
+        var ListEmployeeControlPanel = new ListEmployee(new EmployeesRepository(new Executor()));
         ListEmployeeControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(ListEmployeeControlPanel);
       }
@@ -221,7 +221,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var CurrentStateControl = new CurrentState_panel();
+        var CurrentStateControl = new CurrentState( new InventoryLevelRepository(new Executor()));
         CurrentStateControl.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(CurrentStateControl);
       }

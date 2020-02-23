@@ -33,6 +33,22 @@
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
+      this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.departament = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.houseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.apartmentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.zipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.webside = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
@@ -40,6 +56,23 @@
       // Data_dgv
       // 
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.name,
+            this.surname,
+            this.departament,
+            this.position,
+            this.login,
+            this.password,
+            this.street,
+            this.houseNumber,
+            this.apartmentNumber,
+            this.city,
+            this.zipCode,
+            this.country,
+            this.phoneNumber,
+            this.email,
+            this.webside});
       this.Data_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Data_dgv.Location = new System.Drawing.Point(0, 62);
       this.Data_dgv.Name = "Data_dgv";
@@ -89,6 +122,151 @@
       this.Refresh_btn.TabIndex = 4;
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
+      this.Refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
+      // 
+      // Id
+      // 
+      this.Id.DataPropertyName = "Id";
+      this.Id.HeaderText = "Id";
+      this.Id.MinimumWidth = 6;
+      this.Id.Name = "Id";
+      this.Id.ReadOnly = true;
+      this.Id.Width = 125;
+      // 
+      // name
+      // 
+      this.name.DataPropertyName = "Name";
+      this.name.HeaderText = "Imię";
+      this.name.MinimumWidth = 6;
+      this.name.Name = "name";
+      this.name.ReadOnly = true;
+      this.name.Width = 125;
+      // 
+      // surname
+      // 
+      this.surname.DataPropertyName = "Surname";
+      this.surname.HeaderText = "Nazwisko";
+      this.surname.MinimumWidth = 6;
+      this.surname.Name = "surname";
+      this.surname.ReadOnly = true;
+      this.surname.Width = 125;
+      // 
+      // departament
+      // 
+      this.departament.DataPropertyName = "Departament";
+      this.departament.HeaderText = "Dział";
+      this.departament.MinimumWidth = 6;
+      this.departament.Name = "departament";
+      this.departament.ReadOnly = true;
+      this.departament.Width = 125;
+      // 
+      // position
+      // 
+      this.position.DataPropertyName = "Position";
+      this.position.HeaderText = "Stanowisko";
+      this.position.MinimumWidth = 6;
+      this.position.Name = "position";
+      this.position.ReadOnly = true;
+      this.position.Width = 125;
+      // 
+      // login
+      // 
+      this.login.DataPropertyName = "Login";
+      this.login.HeaderText = "Login";
+      this.login.MinimumWidth = 6;
+      this.login.Name = "login";
+      this.login.ReadOnly = true;
+      this.login.Width = 125;
+      // 
+      // password
+      // 
+      this.password.DataPropertyName = "Password";
+      this.password.HeaderText = "Hasło";
+      this.password.MinimumWidth = 6;
+      this.password.Name = "password";
+      this.password.ReadOnly = true;
+      this.password.Width = 125;
+      // 
+      // street
+      // 
+      this.street.DataPropertyName = "Street";
+      this.street.HeaderText = "Ulica";
+      this.street.MinimumWidth = 6;
+      this.street.Name = "street";
+      this.street.ReadOnly = true;
+      this.street.Width = 125;
+      // 
+      // houseNumber
+      // 
+      this.houseNumber.DataPropertyName = "HouseNumber";
+      this.houseNumber.HeaderText = "Nr. domu";
+      this.houseNumber.MinimumWidth = 6;
+      this.houseNumber.Name = "houseNumber";
+      this.houseNumber.ReadOnly = true;
+      this.houseNumber.Width = 125;
+      // 
+      // apartmentNumber
+      // 
+      this.apartmentNumber.DataPropertyName = "ApartmentNumber";
+      this.apartmentNumber.HeaderText = "Nr. lokalu";
+      this.apartmentNumber.MinimumWidth = 6;
+      this.apartmentNumber.Name = "apartmentNumber";
+      this.apartmentNumber.ReadOnly = true;
+      this.apartmentNumber.Width = 125;
+      // 
+      // city
+      // 
+      this.city.DataPropertyName = "City";
+      this.city.HeaderText = "Miasto";
+      this.city.MinimumWidth = 6;
+      this.city.Name = "city";
+      this.city.ReadOnly = true;
+      this.city.Width = 125;
+      // 
+      // zipCode
+      // 
+      this.zipCode.DataPropertyName = "ZipCode";
+      this.zipCode.HeaderText = "Kod-pocztowy";
+      this.zipCode.MinimumWidth = 6;
+      this.zipCode.Name = "zipCode";
+      this.zipCode.ReadOnly = true;
+      this.zipCode.Width = 125;
+      // 
+      // country
+      // 
+      this.country.DataPropertyName = "Country";
+      this.country.HeaderText = "Kraj";
+      this.country.MinimumWidth = 6;
+      this.country.Name = "country";
+      this.country.ReadOnly = true;
+      this.country.Width = 125;
+      // 
+      // phoneNumber
+      // 
+      this.phoneNumber.DataPropertyName = "PhoneNumber";
+      this.phoneNumber.HeaderText = "Telefon";
+      this.phoneNumber.MinimumWidth = 6;
+      this.phoneNumber.Name = "phoneNumber";
+      this.phoneNumber.ReadOnly = true;
+      this.phoneNumber.Width = 125;
+      // 
+      // email
+      // 
+      this.email.DataPropertyName = "Email";
+      this.email.HeaderText = "E-mail";
+      this.email.MinimumWidth = 6;
+      this.email.Name = "email";
+      this.email.ReadOnly = true;
+      this.email.Width = 125;
+      // 
+      // webside
+      // 
+      this.webside.DataPropertyName = "Webside";
+      this.webside.HeaderText = "Strona internetowa";
+      this.webside.MinimumWidth = 6;
+      this.webside.Name = "webside";
+      this.webside.ReadOnly = true;
+      this.webside.Width = 125;
       // 
       // ListEmployee
       // 
@@ -112,5 +290,21 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Refresh_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departament;
+        private System.Windows.Forms.DataGridViewTextBoxColumn position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street;
+        private System.Windows.Forms.DataGridViewTextBoxColumn houseNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apartmentNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zipCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn country;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn webside;
     }
 }

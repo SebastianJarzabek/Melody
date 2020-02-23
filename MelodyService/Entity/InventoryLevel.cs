@@ -5,7 +5,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class InventoryLevel
   {
-    public int IdInventoryLevel { get; set; }
+    public int Id { get; set; }
 
     public Material Material { get; set; }
 

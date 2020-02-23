@@ -45,7 +45,7 @@
       this.label27 = new System.Windows.Forms.Label();
       this.label28 = new System.Windows.Forms.Label();
       this.Departmrnt_tb = new System.Windows.Forms.TextBox();
-      this.TextBoxesValidation_lbl = new System.Windows.Forms.Label();
+      this.Validation_lbl = new System.Windows.Forms.Label();
       this.AddEmployee_btn = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.label17 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
       // 
       this.AddEmployee_panel.Controls.Add(this.groupBox4);
       this.AddEmployee_panel.Controls.Add(this.groupBox1);
-      this.AddEmployee_panel.Controls.Add(this.TextBoxesValidation_lbl);
+      this.AddEmployee_panel.Controls.Add(this.Validation_lbl);
       this.AddEmployee_panel.Controls.Add(this.AddEmployee_btn);
       this.AddEmployee_panel.Controls.Add(this.groupBox2);
       this.AddEmployee_panel.Controls.Add(this.groupBox3);
@@ -141,6 +141,7 @@
       this.LoginDataClear_btn.TabIndex = 2;
       this.LoginDataClear_btn.Text = " Wyczyść";
       this.LoginDataClear_btn.UseVisualStyleBackColor = true;
+      this.LoginDataClear_btn.Click += new System.EventHandler(this.LoginDataClear_btn_Click);
       // 
       // Password_tb
       // 
@@ -187,6 +188,7 @@
       this.GeneralClear_btn.TabIndex = 4;
       this.GeneralClear_btn.Text = " Wyczyść";
       this.GeneralClear_btn.UseVisualStyleBackColor = true;
+      this.GeneralClear_btn.Click += new System.EventHandler(this.GeneralClear_btn_Click);
       // 
       // Name_tb
       // 
@@ -246,15 +248,15 @@
       this.Departmrnt_tb.Size = new System.Drawing.Size(300, 30);
       this.Departmrnt_tb.TabIndex = 2;
       // 
-      // TextBoxesValidation_lbl
+      // Validation_lbl
       // 
-      this.TextBoxesValidation_lbl.AutoSize = true;
-      this.TextBoxesValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TextBoxesValidation_lbl.ForeColor = System.Drawing.Color.Red;
-      this.TextBoxesValidation_lbl.Location = new System.Drawing.Point(12, 461);
-      this.TextBoxesValidation_lbl.Name = "TextBoxesValidation_lbl";
-      this.TextBoxesValidation_lbl.Size = new System.Drawing.Size(0, 20);
-      this.TextBoxesValidation_lbl.TabIndex = 8;
+      this.Validation_lbl.AutoSize = true;
+      this.Validation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Validation_lbl.ForeColor = System.Drawing.Color.Red;
+      this.Validation_lbl.Location = new System.Drawing.Point(12, 461);
+      this.Validation_lbl.Name = "Validation_lbl";
+      this.Validation_lbl.Size = new System.Drawing.Size(0, 20);
+      this.Validation_lbl.TabIndex = 8;
       // 
       // AddEmployee_btn
       // 
@@ -265,6 +267,7 @@
       this.AddEmployee_btn.TabIndex = 7;
       this.AddEmployee_btn.Text = "Dodaj";
       this.AddEmployee_btn.UseVisualStyleBackColor = true;
+      this.AddEmployee_btn.Click += new System.EventHandler(this.AddEmployee_btn_Click);
       // 
       // groupBox2
       // 
@@ -342,6 +345,7 @@
       this.AdressClear_btn.TabIndex = 6;
       this.AdressClear_btn.Text = " Wyczyść";
       this.AdressClear_btn.UseVisualStyleBackColor = true;
+      this.AdressClear_btn.Click += new System.EventHandler(this.AdressClear_btn_Click);
       // 
       // ApartamentNumber_tb
       // 
@@ -480,6 +484,7 @@
       this.ContactDetailClear_btn.TabIndex = 3;
       this.ContactDetailClear_btn.Text = " Wyczyść";
       this.ContactDetailClear_btn.UseVisualStyleBackColor = true;
+      this.ContactDetailClear_btn.Click += new System.EventHandler(this.ClearContact_btn_Click);
       // 
       // AddEmployee
       // 
@@ -521,7 +526,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox Departmrnt_tb;
-        private System.Windows.Forms.Label TextBoxesValidation_lbl;
+        private System.Windows.Forms.Label Validation_lbl;
         private System.Windows.Forms.Button AddEmployee_btn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label17;

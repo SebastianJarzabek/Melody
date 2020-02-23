@@ -15,11 +15,11 @@ namespace Melody.Service.Logic
       {
         if (int.TryParse(phoneNumber, out int result))
         {
-          return "Nieprawidłowy format numeru telefonu.\nNumer powinien sie składać tylko cyfr.";
+          return string.Empty;
         }
         else
         {
-          return string.Empty;
+          return "Nieprawidłowy format numeru telefonu.\nNumer powinien sie składać tylko cyfr.";
         }
       }
       catch (Exception ex)
@@ -34,11 +34,11 @@ namespace Melody.Service.Logic
       {
         if (email.Contains("@") && email.Contains("."))
         {
-          return $"Nieprawidłowy format adresu email.\nNumer powinien zwierać @ i .";
+          return string.Empty;
         }
         else
         {
-          return string.Empty;
+          return $"Nieprawidłowy format adresu email.\nNumer powinien zwierać @ i .";
         }
       }
       catch (Exception ex)

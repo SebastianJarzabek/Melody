@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Logic;
 using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
@@ -9,9 +10,18 @@ namespace Melody.View.Controls
 {
   public partial class DeleteEmployee : UserControl
   {
+    private EmployeesRepository employeesRepository;
+    private Validators validators;
+
     public DeleteEmployee()
     {
       InitializeComponent();
+    }
+
+    public DeleteEmployee(EmployeesRepository employeesRepository, Validators validators)
+    {
+      this.employeesRepository = employeesRepository;
+      this.validators = validators;
     }
 
     private void DeleteEmployee_panel_Paint(object sender, PaintEventArgs e)

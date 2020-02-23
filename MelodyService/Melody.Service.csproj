@@ -60,7 +60,9 @@
     <Compile Include="ConfigService\ConfigServices.cs" />
     <Compile Include="ConfigService\Interfaces\IConfigServices.cs" />
     <Compile Include="DataAccess\ContractsRepository.cs" />
+    <Compile Include="DataAccess\EmployeesRepository.cs" />
     <Compile Include="DataAccess\Executor.cs" />
+    <Compile Include="DataAccess\Interfaces\IEmployeesRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IContractsRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IExecutor.cs" />
     <Compile Include="DataAccess\Interfaces\ISuppliersRepository.cs" />

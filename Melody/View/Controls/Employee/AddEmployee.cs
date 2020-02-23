@@ -1,8 +1,7 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using Melody.Service.Logic;
-using Melody.Service.PasswordCoder;
-using Melody.Service.SqlProcedures;
+using Melody.Service.Logic.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,15 +11,20 @@ namespace Melody.View.Controls
 {
   public partial class AddEmployee : UserControl
   {
-    Validators validators = new Validators();
-    public AddEmployee()
+    private readonly IEmployeesRepository _employeeRepository;
+    private readonly IValidators _validator;
+
+    public AddEmployee(IEmployeesRepository employeeRepository, IValidators validator)
     {
       InitializeComponent();
+      _employeeRepository = employeeRepository;
+      _validator = validator;
     }
 
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
-      TextBoxesValidation_lbl.Text = string.Empty;
+      ClearErrorLabel();
+
       var emp = new Employee
       {
         Name = Name_tb.Text,
@@ -65,49 +69,38 @@ namespace Melody.View.Controls
 
       try
       {
-        var parameters = new
-        {
-          nameIn = emp.Name,
-          surnameIn = emp.Surname,
-          departamentIn = emp.Departament,
-          positionIn = emp.Position,
-          loginIn = emp.Access.Login,
-          passwordIn = new Coder().CodePassword(emp.Access.Password),
-          streetIn = emp.Adress.Street,
-          houseNumberIn = emp.Adress.HouseNumber,
-          apartmentNumberIn = emp.Adress.ApartmentNumber,
-          cityIn = emp.Adress.City,
-          zipCodeIn = emp.Adress.ZipCode,
-          countryIn = emp.Adress.Country,
-          phoneNumberIn = emp.ContactDetails.PhoneNumber,
-          emailIn = emp.ContactDetails.Email,
-          websideIn = emp.ContactDetails.Webside
-        };
+        _employeeRepository.AddEmployee(emp);
 
-        var executor = new Executor();
-        var execute = new SqlProcedure();
-        executor.InsertIntoDatabase(execute.AddEmployee, parameters);
-        
-          MessageBox.Show(
-          $"Dodano do bazy danych pracownika: {parameters.nameIn} {parameters.surnameIn}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
-        
+          MessageBox.Show($"Dodano do bazy danych pracownika: {emp.Name} {emp.Surname}.",
+                          "Informacja",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
         MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
-          "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
         throw ex;
+      }
+      finally
+      {
+        Clear();
+      }
+    }
+
+    private void ClearErrorLabel()
+    {
+      if (string.IsNullOrWhiteSpace(Validation_lbl.Text))
+      {
+        Validation_lbl.Text = string.Empty;
       }
     }
 
     private bool PhoneValidate(string phoneNumber)
     {
-      var errorMessage = validators.PhoneValidate(PhoneNumber_tb.Text);
+      var errorMessage = _validator.PhoneValidate(PhoneNumber_tb.Text);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -116,16 +109,16 @@ namespace Melody.View.Controls
       else
       {
         MessageBox.Show(errorMessage, "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                        Validation_lbl.Text = errorMessage;
         return false;
       }
     }
 
     private bool EmailValidate(string email)
     {
-      var errorMessage = validators.EmailValidate(Email_tb.Text);
+      var errorMessage = _validator.EmailValidate(Email_tb.Text);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -136,14 +129,14 @@ namespace Melody.View.Controls
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+        Validation_lbl.Text = errorMessage;
         return false;
       }
     }
 
     private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      var errorMessage = validators.TextBoxesValidate(null,emp, null, dataClasses);
+      var errorMessage = _validator.TextBoxesValidate(null,emp, null, dataClasses);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -154,9 +147,28 @@ namespace Melody.View.Controls
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+        Validation_lbl.Text = errorMessage;
         return false;
       }
+    }
+
+    private void Clear()
+    {
+      Name_tb.Text = string.Empty;
+      Surname_tb.Text = string.Empty;
+      Departmrnt_tb.Text = string.Empty;
+      Position_tb.Text = string.Empty;
+      Login_tb.Text = string.Empty;
+      Password_tb.Text = string.Empty;
+      PhoneNumber_tb.Text = string.Empty;
+      Email_tb.Text = string.Empty;
+      Webside_tb.Text = "Brak";
+      Street_tb.Text = string.Empty;
+      HouseNumber_tb.Text = string.Empty;
+      ApartamentNumber_tb.Text = "0";
+      City_tb.Text = string.Empty;
+      ZipCode_tb.Text = string.Empty;
+      Country_tb.Text = string.Empty;
     }
 
     private void GeneralClear_btn_Click(object sender, EventArgs e)

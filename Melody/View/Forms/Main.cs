@@ -54,7 +54,7 @@ namespace Melody.View.Window
     private void AddEmployee_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var AddEmployeeControlPanel = new AddEmployee();
+      var AddEmployeeControlPanel = new AddEmployee(new EmployeesRepository(new Executor()), new Validators());
       AddEmployeeControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(AddEmployeeControlPanel);
     }
@@ -62,7 +62,7 @@ namespace Melody.View.Window
     private void EditEmployee_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var EditEmployeeControlPanel = new EditEmployee();
+      var EditEmployeeControlPanel = new EditEmployee(new EmployeesRepository(new Executor()), new Validators());
       EditEmployeeControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(EditEmployeeControlPanel);
     }
@@ -70,7 +70,7 @@ namespace Melody.View.Window
     private void ListEmployee_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var ListEmployeeControlPanel = new ListEmployee();
+      var ListEmployeeControlPanel = new ListEmployee(new EmployeesRepository(new Executor()), new Validators());
       ListEmployeeControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(ListEmployeeControlPanel);
     }
@@ -78,7 +78,7 @@ namespace Melody.View.Window
     private void DeleteEmployee_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var DeleteEmployeeControlPanel = new DeleteEmployee();
+      var DeleteEmployeeControlPanel = new DeleteEmployee(new EmployeesRepository(new Executor()), new Validators());
       DeleteEmployeeControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(DeleteEmployeeControlPanel);
     }

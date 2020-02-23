@@ -14,10 +14,17 @@ namespace Melody.View.Controls
   {
 
     Validators validators = new Validators();
+    private EmployeesRepository employeesRepository;
 
     public EditEmployee()
     {
       InitializeComponent();
+    }
+
+    public EditEmployee(EmployeesRepository employeesRepository, Validators validators)
+    {
+      this.employeesRepository = employeesRepository;
+      this.validators = validators;
     }
 
     private void UpdateEmployee_panel_Paint(object sender, PaintEventArgs e)

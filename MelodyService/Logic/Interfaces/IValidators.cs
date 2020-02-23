@@ -8,5 +8,9 @@ namespace Melody.Service.Logic.Interfaces
     string TextBoxesValidate(Destiny destiny, Employee emp, Supplier supplier, List<DataClass> toValidate);
 
     string IsIntContractValidate(Destiny destiny);
+
+    string EmailValidate(string email);
+
+    string PhoneValidate(string phoneNumber);
   }
 }

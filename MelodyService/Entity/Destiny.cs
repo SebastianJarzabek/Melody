@@ -5,7 +5,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class Destiny
   {
-    public int IdDestiny { get; set; }
+    public int Id { get; set; }
 
     public string Name { get; set; }
 

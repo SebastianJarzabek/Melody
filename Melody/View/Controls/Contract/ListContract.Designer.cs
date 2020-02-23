@@ -29,19 +29,21 @@
     private void InitializeComponent()
     {
       this.Data_dgv = new System.Windows.Forms.DataGridView();
-      this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.NameColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ContractColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.panel1 = new System.Windows.Forms.Panel();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
+      this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NameColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ContractColumne = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // Data_dgv
       // 
+      this.Data_dgv.AllowUserToAddRows = false;
+      this.Data_dgv.AllowUserToDeleteRows = false;
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
@@ -51,36 +53,12 @@
       this.Data_dgv.Location = new System.Drawing.Point(0, 76);
       this.Data_dgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
       this.Data_dgv.Name = "Data_dgv";
+      this.Data_dgv.ReadOnly = true;
       this.Data_dgv.RowHeadersWidth = 51;
       this.Data_dgv.RowTemplate.Height = 24;
       this.Data_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.Data_dgv.Size = new System.Drawing.Size(1920, 1005);
       this.Data_dgv.TabIndex = 3;
-      // 
-      // IdDestiny
-      // 
-      this.IdDestiny.DataPropertyName = "IdDestiny";
-      this.IdDestiny.HeaderText = "Column1";
-      this.IdDestiny.MinimumWidth = 6;
-      this.IdDestiny.Name = "IdDestiny";
-      this.IdDestiny.Visible = false;
-      this.IdDestiny.Width = 125;
-      // 
-      // NameColumne
-      // 
-      this.NameColumne.DataPropertyName = "Name";
-      this.NameColumne.HeaderText = "Nazwa";
-      this.NameColumne.MinimumWidth = 6;
-      this.NameColumne.Name = "NameColumne";
-      this.NameColumne.Width = 125;
-      // 
-      // ContractColumne
-      // 
-      this.ContractColumne.DataPropertyName = "Contract";
-      this.ContractColumne.HeaderText = "Numer kontraktu";
-      this.ContractColumne.MinimumWidth = 6;
-      this.ContractColumne.Name = "ContractColumne";
-      this.ContractColumne.Width = 125;
       // 
       // panel1
       // 
@@ -125,6 +103,34 @@
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
       // 
+      // IdDestiny
+      // 
+      this.IdDestiny.DataPropertyName = "Id";
+      this.IdDestiny.HeaderText = "Id";
+      this.IdDestiny.MinimumWidth = 6;
+      this.IdDestiny.Name = "IdDestiny";
+      this.IdDestiny.ReadOnly = true;
+      this.IdDestiny.Visible = false;
+      this.IdDestiny.Width = 125;
+      // 
+      // NameColumne
+      // 
+      this.NameColumne.DataPropertyName = "Name";
+      this.NameColumne.HeaderText = "Nazwa";
+      this.NameColumne.MinimumWidth = 6;
+      this.NameColumne.Name = "NameColumne";
+      this.NameColumne.ReadOnly = true;
+      this.NameColumne.Width = 125;
+      // 
+      // ContractColumne
+      // 
+      this.ContractColumne.DataPropertyName = "Contract";
+      this.ContractColumne.HeaderText = "Numer kontraktu";
+      this.ContractColumne.MinimumWidth = 6;
+      this.ContractColumne.Name = "ContractColumne";
+      this.ContractColumne.ReadOnly = true;
+      this.ContractColumne.Width = 125;
+      // 
       // ListContract
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,11 +152,11 @@
         private System.Windows.Forms.DataGridView Data_dgv;
         private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn IdDestiny;
-    private System.Windows.Forms.DataGridViewTextBoxColumn NameColumne;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ContractColumne;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Refresh_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDestiny;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContractColumne;
     }
 }

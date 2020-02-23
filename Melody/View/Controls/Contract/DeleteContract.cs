@@ -52,7 +52,7 @@ namespace Melody.View.Controls
         destiny.Name = Name_tb.Text;
         destiny.Contract = Contract_tb.Text;
 
-        _contractsRepository.DeleteDestinies(destiny);
+        _contractsRepository.DeleteDestiny(destiny);
 
         Clear();
         var stb = new StringBuilder();

@@ -23,12 +23,15 @@ namespace Melody.Service.DataAccess
       _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
 
-    public void UpdateDestinies(object parm)
+    public void UpdateDestiny(Destiny destiny)
     {
-      _executor.InsertIntoDatabase(new SqlProcedure().UpdateDestiny, parm);
+      int Contract = Convert.ToInt32(destiny.Contract);
+      var parameters = new { destiny.Name, Contract };
+
+      _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
 
-    public void DeleteDestinies(Destiny destiny)
+    public void DeleteDestiny(Destiny destiny)
     {
       object parameters;
 

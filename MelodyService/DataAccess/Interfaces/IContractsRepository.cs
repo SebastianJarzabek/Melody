@@ -7,9 +7,9 @@ namespace Melody.Service.DataAccess.Interfaces
   {
     void AddDestiny(Destiny destiny);
 
-    void UpdateDestinies(object parm);
+    void UpdateDestiny(Destiny destiny);
 
-    void DeleteDestinies(Destiny destiny);
+    void DeleteDestiny(Destiny destiny);
 
     List<Destiny> GetDestinies();
   }

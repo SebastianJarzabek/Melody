@@ -219,7 +219,7 @@ namespace Melody.Service.Logic
         stb.Remove(stb.Length - 1, 1);
         stb.AppendLine("musi zostać uzupełnione.");
 
-        if (stb.Length > 30)
+        if (stb.Length > 32)
         {
           return stb.ToString();
         }

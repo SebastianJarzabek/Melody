@@ -125,14 +125,14 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.UpdateEmployee, parameters))
-        {
+        executor.InsertIntoDatabase(execute.UpdateEmployee, parameters);
+        
           MessageBox.Show(
           $"Edytowano dane pracownika: {parameters.nameIn} {parameters.surnameIn}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+        
       }
       catch (Exception ex)
       {

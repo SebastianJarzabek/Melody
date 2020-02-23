@@ -155,14 +155,14 @@ this.ClientSize.Width / 2 - EditContractors_panel.Size.Width / 2);
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.UpdateSupplier, parameters))
-        {
+        executor.InsertIntoDatabase(execute.UpdateSupplier, parameters);
+        
           MessageBox.Show(
           $"Edytowano w bazie danych kontrahenta: {parameters.name}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+        
       }
       catch (Exception ex)
       {

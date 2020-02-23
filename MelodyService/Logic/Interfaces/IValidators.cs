@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Melody.Service.Entity;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Melody.Service.Logic.Interfaces
 {
-  interface IValidators
+  public interface IValidators
   {
+    string TextBoxesValidate(Destiny destiny, Employee emp, Supplier supplier, List<DataClass> toValidate);
+
+    string IsIntContractValidate(Destiny destiny);
   }
 }

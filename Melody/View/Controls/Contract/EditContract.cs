@@ -66,14 +66,14 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.UpdateDestiny, parameters))
-        {
+    executor.InsertIntoDatabase(execute.UpdateDestiny, parameters);
+       
           MessageBox.Show(
           $"Edytowano kontrakt: {parameters.name} o numerze: {parameters.contract}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+     
       }
       catch (Exception ex)
       {

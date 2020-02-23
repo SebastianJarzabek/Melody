@@ -14,7 +14,7 @@ namespace Melody.Service.SqlProcedures
 
     public string UsersLogin => " dbo.UsersLogin";
 
-    public string AddDestiny => " dbo.AddDestiny";
+    public string AddDestiny => "dbo.AddDestiny";
 
     public string AddEmployee => " dbo.AddEmployee";
 

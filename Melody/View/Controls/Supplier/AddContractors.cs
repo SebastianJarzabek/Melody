@@ -78,14 +78,14 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.AddSupplier, parameters))
-        {
+        executor.InsertIntoDatabase(execute.AddSupplier, parameters);
+        
           MessageBox.Show(
           $"Dodano do bazy danych kontrahenta: {parameters.name}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+        
       }
       catch (Exception ex)
       {

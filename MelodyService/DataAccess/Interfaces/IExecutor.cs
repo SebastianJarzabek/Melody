@@ -1,4 +1,5 @@
 ﻿using log4net;
+using Melody.Service.Entity;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -6,7 +7,7 @@ namespace Melody.Service.DataAccess.Interfaces
 {
   public interface IExecutor
   {
-    bool InsertIntoDatabase(string storedProcedureName, object parameters);
+    void InsertIntoDatabase(string storedProcedureName, object parameters);
     bool DeleteFromDatabase(string storedProcedureName, object parameters);
 
     List<T> GetListFromDatabase<T>(string storedProcedureName, object parameters);

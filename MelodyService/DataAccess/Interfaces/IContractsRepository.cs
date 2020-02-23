@@ -5,9 +5,9 @@ namespace Melody.Service.DataAccess.Interfaces
 {
   public interface IContractsRepository
   {
-    bool AddDestiny(object parm);
+    void AddDestiny(Destiny destiny);
 
-    bool UpdateDestinies(object parm);
+    void UpdateDestinies(object parm);
 
     bool DeleteDestinies(object parm);
 

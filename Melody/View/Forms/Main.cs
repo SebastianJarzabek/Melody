@@ -3,6 +3,7 @@ using Melody.View.Panel;
 using System;
 using System.Windows.Forms;
 using Melody.Service.DataAccess;
+using Melody.Service.Logic;
 
 namespace Melody.View.Window
 {
@@ -85,7 +86,7 @@ namespace Melody.View.Window
     private void AddContract_Click(object sender, EventArgs e)
     {
       Main_Panel.Controls.Clear();
-      var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()));
+      var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()), new Validators());
       AddContractControlPanel.Dock = DockStyle.Fill;
       Main_Panel.Controls.Add(AddContractControlPanel);
     }

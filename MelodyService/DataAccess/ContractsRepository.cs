@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
 using Melody.Service.SqlProcedures;
 
 namespace Melody.Service.DataAccess
 {
-  public class ContractsRepository  : IContractsRepository
+  public class ContractsRepository : IContractsRepository
   {
     private readonly IExecutor _executor;
 
@@ -14,15 +15,17 @@ namespace Melody.Service.DataAccess
       _executor = executor;
     }
 
-
-    public bool AddDestiny(object parm)
+    public void AddDestiny(Destiny destiny)
     {
-      return _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parm);
+      int Contract = Convert.ToInt32(destiny.Contract);
+      var parameters = new { destiny.Name, Contract };
+
+       _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
 
-    public bool UpdateDestinies(object parm)
+    public void UpdateDestinies(object parm)
     {
-      return _executor.InsertIntoDatabase(new SqlProcedure().UpdateDestiny, parm);
+       _executor.InsertIntoDatabase(new SqlProcedure().UpdateDestiny, parm);
     }
 
     public bool DeleteDestinies(object parm)

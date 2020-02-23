@@ -86,14 +86,14 @@ namespace Melody.View.Controls
 
         var executor = new Executor();
         var execute = new SqlProcedure();
-        if (executor.InsertIntoDatabase(execute.AddEmployee, parameters))
-        {
+        executor.InsertIntoDatabase(execute.AddEmployee, parameters);
+        
           MessageBox.Show(
           $"Dodano do bazy danych pracownika: {parameters.nameIn} {parameters.surnameIn}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        }
+        
       }
       catch (Exception ex)
       {

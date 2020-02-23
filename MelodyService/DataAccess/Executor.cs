@@ -3,6 +3,7 @@ using log4net;
 using Melody.Service.ConfigService;
 using Melody.Service.ConfigService.Interfaces;
 using Melody.Service.DataAccess.Interfaces;
+using Melody.Service.Entity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -79,15 +80,13 @@ namespace Melody.Service.DataAccess
       }
     }
 
-    public bool InsertIntoDatabase(string storedProcedureName, object parameters)
+    public void InsertIntoDatabase(string storedProcedureName, object parameters)
     {
       try
       {
         using (var connection = new SqlConnection(_configService.GetConnectionString()))
-        {
-          var result = connection.Execute(storedProcedureName, parameters, null, null, CommandType.StoredProcedure);
-
-          return IsSuccess(result);
+        { 
+          connection.Query(storedProcedureName, parameters, null, true, null, commandType: CommandType.StoredProcedure).ToList();
         }
       }
       catch (Exception ex)

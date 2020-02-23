@@ -135,11 +135,11 @@ namespace Melody.Service.Logic
 
             if (string.IsNullOrWhiteSpace(destiny.Name))
             {
-              stb.AppendLine("Nazwa");
+              stb.AppendLine(" Nazwa");
             }
             if (string.IsNullOrWhiteSpace(destiny.Contract))
             {
-              stb.AppendLine("Numer Kontraktu");
+              stb.AppendLine(" Numer Kontraktu");
             }
           }
         }
@@ -219,7 +219,7 @@ namespace Melody.Service.Logic
         stb.Remove(stb.Length - 1, 1);
         stb.AppendLine("musi zostać uzupełnione.");
 
-        if (stb.Length < 30)
+        if (stb.Length > 30)
         {
           return stb.ToString();
         }
@@ -230,7 +230,7 @@ namespace Melody.Service.Logic
       }
       catch (Exception ex)
       {
-        throw new Exception("Exception was occured in Validators.TextBoxesValidate. " + ex);
+        throw new Exception("Exception was occured in Validators. TextBoxesValidate. " + ex);
       }
 
     }

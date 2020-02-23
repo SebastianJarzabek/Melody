@@ -5,7 +5,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class Employee
   {
-    public int IdEmployee { get; set; }
+    public int Id { get; set; }
 
     public string Name { get; set; }
 

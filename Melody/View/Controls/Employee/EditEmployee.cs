@@ -1,8 +1,7 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
 using Melody.Service.Logic;
-using Melody.Service.PasswordCoder;
-using Melody.Service.SqlProcedures;
+using Melody.Service.Logic.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,19 +11,14 @@ namespace Melody.View.Controls
 {
   public partial class EditEmployee : UserControl
   {
+    private readonly IEmployeesRepository _employeeRepository;
+    private readonly IValidators _validator;
 
-    Validators validators = new Validators();
-    private EmployeesRepository employeesRepository;
-
-    public EditEmployee()
+    public EditEmployee(IEmployeesRepository employeeRepository, IValidators validator)
     {
       InitializeComponent();
-    }
-
-    public EditEmployee(EmployeesRepository employeesRepository, Validators validators)
-    {
-      this.employeesRepository = employeesRepository;
-      this.validators = validators;
+      _employeeRepository = employeeRepository;
+      _validator = validator;
     }
 
     private void UpdateEmployee_panel_Paint(object sender, PaintEventArgs e)
@@ -36,6 +30,7 @@ namespace Melody.View.Controls
 
     private void GeneralClear_btn_Click(object sender, EventArgs e)
     {
+      Id_tb.Text = string.Empty;
       Name_tb.Text = string.Empty;
       Surname_tb.Text = string.Empty;
       Departmrnt_tb.Text = string.Empty;
@@ -66,9 +61,23 @@ namespace Melody.View.Controls
     }
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
-      TextBoxesValidation_lbl.Text = string.Empty;
+      ClearErrorLabel();
+
+      var errorMessage = _validator.IsIntContractValidate(Id_tb.Text, "Id");
+      int Id = 0;
+
+      if (string.IsNullOrEmpty(errorMessage))
+      {
+        Id = Convert.ToInt32(Id_tb.Text);
+      }
+      else
+      {
+        throw new Exception(errorMessage);
+      }
+
       var emp = new Employee
       {
+        Id = Id == 0 ? 0 : Id,
         Name = Name_tb.Text,
         Surname = Surname_tb.Text,
         Departament = Departmrnt_tb.Text,
@@ -111,35 +120,13 @@ namespace Melody.View.Controls
 
       try
       {
-        var parameters = new
-        {
-          nameIn = emp.Name,
-          surnameIn = emp.Surname,
-          departamentIn = emp.Departament,
-          positionIn = emp.Position,
-          loginIn = emp.Access.Login,
-          passwordIn = new Coder().CodePassword(emp.Access.Password),
-          streetIn = emp.Adress.Street,
-          houseNumberIn = emp.Adress.HouseNumber,
-          apartmentNumberIn = emp.Adress.ApartmentNumber,
-          cityIn = emp.Adress.City,
-          zipCodeIn = emp.Adress.ZipCode,
-          countryIn = emp.Adress.Country,
-          phoneNumberIn = emp.ContactDetails.PhoneNumber,
-          emailIn = emp.ContactDetails.Email,
-          websideIn = emp.ContactDetails.Webside
-        };
-
-        var executor = new Executor();
-        var execute = new SqlProcedure();
-        executor.InsertIntoDatabase(execute.UpdateEmployee, parameters);
-        
-          MessageBox.Show(
-          $"Edytowano dane pracownika: {parameters.nameIn} {parameters.surnameIn}.",
+        _employeeRepository.UpdateEmployee(emp);
+        MessageBox.Show(
+          $"Edytowano dane pracownika: {emp.Name} {emp.Surname}.",
           "Informacja",
           MessageBoxButtons.OK,
           MessageBoxIcon.Information);
-        
+
       }
       catch (Exception ex)
       {
@@ -149,11 +136,15 @@ namespace Melody.View.Controls
           MessageBoxIcon.Error);
         throw ex;
       }
+      finally
+      {
+        Clear();
+      }
     }
 
     private bool PhoneValidate(string phoneNumber)
     {
-      var errorMessage = validators.PhoneValidate(PhoneNumber_tb.Text);
+      var errorMessage = _validator.PhoneValidate(PhoneNumber_tb.Text);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -164,14 +155,40 @@ namespace Melody.View.Controls
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+        Validation_lbl.Text = errorMessage;
         return false;
       }
+    }
+    private void ClearErrorLabel()
+    {
+      if (string.IsNullOrWhiteSpace(Validation_lbl.Text))
+      {
+        Validation_lbl.Text = string.Empty;
+      }
+    }
+    private void Clear()
+    {
+      Id_tb.Text = string.Empty;
+      Name_tb.Text = string.Empty;
+      Surname_tb.Text = string.Empty;
+      Departmrnt_tb.Text = string.Empty;
+      Position_tb.Text = string.Empty;
+      Login_tb.Text = string.Empty;
+      Password_tb.Text = string.Empty;
+      PhoneNumber_tb.Text = string.Empty;
+      Email_tb.Text = string.Empty;
+      Webside_tb.Text = "Brak";
+      Street_tb.Text = string.Empty;
+      HouseNumber_tb.Text = string.Empty;
+      ApartamentNumber_tb.Text = "0";
+      City_tb.Text = string.Empty;
+      ZipCode_tb.Text = string.Empty;
+      Country_tb.Text = string.Empty;
     }
 
     private bool EmailValidate(string email)
     {
-      var errorMessage = validators.EmailValidate(Email_tb.Text);
+      var errorMessage = _validator.EmailValidate(Email_tb.Text);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -182,14 +199,14 @@ namespace Melody.View.Controls
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+        Validation_lbl.Text = errorMessage;
         return false;
       }
     }
 
     private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
     {
-      var errorMessage = validators.TextBoxesValidate(null, emp, null, dataClasses);
+      var errorMessage = _validator.TextBoxesValidate(null, emp, null, dataClasses);
 
       if (string.IsNullOrEmpty(errorMessage))
       {
@@ -200,7 +217,7 @@ namespace Melody.View.Controls
         MessageBox.Show(errorMessage, "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
-        TextBoxesValidation_lbl.Text = errorMessage;
+        Validation_lbl.Text = errorMessage;
         return false;
       }
     }

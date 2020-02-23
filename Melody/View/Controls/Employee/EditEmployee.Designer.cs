@@ -36,6 +36,8 @@
       this.LoginDataClear_btn = new System.Windows.Forms.Button();
       this.Password_tb = new System.Windows.Forms.TextBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.Id_lbl = new System.Windows.Forms.Label();
+      this.Id_tb = new System.Windows.Forms.TextBox();
       this.label15 = new System.Windows.Forms.Label();
       this.GeneralClear_btn = new System.Windows.Forms.Button();
       this.Name_tb = new System.Windows.Forms.TextBox();
@@ -45,7 +47,7 @@
       this.label27 = new System.Windows.Forms.Label();
       this.label28 = new System.Windows.Forms.Label();
       this.Departmrnt_tb = new System.Windows.Forms.TextBox();
-      this.TextBoxesValidation_lbl = new System.Windows.Forms.Label();
+      this.Validation_lbl = new System.Windows.Forms.Label();
       this.UpdateEmployee_btn = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.label17 = new System.Windows.Forms.Label();
@@ -80,7 +82,7 @@
       // 
       this.UpdateEmployee_panel.Controls.Add(this.groupBox4);
       this.UpdateEmployee_panel.Controls.Add(this.groupBox1);
-      this.UpdateEmployee_panel.Controls.Add(this.TextBoxesValidation_lbl);
+      this.UpdateEmployee_panel.Controls.Add(this.Validation_lbl);
       this.UpdateEmployee_panel.Controls.Add(this.UpdateEmployee_btn);
       this.UpdateEmployee_panel.Controls.Add(this.groupBox2);
       this.UpdateEmployee_panel.Controls.Add(this.groupBox3);
@@ -98,7 +100,7 @@
       this.groupBox4.Controls.Add(this.LoginDataClear_btn);
       this.groupBox4.Controls.Add(this.Password_tb);
       this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox4.Location = new System.Drawing.Point(3, 213);
+      this.groupBox4.Location = new System.Drawing.Point(14, 250);
       this.groupBox4.Name = "groupBox4";
       this.groupBox4.Size = new System.Drawing.Size(526, 127);
       this.groupBox4.TabIndex = 10;
@@ -141,6 +143,7 @@
       this.LoginDataClear_btn.TabIndex = 2;
       this.LoginDataClear_btn.Text = " Wyczyść";
       this.LoginDataClear_btn.UseVisualStyleBackColor = true;
+      this.LoginDataClear_btn.Click += new System.EventHandler(this.LoginDataClear_btn_Click);
       // 
       // Password_tb
       // 
@@ -151,6 +154,8 @@
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.Id_lbl);
+      this.groupBox1.Controls.Add(this.Id_tb);
       this.groupBox1.Controls.Add(this.label15);
       this.groupBox1.Controls.Add(this.GeneralClear_btn);
       this.groupBox1.Controls.Add(this.Name_tb);
@@ -161,18 +166,35 @@
       this.groupBox1.Controls.Add(this.label28);
       this.groupBox1.Controls.Add(this.Departmrnt_tb);
       this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(3, 3);
+      this.groupBox1.Location = new System.Drawing.Point(14, 3);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(526, 204);
+      this.groupBox1.Size = new System.Drawing.Size(526, 249);
       this.groupBox1.TabIndex = 9;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Dane Podstawowe";
+      // 
+      // Id_lbl
+      // 
+      this.Id_lbl.AutoSize = true;
+      this.Id_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Id_lbl.Location = new System.Drawing.Point(9, 38);
+      this.Id_lbl.Name = "Id_lbl";
+      this.Id_lbl.Size = new System.Drawing.Size(27, 20);
+      this.Id_lbl.TabIndex = 18;
+      this.Id_lbl.Text = "Id:";
+      // 
+      // Id_tb
+      // 
+      this.Id_tb.Location = new System.Drawing.Point(219, 31);
+      this.Id_tb.Name = "Id_tb";
+      this.Id_tb.Size = new System.Drawing.Size(300, 30);
+      this.Id_tb.TabIndex = 17;
       // 
       // label15
       // 
       this.label15.AutoSize = true;
       this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label15.Location = new System.Drawing.Point(8, 31);
+      this.label15.Location = new System.Drawing.Point(7, 74);
       this.label15.Name = "label15";
       this.label15.Size = new System.Drawing.Size(45, 20);
       this.label15.TabIndex = 4;
@@ -181,16 +203,17 @@
       // GeneralClear_btn
       // 
       this.GeneralClear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.GeneralClear_btn.Location = new System.Drawing.Point(400, 168);
+      this.GeneralClear_btn.Location = new System.Drawing.Point(399, 211);
       this.GeneralClear_btn.Name = "GeneralClear_btn";
       this.GeneralClear_btn.Size = new System.Drawing.Size(120, 30);
       this.GeneralClear_btn.TabIndex = 4;
       this.GeneralClear_btn.Text = " Wyczyść";
       this.GeneralClear_btn.UseVisualStyleBackColor = true;
+      this.GeneralClear_btn.Click += new System.EventHandler(this.GeneralClear_btn_Click);
       // 
       // Name_tb
       // 
-      this.Name_tb.Location = new System.Drawing.Point(220, 24);
+      this.Name_tb.Location = new System.Drawing.Point(219, 67);
       this.Name_tb.Name = "Name_tb";
       this.Name_tb.Size = new System.Drawing.Size(300, 30);
       this.Name_tb.TabIndex = 0;
@@ -199,7 +222,7 @@
       // 
       this.label26.AutoSize = true;
       this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label26.Location = new System.Drawing.Point(8, 67);
+      this.label26.Location = new System.Drawing.Point(7, 110);
       this.label26.Name = "label26";
       this.label26.Size = new System.Drawing.Size(86, 20);
       this.label26.TabIndex = 6;
@@ -207,14 +230,14 @@
       // 
       // Surname_tb
       // 
-      this.Surname_tb.Location = new System.Drawing.Point(220, 60);
+      this.Surname_tb.Location = new System.Drawing.Point(219, 103);
       this.Surname_tb.Name = "Surname_tb";
       this.Surname_tb.Size = new System.Drawing.Size(300, 30);
       this.Surname_tb.TabIndex = 1;
       // 
       // Position_tb
       // 
-      this.Position_tb.Location = new System.Drawing.Point(220, 132);
+      this.Position_tb.Location = new System.Drawing.Point(219, 175);
       this.Position_tb.Name = "Position_tb";
       this.Position_tb.Size = new System.Drawing.Size(300, 30);
       this.Position_tb.TabIndex = 3;
@@ -223,7 +246,7 @@
       // 
       this.label27.AutoSize = true;
       this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label27.Location = new System.Drawing.Point(6, 103);
+      this.label27.Location = new System.Drawing.Point(5, 146);
       this.label27.Name = "label27";
       this.label27.Size = new System.Drawing.Size(53, 20);
       this.label27.TabIndex = 8;
@@ -233,7 +256,7 @@
       // 
       this.label28.AutoSize = true;
       this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label28.Location = new System.Drawing.Point(6, 139);
+      this.label28.Location = new System.Drawing.Point(5, 182);
       this.label28.Name = "label28";
       this.label28.Size = new System.Drawing.Size(99, 20);
       this.label28.TabIndex = 10;
@@ -241,20 +264,20 @@
       // 
       // Departmrnt_tb
       // 
-      this.Departmrnt_tb.Location = new System.Drawing.Point(220, 96);
+      this.Departmrnt_tb.Location = new System.Drawing.Point(219, 139);
       this.Departmrnt_tb.Name = "Departmrnt_tb";
       this.Departmrnt_tb.Size = new System.Drawing.Size(300, 30);
       this.Departmrnt_tb.TabIndex = 2;
       // 
-      // TextBoxesValidation_lbl
+      // Validation_lbl
       // 
-      this.TextBoxesValidation_lbl.AutoSize = true;
-      this.TextBoxesValidation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TextBoxesValidation_lbl.ForeColor = System.Drawing.Color.Red;
-      this.TextBoxesValidation_lbl.Location = new System.Drawing.Point(12, 461);
-      this.TextBoxesValidation_lbl.Name = "TextBoxesValidation_lbl";
-      this.TextBoxesValidation_lbl.Size = new System.Drawing.Size(0, 20);
-      this.TextBoxesValidation_lbl.TabIndex = 8;
+      this.Validation_lbl.AutoSize = true;
+      this.Validation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Validation_lbl.ForeColor = System.Drawing.Color.Red;
+      this.Validation_lbl.Location = new System.Drawing.Point(12, 461);
+      this.Validation_lbl.Name = "Validation_lbl";
+      this.Validation_lbl.Size = new System.Drawing.Size(0, 20);
+      this.Validation_lbl.TabIndex = 8;
       // 
       // UpdateEmployee_btn
       // 
@@ -265,6 +288,7 @@
       this.UpdateEmployee_btn.TabIndex = 7;
       this.UpdateEmployee_btn.Text = "Edytuj";
       this.UpdateEmployee_btn.UseVisualStyleBackColor = true;
+      this.UpdateEmployee_btn.Click += new System.EventHandler(this.AddEmployee_btn_Click);
       // 
       // groupBox2
       // 
@@ -342,6 +366,7 @@
       this.AdressClear_btn.TabIndex = 6;
       this.AdressClear_btn.Text = " Wyczyść";
       this.AdressClear_btn.UseVisualStyleBackColor = true;
+      this.AdressClear_btn.Click += new System.EventHandler(this.AdressClear_btn_Click);
       // 
       // ApartamentNumber_tb
       // 
@@ -480,6 +505,7 @@
       this.ContactDetailClear_btn.TabIndex = 3;
       this.ContactDetailClear_btn.Text = " Wyczyść";
       this.ContactDetailClear_btn.UseVisualStyleBackColor = true;
+      this.ContactDetailClear_btn.Click += new System.EventHandler(this.ClearContact_btn_Click);
       // 
       // EditEmployee
       // 
@@ -521,7 +547,7 @@
     private System.Windows.Forms.Label label27;
     private System.Windows.Forms.Label label28;
     private System.Windows.Forms.TextBox Departmrnt_tb;
-    private System.Windows.Forms.Label TextBoxesValidation_lbl;
+    private System.Windows.Forms.Label Validation_lbl;
     private System.Windows.Forms.Button UpdateEmployee_btn;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Label label17;
@@ -545,5 +571,7 @@
     private System.Windows.Forms.TextBox Email_tb;
     private System.Windows.Forms.Label label25;
     private System.Windows.Forms.Button ContactDetailClear_btn;
-  }
+        private System.Windows.Forms.Label Id_lbl;
+        private System.Windows.Forms.TextBox Id_tb;
+    }
 }

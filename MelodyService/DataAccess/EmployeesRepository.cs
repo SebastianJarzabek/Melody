@@ -42,6 +42,7 @@ namespace Melody.Service.DataAccess
     {
       var parameters = new
       {
+        Id = employee.Id,
         nameIn = employee.Name,
         surnameIn = employee.Surname,
         departamentIn = employee.Departament,
@@ -68,19 +69,6 @@ namespace Melody.Service.DataAccess
       {
         nameIn = employee.Name,
         surnameIn = employee.Surname,
-        departamentIn = employee.Departament,
-        positionIn = employee.Position,
-        loginIn = employee.Access.Login,
-        passwordIn = new Coder().CodePassword(employee.Access.Password),
-        streetIn = employee.Adress.Street,
-        houseNumberIn = employee.Adress.HouseNumber,
-        apartmentNumberIn = employee.Adress.ApartmentNumber,
-        cityIn = employee.Adress.City,
-        zipCodeIn = employee.Adress.ZipCode,
-        countryIn = employee.Adress.Country,
-        phoneNumberIn = employee.ContactDetails.PhoneNumber,
-        emailIn = employee.ContactDetails.Email,
-        websideIn = employee.ContactDetails.Webside
       };
       
       _executor.DeleteFromDatabase(new SqlProcedure().DeleteEmployee, parameters);

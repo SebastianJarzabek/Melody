@@ -272,5 +272,24 @@ namespace Melody.Service.Logic
         throw new Exception("Exception was occured in Validators.IsIntValidate. " + ex);
       }
     }
+
+    public string IsIntContractValidate(string textToCheck, string message)
+    {
+      try
+      {
+        if (!int.TryParse(textToCheck, out int result))
+        {
+          return $"Nieprawidłowy format {message}.\nNumer powinien sie składać tylko cyfr.";
+        }
+        else
+        {
+          return string.Empty;
+        }
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("Exception was occured in Validators.IsIntContractValidate. " + ex);
+      }
+    }
   }
 }

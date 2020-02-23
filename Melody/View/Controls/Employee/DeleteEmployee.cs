@@ -1,7 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
-using Melody.Service.SqlProcedures;
+using Melody.Service.Logic.Interfaces;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,30 +9,26 @@ namespace Melody.View.Controls
 {
   public partial class DeleteEmployee : UserControl
   {
-    private EmployeesRepository employeesRepository;
-    private Validators validators;
+    private readonly IEmployeesRepository _employeeRepository;
+    private readonly IValidators _validator;
 
-    public DeleteEmployee()
+    public DeleteEmployee(IEmployeesRepository employeeRepository, IValidators validator)
     {
       InitializeComponent();
-    }
-
-    public DeleteEmployee(EmployeesRepository employeesRepository, Validators validators)
-    {
-      this.employeesRepository = employeesRepository;
-      this.validators = validators;
+      _employeeRepository = employeeRepository;
+      _validator = validator;
     }
 
     private void DeleteEmployee_panel_Paint(object sender, PaintEventArgs e)
     {
       DeleteEmployee_panel.Location = new Point(
-this.ClientSize.Width / 2 - DeleteEmployee_panel.Size.Width / 2);
+      this.ClientSize.Width / 2 - DeleteEmployee_panel.Size.Width / 2);
       DeleteEmployee_panel.Anchor = AnchorStyles.None;
     }
+
     private void Clear_btn_Click(object sender, EventArgs e)
     {
       Clear();
-
     }
 
     private void Clear()
@@ -52,31 +47,23 @@ this.ClientSize.Width / 2 - DeleteEmployee_panel.Size.Width / 2);
           Surname = Surname_tb.Text
         };
 
-        var parameters = new
-        {
-          nameIn   = employee.Name,
-          surnameIn = employee.Surname,
-        };
-
-        var executor = new Executor();
-        var execute = new SqlProcedure();
-        executor.DeleteFromDatabase(execute.DeleteEmployee, parameters);
-        
-          Clear();
-          MessageBox.Show(
-          $"Usunięto z bazy danych kontrakt: {parameters.nameIn} o numerze: {parameters.surnameIn}.",
-          "Informacja",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Information);
-        
+        _employeeRepository.DeleteEmployee(employee);
+        MessageBox.Show( $"Usunięto z bazy danych kontrakt: {employee.Name} o numerze: {employee.Surname}.",
+                         "Informacja",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Błąd",
-          $"Wystąpił błąd przy usuwaniu kontraktu do bazy. {ex}",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
+        MessageBox.Show($"Wystąpił błąd przy usuwaniu kontraktu do bazy. {ex}", 
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
         throw ex;
+      }
+      finally
+      {
+        Clear();
       }
     }
   }

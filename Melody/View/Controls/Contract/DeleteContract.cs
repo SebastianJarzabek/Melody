@@ -1,8 +1,6 @@
-﻿using Melody.Service.DataAccess;
-using Melody.Service.DataAccess.Interfaces;
+﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
 using Melody.Service.Logic.Interfaces;
-using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
 using System.Text;
@@ -10,19 +8,16 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class DeleteContract : UserControl
+    public partial class DeleteContract : UserControl
   {
     private readonly IContractsRepository _contractsRepository;
-    private readonly IValidators _validator;
-
     Destiny destiny = new Destiny();
 
-    public DeleteContract(IContractsRepository contractsRepository, IValidators validators)
+    public DeleteContract(IContractsRepository contractsRepository)
     {
       InitializeComponent();
 
       _contractsRepository = contractsRepository;
-      _validator = validators;
     }
 
     private void DeleteContract_panel_Paint(object sender, PaintEventArgs e)

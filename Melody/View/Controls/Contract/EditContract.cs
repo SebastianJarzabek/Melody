@@ -1,11 +1,7 @@
-﻿using Melody.Service.DataAccess;
-using Melody.Service.DataAccess.Interfaces;
+﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
 using Melody.Service.Logic.Interfaces;
-using Melody.Service.SqlProcedures;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,15 +10,13 @@ namespace Melody.View.Controls
   public partial class EditContract : UserControl
   {
     private readonly IContractsRepository _contractsRepository;
-    private readonly IValidators _validator;
 
     Destiny destiny = new Destiny();
 
-    public EditContract(IContractsRepository contractsRepository, IValidators validators)
+    public EditContract(IContractsRepository contractsRepository)
     {
       InitializeComponent();
       _contractsRepository = contractsRepository;
-      _validator = validators;
     }
 
     private void EditContract_btn_Click(object sender, EventArgs e)
@@ -31,13 +25,11 @@ namespace Melody.View.Controls
 
       try
       {
-        destiny.Name = Name_tb.Text;
-        destiny.Contract = Contract_tb.Text;
-
-        if (TbValidate() && ContractValidate())
+        var destiny = CollectEmployee();
+        var validationResult = destiny.Validate();
+        if (validationResult.IsValid)
         {
           _contractsRepository.UpdateDestiny(destiny);
-
           MessageBox.Show($"Edytowano kontrakt: kontrakt: {destiny.Name} o numerze: {destiny.Contract}.",
                           "Informacja",
                           MessageBoxButtons.OK,
@@ -45,15 +37,21 @@ namespace Melody.View.Controls
         }
         else
         {
-          return;
+          Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+          MessageBox.Show(validationResult.ErrorMessageToDisplay,
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+
         }
       }
       catch (Exception ex)
       {
-        MessageBox.Show($"Wystąpił błąd przy edycji kontraktu. {ex}",
-                         "Błąd",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
+        MessageBox.Show("Wystąpił błąd przy edycji kontraktu.",
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
         throw ex;
       }
       finally
@@ -62,47 +60,12 @@ namespace Melody.View.Controls
       }
     }
 
-    private bool ContractValidate()
+    private Destiny CollectEmployee()
     {
-      var destinyErrorMessage = _validator.IsIntContractValidate(destiny);
-      if (string.IsNullOrEmpty(destinyErrorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        Validation_lbl.Text = destinyErrorMessage;
-        MessageBox.Show(destinyErrorMessage,
-        "Błąd",
-
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Error);
-        return false;
-      }
-    }
-
-    private bool TbValidate()
-    {
-      var list = new List<DataClass>
-        {
-          DataClass.Destiny
-        };
-      var textBoxesValidateErrorMessage = _validator.TextBoxesValidate(destiny, null, null, list);
-
-      if (string.IsNullOrEmpty(textBoxesValidateErrorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        Validation_lbl.Text = textBoxesValidateErrorMessage;
-        MessageBox.Show(textBoxesValidateErrorMessage,
-        "Błąd",
-
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Error);
-        return false;
-      }
+      var destiny = new Destiny();
+      destiny.Name = Name_tb.Text;
+      destiny.Contract = Contract_tb.Text;
+      return destiny;
     }
 
     private void ClearErrorLabel()

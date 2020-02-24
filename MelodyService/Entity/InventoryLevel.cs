@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using Melody.Service.Helper;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Melody.Service.Entity
 {
@@ -12,5 +14,19 @@ namespace Melody.Service.Entity
     public int Quantity { get; set; }
 
     public Unit Unit { get; set; }
+
+    public ValidationResult Validate()
+    {
+      var errorMessages = new List<string>();
+      if (Quantity < 0)
+      {
+        errorMessages.Add("ilość, ");
+      }
+
+      return new ValidationResult
+      {
+        ErrorMessages = errorMessages
+      };
+    }
   }
 }

@@ -1,9 +1,7 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
 using Melody.Service.Logic.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,15 +10,13 @@ namespace Melody.View.Controls
   public partial class AddContract : UserControl
   {
     private readonly IContractsRepository _contractsRepository;
-    private readonly IValidators _validator;
 
     Destiny destiny = new Destiny();
 
-    public AddContract(IContractsRepository contractsRepository, IValidators validators)
+    public AddContract(IContractsRepository contractsRepository)
     {
       InitializeComponent();
       _contractsRepository = contractsRepository;
-      _validator = validators;
     }
 
     private void AddContract_btn_Click(object sender, EventArgs e)
@@ -28,10 +24,9 @@ namespace Melody.View.Controls
       ClearErrorLabel();
       try
       {
-        destiny.Name = Name_tb.Text;
-        destiny.Contract = Contract_tb.Text;
-
-        if (TbValidate() && ContractValidate())
+        var destiny = CollectDestines();
+        var validationResult = destiny.Validate();
+        if (validationResult.IsValid)
         {
           _contractsRepository.AddDestiny(destiny);
 
@@ -42,7 +37,12 @@ namespace Melody.View.Controls
         }
         else
         {
-          return;
+          Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+          MessageBox.Show(validationResult.ErrorMessageToDisplay,
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
         }
       }
       catch (Exception ex)
@@ -59,47 +59,12 @@ namespace Melody.View.Controls
       }
     }
 
-    private bool ContractValidate()
+    private Destiny CollectDestines()
     {
-      var destinyErrorMessage = _validator.IsIntContractValidate(destiny);
-      if (string.IsNullOrEmpty(destinyErrorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        Validation_lbl.Text = destinyErrorMessage;
-        MessageBox.Show(destinyErrorMessage,
-        "Błąd",
-
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Error);
-        return false;
-      }
-    }
-
-    private bool TbValidate()
-    {
-      var list = new List<DataClass>
-        {
-          DataClass.Destiny
-        };
-      var textBoxesValidateErrorMessage = _validator.TextBoxesValidate(destiny, null, null, list);
-
-      if (string.IsNullOrEmpty(textBoxesValidateErrorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        Validation_lbl.Text = textBoxesValidateErrorMessage;
-        MessageBox.Show(textBoxesValidateErrorMessage,
-        "Błąd",
-
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Error);
-        return false;
-      }
+      var destiny = new Destiny();
+      destiny.Name = Name_tb.Text;
+      destiny.Contract = Contract_tb.Text;
+      return destiny;
     }
 
     private void ClearErrorLabel()

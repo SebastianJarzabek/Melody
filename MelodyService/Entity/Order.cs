@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Melody.Service.Helper;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Melody.Service.Entity
@@ -27,5 +29,30 @@ namespace Melody.Service.Entity
     public string ReceivingEmployee { get; set; }
 
     public DateTime PlannedDateOfReceipt { get; set; }
+
+    public ValidationResult Validate()
+    {
+      var errorMessages = new List<string>();
+      if (DateOfOrder < DateTime.Now.Subtract(TimeSpan.FromDays(7)))
+      {
+        errorMessages.Add("data zamówienia, ");
+      }
+      if (OrderingEmployee.Length < 5)
+      {
+        errorMessages.Add("zamawiający, ");
+      }
+      if (Quantity < 0)
+      {
+        errorMessages.Add("ilość zamawiana, ");
+      }
+      if (PlannedDateOfReceipt < DateTime.Now.Subtract(TimeSpan.FromDays(1)))
+      {
+        errorMessages.Add("data odbioru, ");
+      }
+      return new ValidationResult
+      {
+        ErrorMessages = errorMessages
+      };
+    }
   }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Melody.Service.Helper;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Melody.Service.Entity
@@ -6,7 +8,7 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class WarehouseAdmission
   {
-    public int IdWarehouseAdmission { get; set; }
+    public int Id { get; set; }
 
     public DateTime DateOfAdmission { get; set; }
 
@@ -25,5 +27,27 @@ namespace Melody.Service.Entity
     public Destiny Destiny { get; set; }
 
     public Note Note { get; set; }
+
+    public ValidationResult Validate()
+    {
+      var errorMessages = new List<string>();
+      if (DateOfAdmission < DateTime.Now.Subtract(TimeSpan.FromDays(7)))
+      {
+        errorMessages.Add("data przyjęcia, ");
+      }
+      if (HostEmployee.Length < 5)
+      {
+        errorMessages.Add("przyjmujący, ");
+      }
+      if (Quantity < 0)
+      {
+        errorMessages.Add("ilość przyjęta, ");
+      }
+      
+      return new ValidationResult
+      {
+        ErrorMessages = errorMessages
+      };
+    }
   }
 }

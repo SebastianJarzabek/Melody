@@ -28,7 +28,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddSuppliersControlPanel = new AddSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        var AddSuppliersControlPanel = new AddSuppliers(new SuppliersRepository(new Executor()));
         AddSuppliersControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddSuppliersControlPanel);
       }
@@ -40,7 +40,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var UpdateSuppliersControlPanel = new UpdateSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        var UpdateSuppliersControlPanel = new EditSuppliers(new SuppliersRepository(new Executor()));
         UpdateSuppliersControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(UpdateSuppliersControlPanel);
       }
@@ -64,7 +64,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteSuppliersControlPanel = new DeleteSuppliers(new SuppliersRepository(new Executor()), new Validators());
+        var DeleteSuppliersControlPanel = new DeleteSuppliers(new SuppliersRepository(new Executor()));
         DeleteSuppliersControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteSuppliersControlPanel);
       }
@@ -76,7 +76,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddEmployeeControlPanel = new AddEmployee(new EmployeesRepository(new Executor()), new Validators());
+        var AddEmployeeControlPanel = new AddEmployee(new EmployeesRepository(new Executor()));
         AddEmployeeControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddEmployeeControlPanel);
       }
@@ -88,7 +88,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var EditEmployeeControlPanel = new EditEmployee(new EmployeesRepository(new Executor()), new Validators());
+        var EditEmployeeControlPanel = new EditEmployee(new EmployeesRepository(new Executor()));
         EditEmployeeControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(EditEmployeeControlPanel);
       }
@@ -112,7 +112,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteEmployeeControlPanel = new DeleteEmployee(new EmployeesRepository(new Executor()), new Validators());
+        var DeleteEmployeeControlPanel = new DeleteEmployee(new EmployeesRepository(new Executor()));
         DeleteEmployeeControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteEmployeeControlPanel);
 
@@ -125,7 +125,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()), new Validators());
+        var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()));
         AddContractControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddContractControlPanel);
       }
@@ -137,7 +137,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var EditContractControlPanel = new EditContract(new ContractsRepository(new Executor()), new Validators());
+        var EditContractControlPanel = new EditContract(new ContractsRepository(new Executor()));
         EditContractControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(EditContractControlPanel);
       }
@@ -161,7 +161,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteContractControlPanel = new DeleteContract(new ContractsRepository(new Executor()), new Validators());
+        var DeleteContractControlPanel = new DeleteContract(new ContractsRepository(new Executor()));
         DeleteContractControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteContractControlPanel);
       }

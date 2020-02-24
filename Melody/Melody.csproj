@@ -138,11 +138,11 @@
     <Compile Include="View\Controls\Contract\EditContract.Designer.cs">
       <DependentUpon>EditContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\Supplier\EditContractors.cs">
+    <Compile Include="View\Controls\Supplier\EditSuppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\Supplier\EditContractors.Designer.cs">
-      <DependentUpon>EditContractors.cs</DependentUpon>
+    <Compile Include="View\Controls\Supplier\EditSuppliers.Designer.cs">
+      <DependentUpon>EditSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\Employee\EditEmployee.cs">
       <SubType>UserControl</SubType>
@@ -280,8 +280,8 @@
     <EmbeddedResource Include="View\Controls\Contract\EditContract.resx">
       <DependentUpon>EditContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\Supplier\EditContractors.resx">
-      <DependentUpon>EditContractors.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\Supplier\EditSuppliers.resx">
+      <DependentUpon>EditSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Employee\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>

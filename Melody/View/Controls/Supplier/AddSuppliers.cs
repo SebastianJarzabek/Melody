@@ -1,9 +1,7 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
 using Melody.Service.Logic.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,13 +10,11 @@ namespace Melody.View.Controls
   public partial class AddSuppliers : UserControl
   {
     private readonly ISuppliersRepository _suppliersRepository;
-    private readonly IValidators _validator;
 
-    public AddSuppliers(ISuppliersRepository suppliersRepository, IValidators validator)
+    public AddSuppliers(ISuppliersRepository suppliersRepository)
     {
       InitializeComponent();
       _suppliersRepository = suppliersRepository;
-      _validator = validator;
     }
 
     private void AddSuppliers_panel_Paint(object sender, PaintEventArgs e)
@@ -31,7 +27,43 @@ namespace Melody.View.Controls
     private void AddSuppliers_btn_Click(object sender, EventArgs e)
     {
       ClearErrorLabel();
+      var supplier = CollectSupplier();
+      var validationResult = supplier.Validate();
+      try
+      {
+        if (validationResult.IsValid)
+        {
+          _suppliersRepository.AddSupplier(supplier);
 
+          MessageBox.Show($"Dodano do bazy danych kontrahenta: {supplier.Name}.",
+                          "Informacja",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
+        }
+        else
+        {
+          Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+          MessageBox.Show(validationResult.ErrorMessageToDisplay,
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show($"Wystąpił błąd przy dodaniu kontrahenta do bazy. {ex}",
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+        throw ex;
+      }
+      finally
+      {
+        Clear();
+      }
+    }
+    private Supplier CollectSupplier()
+    {
       var supplier = new Supplier
       {
         Name = Name_tb.Text,
@@ -51,44 +83,7 @@ namespace Melody.View.Controls
           Webside = Webside_tb.Text
         }
       };
-
-      var list = new List<DataClass>
-      {
-        DataClass.Supplier
-        ,DataClass.Adress
-        ,DataClass.ContactDetails};
-
-
-
-      //// [TODO] -> błąd walidacji (obiekt emp a supplier) w validators 
-      //if (!TextBoxesValidate(supplier, list)
-      //  || !PhoneValidate(supplier.ContactDetails.PhoneNumber)
-      //  || !EmailValidate(supplier.ContactDetails.Email))
-      //{
-      //  return;
-      //}
-
-      try
-      {
-        _suppliersRepository.AddSupplier(supplier);
-
-        MessageBox.Show($"Dodano do bazy danych kontrahenta: {supplier.Name}.",
-                        "Informacja",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show($"Wystąpił błąd przy dodaniu kontrahenta do bazy. {ex}",
-                        "Błąd",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-        throw ex;
-      }
-      finally
-      {
-        Clear();
-      }
+      return supplier;
     }
 
     private void ClearErrorLabel()
@@ -96,60 +91,6 @@ namespace Melody.View.Controls
       if (!string.IsNullOrWhiteSpace(Validation_lbl.Text))
       {
         Validation_lbl.Text = string.Empty;
-      }
-    }
-
-    private bool PhoneValidate(string phoneNumber)
-    {
-      var errorMessage = _validator.PhoneValidate(PhoneNumber_tb.Text);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-        Validation_lbl.Text = errorMessage;
-        return false;
-      }
-    }
-
-    private bool EmailValidate(string email)
-    {
-      var errorMessage = _validator.EmailValidate(Email_tb.Text);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        Validation_lbl.Text = errorMessage;
-        return false;
-      }
-    }
-
-    private bool TextBoxesValidate(Supplier supplier, List<DataClass> dataClasses)
-    {
-      var errorMessage = _validator.TextBoxesValidate(null, null, supplier, dataClasses);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        Validation_lbl.Text = errorMessage;
-        return false;
       }
     }
 

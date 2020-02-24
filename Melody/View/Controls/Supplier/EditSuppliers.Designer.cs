@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class UpdateSuppliers
+  partial class EditSuppliers
   {
     /// <summary> 
     /// Required designer variable.

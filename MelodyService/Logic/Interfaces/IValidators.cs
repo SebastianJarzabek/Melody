@@ -5,7 +5,7 @@ namespace Melody.Service.Logic.Interfaces
 {
   public interface IValidators
   {
-    string TextBoxesValidate(Destiny destiny, Employee emp, Supplier supplier, List<DataClass> toValidate);
+    //string TextBoxesValidate(Destiny destiny, Employee emp, Supplier supplier, List<DataClass> toValidate);
 
     string IsIntContractValidate(Destiny destiny);
 

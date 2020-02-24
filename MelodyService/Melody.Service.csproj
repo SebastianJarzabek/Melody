@@ -83,6 +83,7 @@
     <Compile Include="Entity\Supplier.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Unit.cs" />
+    <Compile Include="Helper\ValidationResult.cs" />
     <Compile Include="Logic\AccessParms.cs" />
     <Compile Include="Logic\DataClass.cs" />
     <Compile Include="Logic\Interfaces\ITrimAccessParms.cs" />

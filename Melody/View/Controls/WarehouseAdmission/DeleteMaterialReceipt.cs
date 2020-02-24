@@ -39,13 +39,13 @@ namespace Melody.View.Controls
       {
         var materialReceipt = new WarehouseAdmission()
         {
-          IdWarehouseAdmission = Convert.ToInt16(MaterialReceiptId_tb.Text)
+          Id = Convert.ToInt16(MaterialReceiptId_tb.Text)
 
         };
 
         var parameters = new
         {
-          idWarehouseIssue = materialReceipt.IdWarehouseAdmission
+          idWarehouseIssue = materialReceipt.Id
         };
 
         var executor = new Executor();

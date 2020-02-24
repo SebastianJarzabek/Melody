@@ -10,13 +10,11 @@ namespace Melody.View.Controls
   public partial class DeleteEmployee : UserControl
   {
     private readonly IEmployeesRepository _employeeRepository;
-    private readonly IValidators _validator;
 
-    public DeleteEmployee(IEmployeesRepository employeeRepository, IValidators validator)
+    public DeleteEmployee(IEmployeesRepository employeeRepository)
     {
       InitializeComponent();
       _employeeRepository = employeeRepository;
-      _validator = validator;
     }
 
     private void DeleteEmployee_panel_Paint(object sender, PaintEventArgs e)

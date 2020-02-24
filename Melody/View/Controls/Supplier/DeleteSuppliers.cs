@@ -10,13 +10,11 @@ namespace Melody.View.Controls
   public partial class DeleteSuppliers : UserControl
   {
     private readonly ISuppliersRepository _suppliersRepository;
-    private readonly IValidators _validator;
 
-    public DeleteSuppliers(ISuppliersRepository suppliersRepository, IValidators validator)
+    public DeleteSuppliers(ISuppliersRepository suppliersRepository)
     {
       InitializeComponent();
       _suppliersRepository = suppliersRepository;
-      _validator = validator;
     }
 
     private void DeleteContractor_panel_Paint(object sender, PaintEventArgs e)

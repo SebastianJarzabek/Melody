@@ -12,20 +12,63 @@ namespace Melody.View.Controls
   public partial class AddEmployee : UserControl
   {
     private readonly IEmployeesRepository _employeeRepository;
-    private readonly IValidators _validator;
 
-    public AddEmployee(IEmployeesRepository employeeRepository, IValidators validator)
+    public AddEmployee(IEmployeesRepository employeeRepository)
     {
       InitializeComponent();
       _employeeRepository = employeeRepository;
-      _validator = validator;
     }
 
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
       ClearErrorLabel();
+      var list = new List<DataClass>
+      {
+        DataClass.Employee
+        ,DataClass.Access
+        ,DataClass.Adress
+        ,DataClass.ContactDetails};
+      var employee = CollectEmployee();
+      var validationResult = employee.Validate();
+      try
+      {
+        if (validationResult.IsValid)
+        {
+          _employeeRepository.AddEmployee(employee);
+          MessageBox.Show($"Dodano do bazy danych pracownika: {employee.Name} {employee.Surname}.",
+                          "Informacja",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
+        }
+        else
+        {
+          Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+          MessageBox.Show(validationResult.ErrorMessageToDisplay,
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
 
-      var emp = new Employee
+
+        }
+      }
+      catch (Exception ex)
+      {
+        Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+        MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
+                        "Błąd",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+        throw ex;
+      }
+      finally
+      {
+        Clear();
+      }
+    }
+
+    private Employee CollectEmployee()
+    {
+      return new Employee
       {
         Name = Name_tb.Text,
         Surname = Surname_tb.Text,
@@ -45,49 +88,13 @@ namespace Melody.View.Controls
           ZipCode = ZipCode_tb.Text,
           Country = Country_tb.Text
         },
-        ContactDetails =new ContactDetails
+        ContactDetails = new ContactDetails
         {
-          PhoneNumber=PhoneNumber_tb.Text,
-          Email=Email_tb.Text,
-          Webside=Webside_tb.Text
+          PhoneNumber = PhoneNumber_tb.Text,
+          Email = Email_tb.Text,
+          Webside = Webside_tb.Text
         }
       };
-
-      var list = new List<DataClass> 
-      {
-        DataClass.Employee
-        ,DataClass.Access
-        ,DataClass.Adress
-        ,DataClass.ContactDetails};
-
-      if (!TextBoxesValidate(emp,list)
-        || !PhoneValidate(PhoneNumber_tb.Text)
-        || !EmailValidate(Email_tb.Text))
-      {
-        return;
-      }
-
-      try
-      {
-        _employeeRepository.AddEmployee(emp);
-
-          MessageBox.Show($"Dodano do bazy danych pracownika: {emp.Name} {emp.Surname}.",
-                          "Informacja",
-                          MessageBoxButtons.OK,
-                          MessageBoxIcon.Information);
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
-                        "Błąd",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-        throw ex;
-      }
-      finally
-      {
-        Clear();
-      }
     }
 
     private void ClearErrorLabel()
@@ -95,60 +102,6 @@ namespace Melody.View.Controls
       if (string.IsNullOrWhiteSpace(Validation_lbl.Text))
       {
         Validation_lbl.Text = string.Empty;
-      }
-    }
-
-    private bool PhoneValidate(string phoneNumber)
-    {
-      var errorMessage = _validator.PhoneValidate(PhoneNumber_tb.Text);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                        Validation_lbl.Text = errorMessage;
-        return false;
-      }
-    }
-
-    private bool EmailValidate(string email)
-    {
-      var errorMessage = _validator.EmailValidate(Email_tb.Text);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        Validation_lbl.Text = errorMessage;
-        return false;
-      }
-    }
-
-    private bool TextBoxesValidate(Employee emp, List<DataClass> dataClasses)
-    {
-      var errorMessage = _validator.TextBoxesValidate(null,emp, null, dataClasses);
-
-      if (string.IsNullOrEmpty(errorMessage))
-      {
-        return true;
-      }
-      else
-      {
-        MessageBox.Show(errorMessage, "Błąd",
-          MessageBoxButtons.OK,
-          MessageBoxIcon.Error);
-        Validation_lbl.Text = errorMessage;
-        return false;
       }
     }
 

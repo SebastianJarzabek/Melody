@@ -38,7 +38,8 @@ namespace Melody.Service.DataAccess
       {
         using (var connection = new SqlConnection(_configService.GetConnectionString()))
         {
-          return connection.Query<T>(storedProcedureName, parameters, null, true, null, commandType: CommandType.StoredProcedure).ToList();
+          var pom = connection.Query<T>(storedProcedureName, parameters, null, true, null, commandType: CommandType.StoredProcedure).ToList();
+          return pom;
         }
       }
       catch (Exception ex)

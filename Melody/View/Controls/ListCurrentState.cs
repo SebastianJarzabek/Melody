@@ -1,8 +1,7 @@
-﻿using Melody.Service.DataAccess;
+﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Melody.Service.DataAccess.Interfaces;
 
 namespace Melody.View.Panel
 {

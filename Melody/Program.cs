@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using Dapper.FluentMap.Configuration;
+using log4net;
 using Melody.View.Controls;
 using Melody.View.Window;
 using System;
@@ -24,6 +25,7 @@ namespace Melody
       {
         Log.Error(ex);
       }
+      
     }
   }
 }

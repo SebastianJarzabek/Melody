@@ -11,35 +11,33 @@ namespace Melody.View.Controls
   public partial class AddOrder : UserControl
   {
     List<MaterialToOrder> materialToOrders = new List<MaterialToOrder>();
-    Validators validators = new Validators();
 
     public AddOrder()
     {
       InitializeComponent();
     }
 
-    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
+    private void AddOrder_btn_Click(object sender, EventArgs e)
     {
-      AddOrder_panel.Location = new Point(
-      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
-      );
-      AddOrder_panel.Anchor = AnchorStyles.None;
+      ///TODO: validacja, dodanie do bazy.
     }
+
+   
 
     private void AddMaterialToList_btn_Click(object sender, EventArgs e)
     {
       try
       {
-        var errorMessage = validators.IsIntValidate(MaterialQuantity_tb.Text);
+        //var errorMessage = validators.IsIntValidate(MaterialQuantity_tb.Text);
 
-        if (!string.IsNullOrEmpty(errorMessage))
-        {
-          MessageBox.Show(errorMessage, "Błąd",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Error);
-          Validation_lbl.Text = errorMessage;
-          return;
-        }
+        //if (!string.IsNullOrEmpty(errorMessage))
+        //{
+        //  MessageBox.Show(errorMessage, "Błąd",
+        //    MessageBoxButtons.OK,
+        //    MessageBoxIcon.Error);
+        //  Validation_lbl.Text = errorMessage;
+        //  return;
+        //}
 
         var materialToOrder = new MaterialToOrder
         {
@@ -63,13 +61,13 @@ namespace Melody.View.Controls
         throw ex;
       }
     }
-
-    private void AddOrder_btn_Click(object sender, EventArgs e)
+    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
     {
-      ///TODO: validacja, dodanie do bazy.
+      AddOrder_panel.Location = new Point(
+      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
+      );
+      AddOrder_panel.Anchor = AnchorStyles.None;
     }
-
-
     private void ClearOrder_btn_Click(object sender, EventArgs e)
     {
       dateOfOrderIn_dtp.Value = DateTime.Now;

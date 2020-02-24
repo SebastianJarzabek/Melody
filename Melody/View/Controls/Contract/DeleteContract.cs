@@ -1,6 +1,5 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
-using Melody.Service.Logic.Interfaces;
 using System;
 using System.Drawing;
 using System.Text;
@@ -8,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-    public partial class DeleteContract : UserControl
+  public partial class DeleteContract : UserControl
   {
     private readonly IContractsRepository _contractsRepository;
     Destiny destiny = new Destiny();
@@ -61,7 +60,7 @@ namespace Melody.View.Controls
           stb.Append($" o numerze: {destiny.Contract}");
         }
         stb.Append(".");
-        
+
         MessageBox.Show(stb.ToString(),
                         "Informacja",
                         MessageBoxButtons.OK,

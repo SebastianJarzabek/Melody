@@ -1,9 +1,8 @@
-﻿using Melody.View.Controls;
+﻿using Melody.Service.DataAccess;
+using Melody.View.Controls;
 using Melody.View.Panel;
 using System;
 using System.Windows.Forms;
-using Melody.Service.DataAccess;
-using Melody.Service.Logic;
 
 namespace Melody.View.Window
 {
@@ -221,7 +220,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var CurrentStateControl = new CurrentState( new InventoryLevelRepository(new Executor()));
+        var CurrentStateControl = new CurrentState(new InventoryLevelRepository(new Executor()));
         CurrentStateControl.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(CurrentStateControl);
       }

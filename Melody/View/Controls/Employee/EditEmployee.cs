@@ -1,9 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
-using Melody.Service.Logic.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -67,7 +64,7 @@ namespace Melody.View.Controls
         if (validationResult.IsValid)
         {
           _employeeRepository.UpdateEmployee(employee);
-          MessageBox.Show(  $"Edytowano dane pracownika: {employee.Name} {employee.Surname}.",
+          MessageBox.Show($"Edytowano dane pracownika: {employee.Name} {employee.Surname}.",
                            "Informacja",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);

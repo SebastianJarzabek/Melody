@@ -19,13 +19,5 @@ namespace Melody.Service.DataAccess
     {
       return _executor.GetListFromDatabase<InventoryLevelView>(new SqlProcedure().GetInventoryLevel, null);
     }
-    //public List<InventoryLevel> GetInventoryLevel()
-    //{
-    //  return _executor.GetListFromDatabase<InventoryLevel>(new SqlProcedure().GetInventoryLevel, null);
-    //}
-    //public List<InventoryLevel> GetInventoryLevel()
-    //{
-    //  return _executor.GetListFromDatabase<InventoryLevel>(new SqlProcedure().GetInventoryLevel, null);
-    //}
   }
 }

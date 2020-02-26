@@ -19,7 +19,18 @@ namespace Melody.View.Controls
 
     private void AddOrder_btn_Click(object sender, EventArgs e)
     {
-      ///TODO: validacja, dodanie do bazy.
+      try
+      {
+
+      }
+      catch (Exception ex)
+      {
+        throw ex;
+      }
+      finally
+      {
+        Clear();
+      }
     }
 
    
@@ -61,13 +72,28 @@ namespace Melody.View.Controls
         throw ex;
       }
     }
-    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
+
+    private void Clear()
     {
-      AddOrder_panel.Location = new Point(
-      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
-      );
-      AddOrder_panel.Anchor = AnchorStyles.None;
+        dateOfOrderIn_dtp.Value = DateTime.Now;
+        NameOrderingEmployeeIn_cb.Text = string.Empty;
+        SurnameOrderingEmployeeIn_cb.Text = string.Empty;
+        NameSupplierIn_cb.Text = string.Empty;
+        DestinyName_cb.Text = string.Empty;
+        DestinyContractNumber_cb.Text = string.Empty;
+        MaterialName_cb.Text = string.Empty;
+        MaterialQuantity_tb.Text = string.Empty;
+        MaterialType_cb.Text = string.Empty;
+        MaterialUnitType_cb.Text = string.Empty;
+        Note_rtb.Text = string.Empty;
+        DateOfAdmissionIn_dtp.Value = DateTime.Now;
+        NameHostEmployeeIn_cb.Text = string.Empty;
+        SurnameHostEmployeeIn_cb.Text = string.Empty;
+        DateOfReceiptIn_dtp.Value = DateTime.Now;
+        NameReceivingEmployeeIn_cb.Text = string.Empty;
+        SurnameReceivingEmployeeIn_cb.Text = string.Empty;
     }
+
     private void ClearOrder_btn_Click(object sender, EventArgs e)
     {
       dateOfOrderIn_dtp.Value = DateTime.Now;
@@ -172,6 +198,14 @@ namespace Melody.View.Controls
       var datatableUnitName = exec.ComboboxSugest("name", "Unit");
       MaterialUnitType_cb.ValueMember = "name";
       MaterialUnitType_cb.DataSource = datatableUnitName;
+    }
+
+    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
+    {
+      AddOrder_panel.Location = new Point(
+      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
+      );
+      AddOrder_panel.Anchor = AnchorStyles.None;
     }
   }
 }

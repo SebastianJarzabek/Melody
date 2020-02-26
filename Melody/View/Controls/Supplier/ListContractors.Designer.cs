@@ -216,6 +216,7 @@ namespace Melody.View.Controls
       this.Refresh_btn.TabIndex = 4;
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
+      this.Refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
       // 
       // ListContractors
       // 

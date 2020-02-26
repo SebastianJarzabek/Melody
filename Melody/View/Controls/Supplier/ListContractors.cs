@@ -19,10 +19,6 @@ namespace Melody.View.Controls
       ReferesSuppliers();
     }
 
-    public ListContractors()
-    {
-    }
-
     private void Refresh_btn_Click(object sender, EventArgs e)
     {
       ReferesSuppliers();

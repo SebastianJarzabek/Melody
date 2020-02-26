@@ -1,5 +1,7 @@
 ﻿using Dapper.FluentMap.Configuration;
 using log4net;
+using Melody;
+using Melody.Service.DataAccess;
 using Melody.View.Controls;
 using Melody.View.Window;
 using System;
@@ -20,6 +22,7 @@ namespace Melody
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(new Main());
+        OnFirstStart.InitAccess();
       }
       catch (Exception ex)
       {

@@ -85,5 +85,7 @@ namespace Melody.Service.SqlProcedures
     public string UpdateWarehouseIssue => "dbo.UpdateWarehouseIssue";
 
     public string GetDestinies => "dbo.GetAllDestiny";
+
+    public string OnInit => "dbo.OnInit";
   }
 }

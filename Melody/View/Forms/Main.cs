@@ -51,7 +51,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var ListContractorsControlPanel = new ListContractors();
+        var ListContractorsControlPanel = new ListContractors(new SuppliersRepository(new Executor()));
         ListContractorsControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(ListContractorsControlPanel);
       }

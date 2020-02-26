@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using Melody.Service.SqlProcedures;
 using System.Collections.Generic;
 
@@ -62,6 +63,6 @@ namespace Melody.Service.DataAccess
       _executor.DeleteFromDatabase(new SqlProcedure().DeleteSupplier, parameters);
     }
 
-    public List<Supplier> GetSuppliers() => _executor.GetListFromDatabase<Supplier>(new SqlProcedure().GetAllSupplier, null);
+    public List<SupplierView> GetSuppliers() => _executor.GetListFromDatabase<SupplierView>(new SqlProcedure().GetAllSupplier, null);
   }
 }

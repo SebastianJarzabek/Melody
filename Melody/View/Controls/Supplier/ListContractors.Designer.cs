@@ -31,21 +31,21 @@ namespace Melody.View.Controls
     private void InitializeComponent()
     {
       this.Data_dgv = new System.Windows.Forms.DataGridView();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.Search_btn = new System.Windows.Forms.Button();
-      this.Refresh_btn = new System.Windows.Forms.Button();
       this.IdDestiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.StreetColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HouseNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ApartamentNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ZipCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ZipCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.PhoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.WebsideColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.Search_btn = new System.Windows.Forms.Button();
+      this.Refresh_btn = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
@@ -57,11 +57,11 @@ namespace Melody.View.Controls
       this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDestiny,
             this.NameColumn,
-            this.Contract,
+            this.StreetColumn,
             this.HouseNumberColumn,
             this.ApartamentNumberColumn,
-            this.ZipCodeColumn,
             this.CityColumn,
+            this.ZipCodeColumn,
             this.CountryColumn,
             this.PhoneNumberColumn,
             this.EmailColumn,
@@ -74,6 +74,105 @@ namespace Melody.View.Controls
       this.Data_dgv.RowTemplate.Height = 24;
       this.Data_dgv.Size = new System.Drawing.Size(1920, 1019);
       this.Data_dgv.TabIndex = 3;
+      // 
+      // IdDestiny
+      // 
+      this.IdDestiny.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.IdDestiny.DataPropertyName = "Id";
+      this.IdDestiny.HeaderText = "Id";
+      this.IdDestiny.MinimumWidth = 6;
+      this.IdDestiny.Name = "IdDestiny";
+      this.IdDestiny.Visible = false;
+      this.IdDestiny.Width = 125;
+      // 
+      // NameColumn
+      // 
+      this.NameColumn.DataPropertyName = "Name";
+      this.NameColumn.HeaderText = "Nazwa";
+      this.NameColumn.MinimumWidth = 6;
+      this.NameColumn.Name = "NameColumn";
+      this.NameColumn.Width = 125;
+      // 
+      // StreetColumn
+      // 
+      this.StreetColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.StreetColumn.DataPropertyName = "Street";
+      this.StreetColumn.HeaderText = "Ulica";
+      this.StreetColumn.MinimumWidth = 6;
+      this.StreetColumn.Name = "StreetColumn";
+      this.StreetColumn.Width = 68;
+      // 
+      // HouseNumberColumn
+      // 
+      this.HouseNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.HouseNumberColumn.DataPropertyName = "HouseNumber";
+      this.HouseNumberColumn.HeaderText = "Nr. domu";
+      this.HouseNumberColumn.MinimumWidth = 6;
+      this.HouseNumberColumn.Name = "HouseNumberColumn";
+      this.HouseNumberColumn.Width = 95;
+      // 
+      // ApartamentNumberColumn
+      // 
+      this.ApartamentNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ApartamentNumberColumn.DataPropertyName = "ApartamentNumber";
+      this.ApartamentNumberColumn.HeaderText = "Nr. lokalu";
+      this.ApartamentNumberColumn.MinimumWidth = 6;
+      this.ApartamentNumberColumn.Name = "ApartamentNumberColumn";
+      this.ApartamentNumberColumn.Width = 97;
+      // 
+      // CityColumn
+      // 
+      this.CityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.CityColumn.DataPropertyName = "City";
+      this.CityColumn.HeaderText = "Miasto";
+      this.CityColumn.MinimumWidth = 6;
+      this.CityColumn.Name = "CityColumn";
+      this.CityColumn.Width = 78;
+      // 
+      // ZipCodeColumn
+      // 
+      this.ZipCodeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ZipCodeColumn.DataPropertyName = "ZipCode";
+      this.ZipCodeColumn.HeaderText = "Kod pocztowy";
+      this.ZipCodeColumn.MinimumWidth = 6;
+      this.ZipCodeColumn.Name = "ZipCodeColumn";
+      this.ZipCodeColumn.Width = 124;
+      // 
+      // CountryColumn
+      // 
+      this.CountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.CountryColumn.DataPropertyName = "Country";
+      this.CountryColumn.HeaderText = "Kraj";
+      this.CountryColumn.MinimumWidth = 6;
+      this.CountryColumn.Name = "CountryColumn";
+      this.CountryColumn.Width = 62;
+      // 
+      // PhoneNumberColumn
+      // 
+      this.PhoneNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.PhoneNumberColumn.DataPropertyName = "PhoneNumber";
+      this.PhoneNumberColumn.HeaderText = "Nr. telefonu";
+      this.PhoneNumberColumn.MinimumWidth = 6;
+      this.PhoneNumberColumn.Name = "PhoneNumberColumn";
+      this.PhoneNumberColumn.Width = 111;
+      // 
+      // EmailColumn
+      // 
+      this.EmailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.EmailColumn.DataPropertyName = "Email";
+      this.EmailColumn.HeaderText = "E-mail";
+      this.EmailColumn.MinimumWidth = 6;
+      this.EmailColumn.Name = "EmailColumn";
+      this.EmailColumn.Width = 76;
+      // 
+      // WebsideColumn
+      // 
+      this.WebsideColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.WebsideColumn.DataPropertyName = "Webside";
+      this.WebsideColumn.HeaderText = "Strona www";
+      this.WebsideColumn.MinimumWidth = 6;
+      this.WebsideColumn.Name = "WebsideColumn";
+      this.WebsideColumn.Width = 110;
       // 
       // panel1
       // 
@@ -118,96 +217,6 @@ namespace Melody.View.Controls
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
       // 
-      // IdDestiny
-      // 
-      this.IdDestiny.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.IdDestiny.DataPropertyName = "IdDestiny";
-      this.IdDestiny.HeaderText = "Id";
-      this.IdDestiny.MinimumWidth = 6;
-      this.IdDestiny.Name = "IdDestiny";
-      this.IdDestiny.Visible = false;
-      this.IdDestiny.Width = 48;
-      // 
-      // NameColumn
-      // 
-      this.NameColumn.HeaderText = "Nazwa";
-      this.NameColumn.MinimumWidth = 6;
-      this.NameColumn.Name = "NameColumn";
-      this.NameColumn.Width = 125;
-      // 
-      // Contract
-      // 
-      this.Contract.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.Contract.DataPropertyName = "StreetColumn";
-      this.Contract.HeaderText = "Ulica";
-      this.Contract.MinimumWidth = 6;
-      this.Contract.Name = "Contract";
-      this.Contract.Width = 68;
-      // 
-      // HouseNumberColumn
-      // 
-      this.HouseNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.HouseNumberColumn.HeaderText = "Nr. domu";
-      this.HouseNumberColumn.MinimumWidth = 6;
-      this.HouseNumberColumn.Name = "HouseNumberColumn";
-      this.HouseNumberColumn.Width = 95;
-      // 
-      // ApartamentNumberColumn
-      // 
-      this.ApartamentNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ApartamentNumberColumn.HeaderText = "Nr. lokalu";
-      this.ApartamentNumberColumn.MinimumWidth = 6;
-      this.ApartamentNumberColumn.Name = "ApartamentNumberColumn";
-      this.ApartamentNumberColumn.Width = 97;
-      // 
-      // ZipCodeColumn
-      // 
-      this.ZipCodeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ZipCodeColumn.HeaderText = "Kod pocztowy";
-      this.ZipCodeColumn.MinimumWidth = 6;
-      this.ZipCodeColumn.Name = "ZipCodeColumn";
-      this.ZipCodeColumn.Width = 124;
-      // 
-      // CityColumn
-      // 
-      this.CityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.CityColumn.HeaderText = "Miasto";
-      this.CityColumn.MinimumWidth = 6;
-      this.CityColumn.Name = "CityColumn";
-      this.CityColumn.Width = 78;
-      // 
-      // CountryColumn
-      // 
-      this.CountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.CountryColumn.HeaderText = "Kraj";
-      this.CountryColumn.MinimumWidth = 6;
-      this.CountryColumn.Name = "CountryColumn";
-      this.CountryColumn.Width = 62;
-      // 
-      // PhoneNumberColumn
-      // 
-      this.PhoneNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.PhoneNumberColumn.HeaderText = "Nr. telefonu";
-      this.PhoneNumberColumn.MinimumWidth = 6;
-      this.PhoneNumberColumn.Name = "PhoneNumberColumn";
-      this.PhoneNumberColumn.Width = 111;
-      // 
-      // EmailColumn
-      // 
-      this.EmailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.EmailColumn.HeaderText = "E-mail";
-      this.EmailColumn.MinimumWidth = 6;
-      this.EmailColumn.Name = "EmailColumn";
-      this.EmailColumn.Width = 76;
-      // 
-      // WebsideColumn
-      // 
-      this.WebsideColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.WebsideColumn.HeaderText = "Strona www";
-      this.WebsideColumn.MinimumWidth = 6;
-      this.WebsideColumn.Name = "WebsideColumn";
-      this.WebsideColumn.Width = 110;
-      // 
       // ListContractors
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,16 +239,16 @@ namespace Melody.View.Controls
         private TextBox textBox1;
         private Button Search_btn;
         private Button Refresh_btn;
-    private DataGridViewTextBoxColumn IdDestiny;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewTextBoxColumn Contract;
-    private DataGridViewTextBoxColumn HouseNumberColumn;
-    private DataGridViewTextBoxColumn ApartamentNumberColumn;
-    private DataGridViewTextBoxColumn ZipCodeColumn;
-    private DataGridViewTextBoxColumn CityColumn;
-    private DataGridViewTextBoxColumn CountryColumn;
-    private DataGridViewTextBoxColumn PhoneNumberColumn;
-    private DataGridViewTextBoxColumn EmailColumn;
-    private DataGridViewTextBoxColumn WebsideColumn;
-  }
+        private DataGridViewTextBoxColumn IdDestiny;
+        private DataGridViewTextBoxColumn NameColumn;
+        private DataGridViewTextBoxColumn StreetColumn;
+        private DataGridViewTextBoxColumn HouseNumberColumn;
+        private DataGridViewTextBoxColumn ApartamentNumberColumn;
+        private DataGridViewTextBoxColumn CityColumn;
+        private DataGridViewTextBoxColumn ZipCodeColumn;
+        private DataGridViewTextBoxColumn CountryColumn;
+        private DataGridViewTextBoxColumn PhoneNumberColumn;
+        private DataGridViewTextBoxColumn EmailColumn;
+        private DataGridViewTextBoxColumn WebsideColumn;
+    }
 }

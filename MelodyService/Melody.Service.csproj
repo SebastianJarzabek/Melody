@@ -74,6 +74,9 @@
     <Compile Include="Entity\ContactDetails.cs" />
     <Compile Include="Entity\Destiny.cs" />
     <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\EntityToView\EmployeeView.cs" />
+    <Compile Include="Entity\EntityToView\InventoryLevelView.cs" />
+    <Compile Include="Entity\EntityToView\SupplierView.cs" />
     <Compile Include="Entity\InventoryLevel.cs" />
     <Compile Include="Entity\Material.cs" />
     <Compile Include="Entity\MaterialToOrder.cs" />

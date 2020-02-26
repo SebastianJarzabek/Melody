@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 
 namespace Melody.View.Controls
 {
   public partial class ListContractors : UserControl
   {
     private readonly ISuppliersRepository _suppliersRepository;
-    private List<Supplier> _suppliers;
+    private List<SupplierView> _suppliers;
 
     public ListContractors(ISuppliersRepository suppliersRepository)
     {

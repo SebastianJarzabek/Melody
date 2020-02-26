@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using Melody.Service.Logic;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Melody.View.Controls
   public partial class ListEmployee : UserControl
   {
     private IEmployeesRepository _employeesRepository;
-    private List<Employee> _employees;
+    private List<EmployeeView> _employees;
 
     public ListEmployee(EmployeesRepository employeesRepository)
     {

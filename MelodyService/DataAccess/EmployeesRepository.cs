@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using Melody.Service.PasswordCoder;
 using Melody.Service.SqlProcedures;
 using System.Collections.Generic;
@@ -74,9 +75,9 @@ namespace Melody.Service.DataAccess
       _executor.DeleteFromDatabase(new SqlProcedure().DeleteEmployee, parameters);
     }
 
-    public List<Employee> GetEmployees()
+    public List<EmployeeView> GetEmployees()
     {
-      return _executor.GetListFromDatabase<Employee>(new SqlProcedure().GetAllEmployee, null);
+      return _executor.GetListFromDatabase<EmployeeView>(new SqlProcedure().GetAllEmployee, null);
     }
   }
 }

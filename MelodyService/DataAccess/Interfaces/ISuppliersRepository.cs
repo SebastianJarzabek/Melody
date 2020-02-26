@@ -1,4 +1,5 @@
 ﻿using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using System.Collections.Generic;
 
 namespace Melody.Service.DataAccess
@@ -11,6 +12,6 @@ namespace Melody.Service.DataAccess
 
     void DeleteSupplier(Supplier supplier);
 
-    List<Supplier> GetSuppliers();
+    List<SupplierView> GetSuppliers();
   }
 }

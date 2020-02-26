@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using Melody.Service.SqlProcedures;
 using System.Collections.Generic;
 
@@ -14,9 +15,9 @@ namespace Melody.Service.DataAccess
       _executor = executor;
     }
 
-    public List<InventoryLevel> GetInventoryLevel()
+    public List<InventoryLevelView> GetInventoryLevel()
     {
-      return _executor.GetListFromDatabase<InventoryLevel>(new SqlProcedure().GetInventoryLevel, null);
+      return _executor.GetListFromDatabase<InventoryLevelView>(new SqlProcedure().GetInventoryLevel, null);
     }
     //public List<InventoryLevel> GetInventoryLevel()
     //{

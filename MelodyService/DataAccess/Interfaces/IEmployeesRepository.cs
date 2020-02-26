@@ -1,4 +1,5 @@
 ﻿using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using System.Collections.Generic;
 
 namespace Melody.Service.DataAccess
@@ -11,7 +12,7 @@ namespace Melody.Service.DataAccess
 
     void DeleteEmployee(Employee employee);
 
-    List<Employee> GetEmployees();
+    List<EmployeeView> GetEmployees();
 
   }
 }

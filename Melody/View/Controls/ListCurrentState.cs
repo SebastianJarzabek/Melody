@@ -1,5 +1,6 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -8,7 +9,7 @@ namespace Melody.View.Panel
   public partial class CurrentState : UserControl
   {
     private IInventoryLevelRepository _inventoryLevelRepository;
-    private List<InventoryLevel> _inventoryLevels;
+    private List<InventoryLevelView> _inventoryLevels;
 
     public CurrentState(IInventoryLevelRepository inventoryLevelRepository)
     {

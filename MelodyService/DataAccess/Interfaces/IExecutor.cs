@@ -2,6 +2,7 @@
 using Melody.Service.Entity;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 
 namespace Melody.Service.DataAccess.Interfaces
 {
@@ -17,5 +18,7 @@ namespace Melody.Service.DataAccess.Interfaces
     void GetFromDatabase(string storedProcedureName, object parameters);
 
     ObservableCollection<T> GetObservableCollectionFromDatabase<T>(string storedProcedureName, object parameters);
+    DataTable ComboboxSugest(string v1, string column, string v2, string table);
+    DataTable ComboboxSugest(string column, string table);
   }
 }

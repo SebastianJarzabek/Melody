@@ -1,11 +1,10 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
+using Melody.Service.Entity.EntityToView;
 using Melody.Service.SqlProcedures;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace Melody.Service.DataAccess
 {
@@ -17,42 +16,47 @@ namespace Melody.Service.DataAccess
       _executor = executor;
     }
 
-    public void AddDestiny(Order order)
+    public void AddOrder(Order order)
     {
       var parameters = new
       {
 
-      }
-      _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
-    }
-
-    public void UpdateDestiny(Order order)
-    {
-      int Contract = Convert.ToInt32(destiny.Contract);
-      var parameters = new { destiny.Name, Contract };
+      };
 
       _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
 
-    public void DeleteDestiny(Order order)
+    public void UpdateOrder(Order order)
     {
-      object parameters;
+      var parameters = new
+      {
 
-      if (!string.IsNullOrEmpty(order.Contract))
+      };
+      _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
+    }
+
+    public void DeleteOrder(Order order)
+    {
+      var parameters = new
       {
-        var Contract = Convert.ToInt32(order.Contract);
-        parameters = new { order.Name, Contract };
-      }
-      else
-      {
-        parameters = new { order.Name };
-      }
+
+      };
       _executor.DeleteFromDatabase(new SqlProcedure().DeleteDestiny, parameters);
     }
 
-    public List<Destiny> GetDestinies()
+    public List<OrderView> GetOrders()
     {
-      return _executor.GetListFromDatabase<Destiny>(new SqlProcedure().GetDestinies, null);
+      return _executor.GetListFromDatabase<OrderView>(new SqlProcedure().GetDestinies, null);
+    }
+
+    public int CheckLast()
+    {
+      return _executor.GetFromDatabase<int>(new SqlProcedure().LastOrderNumber, null);
+    }
+
+    public DataTable ComboboxSugest(string column, string table)
+    {
+      return _executor.ComboboxSugest(column, table);
     }
   }
 }

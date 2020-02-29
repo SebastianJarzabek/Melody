@@ -280,7 +280,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddOrderControlPanel = new AddOrder();
+        var AddOrderControlPanel = new AddOrder(new OrderRepository(new Executor()));
         AddOrderControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddOrderControlPanel);
       }

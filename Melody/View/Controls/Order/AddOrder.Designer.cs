@@ -89,6 +89,8 @@
       this.MaterialName_cb = new System.Windows.Forms.ComboBox();
       this.MaterialType_cb = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
+      this.OrderNumber_tb = new System.Windows.Forms.TextBox();
+      this.label20 = new System.Windows.Forms.Label();
       this.AddOrder_panel.SuspendLayout();
       this.MaterialsToOrder_gb.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).BeginInit();
@@ -416,6 +418,8 @@
       // OrderData_gb
       // 
       this.OrderData_gb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.OrderData_gb.Controls.Add(this.OrderNumber_tb);
+      this.OrderData_gb.Controls.Add(this.label20);
       this.OrderData_gb.Controls.Add(this.Order_gb);
       this.OrderData_gb.Controls.Add(this.Destiny_gb);
       this.OrderData_gb.Controls.Add(this.Note_gb);
@@ -768,6 +772,23 @@
       this.label4.TabIndex = 12;
       this.label4.Text = "Typ materiału";
       // 
+      // OrderNumber_tb
+      // 
+      this.OrderNumber_tb.Location = new System.Drawing.Point(442, 16);
+      this.OrderNumber_tb.Name = "OrderNumber_tb";
+      this.OrderNumber_tb.Size = new System.Drawing.Size(100, 34);
+      this.OrderNumber_tb.TabIndex = 30;
+      // 
+      // label20
+      // 
+      this.label20.AutoSize = true;
+      this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label20.Location = new System.Drawing.Point(279, 26);
+      this.label20.Name = "label20";
+      this.label20.Size = new System.Drawing.Size(157, 20);
+      this.label20.TabIndex = 31;
+      this.label20.Text = "Numer zamówienia:";
+      // 
       // AddOrder
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -788,6 +809,7 @@
       this.WarehouseIssue_gb.ResumeLayout(false);
       this.WarehouseIssue_gb.PerformLayout();
       this.OrderData_gb.ResumeLayout(false);
+      this.OrderData_gb.PerformLayout();
       this.Order_gb.ResumeLayout(false);
       this.Order_gb.PerformLayout();
       this.Destiny_gb.ResumeLayout(false);
@@ -861,5 +883,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType_dgvr;
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialUnit_dgvr;
     private System.Windows.Forms.DataGridViewTextBoxColumn MaterialQuaility_dgvr;
+        private System.Windows.Forms.TextBox OrderNumber_tb;
+        private System.Windows.Forms.Label label20;
     }
 }

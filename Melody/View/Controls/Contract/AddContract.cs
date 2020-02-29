@@ -16,6 +16,8 @@ namespace Melody.View.Controls
     {
       InitializeComponent();
       _contractsRepository = contractsRepository;
+      
+
     }
 
     private void AddContract_btn_Click(object sender, EventArgs e)

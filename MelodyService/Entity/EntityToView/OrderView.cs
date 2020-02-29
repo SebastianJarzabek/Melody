@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Melody.Service.Entity.EntityToView
 {
-  class OrderView
+  public class OrderView
   {
     public int IdOrder { get; set; }
+
+    public int OrderNumber { get; set; }
 
     public DateTime DateOfOrder { get; set; }
 

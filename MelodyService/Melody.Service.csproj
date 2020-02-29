@@ -68,6 +68,7 @@
     <Compile Include="DataAccess\Interfaces\IInventoryLevelRepository.cs" />
     <Compile Include="DataAccess\Interfaces\ISuppliersRepository.cs" />
     <Compile Include="DataAccess\InventoryLevelRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IOrderRepository.cs" />
     <Compile Include="DataAccess\OrderRepository.cs" />
     <Compile Include="DataAccess\SuppliersRepository.cs" />
     <Compile Include="Entity\Access.cs" />

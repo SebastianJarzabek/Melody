@@ -138,5 +138,10 @@ namespace Melody.Service.DataAccess
         return false;
       }
     }
+
+    public DataTable ComboboxSugest(string v1, string column, string v2, string table)
+    {
+      throw new NotImplementedException();
+    }
   }
 }

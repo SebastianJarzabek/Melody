@@ -87,5 +87,7 @@ namespace Melody.Service.SqlProcedures
     public string GetDestinies => "dbo.GetAllDestiny";
 
     public string OnInit => "dbo.OnInit";
+
+    public string LastOrderNumber => "dbo.LastOrderNumber";
   }
 }

@@ -88,7 +88,7 @@ namespace Melody.Service.DataAccess
       {
         orderNumber = order.OrderNumber
       };
-      _executor.DeleteFromDatabase(new SqlProcedure().DeleteDestiny, parameters);
+      _executor.DeleteFromDatabase(new SqlProcedure().DeleteOrder, parameters);
     }
 
     public List<OrderView> GetOrders()

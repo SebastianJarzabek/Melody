@@ -1,7 +1,7 @@
 ﻿
-Create Procedure AddDestiny
-@name varchar(100)
-,@contract int
+CREATE Procedure [dbo].[AddDestiny]
+@Name varchar(100)
+,@Contract int
 as
 begin Transaction
 Insert into Destiny (name, contract) values (@name,@contract)

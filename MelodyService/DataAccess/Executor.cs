@@ -18,7 +18,7 @@ namespace Melody.Service.DataAccess
   [ExcludeFromCodeCoverage]
   public class Executor : IExecutor
   {
-    private ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+    private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
     private readonly IConfigServices _configService;
     
     public Executor()

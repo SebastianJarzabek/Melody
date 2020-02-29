@@ -316,7 +316,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteOrderControlPanel = new DeleteOrder();
+        var DeleteOrderControlPanel = new DeleteOrder(new OrderRepository(new Executor()));
         DeleteOrderControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteOrderControlPanel);
       }

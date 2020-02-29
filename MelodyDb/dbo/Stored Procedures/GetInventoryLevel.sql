@@ -2,7 +2,12 @@
 CREATE Procedure [dbo].[GetInventoryLevel] 
 as
 begin Transaction
-select il.idInventoryLevel, m.name, m.type, u.name as unitType, il.quantity from  InventoryLevel as il
+select il.idInventoryLevel as Id,
+m.name as MaterialName,
+m.type as MaterialType,
+u.name as UnitName,
+il.quantity as Quantity
+from  InventoryLevel as il
 inner join Material as m  on il.idMaterial = m.Id
 inner join Unit as u on il.idUnit = u.Id
 IF @@ERROR <> 0

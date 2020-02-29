@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Order] (
     [Id]                   INT           IDENTITY (1, 1) NOT NULL,
+    [OrderNumber]          INT           NOT NULL,
     [DateOfOrder]          DATETIME      NOT NULL,
     [OrderingEmployee]     VARCHAR (100) NOT NULL,
     [IdSupplier]           INT           NULL,
@@ -21,6 +22,8 @@
     CONSTRAINT [FK_Order_Supplier] FOREIGN KEY ([IdSupplier]) REFERENCES [dbo].[Supplier] ([Id]),
     CONSTRAINT [FK_Order_Unit] FOREIGN KEY ([IdUnit]) REFERENCES [dbo].[Unit] ([Id])
 );
+
+
 
 
 

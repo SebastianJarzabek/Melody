@@ -151,7 +151,7 @@
 
         private System.Windows.Forms.DataGridView Data_dgv;
         private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Refresh_btn;

@@ -13,11 +13,73 @@ namespace Melody.View.Controls
     List<Order> orders = new List<Order>();
     private readonly IOrderRepository _orderRepository;
     private int orderNumber;
+
     public AddOrder(IOrderRepository orderRepository)
     {
       _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
       InitializeComponent();
       orderNumber = _orderRepository.CheckLast() + 1;
+    }
+
+    private void AddOrder_Load(object sender, EventArgs e)
+    {
+      OrderNumber_tb.Text = orderNumber.ToString();
+
+      var datatableName = _orderRepository.ComboboxSugest("name", "Employee");
+      NameOrderingEmployeeIn_cb.ValueMember = "name";
+      NameOrderingEmployeeIn_cb.DataSource = datatableName;
+
+      var datatableName1 = _orderRepository.ComboboxSugest("name", "Employee");
+      NameHostEmployeeIn_cb.ValueMember = "name";
+      NameHostEmployeeIn_cb.DataSource = datatableName1;
+
+      var datatableName2 = _orderRepository.ComboboxSugest("name", "Employee");
+      NameReceivingEmployeeIn_cb.ValueMember = "name";
+      NameReceivingEmployeeIn_cb.DataSource = datatableName2;
+
+      var datatableSurname = _orderRepository.ComboboxSugest("surname", "Employee");
+      SurnameOrderingEmployeeIn_cb.ValueMember = "surname";
+      SurnameOrderingEmployeeIn_cb.DataSource = datatableSurname;
+
+      var datatableSurname1 = _orderRepository.ComboboxSugest("surname", "Employee");
+      SurnameHostEmployeeIn_cb.ValueMember = "surname";
+      SurnameHostEmployeeIn_cb.DataSource = datatableSurname1;
+
+      var datatableSurname2 = _orderRepository.ComboboxSugest("surname", "Employee");
+      SurnameReceivingEmployeeIn_cb.ValueMember = "surname";
+      SurnameReceivingEmployeeIn_cb.DataSource = datatableSurname2;
+
+      var datatableDestinyName = _orderRepository.ComboboxSugest("name", "Destiny");
+      DestinyName_cb.ValueMember = "name";
+      DestinyName_cb.DataSource = datatableDestinyName;
+
+      var datatableSupplierName = _orderRepository.ComboboxSugest("name", "Supplier");
+      NameSupplierIn_cb.ValueMember = "name";
+      NameSupplierIn_cb.DataSource = datatableSupplierName;
+
+      var datatableDestinyContract = _orderRepository.ComboboxSugest("contract", "Destiny");
+      DestinyContractNumber_cb.ValueMember = "contract";
+      DestinyContractNumber_cb.DataSource = datatableDestinyContract;
+
+      var datatableMaterialName = _orderRepository.ComboboxSugest("name", "Material");
+      MaterialName_cb.ValueMember = "name";
+      MaterialName_cb.DataSource = datatableMaterialName;
+
+      var datatableMaterialType = _orderRepository.ComboboxSugest("type", "Material");
+      MaterialType_cb.ValueMember = "type";
+      MaterialType_cb.DataSource = datatableMaterialType;
+
+      var datatableUnitName = _orderRepository.ComboboxSugest("name", "Unit");
+      MaterialUnitType_cb.ValueMember = "name";
+      MaterialUnitType_cb.DataSource = datatableUnitName;
+    }
+
+    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
+    {
+      AddOrder_panel.Location = new Point(
+      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
+      );
+      AddOrder_panel.Anchor = AnchorStyles.None;
     }
 
     private void AddOrder_btn_Click(object sender, EventArgs e)
@@ -94,6 +156,58 @@ namespace Melody.View.Controls
       }
     }
 
+    private List<Order> OrderCollect()
+    {
+      foreach (var item in materialToOrders)
+      {
+        orders.Add(new Order
+        {
+          OrderNumber = orderNumber
+          ,
+          DateOfOrder = dateOfOrderIn_dtp.Value
+          ,
+          OrderingEmployee = NameOrderingEmployeeIn_cb.Text + " " + SurnameOrderingEmployeeIn_cb.Text
+          ,
+          Supplier = new Supplier
+          {
+            Name = NameSupplierIn_cb.Text
+          },
+          Destiny = new Destiny
+          {
+            Name = DestinyName_cb.Text
+            ,
+            Contract = DestinyContractNumber_cb.Text
+          },
+          Material = new Material
+          {
+            Name = item.material.Name
+          },
+          Quantity = item.Quantity
+          ,
+          Unit = new Unit
+          {
+            Name = item.unit.Name
+          }
+          ,
+          Note = new Note
+          {
+            NoteFullText = Note_rtb.Text
+          }
+          ,
+          ReceivingEmployee = NameReceivingEmployeeIn_cb.Text + " " + SurnameReceivingEmployeeIn_cb.Text
+          ,
+          PlannedDateOfReceipt = DateOfReceiptIn_dtp.Value
+        });
+      }
+      return orders;
+    }
+
+    private void MaterialsToOrder_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      MaterialsToOrder_dgv.DataSource = materialToOrders;
+      MaterialsToOrder_dgv.Refresh();
+    }
+
     private void Clear()
     {
       dateOfOrderIn_dtp.Value = DateTime.Now;
@@ -114,6 +228,7 @@ namespace Melody.View.Controls
       NameReceivingEmployeeIn_cb.Text = string.Empty;
       SurnameReceivingEmployeeIn_cb.Text = string.Empty;
     }
+
     private void ClearErrorLabel()
     {
       if (string.IsNullOrWhiteSpace(Validation_lbl.Text))
@@ -121,6 +236,7 @@ namespace Melody.View.Controls
         Validation_lbl.Text = string.Empty;
       }
     }
+
     private void ClearOrder_btn_Click(object sender, EventArgs e)
     {
       dateOfOrderIn_dtp.Value = DateTime.Now;
@@ -167,119 +283,6 @@ namespace Melody.View.Controls
       materialToOrders = null;
       MaterialsToOrder_dgv.Refresh();
       MaterialsToOrder_dgv.DataSource = materialToOrders;
-    }
-
-    private void MaterialsToOrder_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-      MaterialsToOrder_dgv.DataSource = materialToOrders;
-      MaterialsToOrder_dgv.Refresh();
-    }
-
-    private void AddOrder_Load(object sender, EventArgs e)
-    {
-      OrderNumber_tb.Text = orderNumber.ToString();
-
-      var datatableName = _orderRepository.ComboboxSugest("name", "Employee");
-      NameOrderingEmployeeIn_cb.ValueMember = "name";
-      NameOrderingEmployeeIn_cb.DataSource = datatableName;
-
-      var datatableName1 = _orderRepository.ComboboxSugest("name", "Employee");
-      NameHostEmployeeIn_cb.ValueMember = "name";
-      NameHostEmployeeIn_cb.DataSource = datatableName1;
-
-      var datatableName2 = _orderRepository.ComboboxSugest("name", "Employee");
-      NameReceivingEmployeeIn_cb.ValueMember = "name";
-      NameReceivingEmployeeIn_cb.DataSource = datatableName2;
-
-      var datatableSurname = _orderRepository.ComboboxSugest("surname", "Employee");
-      SurnameOrderingEmployeeIn_cb.ValueMember = "surname";
-      SurnameOrderingEmployeeIn_cb.DataSource = datatableSurname;
-
-      var datatableSurname1 = _orderRepository.ComboboxSugest("surname", "Employee");
-      SurnameHostEmployeeIn_cb.ValueMember = "surname";
-      SurnameHostEmployeeIn_cb.DataSource = datatableSurname1;
-
-      var datatableSurname2 = _orderRepository.ComboboxSugest("surname", "Employee");
-      SurnameReceivingEmployeeIn_cb.ValueMember = "surname";
-      SurnameReceivingEmployeeIn_cb.DataSource = datatableSurname2;
-
-      var datatableDestinyName = _orderRepository.ComboboxSugest("name", "Destiny");
-      DestinyName_cb.ValueMember = "name";
-      DestinyName_cb.DataSource = datatableDestinyName;
-
-      var datatableSupplierName = _orderRepository.ComboboxSugest("name", "Supplier");
-      NameSupplierIn_cb.ValueMember = "name";
-      NameSupplierIn_cb.DataSource = datatableSupplierName;
-
-      var datatableDestinyContract = _orderRepository.ComboboxSugest("contract", "Destiny");
-      DestinyContractNumber_cb.ValueMember = "contract";
-      DestinyContractNumber_cb.DataSource = datatableDestinyContract;
-
-      var datatableMaterialName = _orderRepository.ComboboxSugest("name", "Material");
-      MaterialName_cb.ValueMember = "name";
-      MaterialName_cb.DataSource = datatableMaterialName;
-
-      var datatableMaterialType = _orderRepository.ComboboxSugest("type", "Material");
-      MaterialType_cb.ValueMember = "type";
-      MaterialType_cb.DataSource = datatableMaterialType;
-
-      var datatableUnitName = _orderRepository.ComboboxSugest("name", "Unit");
-      MaterialUnitType_cb.ValueMember = "name";
-      MaterialUnitType_cb.DataSource = datatableUnitName;
-    }
-
-    private void AddOrder_panel_Paint(object sender, PaintEventArgs e)
-    {
-      AddOrder_panel.Location = new Point(
-      this.ClientSize.Width / 2 - AddOrder_panel.Size.Width / 2
-      );
-      AddOrder_panel.Anchor = AnchorStyles.None;
-    }
-
-    private List<Order> OrderCollect()
-    {
-      foreach (var item in materialToOrders)
-      {
-        orders.Add(new Order
-        {
-          OrderNumber = orderNumber
-          ,
-          DateOfOrder = dateOfOrderIn_dtp.Value
-          ,
-          OrderingEmployee = NameOrderingEmployeeIn_cb.Text + " " + SurnameOrderingEmployeeIn_cb.Text
-          ,
-          Supplier = new Supplier
-          {
-            Name = NameSupplierIn_cb.Text
-          },
-          Destiny = new Destiny
-          {
-            Name = DestinyName_cb.Text
-            ,
-            Contract = DestinyContractNumber_cb.Text
-          },
-          Material = new Material
-          {
-            Name = item.material.Name
-          },
-          Quantity = item.Quantity
-          ,
-          Unit = new Unit
-          {
-            Name = item.unit.Name
-          }
-          ,
-          Note = new Note
-          {
-            NoteFullText = Note_rtb.Text
-          }
-          ,
-          ReceivingEmployee = NameReceivingEmployeeIn_cb.Text + " " + SurnameReceivingEmployeeIn_cb.Text
-          ,
-          PlannedDateOfReceipt = DateOfReceiptIn_dtp.Value
-        });
-      }
-      return orders;
     }
   }
 }

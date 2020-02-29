@@ -7,13 +7,6 @@ namespace Melody.Service.Entity
   [ExcludeFromCodeCoverage]
   public class Employee
   {
-    public Employee()
-    {
-      Access = new Access();
-      ContactDetails = new ContactDetails();
-      Adress = new Adress();
-    }
-
     public int Id { get; set; }
 
     public string Name { get; set; }

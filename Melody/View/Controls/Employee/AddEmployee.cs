@@ -22,12 +22,7 @@ namespace Melody.View.Controls
     private void AddEmployee_btn_Click(object sender, EventArgs e)
     {
       ClearErrorLabel();
-      var list = new List<DataClass>
-      {
-        DataClass.Employee
-        ,DataClass.Access
-        ,DataClass.Adress
-        ,DataClass.ContactDetails};
+
       var employee = CollectEmployee();
       var validationResult = employee.Validate();
       try

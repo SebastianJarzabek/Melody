@@ -65,6 +65,22 @@ namespace Melody.Service.DataAccess
       }
     }
 
+    public int CheckLastOrder(string storedProcedureName)
+    {
+      try
+      {
+        using (var connection = new SqlConnection(_configService.GetConnectionString()))
+        {
+          return connection.Execute(storedProcedureName);
+        }
+      }
+      catch (Exception ex)
+      {
+        log.Error(ex);
+        throw;
+      }
+    }
+
     public void GetFromDatabase(string storedProcedureName, object parameters)
     {
       try

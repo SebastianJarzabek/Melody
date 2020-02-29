@@ -22,20 +22,48 @@ namespace Melody.View.Controls
 
     private void AddOrder_btn_Click(object sender, EventArgs e)
     {
-      try
-      {
-        OrderNumber_tb.Text = _orderRepository.CheckLast().ToString();
+      OrderCollect();
+      string isValidate = string.Empty;
 
-
-
-      }
-      catch (Exception ex)
+      foreach (var item in orders)
       {
-        throw ex;
-      }
-      finally
-      {
-        Clear();
+        isValidate += item.Validate();
+        var validationResult = item.Validate();
+        try
+        {
+          ClearErrorLabel();
+          OrderNumber_tb.Text = _orderRepository.CheckLast().ToString();
+
+          if (validationResult.IsValid)
+          {
+            _orderRepository.AddOrder(item);
+            MessageBox.Show($"Dodano do bazy danych zamówienie o numerze: {item.IdOrder}.",
+                            "Informacja",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+          }
+          else
+          {
+            Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+            MessageBox.Show(validationResult.ErrorMessageToDisplay,
+                          "Błąd",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Error);
+          }
+        }
+        catch (Exception ex)
+        {
+          Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
+          MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
+                          "Błąd",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Error);
+          throw ex;
+        }
+        finally
+        {
+          Clear();
+        }
       }
     }
 
@@ -86,7 +114,13 @@ namespace Melody.View.Controls
       NameReceivingEmployeeIn_cb.Text = string.Empty;
       SurnameReceivingEmployeeIn_cb.Text = string.Empty;
     }
-
+    private void ClearErrorLabel()
+    {
+      if (string.IsNullOrWhiteSpace(Validation_lbl.Text))
+      {
+        Validation_lbl.Text = string.Empty;
+      }
+    }
     private void ClearOrder_btn_Click(object sender, EventArgs e)
     {
       dateOfOrderIn_dtp.Value = DateTime.Now;

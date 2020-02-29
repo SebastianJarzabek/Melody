@@ -20,17 +20,64 @@ namespace Melody.Service.DataAccess
     {
       var parameters = new
       {
-
+        orderNumber = order.OrderNumber
+    ,
+        DateOfOrder = order.DateOfOrder
+    ,
+        OrderingEmployee = order.OrderingEmployee
+    ,
+        SupplierName = order.Supplier.Name
+    ,
+        DestinyName = order.Destiny.Name
+    ,
+        Contract = order.Destiny.Contract
+    ,
+        MaterialName = order.Material.Name
+    ,
+        MaterialType = order.Material.Type
+    ,
+        Quantity = order.Quantity
+    ,
+        UnitName = order.Unit.Name
+    ,
+        NoteFullText = order.Note.NoteFullText
+    ,
+        ReceivingEmployee = order.ReceivingEmployee
+    ,
+        PlannedDateOfReceipt = order.PlannedDateOfReceipt
       };
-
-      _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
+      _executor.InsertIntoDatabase(new SqlProcedure().AddOrder, parameters);
     }
 
     public void UpdateOrder(Order order)
     {
       var parameters = new
       {
-
+        orderNumber = order.OrderNumber
+    ,
+        DateOfOrder = order.DateOfOrder
+    ,
+        OrderingEmployee = order.OrderingEmployee
+    ,
+        SupplierName = order.Supplier.Name
+    ,
+        DestinyName = order.Destiny.Name
+    ,
+        Contract = order.Destiny.Contract
+    ,
+        MaterialName = order.Material.Name
+    ,
+        MaterialType = order.Material.Type
+    ,
+        Quantity = order.Quantity
+    ,
+        UnitName = order.Unit.Name
+    ,
+        NoteFullText = order.Note.NoteFullText
+    ,
+        ReceivingEmployee = order.ReceivingEmployee
+    ,
+        PlannedDateOfReceipt = order.PlannedDateOfReceipt
       };
       _executor.InsertIntoDatabase(new SqlProcedure().AddDestiny, parameters);
     }
@@ -39,7 +86,7 @@ namespace Melody.Service.DataAccess
     {
       var parameters = new
       {
-
+        orderNumber = order.OrderNumber
       };
       _executor.DeleteFromDatabase(new SqlProcedure().DeleteDestiny, parameters);
     }
@@ -51,7 +98,7 @@ namespace Melody.Service.DataAccess
 
     public int CheckLast()
     {
-      return _executor.GetFromDatabase<int>(new SqlProcedure().LastOrderNumber, null);
+      return _executor.CheckLastOrder(new SqlProcedure().LastOrderNumber);
     }
 
     public DataTable ComboboxSugest(string column, string table)

@@ -71,7 +71,8 @@ namespace Melody.Service.DataAccess
       {
         using (var connection = new SqlConnection(_configService.GetConnectionString()))
         {
-          return connection.Execute(storedProcedureName);
+          var pom = connection.ExecuteScalar(storedProcedureName);
+          return Convert.ToInt32(pom);
         }
       }
       catch (Exception ex)
@@ -153,11 +154,6 @@ namespace Melody.Service.DataAccess
       {
         return false;
       }
-    }
-
-    public DataTable ComboboxSugest(string v1, string column, string v2, string table)
-    {
-      throw new NotImplementedException();
     }
   }
 }

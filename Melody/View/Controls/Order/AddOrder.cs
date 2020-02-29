@@ -17,7 +17,7 @@ namespace Melody.View.Controls
     {
       _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
       InitializeComponent();
-      orderNumber = _orderRepository.CheckLast();
+      orderNumber = _orderRepository.CheckLast() + 1;
     }
 
     private void AddOrder_btn_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace Melody.View.Controls
           if (validationResult.IsValid)
           {
             _orderRepository.AddOrder(item);
-            MessageBox.Show($"Dodano do bazy danych zamówienie o numerze: {item.IdOrder}.",
+            MessageBox.Show($"Dodano do bazy danych zamówienie o numerze: {orderNumber}.",
                             "Informacja",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -54,7 +54,7 @@ namespace Melody.View.Controls
         catch (Exception ex)
         {
           Validation_lbl.Text = validationResult.ErrorMessageToDisplay;
-          MessageBox.Show($"Wystąpił błąd przy dodaniu pracownika do bazy. {ex}",
+          MessageBox.Show($"Wystąpił błąd przy dodaniu zamówienie o numerze: {orderNumber} do bazy. {ex}",
                           "Błąd",
                           MessageBoxButtons.OK,
                           MessageBoxIcon.Error);
@@ -177,7 +177,6 @@ namespace Melody.View.Controls
 
     private void AddOrder_Load(object sender, EventArgs e)
     {
-      var orderNumber = _orderRepository.CheckLast();
       OrderNumber_tb.Text = orderNumber.ToString();
 
       var datatableName = _orderRepository.ComboboxSugest("name", "Employee");

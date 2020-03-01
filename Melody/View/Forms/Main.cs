@@ -304,7 +304,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var ListOrderControlPanel = new ListOrder();
+        var ListOrderControlPanel = new ListOrder(new OrderRepository(new Executor()));
         ListOrderControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(ListOrderControlPanel);
       }

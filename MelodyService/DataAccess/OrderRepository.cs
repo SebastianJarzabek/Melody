@@ -93,7 +93,7 @@ namespace Melody.Service.DataAccess
 
     public List<OrderView> GetOrders()
     {
-      return _executor.GetListFromDatabase<OrderView>(new SqlProcedure().GetDestinies, null);
+      return _executor.GetListFromDatabase<OrderView>(new SqlProcedure().GetAllOrder, null);
     }
 
     public int CheckLast()

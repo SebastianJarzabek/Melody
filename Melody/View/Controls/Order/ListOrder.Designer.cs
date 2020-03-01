@@ -29,10 +29,24 @@
     private void InitializeComponent()
     {
       this.panel1 = new System.Windows.Forms.Panel();
-      this.Data_dgv = new System.Windows.Forms.DataGridView();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
+      this.Data_dgv = new System.Windows.Forms.DataGridView();
+      this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dateOfOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.orderingEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DestinyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DestinyContract = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.MaterialType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NoteName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.RecivingEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.PlannedDateOfReceit = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.SuspendLayout();
@@ -47,17 +61,6 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(1920, 62);
       this.panel1.TabIndex = 0;
-      // 
-      // Data_dgv
-      // 
-      this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.Data_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.Data_dgv.Location = new System.Drawing.Point(0, 62);
-      this.Data_dgv.Name = "Data_dgv";
-      this.Data_dgv.RowHeadersWidth = 51;
-      this.Data_dgv.RowTemplate.Height = 24;
-      this.Data_dgv.Size = new System.Drawing.Size(1920, 1018);
-      this.Data_dgv.TabIndex = 1;
       // 
       // textBox1
       // 
@@ -89,6 +92,150 @@
       this.Refresh_btn.TabIndex = 4;
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
+      this.Refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
+      // 
+      // Data_dgv
+      // 
+      this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.OrderNumber,
+            this.dateOfOrder,
+            this.orderingEmployee,
+            this.SupplierName,
+            this.DestinyName,
+            this.DestinyContract,
+            this.MaterialName,
+            this.MaterialType,
+            this.quantity,
+            this.UnitName,
+            this.NoteName,
+            this.RecivingEmployee,
+            this.PlannedDateOfReceit});
+      this.Data_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Data_dgv.Location = new System.Drawing.Point(0, 62);
+      this.Data_dgv.Name = "Data_dgv";
+      this.Data_dgv.RowHeadersWidth = 51;
+      this.Data_dgv.RowTemplate.Height = 24;
+      this.Data_dgv.Size = new System.Drawing.Size(1920, 1018);
+      this.Data_dgv.TabIndex = 1;
+      // 
+      // Id
+      // 
+      this.Id.DataPropertyName = "IdOrder";
+      this.Id.HeaderText = "Id";
+      this.Id.MinimumWidth = 6;
+      this.Id.Name = "Id";
+      this.Id.Visible = false;
+      this.Id.Width = 125;
+      // 
+      // OrderNumber
+      // 
+      this.OrderNumber.DataPropertyName = "OrderNumber";
+      this.OrderNumber.HeaderText = "Numer zamówienia";
+      this.OrderNumber.MinimumWidth = 6;
+      this.OrderNumber.Name = "OrderNumber";
+      this.OrderNumber.ReadOnly = true;
+      this.OrderNumber.Width = 125;
+      // 
+      // dateOfOrder
+      // 
+      this.dateOfOrder.DataPropertyName = "DateOfOrder";
+      this.dateOfOrder.HeaderText = "Data zamówienia";
+      this.dateOfOrder.MinimumWidth = 6;
+      this.dateOfOrder.Name = "dateOfOrder";
+      this.dateOfOrder.ReadOnly = true;
+      this.dateOfOrder.Width = 125;
+      // 
+      // orderingEmployee
+      // 
+      this.orderingEmployee.DataPropertyName = "OrderingEmployee";
+      this.orderingEmployee.HeaderText = "Zamawiający";
+      this.orderingEmployee.MinimumWidth = 6;
+      this.orderingEmployee.Name = "orderingEmployee";
+      this.orderingEmployee.ReadOnly = true;
+      this.orderingEmployee.Width = 125;
+      // 
+      // SupplierName
+      // 
+      this.SupplierName.DataPropertyName = "SupplierName";
+      this.SupplierName.HeaderText = "Dostawca";
+      this.SupplierName.MinimumWidth = 6;
+      this.SupplierName.Name = "SupplierName";
+      this.SupplierName.ReadOnly = true;
+      this.SupplierName.Width = 125;
+      // 
+      // DestinyName
+      // 
+      this.DestinyName.DataPropertyName = "DestinyName";
+      this.DestinyName.HeaderText = "Przeznaczenie";
+      this.DestinyName.MinimumWidth = 6;
+      this.DestinyName.Name = "DestinyName";
+      this.DestinyName.Width = 125;
+      // 
+      // DestinyContract
+      // 
+      this.DestinyContract.DataPropertyName = "Contract";
+      this.DestinyContract.HeaderText = "Kontrakt";
+      this.DestinyContract.MinimumWidth = 6;
+      this.DestinyContract.Name = "DestinyContract";
+      this.DestinyContract.Width = 125;
+      // 
+      // MaterialName
+      // 
+      this.MaterialName.DataPropertyName = "MaterialName";
+      this.MaterialName.HeaderText = "Nazwa Materiału";
+      this.MaterialName.MinimumWidth = 6;
+      this.MaterialName.Name = "MaterialName";
+      this.MaterialName.Width = 125;
+      // 
+      // MaterialType
+      // 
+      this.MaterialType.DataPropertyName = "MaterialType";
+      this.MaterialType.HeaderText = "Typ materiału";
+      this.MaterialType.MinimumWidth = 6;
+      this.MaterialType.Name = "MaterialType";
+      this.MaterialType.Width = 125;
+      // 
+      // quantity
+      // 
+      this.quantity.DataPropertyName = "Quantity";
+      this.quantity.HeaderText = "Ilość";
+      this.quantity.MinimumWidth = 6;
+      this.quantity.Name = "quantity";
+      this.quantity.Width = 125;
+      // 
+      // UnitName
+      // 
+      this.UnitName.DataPropertyName = "UnitName";
+      this.UnitName.HeaderText = "j.m.";
+      this.UnitName.MinimumWidth = 6;
+      this.UnitName.Name = "UnitName";
+      this.UnitName.Width = 125;
+      // 
+      // NoteName
+      // 
+      this.NoteName.DataPropertyName = "NoteFullText";
+      this.NoteName.HeaderText = "Uwagi";
+      this.NoteName.MinimumWidth = 6;
+      this.NoteName.Name = "NoteName";
+      this.NoteName.Width = 125;
+      // 
+      // RecivingEmployee
+      // 
+      this.RecivingEmployee.DataPropertyName = "RecivingEmployee";
+      this.RecivingEmployee.HeaderText = "Przyjmujący na magazyn";
+      this.RecivingEmployee.MinimumWidth = 6;
+      this.RecivingEmployee.Name = "RecivingEmployee";
+      this.RecivingEmployee.Width = 125;
+      // 
+      // PlannedDateOfReceit
+      // 
+      this.PlannedDateOfReceit.DataPropertyName = "PlannedDateOfReceit";
+      this.PlannedDateOfReceit.HeaderText = "Planowany odbiór";
+      this.PlannedDateOfReceit.MinimumWidth = 6;
+      this.PlannedDateOfReceit.Name = "PlannedDateOfReceit";
+      this.PlannedDateOfReceit.Width = 125;
       // 
       // ListOrder
       // 
@@ -112,5 +259,19 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Refresh_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderingEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DestinyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DestinyContract;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoteName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecivingEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlannedDateOfReceit;
     }
 }

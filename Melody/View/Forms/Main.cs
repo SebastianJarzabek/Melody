@@ -292,7 +292,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var EditOrderControlPanel = new EditOrder();
+        var EditOrderControlPanel = new EditOrder(new OrderRepository(new Executor()));
         EditOrderControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(EditOrderControlPanel);
       }

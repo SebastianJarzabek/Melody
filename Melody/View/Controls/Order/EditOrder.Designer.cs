@@ -133,11 +133,11 @@
       // 
       this.label20.AutoSize = true;
       this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label20.Location = new System.Drawing.Point(400, 28);
+      this.label20.Location = new System.Drawing.Point(279, 30);
       this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(36, 20);
+      this.label20.Size = new System.Drawing.Size(157, 20);
       this.label20.TabIndex = 31;
-      this.label20.Text = "ID: ";
+      this.label20.Text = "Numer zamówienia:";
       // 
       // Order_gb
       // 

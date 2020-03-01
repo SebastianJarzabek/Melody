@@ -121,6 +121,9 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Service Broker\" />
+    <Folder Include="Server Objects\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Unit.sql">
@@ -352,6 +355,23 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="Storage\MelodyDb_log.sql" />
+    <Build Include="Storage\MelodyDb.sql" />
+    <Build Include="Security\sa.sql" />
+    <Build Include="Security\NT SERVICE_Winmgmt.sql" />
+    <Build Include="Security\NT SERVICE_SQLWriter.sql" />
+    <Build Include="Security\NT SERVICE_SQLTELEMETRY.sql" />
+    <Build Include="Security\NT SERVICE_SQLSERVERAGENT.sql" />
+    <Build Include="Security\NT Service_MSSQLSERVER.sql" />
+    <Build Include="Security\NT AUTHORITY_SYSTEM.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllWarehouseAdmission.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Service Broker\AutoCreatedLocal.sql" />
+    <Build Include="Server Objects\telemetry_xevents.sql" />
+    <Build Include="Server Objects\AlwaysOn_health.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">

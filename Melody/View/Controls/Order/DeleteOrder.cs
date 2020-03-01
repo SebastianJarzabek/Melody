@@ -12,7 +12,7 @@ namespace Melody.View.Controls
     public DeleteOrder(IOrderRepository orderRepository)
     {
       InitializeComponent();
-      _orderRepository = orderRepository;
+      _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
     }
 
     private void DeleteOrder_panel_Paint(object sender, PaintEventArgs e)
@@ -47,6 +47,10 @@ namespace Melody.View.Controls
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
         throw ex;
+      }
+      finally
+      {
+        Clear();
       }
     }
 

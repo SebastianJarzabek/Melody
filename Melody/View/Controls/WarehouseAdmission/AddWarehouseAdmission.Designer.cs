@@ -49,6 +49,8 @@
       this.DateOfAdmissionIn_dtp = new System.Windows.Forms.DateTimePicker();
       this.label7 = new System.Windows.Forms.Label();
       this.WarehouseAdmissionData_gb = new System.Windows.Forms.GroupBox();
+      this.warehouseAdmissionNumber_tb = new System.Windows.Forms.TextBox();
+      this.label12 = new System.Windows.Forms.Label();
       this.Order_gb = new System.Windows.Forms.GroupBox();
       this.ClearOrder_btn = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@
       this.MaterialName_cb = new System.Windows.Forms.ComboBox();
       this.MaterialType_cb = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
+      this.label13 = new System.Windows.Forms.Label();
+      this.OrderNumber_tb = new System.Windows.Forms.TextBox();
       this.AddWarehouseAdmission_panel.SuspendLayout();
       this.MaterialsToOrder_gb.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).BeginInit();
@@ -105,6 +109,7 @@
       this.AddWarehouseAdmission_panel.Name = "AddWarehouseAdmission_panel";
       this.AddWarehouseAdmission_panel.Size = new System.Drawing.Size(1140, 850);
       this.AddWarehouseAdmission_panel.TabIndex = 36;
+      this.AddWarehouseAdmission_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddWarehouseAdmission_panel_Paint);
       // 
       // MaterialsToOrder_gb
       // 
@@ -127,6 +132,7 @@
       this.ClearMaterialsToOrder_btn.TabIndex = 1;
       this.ClearMaterialsToOrder_btn.Text = "Wyczyść";
       this.ClearMaterialsToOrder_btn.UseVisualStyleBackColor = true;
+      this.ClearMaterialsToOrder_btn.Click += new System.EventHandler(this.ClearMaterialsToOrder_btn_Click);
       // 
       // MaterialsToOrder_dgv
       // 
@@ -190,6 +196,7 @@
       this.AddOrder_btn.TabIndex = 0;
       this.AddOrder_btn.Text = "Przyjmij";
       this.AddOrder_btn.UseVisualStyleBackColor = true;
+      this.AddOrder_btn.Click += new System.EventHandler(this.AddWarehouseAdmission_btn_Click);
       // 
       // DataFlow_gb
       // 
@@ -229,6 +236,7 @@
       this.ClearWarehouseAdmission_btn.TabIndex = 3;
       this.ClearWarehouseAdmission_btn.Text = "Wyczyść";
       this.ClearWarehouseAdmission_btn.UseVisualStyleBackColor = true;
+      this.ClearWarehouseAdmission_btn.Click += new System.EventHandler(this.ClearWarehouseAdmission_btn_Click);
       // 
       // label16
       // 
@@ -301,6 +309,8 @@
       // WarehouseAdmissionData_gb
       // 
       this.WarehouseAdmissionData_gb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.WarehouseAdmissionData_gb.Controls.Add(this.warehouseAdmissionNumber_tb);
+      this.WarehouseAdmissionData_gb.Controls.Add(this.label12);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Order_gb);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Destiny_gb);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Note_gb);
@@ -313,9 +323,28 @@
       this.WarehouseAdmissionData_gb.TabStop = false;
       this.WarehouseAdmissionData_gb.Text = "Dane przyjęcia";
       // 
+      // warehouseAdmissionNumber_tb
+      // 
+      this.warehouseAdmissionNumber_tb.Location = new System.Drawing.Point(442, 25);
+      this.warehouseAdmissionNumber_tb.Name = "warehouseAdmissionNumber_tb";
+      this.warehouseAdmissionNumber_tb.Size = new System.Drawing.Size(100, 34);
+      this.warehouseAdmissionNumber_tb.TabIndex = 30;
+      // 
+      // label12
+      // 
+      this.label12.AutoSize = true;
+      this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label12.Location = new System.Drawing.Point(275, 30);
+      this.label12.Name = "label12";
+      this.label12.Size = new System.Drawing.Size(161, 20);
+      this.label12.TabIndex = 31;
+      this.label12.Text = "Numer przyjęcia WZ";
+      // 
       // Order_gb
       // 
       this.Order_gb.Anchor = System.Windows.Forms.AnchorStyles.None;
+      this.Order_gb.Controls.Add(this.OrderNumber_tb);
+      this.Order_gb.Controls.Add(this.label13);
       this.Order_gb.Controls.Add(this.ClearOrder_btn);
       this.Order_gb.Controls.Add(this.label3);
       this.Order_gb.Controls.Add(this.label2);
@@ -343,6 +372,7 @@
       this.ClearOrder_btn.TabIndex = 4;
       this.ClearOrder_btn.Text = "Wyczyść";
       this.ClearOrder_btn.UseVisualStyleBackColor = true;
+      this.ClearOrder_btn.Click += new System.EventHandler(this.ClearOrder_btn_Click);
       // 
       // label3
       // 
@@ -457,6 +487,7 @@
       this.ClearDestiny_btn.TabIndex = 2;
       this.ClearDestiny_btn.Text = "Wyczyść";
       this.ClearDestiny_btn.UseVisualStyleBackColor = true;
+      this.ClearDestiny_btn.Click += new System.EventHandler(this.ClearDestiny_btn_Click);
       // 
       // label6
       // 
@@ -520,6 +551,7 @@
       this.ClearNote_btn.TabIndex = 1;
       this.ClearNote_btn.Text = "Wyczyść";
       this.ClearNote_btn.UseVisualStyleBackColor = true;
+      this.ClearNote_btn.Click += new System.EventHandler(this.ClearNote_btn_Click);
       // 
       // Note_rtb
       // 
@@ -597,6 +629,7 @@
       this.ClearMaterial_btn.TabIndex = 5;
       this.ClearMaterial_btn.Text = "Wyczyść";
       this.ClearMaterial_btn.UseVisualStyleBackColor = true;
+      this.ClearMaterial_btn.Click += new System.EventHandler(this.ClearMaterial_btn_Click);
       // 
       // AddMaterialToList_btn
       // 
@@ -648,6 +681,23 @@
       this.label4.TabIndex = 12;
       this.label4.Text = "Typ materiału";
       // 
+      // label13
+      // 
+      this.label13.AutoSize = true;
+      this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label13.Location = new System.Drawing.Point(273, 174);
+      this.label13.Name = "label13";
+      this.label13.Size = new System.Drawing.Size(157, 20);
+      this.label13.TabIndex = 32;
+      this.label13.Text = "Numer zamówienia:";
+      // 
+      // OrderNumber_tb
+      // 
+      this.OrderNumber_tb.Location = new System.Drawing.Point(436, 167);
+      this.OrderNumber_tb.Name = "OrderNumber_tb";
+      this.OrderNumber_tb.Size = new System.Drawing.Size(100, 30);
+      this.OrderNumber_tb.TabIndex = 37;
+      // 
       // AddWarehouseAdmission
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -663,6 +713,7 @@
       this.WarehouseAdmission_gb.ResumeLayout(false);
       this.WarehouseAdmission_gb.PerformLayout();
       this.WarehouseAdmissionData_gb.ResumeLayout(false);
+      this.WarehouseAdmissionData_gb.PerformLayout();
       this.Order_gb.ResumeLayout(false);
       this.Order_gb.PerformLayout();
       this.Destiny_gb.ResumeLayout(false);
@@ -728,5 +779,9 @@
         private System.Windows.Forms.ComboBox MaterialName_cb;
         private System.Windows.Forms.ComboBox MaterialType_cb;
         private System.Windows.Forms.Label label4;
-    }
+        private System.Windows.Forms.TextBox warehouseAdmissionNumber_tb;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.TextBox OrderNumber_tb;
+  }
 }

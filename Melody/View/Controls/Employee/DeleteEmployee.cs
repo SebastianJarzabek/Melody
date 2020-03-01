@@ -14,7 +14,7 @@ namespace Melody.View.Controls
     public DeleteEmployee(IEmployeesRepository employeeRepository)
     {
       InitializeComponent();
-      _employeeRepository = employeeRepository;
+      _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
     }
 
     private void DeleteEmployee_panel_Paint(object sender, PaintEventArgs e)

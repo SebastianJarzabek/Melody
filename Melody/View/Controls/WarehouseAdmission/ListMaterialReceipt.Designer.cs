@@ -33,6 +33,19 @@
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.Search_btn = new System.Windows.Forms.Button();
       this.Refresh_btn = new System.Windows.Forms.Button();
+      this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.WarehouseAdmissionNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DateOfAdmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HostEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DestinyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.MaterialType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.NoteFullText = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.Data_dgv)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
@@ -40,6 +53,20 @@
       // Data_dgv
       // 
       this.Data_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.Data_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.WarehouseAdmissionNumber,
+            this.DateOfAdmission,
+            this.HostEmployee,
+            this.SupplierName,
+            this.OrderNumber,
+            this.DestinyName,
+            this.Contract,
+            this.MaterialName,
+            this.MaterialType,
+            this.Quantity,
+            this.UnitName,
+            this.NoteFullText});
       this.Data_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Data_dgv.Location = new System.Drawing.Point(0, 62);
       this.Data_dgv.Name = "Data_dgv";
@@ -89,6 +116,111 @@
       this.Refresh_btn.TabIndex = 4;
       this.Refresh_btn.Text = "Odśwież";
       this.Refresh_btn.UseVisualStyleBackColor = true;
+      this.Refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
+      // 
+      // Id
+      // 
+      this.Id.HeaderText = "Id";
+      this.Id.MinimumWidth = 6;
+      this.Id.Name = "Id";
+      this.Id.Visible = false;
+      this.Id.Width = 125;
+      // 
+      // WarehouseAdmissionNumber
+      // 
+      this.WarehouseAdmissionNumber.DataPropertyName = "WarehouseAdmissionNumber";
+      this.WarehouseAdmissionNumber.HeaderText = "Numer przyjęcia na magazyn";
+      this.WarehouseAdmissionNumber.MinimumWidth = 6;
+      this.WarehouseAdmissionNumber.Name = "WarehouseAdmissionNumber";
+      this.WarehouseAdmissionNumber.Width = 125;
+      // 
+      // DateOfAdmission
+      // 
+      this.DateOfAdmission.DataPropertyName = "DateOfAdmission";
+      this.DateOfAdmission.HeaderText = "Data przyjęcia";
+      this.DateOfAdmission.MinimumWidth = 6;
+      this.DateOfAdmission.Name = "DateOfAdmission";
+      this.DateOfAdmission.Width = 125;
+      // 
+      // HostEmployee
+      // 
+      this.HostEmployee.DataPropertyName = "HostEmployee";
+      this.HostEmployee.HeaderText = "Przyjmujący";
+      this.HostEmployee.MinimumWidth = 6;
+      this.HostEmployee.Name = "HostEmployee";
+      this.HostEmployee.Width = 125;
+      // 
+      // SupplierName
+      // 
+      this.SupplierName.DataPropertyName = "SupplierName";
+      this.SupplierName.HeaderText = "Dostawca";
+      this.SupplierName.MinimumWidth = 6;
+      this.SupplierName.Name = "SupplierName";
+      this.SupplierName.Width = 125;
+      // 
+      // OrderNumber
+      // 
+      this.OrderNumber.DataPropertyName = "OrderNumber";
+      this.OrderNumber.HeaderText = "Numer zamówienia";
+      this.OrderNumber.MinimumWidth = 6;
+      this.OrderNumber.Name = "OrderNumber";
+      this.OrderNumber.Width = 125;
+      // 
+      // DestinyName
+      // 
+      this.DestinyName.DataPropertyName = "DestinyName";
+      this.DestinyName.HeaderText = "Przeznaczenie";
+      this.DestinyName.MinimumWidth = 6;
+      this.DestinyName.Name = "DestinyName";
+      this.DestinyName.Width = 125;
+      // 
+      // Contract
+      // 
+      this.Contract.DataPropertyName = "Contract";
+      this.Contract.HeaderText = "Kontrakt";
+      this.Contract.MinimumWidth = 6;
+      this.Contract.Name = "Contract";
+      this.Contract.Width = 125;
+      // 
+      // MaterialName
+      // 
+      this.MaterialName.DataPropertyName = "MaterialName";
+      this.MaterialName.HeaderText = "Nazwa materiału";
+      this.MaterialName.MinimumWidth = 6;
+      this.MaterialName.Name = "MaterialName";
+      this.MaterialName.Width = 125;
+      // 
+      // MaterialType
+      // 
+      this.MaterialType.DataPropertyName = "MaterialType";
+      this.MaterialType.HeaderText = "Typ materiału";
+      this.MaterialType.MinimumWidth = 6;
+      this.MaterialType.Name = "MaterialType";
+      this.MaterialType.Width = 125;
+      // 
+      // Quantity
+      // 
+      this.Quantity.DataPropertyName = "Quantity";
+      this.Quantity.HeaderText = "Ilość";
+      this.Quantity.MinimumWidth = 6;
+      this.Quantity.Name = "Quantity";
+      this.Quantity.Width = 125;
+      // 
+      // UnitName
+      // 
+      this.UnitName.DataPropertyName = "UnitName";
+      this.UnitName.HeaderText = "J.m.";
+      this.UnitName.MinimumWidth = 6;
+      this.UnitName.Name = "UnitName";
+      this.UnitName.Width = 125;
+      // 
+      // NoteFullText
+      // 
+      this.NoteFullText.DataPropertyName = "NoteFullText";
+      this.NoteFullText.HeaderText = "Uwagi";
+      this.NoteFullText.MinimumWidth = 6;
+      this.NoteFullText.Name = "NoteFullText";
+      this.NoteFullText.Width = 125;
       // 
       // ListMaterialReceipt
       // 
@@ -112,5 +244,18 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search_btn;
         private System.Windows.Forms.Button Refresh_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WarehouseAdmissionNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfAdmission;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HostEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DestinyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contract;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoteFullText;
     }
 }

@@ -1,9 +1,9 @@
-﻿Create Procedure DeleteOrder 
-@Order int
+﻿CREATE Procedure [dbo].[DeleteOrder] 
+@OrderNumber int
 as
 begin Transaction
 
-delete [Order] where Id=@Order
+delete [Order] where OrderNumber=@OrderNumber
 IF @@ERROR <> 0
     BEGIN
         ROLLBACK TRANSACTION

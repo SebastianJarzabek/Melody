@@ -5,6 +5,7 @@ CREATE Procedure [dbo].[GetAllOrder]
 as
 begin Transaction
 select o.Id,
+OrderNumber,
  dateOfOrder
 ,orderingEmployee
 ,s.Id

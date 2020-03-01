@@ -1,6 +1,5 @@
-﻿using Melody.Service.DataAccess;
+﻿using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
-using Melody.Service.SqlProcedures;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,21 +8,12 @@ namespace Melody.View.Controls
 {
   public partial class DeleteMaterialReceipt : UserControl
   {
-    public DeleteMaterialReceipt()
+    private readonly IMaterialReceiptRepository _materialReceiptRepository;
+    public DeleteMaterialReceipt(IMaterialReceiptRepository materialReceiptRepository )
     {
       InitializeComponent();
+      _materialReceiptRepository = materialReceiptRepository ?? throw new ArgumentNullException(nameof(materialReceiptRepository));
     }
-
-    private void Clear_btn_Click(object sender, EventArgs e)
-    {
-      Clear();
-    }
-
-    private void Clear()
-    {
-      MaterialReceiptId_tb.Text = string.Empty;
-    }
-
     private void DeleteMaterialReceipt_panel_Paint(object sender, PaintEventArgs e)
     {
       DeleteMaterialReceipt_panel.Location = new Point(
@@ -37,37 +27,40 @@ namespace Melody.View.Controls
     {
       try
       {
-        var materialReceipt = new WarehouseAdmission()
+        var warehouseAdmission = new WarehouseAdmission()
         {
-          Id = Convert.ToInt16(MaterialReceiptId_tb.Text)
-
+          WarehouseAdmissionNumber = Convert.ToInt16(MaterialReceiptNumber_tb.Text)
         };
 
-        var parameters = new
-        {
-          idWarehouseIssue = materialReceipt.Id
-        };
 
-        var executor = new Executor();
-        var execute = new SqlProcedure();
-        //if (executor.DeleteFromDatabase(execute.DeleteWarehouseAdmissionFromId, parameters))
-        //{
-        //  Clear();
-        //  MessageBox.Show(
-        //  $"Usunięto z bazy danych  : {parameters.idWarehouseIssue}.",
-        //  "Informacja",
-        //  MessageBoxButtons.OK,
-        //  MessageBoxIcon.Information);
-        //}
+        _materialReceiptRepository.DeleteMaterialReceipt(warehouseAdmission);
+        MessageBox.Show(
+        $"Usunięto z bazy danych przyjęcie na magazyn o numerze: {warehouseAdmission.WarehouseAdmissionNumber}.",
+        "Informacja",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Błąd",
-          $"Wystąpił błąd przy usuwaniu kontraktu do bazy. {ex}",
+        MessageBox.Show(
+          $"Wystąpił błąd przy usuwaniu przyjęcia na magazyn./n{ex}", "Błąd",
           MessageBoxButtons.OK,
           MessageBoxIcon.Error);
         throw ex;
       }
+      finally
+      {
+        Clear();
+      }
+    }
+    private void Clear_btn_Click(object sender, EventArgs e)
+    {
+      Clear();
+    }
+
+    private void Clear()
+    {
+      MaterialReceiptNumber_tb.Text = string.Empty;
     }
   }
 }

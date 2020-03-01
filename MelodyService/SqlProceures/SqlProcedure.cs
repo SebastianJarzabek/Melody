@@ -42,6 +42,8 @@ namespace Melody.Service.SqlProcedures
 
     public string DeleteUnit => "dbo.DeleteUnit";
 
+ 
+
     public string DeleteWarehouseAdmissionFromId => "dbo.DeleteWarehouseAdmissionFromId";
 
     public string DeleteWarehouseIssueFromId => "dbo.DeleteWarehouseIssueFromId";
@@ -52,6 +54,7 @@ namespace Melody.Service.SqlProcedures
 
     public string GetAllWarehouseIssueFromId => "dbo.GetAllWarehouseIssueFromId";
 
+    public string GetAllWarehouseAdmission => "dbo.GetAllWarehouseAdmission";
     public string GetDestiny => "dbo.GetDestiny";
 
     public string GetDestinyFromId => "dbo.GetDestinyFromId";

@@ -1,6 +1,5 @@
 ﻿using Melody.Service.DataAccess;
 using Melody.Service.Entity;
-using Melody.Service.Logic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

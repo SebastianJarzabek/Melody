@@ -32,7 +32,7 @@
       this.Clear_btn = new System.Windows.Forms.Button();
       this.label4 = new System.Windows.Forms.Label();
       this.DeleteMaterialReceipt_tb_btn = new System.Windows.Forms.Button();
-      this.MaterialReceiptId_tb = new System.Windows.Forms.TextBox();
+      this.MaterialReceiptNumber_tb = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.DeleteMaterialReceipt_panel = new System.Windows.Forms.Panel();
       this.DeleteMaterialIssue_gb.SuspendLayout();
@@ -44,7 +44,7 @@
       this.DeleteMaterialIssue_gb.Controls.Add(this.Clear_btn);
       this.DeleteMaterialIssue_gb.Controls.Add(this.label4);
       this.DeleteMaterialIssue_gb.Controls.Add(this.DeleteMaterialReceipt_tb_btn);
-      this.DeleteMaterialIssue_gb.Controls.Add(this.MaterialReceiptId_tb);
+      this.DeleteMaterialIssue_gb.Controls.Add(this.MaterialReceiptNumber_tb);
       this.DeleteMaterialIssue_gb.Controls.Add(this.label1);
       this.DeleteMaterialIssue_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.DeleteMaterialIssue_gb.Location = new System.Drawing.Point(3, 3);
@@ -52,7 +52,8 @@
       this.DeleteMaterialIssue_gb.Size = new System.Drawing.Size(339, 249);
       this.DeleteMaterialIssue_gb.TabIndex = 2;
       this.DeleteMaterialIssue_gb.TabStop = false;
-      this.DeleteMaterialIssue_gb.Text = "Usuń materiał";
+      this.DeleteMaterialIssue_gb.Text = "Usuń przyjęcie na magazyn";
+      this.DeleteMaterialIssue_gb.Paint += new System.Windows.Forms.PaintEventHandler(this.DeleteMaterialReceipt_panel_Paint);
       // 
       // Clear_btn
       // 
@@ -63,12 +64,13 @@
       this.Clear_btn.TabIndex = 8;
       this.Clear_btn.Text = "Wyczyść";
       this.Clear_btn.UseVisualStyleBackColor = true;
+      this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
       // 
       // label4
       // 
       this.label4.AutoSize = true;
       this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.Location = new System.Drawing.Point(6, 51);
+      this.label4.Location = new System.Drawing.Point(0, 53);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(146, 20);
       this.label4.TabIndex = 6;
@@ -83,23 +85,24 @@
       this.DeleteMaterialReceipt_tb_btn.TabIndex = 2;
       this.DeleteMaterialReceipt_tb_btn.Text = "Usuń";
       this.DeleteMaterialReceipt_tb_btn.UseVisualStyleBackColor = true;
+      this.DeleteMaterialReceipt_tb_btn.Click += new System.EventHandler(this.DeleteMaterialReceipt_btn_Click);
       // 
-      // MaterialReceiptId_tb
+      // MaterialReceiptNumber_tb
       // 
-      this.MaterialReceiptId_tb.Location = new System.Drawing.Point(133, 87);
-      this.MaterialReceiptId_tb.Name = "MaterialReceiptId_tb";
-      this.MaterialReceiptId_tb.Size = new System.Drawing.Size(200, 30);
-      this.MaterialReceiptId_tb.TabIndex = 1;
+      this.MaterialReceiptNumber_tb.Location = new System.Drawing.Point(133, 87);
+      this.MaterialReceiptNumber_tb.Name = "MaterialReceiptNumber_tb";
+      this.MaterialReceiptNumber_tb.Size = new System.Drawing.Size(200, 30);
+      this.MaterialReceiptNumber_tb.TabIndex = 1;
       // 
       // label1
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(6, 94);
+      this.label1.Location = new System.Drawing.Point(0, 94);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(65, 20);
+      this.label1.Size = new System.Drawing.Size(136, 20);
       this.label1.TabIndex = 0;
-      this.label1.Text = "Nazwe:";
+      this.label1.Text = "Numer przyjęcia:";
       // 
       // DeleteMaterialReceipt_panel
       // 
@@ -108,6 +111,7 @@
       this.DeleteMaterialReceipt_panel.Name = "DeleteMaterialReceipt_panel";
       this.DeleteMaterialReceipt_panel.Size = new System.Drawing.Size(345, 255);
       this.DeleteMaterialReceipt_panel.TabIndex = 4;
+      this.DeleteMaterialReceipt_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.DeleteMaterialReceipt_panel_Paint);
       // 
       // DeleteMaterialReceipt
       // 
@@ -129,7 +133,7 @@
         private System.Windows.Forms.Button Clear_btn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button DeleteMaterialReceipt_tb_btn;
-        private System.Windows.Forms.TextBox MaterialReceiptId_tb;
+        private System.Windows.Forms.TextBox MaterialReceiptNumber_tb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel DeleteMaterialReceipt_panel;
     }

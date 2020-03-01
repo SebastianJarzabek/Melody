@@ -9,7 +9,11 @@ namespace Melody.Service.DataAccess.Interfaces
     void DeleteMaterialReceipt(WarehouseAdmission warehouseAdmission);
 
     List<MaterialReceiptView> GetWarehouseAdmission();
+
     int CheckLast();
+
     void AddWarehouseAdmission(WarehouseAdmission item);
+
+    object ComboboxSugest(string column, string table);
   }
 }

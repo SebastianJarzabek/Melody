@@ -184,7 +184,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var EditMaterialReceiptControlPanel = new EditMaterialReceipt();
+        var EditMaterialReceiptControlPanel = new EditMaterialReceipt();// new MaterialReceiptRepository(new Executor()));
         EditMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(EditMaterialReceiptControlPanel);
       }
@@ -196,7 +196,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var ListMaterialReceiptControlPanel = new ListMaterialReceipt();
+        var ListMaterialReceiptControlPanel = new ListMaterialReceipt(new MaterialReceiptRepository(new Executor()));
         ListMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(ListMaterialReceiptControlPanel);
       }
@@ -208,7 +208,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteMaterialReceiptControlPanel = new DeleteMaterialReceipt();
+        var DeleteMaterialReceiptControlPanel = new DeleteMaterialReceipt(new MaterialReceiptRepository(new Executor()));
         DeleteMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteMaterialReceiptControlPanel);
       }
@@ -232,7 +232,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddMaterialIssueControlPanel = new AddWarehouseAdmission();
+        var AddMaterialIssueControlPanel = new AddWarehouseAdmission(new MaterialReceiptRepository(new Executor()));
         AddMaterialIssueControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddMaterialIssueControlPanel);
       }

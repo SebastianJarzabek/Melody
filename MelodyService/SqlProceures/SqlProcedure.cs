@@ -92,5 +92,7 @@ namespace Melody.Service.SqlProcedures
     public string OnInit => "dbo.OnInit";
 
     public string LastOrderNumber => "dbo.LastOrderNumber";
+
+    public string LastWarehouseAdmission => "LastWarehouseAdmission";
   }
 }

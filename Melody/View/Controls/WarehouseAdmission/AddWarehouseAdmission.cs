@@ -24,51 +24,43 @@ namespace Melody.View.Controls
     {
       warehouseAdmissionNumber_tb.Text = warehouseAdmissionNumber.ToString();
 
-      var datatableName = _orderRepository.ComboboxSugest("name", "Employee");
+      var datatableName = _materialReceiptRepository.ComboboxSugest("name", "Employee");
       NameOrderingEmployeeIn_cb.ValueMember = "name";
       NameOrderingEmployeeIn_cb.DataSource = datatableName;
 
-      var datatableName1 = _orderRepository.ComboboxSugest("name", "Employee");
+      var datatableName1 = _materialReceiptRepository.ComboboxSugest("name", "Employee");
       NameHostEmployeeIn_cb.ValueMember = "name";
       NameHostEmployeeIn_cb.DataSource = datatableName1;
 
-      var datatableName2 = _orderRepository.ComboboxSugest("name", "Employee");
-      NameReceivingEmployeeIn_cb.ValueMember = "name";
-      NameReceivingEmployeeIn_cb.DataSource = datatableName2;
-
-      var datatableSurname = _orderRepository.ComboboxSugest("surname", "Employee");
+      var datatableSurname = _materialReceiptRepository.ComboboxSugest("surname", "Employee");
       SurnameOrderingEmployeeIn_cb.ValueMember = "surname";
       SurnameOrderingEmployeeIn_cb.DataSource = datatableSurname;
 
-      var datatableSurname1 = _orderRepository.ComboboxSugest("surname", "Employee");
+      var datatableSurname1 = _materialReceiptRepository.ComboboxSugest("surname", "Employee");
       SurnameHostEmployeeIn_cb.ValueMember = "surname";
       SurnameHostEmployeeIn_cb.DataSource = datatableSurname1;
 
-      var datatableSurname2 = _orderRepository.ComboboxSugest("surname", "Employee");
-      SurnameReceivingEmployeeIn_cb.ValueMember = "surname";
-      SurnameReceivingEmployeeIn_cb.DataSource = datatableSurname2;
-
-      var datatableDestinyName = _orderRepository.ComboboxSugest("name", "Destiny");
-      DestinyName_cb.ValueMember = "name";
-      DestinyName_cb.DataSource = datatableDestinyName;
-
-      var datatableSupplierName = _orderRepository.ComboboxSugest("name", "Supplier");
+      var datatableSupplierName = _materialReceiptRepository.ComboboxSugest("name", "Supplier");
       NameSupplierIn_cb.ValueMember = "name";
       NameSupplierIn_cb.DataSource = datatableSupplierName;
 
-      var datatableDestinyContract = _orderRepository.ComboboxSugest("contract", "Destiny");
+      var datatableDestinyName = _materialReceiptRepository.ComboboxSugest("name", "Destiny");
+      DestinyName_cb.ValueMember = "name";
+      DestinyName_cb.DataSource = datatableDestinyName;
+
+      var datatableDestinyContract = _materialReceiptRepository.ComboboxSugest("contract", "Destiny");
       DestinyContractNumber_cb.ValueMember = "contract";
       DestinyContractNumber_cb.DataSource = datatableDestinyContract;
 
-      var datatableMaterialName = _orderRepository.ComboboxSugest("name", "Material");
+      var datatableMaterialName = _materialReceiptRepository.ComboboxSugest("name", "Material");
       MaterialName_cb.ValueMember = "name";
       MaterialName_cb.DataSource = datatableMaterialName;
 
-      var datatableMaterialType = _orderRepository.ComboboxSugest("type", "Material");
+      var datatableMaterialType = _materialReceiptRepository.ComboboxSugest("type", "Material");
       MaterialType_cb.ValueMember = "type";
       MaterialType_cb.DataSource = datatableMaterialType;
 
-      var datatableUnitName = _orderRepository.ComboboxSugest("name", "Unit");
+      var datatableUnitName = _materialReceiptRepository.ComboboxSugest("name", "Unit");
       MaterialUnitType_cb.ValueMember = "name";
       MaterialUnitType_cb.DataSource = datatableUnitName;
     }

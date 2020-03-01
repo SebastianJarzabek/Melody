@@ -14,6 +14,21 @@ namespace Melody.Service.DataAccess
       _executor = executor;
     }
 
+    public void AddWarehouseAdmission(WarehouseAdmission item)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public int CheckLast()
+    {
+      return _executor.CheckLastOrder(new SqlProcedure().LastWarehouseAdmission);
+    }
+
+    public object ComboboxSugest(string column, string table)
+    {
+      return _executor.ComboboxSugest(column, table);
+    }
+
     public void DeleteMaterialReceipt(WarehouseAdmission warehouseAdmission)
     {
       var parameters = new

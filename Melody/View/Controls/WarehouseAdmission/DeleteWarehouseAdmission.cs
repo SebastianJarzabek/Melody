@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class DeleteMaterialReceipt : UserControl
+  public partial class DeleteWarehouseAdmission : UserControl
   {
     private readonly IMaterialReceiptRepository _materialReceiptRepository;
-    public DeleteMaterialReceipt(IMaterialReceiptRepository materialReceiptRepository )
+    public DeleteWarehouseAdmission(IMaterialReceiptRepository materialReceiptRepository )
     {
       InitializeComponent();
       _materialReceiptRepository = materialReceiptRepository ?? throw new ArgumentNullException(nameof(materialReceiptRepository));
@@ -33,7 +33,7 @@ namespace Melody.View.Controls
         };
 
 
-        _materialReceiptRepository.DeleteMaterialReceipt(warehouseAdmission);
+        _materialReceiptRepository.DeleteWarehouseAdmission(warehouseAdmission);
         MessageBox.Show(
         $"Usunięto z bazy danych przyjęcie na magazyn o numerze: {warehouseAdmission.WarehouseAdmissionNumber}.",
         "Informacja",

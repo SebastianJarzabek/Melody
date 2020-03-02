@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class DeleteMaterialReceipt
+  partial class DeleteWarehouseAdmission
   {
     /// <summary> 
     /// Required designer variable.

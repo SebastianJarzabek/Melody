@@ -208,7 +208,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var DeleteMaterialReceiptControlPanel = new DeleteMaterialReceipt(new MaterialReceiptRepository(new Executor()));
+        var DeleteMaterialReceiptControlPanel = new DeleteWarehouseAdmission(new MaterialReceiptRepository(new Executor()));
         DeleteMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(DeleteMaterialReceiptControlPanel);
       }

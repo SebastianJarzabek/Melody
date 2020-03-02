@@ -16,7 +16,7 @@ namespace Melody.Service.DataAccess
 
     public void AddWarehouseAdmission(WarehouseAdmission item)
     {
-      throw new System.NotImplementedException();
+      _executor.CheckLastOrder(new SqlProcedure().AddWarehouseAdmission);
     }
 
     public int CheckLast()
@@ -29,7 +29,7 @@ namespace Melody.Service.DataAccess
       return _executor.ComboboxSugest(column, table);
     }
 
-    public void DeleteMaterialReceipt(WarehouseAdmission warehouseAdmission)
+    public void DeleteWarehouseAdmission(WarehouseAdmission warehouseAdmission)
     {
       var parameters = new
       {
@@ -43,5 +43,9 @@ namespace Melody.Service.DataAccess
       return _executor.GetListFromDatabase<MaterialReceiptView>(new SqlProcedure().GetAllWarehouseAdmission, null);
     }
 
+    public void UpdateWarehouseAdmission(WarehouseAdmission warehouseAdmission)
+    {
+      _executor.CheckLastOrder(new SqlProcedure().UpdateWarehouseAdmission);
+    }
   }
 }

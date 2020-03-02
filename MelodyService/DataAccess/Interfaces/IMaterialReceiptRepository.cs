@@ -6,8 +6,9 @@ namespace Melody.Service.DataAccess.Interfaces
 {
   public interface IMaterialReceiptRepository
   {
-    void DeleteMaterialReceipt(WarehouseAdmission warehouseAdmission);
+    void DeleteWarehouseAdmission(WarehouseAdmission warehouseAdmission);
 
+    void UpdateWarehouseAdmission(WarehouseAdmission warehouseAdmission);
     List<MaterialReceiptView> GetWarehouseAdmission();
 
     int CheckLast();

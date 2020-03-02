@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class AddWarehouseAdmission
+  partial class UpdateWarehouseAdmission
   {
     /// <summary> 
     /// Required designer variable.
@@ -28,16 +28,16 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.AddWarehouseAdmission_panel = new System.Windows.Forms.Panel();
+      this.UpdateWarehouseAdmission_panel = new System.Windows.Forms.Panel();
       this.MaterialsToOrder_gb = new System.Windows.Forms.GroupBox();
       this.ClearMaterialsToOrder_btn = new System.Windows.Forms.Button();
-      this.MaterialsToOrder_dgv = new System.Windows.Forms.DataGridView();
+      this.MaterialsToAdmission_dgv = new System.Windows.Forms.DataGridView();
       this.MaterialName_dgvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.MaterialType_dgvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.MaterialUnit_dgvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.MaterialQuaility_dgvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.Validation_lbl = new System.Windows.Forms.Label();
-      this.AddOrder_btn = new System.Windows.Forms.Button();
+      this.UpdateWarehouseAdmission_btn = new System.Windows.Forms.Button();
       this.DataFlow_gb = new System.Windows.Forms.GroupBox();
       this.WarehouseAdmission_gb = new System.Windows.Forms.GroupBox();
       this.ClearWarehouseAdmission_btn = new System.Windows.Forms.Button();
@@ -84,9 +84,9 @@
       this.MaterialName_cb = new System.Windows.Forms.ComboBox();
       this.MaterialType_cb = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
-      this.AddWarehouseAdmission_panel.SuspendLayout();
+      this.UpdateWarehouseAdmission_panel.SuspendLayout();
       this.MaterialsToOrder_gb.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.MaterialsToAdmission_dgv)).BeginInit();
       this.DataFlow_gb.SuspendLayout();
       this.WarehouseAdmission_gb.SuspendLayout();
       this.WarehouseAdmissionData_gb.SuspendLayout();
@@ -96,25 +96,25 @@
       this.Material_gb.SuspendLayout();
       this.SuspendLayout();
       // 
-      // AddWarehouseAdmission_panel
+      // UpdateWarehouseAdmission_panel
       // 
-      this.AddWarehouseAdmission_panel.Controls.Add(this.MaterialsToOrder_gb);
-      this.AddWarehouseAdmission_panel.Controls.Add(this.Validation_lbl);
-      this.AddWarehouseAdmission_panel.Controls.Add(this.AddOrder_btn);
-      this.AddWarehouseAdmission_panel.Controls.Add(this.DataFlow_gb);
-      this.AddWarehouseAdmission_panel.Controls.Add(this.WarehouseAdmissionData_gb);
-      this.AddWarehouseAdmission_panel.Location = new System.Drawing.Point(390, 115);
-      this.AddWarehouseAdmission_panel.MaximumSize = new System.Drawing.Size(1140, 850);
-      this.AddWarehouseAdmission_panel.MinimumSize = new System.Drawing.Size(1140, 850);
-      this.AddWarehouseAdmission_panel.Name = "AddWarehouseAdmission_panel";
-      this.AddWarehouseAdmission_panel.Size = new System.Drawing.Size(1140, 850);
-      this.AddWarehouseAdmission_panel.TabIndex = 36;
-      this.AddWarehouseAdmission_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddWarehouseAdmission_panel_Paint);
+      this.UpdateWarehouseAdmission_panel.Controls.Add(this.MaterialsToOrder_gb);
+      this.UpdateWarehouseAdmission_panel.Controls.Add(this.Validation_lbl);
+      this.UpdateWarehouseAdmission_panel.Controls.Add(this.UpdateWarehouseAdmission_btn);
+      this.UpdateWarehouseAdmission_panel.Controls.Add(this.DataFlow_gb);
+      this.UpdateWarehouseAdmission_panel.Controls.Add(this.WarehouseAdmissionData_gb);
+      this.UpdateWarehouseAdmission_panel.Location = new System.Drawing.Point(390, 115);
+      this.UpdateWarehouseAdmission_panel.MaximumSize = new System.Drawing.Size(1140, 850);
+      this.UpdateWarehouseAdmission_panel.MinimumSize = new System.Drawing.Size(1140, 850);
+      this.UpdateWarehouseAdmission_panel.Name = "UpdateWarehouseAdmission_panel";
+      this.UpdateWarehouseAdmission_panel.Size = new System.Drawing.Size(1140, 850);
+      this.UpdateWarehouseAdmission_panel.TabIndex = 36;
+      this.UpdateWarehouseAdmission_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdateWarehouseAdmission_panel_Paint);
       // 
       // MaterialsToOrder_gb
       // 
       this.MaterialsToOrder_gb.Controls.Add(this.ClearMaterialsToOrder_btn);
-      this.MaterialsToOrder_gb.Controls.Add(this.MaterialsToOrder_dgv);
+      this.MaterialsToOrder_gb.Controls.Add(this.MaterialsToAdmission_dgv);
       this.MaterialsToOrder_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.MaterialsToOrder_gb.Location = new System.Drawing.Point(571, 195);
       this.MaterialsToOrder_gb.Name = "MaterialsToOrder_gb";
@@ -134,24 +134,24 @@
       this.ClearMaterialsToOrder_btn.UseVisualStyleBackColor = true;
       this.ClearMaterialsToOrder_btn.Click += new System.EventHandler(this.ClearMaterialsToOrder_btn_Click);
       // 
-      // MaterialsToOrder_dgv
+      // MaterialsToAdmission_dgv
       // 
-      this.MaterialsToOrder_dgv.AllowUserToDeleteRows = false;
-      this.MaterialsToOrder_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-      this.MaterialsToOrder_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.MaterialsToOrder_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.MaterialsToAdmission_dgv.AllowUserToDeleteRows = false;
+      this.MaterialsToAdmission_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+      this.MaterialsToAdmission_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.MaterialsToAdmission_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaterialName_dgvr,
             this.MaterialType_dgvr,
             this.MaterialUnit_dgvr,
             this.MaterialQuaility_dgvr});
-      this.MaterialsToOrder_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.MaterialsToOrder_dgv.Location = new System.Drawing.Point(3, 30);
-      this.MaterialsToOrder_dgv.Name = "MaterialsToOrder_dgv";
-      this.MaterialsToOrder_dgv.RowHeadersWidth = 51;
-      this.MaterialsToOrder_dgv.RowTemplate.Height = 24;
-      this.MaterialsToOrder_dgv.ScrollBars = System.Windows.Forms.ScrollBars.None;
-      this.MaterialsToOrder_dgv.Size = new System.Drawing.Size(554, 506);
-      this.MaterialsToOrder_dgv.TabIndex = 0;
+      this.MaterialsToAdmission_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.MaterialsToAdmission_dgv.Location = new System.Drawing.Point(3, 30);
+      this.MaterialsToAdmission_dgv.Name = "MaterialsToAdmission_dgv";
+      this.MaterialsToAdmission_dgv.RowHeadersWidth = 51;
+      this.MaterialsToAdmission_dgv.RowTemplate.Height = 24;
+      this.MaterialsToAdmission_dgv.ScrollBars = System.Windows.Forms.ScrollBars.None;
+      this.MaterialsToAdmission_dgv.Size = new System.Drawing.Size(554, 506);
+      this.MaterialsToAdmission_dgv.TabIndex = 0;
       // 
       // MaterialName_dgvr
       // 
@@ -187,16 +187,16 @@
       this.Validation_lbl.Size = new System.Drawing.Size(0, 20);
       this.Validation_lbl.TabIndex = 19;
       // 
-      // AddOrder_btn
+      // UpdateWarehouseAdmission_btn
       // 
-      this.AddOrder_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AddOrder_btn.Location = new System.Drawing.Point(925, 740);
-      this.AddOrder_btn.Name = "AddOrder_btn";
-      this.AddOrder_btn.Size = new System.Drawing.Size(200, 30);
-      this.AddOrder_btn.TabIndex = 0;
-      this.AddOrder_btn.Text = "Przyjmij";
-      this.AddOrder_btn.UseVisualStyleBackColor = true;
-      this.AddOrder_btn.Click += new System.EventHandler(this.AddWarehouseAdmission_btn_Click);
+      this.UpdateWarehouseAdmission_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.UpdateWarehouseAdmission_btn.Location = new System.Drawing.Point(925, 740);
+      this.UpdateWarehouseAdmission_btn.Name = "UpdateWarehouseAdmission_btn";
+      this.UpdateWarehouseAdmission_btn.Size = new System.Drawing.Size(200, 30);
+      this.UpdateWarehouseAdmission_btn.TabIndex = 0;
+      this.UpdateWarehouseAdmission_btn.Text = "Edytuj";
+      this.UpdateWarehouseAdmission_btn.UseVisualStyleBackColor = true;
+      this.UpdateWarehouseAdmission_btn.Click += new System.EventHandler(this.UpdateWarehouseAdmission_btn_Click);
       // 
       // DataFlow_gb
       // 
@@ -321,7 +321,7 @@
       this.WarehouseAdmissionData_gb.Size = new System.Drawing.Size(562, 767);
       this.WarehouseAdmissionData_gb.TabIndex = 34;
       this.WarehouseAdmissionData_gb.TabStop = false;
-      this.WarehouseAdmissionData_gb.Text = "Dane przyjęcia";
+      this.WarehouseAdmissionData_gb.Text = "Edytuj dane przyjęcia";
       // 
       // warehouseAdmissionNumber_tb
       // 
@@ -699,17 +699,17 @@
       this.label4.TabIndex = 12;
       this.label4.Text = "Typ materiału";
       // 
-      // AddWarehouseAdmission
+      // UpdateWarehouseAdmission
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.AddWarehouseAdmission_panel);
-      this.Name = "AddWarehouseAdmission";
+      this.Controls.Add(this.UpdateWarehouseAdmission_panel);
+      this.Name = "UpdateWarehouseAdmission";
       this.Size = new System.Drawing.Size(1920, 1080);
-      this.AddWarehouseAdmission_panel.ResumeLayout(false);
-      this.AddWarehouseAdmission_panel.PerformLayout();
+      this.UpdateWarehouseAdmission_panel.ResumeLayout(false);
+      this.UpdateWarehouseAdmission_panel.PerformLayout();
       this.MaterialsToOrder_gb.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.MaterialsToAdmission_dgv)).EndInit();
       this.DataFlow_gb.ResumeLayout(false);
       this.WarehouseAdmission_gb.ResumeLayout(false);
       this.WarehouseAdmission_gb.PerformLayout();
@@ -728,16 +728,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel AddWarehouseAdmission_panel;
+        private System.Windows.Forms.Panel UpdateWarehouseAdmission_panel;
         private System.Windows.Forms.GroupBox MaterialsToOrder_gb;
         private System.Windows.Forms.Button ClearMaterialsToOrder_btn;
-        private System.Windows.Forms.DataGridView MaterialsToOrder_dgv;
+        private System.Windows.Forms.DataGridView MaterialsToAdmission_dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName_dgvr;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType_dgvr;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialUnit_dgvr;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialQuaility_dgvr;
         private System.Windows.Forms.Label Validation_lbl;
-        private System.Windows.Forms.Button AddOrder_btn;
+        private System.Windows.Forms.Button UpdateWarehouseAdmission_btn;
         private System.Windows.Forms.GroupBox DataFlow_gb;
         private System.Windows.Forms.GroupBox WarehouseAdmission_gb;
         private System.Windows.Forms.Button ClearWarehouseAdmission_btn;

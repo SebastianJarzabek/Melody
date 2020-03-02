@@ -82,6 +82,12 @@
     <Compile Include="View\Controls\Employee\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\WarehouseAdmission\UpdateWarehouseAdmission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\WarehouseAdmission\UpdateWarehouseAdmission.Designer.cs">
+      <DependentUpon>UpdateWarehouseAdmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Controls\WarehouseAdmission\AddWarehouseAdmission.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,11 +130,11 @@
     <Compile Include="View\Controls\WarehouseIssue\DeleteMaterialIssue.Designer.cs">
       <DependentUpon>DeleteMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\DeleteWarehouseAdmission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.Designer.cs">
-      <DependentUpon>DeleteMaterialReceipt.cs</DependentUpon>
+    <Compile Include="View\Controls\WarehouseAdmission\DeleteWarehouseAdmission.Designer.cs">
+      <DependentUpon>DeleteWarehouseAdmission.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\Order\DeleteOrder.cs">
       <SubType>UserControl</SubType>
@@ -160,12 +166,6 @@
     <Compile Include="View\Controls\WarehouseIssue\EditMaterialIssue.Designer.cs">
       <DependentUpon>EditMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.Designer.cs">
-      <DependentUpon>EditMaterialReceipt.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Controls\Order\EditOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,11 +196,11 @@
     <Compile Include="View\Controls\WarehouseIssue\ListMaterialIssue.Designer.cs">
       <DependentUpon>ListMaterialIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.cs">
+    <Compile Include="View\Controls\WarehouseAdmission\ListWarehouseAdmission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.Designer.cs">
-      <DependentUpon>ListMaterialReceipt.cs</DependentUpon>
+    <Compile Include="View\Controls\WarehouseAdmission\ListWarehouseAdmission.Designer.cs">
+      <DependentUpon>ListWarehouseAdmission.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\Order\ListOrder.cs">
       <SubType>UserControl</SubType>
@@ -254,6 +254,9 @@
     <EmbeddedResource Include="View\Controls\Employee\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\UpdateWarehouseAdmission.resx">
+      <DependentUpon>UpdateWarehouseAdmission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\WarehouseAdmission\AddWarehouseAdmission.resx">
       <DependentUpon>AddWarehouseAdmission.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,8 +278,8 @@
     <EmbeddedResource Include="View\Controls\WarehouseIssue\DeleteMaterialIssue.resx">
       <DependentUpon>DeleteMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\WarehouseAdmission\DeleteMaterialReceipt.resx">
-      <DependentUpon>DeleteMaterialReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\DeleteWarehouseAdmission.resx">
+      <DependentUpon>DeleteWarehouseAdmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Order\DeleteOrder.resx">
       <DependentUpon>DeleteOrder.cs</DependentUpon>
@@ -293,9 +296,6 @@
     <EmbeddedResource Include="View\Controls\WarehouseIssue\EditMaterialIssue.resx">
       <DependentUpon>EditMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\WarehouseAdmission\EditMaterialReceipt.resx">
-      <DependentUpon>EditMaterialReceipt.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Order\EditOrder.resx">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,8 +311,8 @@
     <EmbeddedResource Include="View\Controls\WarehouseIssue\ListMaterialIssue.resx">
       <DependentUpon>ListMaterialIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\WarehouseAdmission\ListMaterialReceipt.resx">
-      <DependentUpon>ListMaterialReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\WarehouseAdmission\ListWarehouseAdmission.resx">
+      <DependentUpon>ListWarehouseAdmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\Order\ListOrder.resx">
       <DependentUpon>ListOrder.cs</DependentUpon>

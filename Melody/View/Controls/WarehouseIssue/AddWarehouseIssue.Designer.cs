@@ -39,6 +39,15 @@
       this.Validation_lbl = new System.Windows.Forms.Label();
       this.AddWarehouseIssue_btn = new System.Windows.Forms.Button();
       this.DataFlow_gb = new System.Windows.Forms.GroupBox();
+      this.WarehouseIssue_gb = new System.Windows.Forms.GroupBox();
+      this.ClearWarehouseIssue_btn = new System.Windows.Forms.Button();
+      this.label18 = new System.Windows.Forms.Label();
+      this.label19 = new System.Windows.Forms.Label();
+      this.SurnameReceivingEmployeeIn_cb = new System.Windows.Forms.ComboBox();
+      this.NameReceivingEmployeeIn_cb = new System.Windows.Forms.ComboBox();
+      this.DateOfReceiptIn_dtp = new System.Windows.Forms.DateTimePicker();
+      this.label12 = new System.Windows.Forms.Label();
+      this.label13 = new System.Windows.Forms.Label();
       this.WarehouseAdmissionData_gb = new System.Windows.Forms.GroupBox();
       this.Order_gb = new System.Windows.Forms.GroupBox();
       this.ClearOrder_btn = new System.Windows.Forms.Button();
@@ -71,25 +80,18 @@
       this.MaterialName_cb = new System.Windows.Forms.ComboBox();
       this.MaterialType_cb = new System.Windows.Forms.ComboBox();
       this.label4 = new System.Windows.Forms.Label();
-      this.WarehouseIssue_gb = new System.Windows.Forms.GroupBox();
-      this.ClearWarehouseIssue_btn = new System.Windows.Forms.Button();
-      this.label18 = new System.Windows.Forms.Label();
-      this.label19 = new System.Windows.Forms.Label();
-      this.SurnameReceivingEmployeeIn_cb = new System.Windows.Forms.ComboBox();
-      this.NameReceivingEmployeeIn_cb = new System.Windows.Forms.ComboBox();
-      this.DateOfReceiptIn_dtp = new System.Windows.Forms.DateTimePicker();
-      this.label12 = new System.Windows.Forms.Label();
-      this.label13 = new System.Windows.Forms.Label();
+      this.LastWarehouseIssue_tb = new System.Windows.Forms.TextBox();
+      this.label7 = new System.Windows.Forms.Label();
       this.AddWarehouseIssue_panel.SuspendLayout();
       this.MaterialsToOrder_gb.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).BeginInit();
       this.DataFlow_gb.SuspendLayout();
+      this.WarehouseIssue_gb.SuspendLayout();
       this.WarehouseAdmissionData_gb.SuspendLayout();
       this.Order_gb.SuspendLayout();
       this.Destiny_gb.SuspendLayout();
       this.Note_gb.SuspendLayout();
       this.Material_gb.SuspendLayout();
-      this.WarehouseIssue_gb.SuspendLayout();
       this.SuspendLayout();
       // 
       // AddWarehouseIssue_panel
@@ -105,6 +107,7 @@
       this.AddWarehouseIssue_panel.Name = "AddWarehouseIssue_panel";
       this.AddWarehouseIssue_panel.Size = new System.Drawing.Size(1140, 850);
       this.AddWarehouseIssue_panel.TabIndex = 37;
+      this.AddWarehouseIssue_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddWarehouseIssue_panel_Paint);
       // 
       // MaterialsToOrder_gb
       // 
@@ -202,9 +205,108 @@
       this.DataFlow_gb.TabStop = false;
       this.DataFlow_gb.Text = "Dane przepływu";
       // 
+      // WarehouseIssue_gb
+      // 
+      this.WarehouseIssue_gb.Anchor = System.Windows.Forms.AnchorStyles.None;
+      this.WarehouseIssue_gb.Controls.Add(this.ClearWarehouseIssue_btn);
+      this.WarehouseIssue_gb.Controls.Add(this.label18);
+      this.WarehouseIssue_gb.Controls.Add(this.label19);
+      this.WarehouseIssue_gb.Controls.Add(this.SurnameReceivingEmployeeIn_cb);
+      this.WarehouseIssue_gb.Controls.Add(this.NameReceivingEmployeeIn_cb);
+      this.WarehouseIssue_gb.Controls.Add(this.DateOfReceiptIn_dtp);
+      this.WarehouseIssue_gb.Controls.Add(this.label12);
+      this.WarehouseIssue_gb.Controls.Add(this.label13);
+      this.WarehouseIssue_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.WarehouseIssue_gb.Location = new System.Drawing.Point(6, 30);
+      this.WarehouseIssue_gb.Name = "WarehouseIssue_gb";
+      this.WarehouseIssue_gb.Size = new System.Drawing.Size(548, 146);
+      this.WarehouseIssue_gb.TabIndex = 28;
+      this.WarehouseIssue_gb.TabStop = false;
+      this.WarehouseIssue_gb.Text = "Wydanie z magazynu";
+      // 
+      // ClearWarehouseIssue_btn
+      // 
+      this.ClearWarehouseIssue_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ClearWarehouseIssue_btn.Location = new System.Drawing.Point(439, 17);
+      this.ClearWarehouseIssue_btn.Name = "ClearWarehouseIssue_btn";
+      this.ClearWarehouseIssue_btn.Size = new System.Drawing.Size(100, 30);
+      this.ClearWarehouseIssue_btn.TabIndex = 3;
+      this.ClearWarehouseIssue_btn.Text = "Wyczyść";
+      this.ClearWarehouseIssue_btn.UseVisualStyleBackColor = true;
+      // 
+      // label18
+      // 
+      this.label18.AutoSize = true;
+      this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label18.Location = new System.Drawing.Point(258, 105);
+      this.label18.Name = "label18";
+      this.label18.Size = new System.Drawing.Size(86, 20);
+      this.label18.TabIndex = 25;
+      this.label18.Text = "Nazwisko:";
+      // 
+      // label19
+      // 
+      this.label19.AutoSize = true;
+      this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label19.Location = new System.Drawing.Point(9, 105);
+      this.label19.Name = "label19";
+      this.label19.Size = new System.Drawing.Size(45, 20);
+      this.label19.TabIndex = 24;
+      this.label19.Text = "Imie:";
+      // 
+      // SurnameReceivingEmployeeIn_cb
+      // 
+      this.SurnameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+      this.SurnameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.SurnameReceivingEmployeeIn_cb.FormattingEnabled = true;
+      this.SurnameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(339, 102);
+      this.SurnameReceivingEmployeeIn_cb.Name = "SurnameReceivingEmployeeIn_cb";
+      this.SurnameReceivingEmployeeIn_cb.Size = new System.Drawing.Size(200, 28);
+      this.SurnameReceivingEmployeeIn_cb.TabIndex = 2;
+      // 
+      // NameReceivingEmployeeIn_cb
+      // 
+      this.NameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+      this.NameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.NameReceivingEmployeeIn_cb.FormattingEnabled = true;
+      this.NameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(52, 102);
+      this.NameReceivingEmployeeIn_cb.Name = "NameReceivingEmployeeIn_cb";
+      this.NameReceivingEmployeeIn_cb.Size = new System.Drawing.Size(200, 28);
+      this.NameReceivingEmployeeIn_cb.TabIndex = 1;
+      // 
+      // DateOfReceiptIn_dtp
+      // 
+      this.DateOfReceiptIn_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.DateOfReceiptIn_dtp.Location = new System.Drawing.Point(10, 50);
+      this.DateOfReceiptIn_dtp.Name = "DateOfReceiptIn_dtp";
+      this.DateOfReceiptIn_dtp.Size = new System.Drawing.Size(243, 27);
+      this.DateOfReceiptIn_dtp.TabIndex = 0;
+      // 
+      // label12
+      // 
+      this.label12.AutoSize = true;
+      this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label12.Location = new System.Drawing.Point(9, 79);
+      this.label12.Name = "label12";
+      this.label12.Size = new System.Drawing.Size(137, 20);
+      this.label12.TabIndex = 20;
+      this.label12.Text = "Osoba wydająca:";
+      // 
+      // label13
+      // 
+      this.label13.AutoSize = true;
+      this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label13.Location = new System.Drawing.Point(9, 27);
+      this.label13.Name = "label13";
+      this.label13.Size = new System.Drawing.Size(115, 20);
+      this.label13.TabIndex = 21;
+      this.label13.Text = "Data wydania:";
+      // 
       // WarehouseAdmissionData_gb
       // 
       this.WarehouseAdmissionData_gb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.WarehouseAdmissionData_gb.Controls.Add(this.LastWarehouseIssue_tb);
+      this.WarehouseAdmissionData_gb.Controls.Add(this.label7);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Order_gb);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Destiny_gb);
       this.WarehouseAdmissionData_gb.Controls.Add(this.Note_gb);
@@ -215,7 +317,7 @@
       this.WarehouseAdmissionData_gb.Size = new System.Drawing.Size(562, 767);
       this.WarehouseAdmissionData_gb.TabIndex = 34;
       this.WarehouseAdmissionData_gb.TabStop = false;
-      this.WarehouseAdmissionData_gb.Text = "Dane wydania";
+      this.WarehouseAdmissionData_gb.Text = "Dane wydanie";
       // 
       // Order_gb
       // 
@@ -552,102 +654,22 @@
       this.label4.TabIndex = 12;
       this.label4.Text = "Typ materiału";
       // 
-      // WarehouseIssue_gb
+      // LastWarehouseIssue_tb
       // 
-      this.WarehouseIssue_gb.Anchor = System.Windows.Forms.AnchorStyles.None;
-      this.WarehouseIssue_gb.Controls.Add(this.ClearWarehouseIssue_btn);
-      this.WarehouseIssue_gb.Controls.Add(this.label18);
-      this.WarehouseIssue_gb.Controls.Add(this.label19);
-      this.WarehouseIssue_gb.Controls.Add(this.SurnameReceivingEmployeeIn_cb);
-      this.WarehouseIssue_gb.Controls.Add(this.NameReceivingEmployeeIn_cb);
-      this.WarehouseIssue_gb.Controls.Add(this.DateOfReceiptIn_dtp);
-      this.WarehouseIssue_gb.Controls.Add(this.label12);
-      this.WarehouseIssue_gb.Controls.Add(this.label13);
-      this.WarehouseIssue_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.WarehouseIssue_gb.Location = new System.Drawing.Point(6, 30);
-      this.WarehouseIssue_gb.Name = "WarehouseIssue_gb";
-      this.WarehouseIssue_gb.Size = new System.Drawing.Size(548, 146);
-      this.WarehouseIssue_gb.TabIndex = 28;
-      this.WarehouseIssue_gb.TabStop = false;
-      this.WarehouseIssue_gb.Text = "Wydanie z magazynu";
+      this.LastWarehouseIssue_tb.Location = new System.Drawing.Point(442, 25);
+      this.LastWarehouseIssue_tb.Name = "LastWarehouseIssue_tb";
+      this.LastWarehouseIssue_tb.Size = new System.Drawing.Size(100, 34);
+      this.LastWarehouseIssue_tb.TabIndex = 32;
       // 
-      // ClearWarehouseIssue_btn
+      // label7
       // 
-      this.ClearWarehouseIssue_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ClearWarehouseIssue_btn.Location = new System.Drawing.Point(439, 17);
-      this.ClearWarehouseIssue_btn.Name = "ClearWarehouseIssue_btn";
-      this.ClearWarehouseIssue_btn.Size = new System.Drawing.Size(100, 30);
-      this.ClearWarehouseIssue_btn.TabIndex = 3;
-      this.ClearWarehouseIssue_btn.Text = "Wyczyść";
-      this.ClearWarehouseIssue_btn.UseVisualStyleBackColor = true;
-      // 
-      // label18
-      // 
-      this.label18.AutoSize = true;
-      this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label18.Location = new System.Drawing.Point(258, 105);
-      this.label18.Name = "label18";
-      this.label18.Size = new System.Drawing.Size(86, 20);
-      this.label18.TabIndex = 25;
-      this.label18.Text = "Nazwisko:";
-      // 
-      // label19
-      // 
-      this.label19.AutoSize = true;
-      this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label19.Location = new System.Drawing.Point(9, 105);
-      this.label19.Name = "label19";
-      this.label19.Size = new System.Drawing.Size(45, 20);
-      this.label19.TabIndex = 24;
-      this.label19.Text = "Imie:";
-      // 
-      // SurnameReceivingEmployeeIn_cb
-      // 
-      this.SurnameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-      this.SurnameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.SurnameReceivingEmployeeIn_cb.FormattingEnabled = true;
-      this.SurnameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(339, 102);
-      this.SurnameReceivingEmployeeIn_cb.Name = "SurnameReceivingEmployeeIn_cb";
-      this.SurnameReceivingEmployeeIn_cb.Size = new System.Drawing.Size(200, 28);
-      this.SurnameReceivingEmployeeIn_cb.TabIndex = 2;
-      // 
-      // NameReceivingEmployeeIn_cb
-      // 
-      this.NameReceivingEmployeeIn_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-      this.NameReceivingEmployeeIn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.NameReceivingEmployeeIn_cb.FormattingEnabled = true;
-      this.NameReceivingEmployeeIn_cb.Location = new System.Drawing.Point(52, 102);
-      this.NameReceivingEmployeeIn_cb.Name = "NameReceivingEmployeeIn_cb";
-      this.NameReceivingEmployeeIn_cb.Size = new System.Drawing.Size(200, 28);
-      this.NameReceivingEmployeeIn_cb.TabIndex = 1;
-      // 
-      // DateOfReceiptIn_dtp
-      // 
-      this.DateOfReceiptIn_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.DateOfReceiptIn_dtp.Location = new System.Drawing.Point(10, 50);
-      this.DateOfReceiptIn_dtp.Name = "DateOfReceiptIn_dtp";
-      this.DateOfReceiptIn_dtp.Size = new System.Drawing.Size(243, 27);
-      this.DateOfReceiptIn_dtp.TabIndex = 0;
-      // 
-      // label12
-      // 
-      this.label12.AutoSize = true;
-      this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label12.Location = new System.Drawing.Point(9, 79);
-      this.label12.Name = "label12";
-      this.label12.Size = new System.Drawing.Size(137, 20);
-      this.label12.TabIndex = 20;
-      this.label12.Text = "Osoba wydająca:";
-      // 
-      // label13
-      // 
-      this.label13.AutoSize = true;
-      this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label13.Location = new System.Drawing.Point(9, 27);
-      this.label13.Name = "label13";
-      this.label13.Size = new System.Drawing.Size(115, 20);
-      this.label13.TabIndex = 21;
-      this.label13.Text = "Data wydania:";
+      this.label7.AutoSize = true;
+      this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label7.Location = new System.Drawing.Point(275, 30);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(154, 20);
+      this.label7.TabIndex = 33;
+      this.label7.Text = "Numer wydania PZ:";
       // 
       // AddWarehouseIssue
       // 
@@ -661,7 +683,10 @@
       this.MaterialsToOrder_gb.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.MaterialsToOrder_dgv)).EndInit();
       this.DataFlow_gb.ResumeLayout(false);
+      this.WarehouseIssue_gb.ResumeLayout(false);
+      this.WarehouseIssue_gb.PerformLayout();
       this.WarehouseAdmissionData_gb.ResumeLayout(false);
+      this.WarehouseAdmissionData_gb.PerformLayout();
       this.Order_gb.ResumeLayout(false);
       this.Order_gb.PerformLayout();
       this.Destiny_gb.ResumeLayout(false);
@@ -669,8 +694,6 @@
       this.Note_gb.ResumeLayout(false);
       this.Material_gb.ResumeLayout(false);
       this.Material_gb.PerformLayout();
-      this.WarehouseIssue_gb.ResumeLayout(false);
-      this.WarehouseIssue_gb.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -729,5 +752,7 @@
         private System.Windows.Forms.DateTimePicker DateOfReceiptIn_dtp;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox LastWarehouseIssue_tb;
+        private System.Windows.Forms.Label label7;
     }
 }

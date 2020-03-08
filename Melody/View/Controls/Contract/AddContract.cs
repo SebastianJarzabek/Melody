@@ -1,23 +1,29 @@
-﻿using Melody.Service.DataAccess.Interfaces;
+﻿using log4net;
+using Melody.Service.DataAccess.Interfaces;
 using Melody.Service.Entity;
 using System;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Melody.View.Controls
 {
-  public partial class AddContract : UserControl
+  public partial class AddContract_panel : UserControl
   {
+    private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
     private readonly IContractsRepository _contractsRepository;
 
-    Destiny destiny = new Destiny();
-
-    public AddContract(IContractsRepository contractsRepository)
+    public AddContract_panel(IContractsRepository contractsRepository)
     {
       InitializeComponent();
       _contractsRepository = contractsRepository;
-      
+    }
 
+    private void AddContract_gb_Paint(object sender, PaintEventArgs e)
+    {
+      AddContract_gb.Location = new Point(
+      this.ClientSize.Width / 2 - AddContract_gb.Size.Width / 2);
+      AddContract_gb.Anchor = AnchorStyles.None;
     }
 
     private void AddContract_btn_Click(object sender, EventArgs e)
@@ -62,18 +68,11 @@ namespace Melody.View.Controls
 
     private Destiny CollectDestines()
     {
-      var destiny = new Destiny();
-      destiny.Name = Name_tb.Text;
-      destiny.Contract = Contract_tb.Text;
-      return destiny;
-    }
-
-    private void ClearErrorLabel()
-    {
-      if (!string.IsNullOrWhiteSpace(Validation_lbl.Text))
+      return new Destiny
       {
-        Validation_lbl.Text = string.Empty;
-      }
+        Name = Name_tb.Text,
+        Contract = Contract_tb.Text
+      };
     }
 
     private void Clear_btn_Click(object sender, EventArgs e)
@@ -81,17 +80,19 @@ namespace Melody.View.Controls
       Clear();
     }
 
+    private void ClearErrorLabel()
+    {
+      if (!string.IsNullOrWhiteSpace(Validation_lbl.Text))
+      {
+        Clear();
+      }
+    }
+
     private void Clear()
     {
       Name_tb.Text = string.Empty;
       Contract_tb.Text = string.Empty;
-    }
-
-    private void AddContract_gb_Paint(object sender, PaintEventArgs e)
-    {
-      AddContract_gb.Location = new Point(
-      this.ClientSize.Width / 2 - AddContract_gb.Size.Width / 2);
-      AddContract_gb.Anchor = AnchorStyles.None;
+      Validation_lbl.Text = string.Empty;
     }
   }
 }

@@ -18,12 +18,12 @@ namespace Melody.Service.Entity
       var errorMessages = new List<string>();
       if (Name.Length < 5)
       {
-        errorMessages.Add("nazwa kontraktu, ");
+        errorMessages.Add("nazwa kontraktu,");
       }
 
       if (Contract.Length < 5)
       {
-        errorMessages.Add("nr. kontraktu, ");
+        errorMessages.Add("nr. kontraktu,");
       }
 
       return new ValidationResult

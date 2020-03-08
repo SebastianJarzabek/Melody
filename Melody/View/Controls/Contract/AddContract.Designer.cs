@@ -1,6 +1,6 @@
 ﻿namespace Melody.View.Controls
 {
-  partial class AddContract
+  partial class AddContract_panel
   {
     /// <summary> 
     /// Required designer variable.
@@ -123,12 +123,12 @@
       this.label2.TabIndex = 3;
       this.label2.Text = "Numer kontraktu:";
       // 
-      // AddContract
+      // AddContract_panel
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.AddContract_gb);
-      this.Name = "AddContract";
+      this.Name = "AddContract_panel";
       this.Size = new System.Drawing.Size(1920, 1080);
       this.AddContract_gb.ResumeLayout(false);
       this.AddContract_gb.PerformLayout();

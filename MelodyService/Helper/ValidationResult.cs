@@ -20,9 +20,10 @@ namespace Melody.Service.Helper
       get
       {
         var sb = new StringBuilder();
-        sb.Append("Proszę poprawić dane: ");
+        sb.AppendLine("Proszę poprawić dane: ");
         foreach (var errorMessage in ErrorMessages)
         {
+          sb.Append("- ");
           sb.AppendLine(errorMessage);
         }
         return sb.ToString();

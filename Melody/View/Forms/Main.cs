@@ -124,7 +124,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddContractControlPanel = new AddContract(new ContractsRepository(new Executor()));
+        var AddContractControlPanel = new AddContract_panel(new ContractsRepository(new Executor()));
         AddContractControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddContractControlPanel);
       }

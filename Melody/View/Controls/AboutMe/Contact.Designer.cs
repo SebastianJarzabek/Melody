@@ -58,7 +58,7 @@
       this.ContactChild_palen.Controls.Add(this.label3);
       this.ContactChild_palen.Controls.Add(this.label2);
       this.ContactChild_palen.Controls.Add(this.label6);
-      this.ContactChild_palen.Location = new System.Drawing.Point(300, 250);
+      this.ContactChild_palen.Location = new System.Drawing.Point(670, 445);
       this.ContactChild_palen.Name = "ContactChild_palen";
       this.ContactChild_palen.Size = new System.Drawing.Size(600, 250);
       this.ContactChild_palen.TabIndex = 5;

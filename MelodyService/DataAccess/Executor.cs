@@ -3,7 +3,6 @@ using log4net;
 using Melody.Service.ConfigService;
 using Melody.Service.ConfigService.Interfaces;
 using Melody.Service.DataAccess.Interfaces;
-using Melody.Service.Entity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

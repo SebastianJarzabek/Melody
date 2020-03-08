@@ -1,5 +1,4 @@
 ﻿using Melody.Service.DataAccess.Interfaces;
-using Melody.Service.Entity;
 using Melody.Service.Entity.EntityToView;
 using Melody.Service.SqlProcedures;
 using System.Collections.Generic;

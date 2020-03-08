@@ -172,7 +172,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var AddMaterialReceiptControlPanel = new AddWarehouseIssue();
+        var AddMaterialReceiptControlPanel = new AddWarehouseIssue(new WarehouseIssueRepository(new Executor()));
         AddMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(AddMaterialReceiptControlPanel);
       }
@@ -184,7 +184,7 @@ namespace Melody.View.Window
       try
       {
         Main_Panel.Controls.Clear();
-        var EditMaterialReceiptControlPanel = new EditMaterialReceipt();// new MaterialReceiptRepository(new Executor()));
+        var EditMaterialReceiptControlPanel = new EditMaterialIssue();
         EditMaterialReceiptControlPanel.Dock = DockStyle.Fill;
         Main_Panel.Controls.Add(EditMaterialReceiptControlPanel);
       }

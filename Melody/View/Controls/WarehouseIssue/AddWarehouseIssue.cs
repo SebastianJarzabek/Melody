@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Melody.Service.Entity;
 using Melody.Service.DataAccess;
+using Melody.Service.Entity.EntityToView;
+using Melody.Service.DataAccess.Interfaces;
 
 namespace Melody.View.Controls
 {
   public partial class AddWarehouseIssue : UserControl
   {
     List<MaterialToWarehouseIssue> materialToWarehouseIssue = new List<MaterialToWarehouseIssue>();
-    List<WarehouseIssue> orders = new List<WarehouseIssue>();
+    List<WarehouseIssue> warehouseIssues = new List<WarehouseIssue>();
     private readonly IWarehouseIssueRepository _warehouseIssueRepository;
     private int LastWarehouseIssue;
 
-    public AddWarehouseIssue(IOrderRepository orderRepository)
+    public AddWarehouseIssue(IWarehouseIssueRepository warehouseIssueRepository)
     {
-      _warehouseIssueRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+      _warehouseIssueRepository = warehouseIssueRepository ?? throw new ArgumentNullException(nameof(warehouseIssueRepository));
       InitializeComponent();
       LastWarehouseIssue = _warehouseIssueRepository.CheckLastWarehouseIssue() + 1;
     }
@@ -83,7 +80,7 @@ namespace Melody.View.Controls
       WarehouseIssueCollect();
       string isValidate = string.Empty;
 
-      foreach (var item in orders)
+      foreach (var item in warehouseIssues)
       {
         isValidate += item.Validate();
         var validationResult = item.Validate();
@@ -94,7 +91,7 @@ namespace Melody.View.Controls
 
           if (validationResult.IsValid)
           {
-            _warehouseIssueRepository.AddOrder(item);
+            _warehouseIssueRepository.AddWarehouseIssue(item);
             MessageBox.Show($"Dodano do bazy danych zamówienie o numerze: {LastWarehouseIssue}.",
                             "Informacja",
                             MessageBoxButtons.OK,
@@ -125,6 +122,11 @@ namespace Melody.View.Controls
       }
     }
 
+    private void WarehouseIssueCollect()
+    {
+      throw new NotImplementedException();
+    }
+
     private void AddMaterialToList_btn_Click(object sender, EventArgs e)
     {
       try
@@ -143,8 +145,8 @@ namespace Melody.View.Controls
           Quantity = Convert.ToInt32(MaterialQuantity_tb.Text)
         };
 
-        materialToOrders.Add(materialToOrder);
-        MaterialsToOrder_dgv.Rows.Add(materialToOrder.material.Name, materialToOrder.material.Type, materialToOrder.unit.Name, materialToOrder.Quantity);
+        //materialToWarehouseIssue.Add(materialToOrder);
+        //MaterialsToOrder_dgv.Rows.Add(materialToOrder.material.Name, materialToOrder.material.Type, materialToOrder.unit.Name, materialToOrder.Quantity);
       }
       catch (Exception ex)
       {
@@ -152,55 +154,55 @@ namespace Melody.View.Controls
       }
     }
 
-    private List<WarehouseIssue> WarehouseIssueCollect()
-    {
-      foreach (var item in materialToWarehouseIssue)
-      {
-        warehouseIssue.Add(new WarehouseIssue
-        {
-          WarehouseIssueNumber = LastWarehouseIssue
-          ,
-          DateOfOrder = dateOfOrderIn_dtp.Value
-          ,
-          OrderingEmployee = NameOrderingEmployeeIn_cb.Text + " " + SurnameOrderingEmployeeIn_cb.Text
-          ,
-          Supplier = new Supplier
-          {
-            Name = NameSupplierIn_cb.Text
-          },
-          Destiny = new Destiny
-          {
-            Name = DestinyName_cb.Text
-            ,
-            Contract = DestinyContractNumber_cb.Text
-          },
-          Material = new Material
-          {
-            Name = item.material.Name
-          },
-          Quantity = item.Quantity
-          ,
-          Unit = new Unit
-          {
-            Name = item.unit.Name
-          }
-          ,
-          Note = new Note
-          {
-            NoteFullText = Note_rtb.Text
-          }
-          ,
-          ReceivingEmployee = NameReceivingEmployeeIn_cb.Text + " " + SurnameReceivingEmployeeIn_cb.Text
-          ,
-          PlannedDateOfReceipt = DateOfReceiptIn_dtp.Value
-        });
-      }
-      return warehouseIssue;
-    }
+    //private List<WarehouseIssue> WarehouseIssueCollect()
+    //{
+    //  foreach (var item in materialToWarehouseIssue)
+    //  {
+    //    warehouseIssue.Add(new WarehouseIssue
+    //    {
+    //      WarehouseIssueNumber = LastWarehouseIssue
+    //      ,
+    //      DateOfOrder = dateOfOrderIn_dtp.Value
+    //      ,
+    //      OrderingEmployee = NameOrderingEmployeeIn_cb.Text + " " + SurnameOrderingEmployeeIn_cb.Text
+    //      ,
+    //      Supplier = new Supplier
+    //      {
+    //        Name = NameSupplierIn_cb.Text
+    //      },
+    //      Destiny = new Destiny
+    //      {
+    //        Name = DestinyName_cb.Text
+    //        ,
+    //        Contract = DestinyContractNumber_cb.Text
+    //      },
+    //      Material = new Material
+    //      {
+    //        Name = item.material.Name
+    //      },
+    //      Quantity = item.Quantity
+    //      ,
+    //      Unit = new Unit
+    //      {
+    //        Name = item.unit.Name
+    //      }
+    //      ,
+    //      Note = new Note
+    //      {
+    //        NoteFullText = Note_rtb.Text
+    //      }
+    //      ,
+    //      ReceivingEmployee = NameReceivingEmployeeIn_cb.Text + " " + SurnameReceivingEmployeeIn_cb.Text
+    //      ,
+    //      PlannedDateOfReceipt = DateOfReceiptIn_dtp.Value
+    //    });
+    //  }
+    //  return warehouseIssue;
+    //}
 
     private void MaterialsToWarehouseIssue_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-      MaterialsToOrder_dgv.DataSource = materialToOrders;
+      MaterialsToOrder_dgv.DataSource = materialToWarehouseIssue;
       MaterialsToOrder_dgv.Refresh();
     }
 
@@ -266,9 +268,9 @@ namespace Melody.View.Controls
 
     private void ClearMaterialsToOrder_btn_Click(object sender, EventArgs e)
     {
-      materialToOrders = null;
+      materialToWarehouseIssue = null;
       MaterialsToOrder_dgv.Refresh();
-      MaterialsToOrder_dgv.DataSource = materialToOrders;
+      MaterialsToOrder_dgv.DataSource = materialToWarehouseIssue;
     }
   }
 }

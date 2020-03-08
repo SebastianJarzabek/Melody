@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Melody.Service.DataAccess;
-using Melody.Service.Entity;
 using Melody.Service.Entity.EntityToView;
 
 namespace Melody.View.Controls

@@ -1,8 +1,4 @@
-﻿using Dapper.FluentMap.Configuration;
-using log4net;
-using Melody;
-using Melody.Service.DataAccess;
-using Melody.View.Controls;
+﻿using log4net;
 using Melody.View.Window;
 using System;
 using System.Reflection;

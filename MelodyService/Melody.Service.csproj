@@ -68,11 +68,13 @@
     <Compile Include="DataAccess\Interfaces\IExecutor.cs" />
     <Compile Include="DataAccess\Interfaces\IInventoryLevelRepository.cs" />
     <Compile Include="DataAccess\Interfaces\ISuppliersRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IWarehouseIssueRepository.cs" />
     <Compile Include="DataAccess\InventoryLevelRepository.cs" />
     <Compile Include="DataAccess\Interfaces\IOrderRepository.cs" />
     <Compile Include="DataAccess\MaterialReceiptRepository.cs" />
     <Compile Include="DataAccess\OrderRepository.cs" />
     <Compile Include="DataAccess\SuppliersRepository.cs" />
+    <Compile Include="DataAccess\WarehouseIssueRepository.cs" />
     <Compile Include="Entity\Access.cs" />
     <Compile Include="Entity\Adress.cs" />
     <Compile Include="Entity\ContactDetails.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Entity\EntityToView\EmployeeView.cs" />
     <Compile Include="Entity\EntityToView\InventoryLevelView.cs" />
     <Compile Include="Entity\EntityToView\MaterialReceiptView.cs" />
+    <Compile Include="Entity\EntityToView\MaterialToWarehouseIssue.cs" />
     <Compile Include="Entity\EntityToView\OrderView.cs" />
     <Compile Include="Entity\EntityToView\SupplierView.cs" />
     <Compile Include="Entity\InventoryLevel.cs" />

@@ -1,6 +1,4 @@
-﻿using log4net;
-using Melody.Service.Entity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 

@@ -17,8 +17,10 @@ namespace Melody
       {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new Main());
         OnFirstStart.InitAccess();
+        Application.Run(new Main());
+       
+      
       }
       catch (Exception ex)
       {
